@@ -11,9 +11,24 @@ from core.tasks import check_url_update, update_thumbnail
 
 @login_required
 def url_list(request):
-    """URL一覧ビュー"""
-    url_items = UrlItem.objects.filter(user=request.user).order_by('-last_updated_at', '-created_at')
-    return render(request, 'url_manager/url_list.html', {'url_items': url_items})
+    """URL一覧ビュー (タブ対応)"""
+    tab = request.GET.get('tab', 'all') # Default to 'all' tab
+    
+    base_queryset = UrlItem.objects.filter(user=request.user) # pylint: disable=no-member
+    
+    if tab == 'uncategorized':
+        url_items = base_queryset.filter(collections__isnull=True).order_by('-last_updated_at', '-created_at')
+    elif tab == 'all':
+        url_items = base_queryset.order_by('-last_updated_at', '-created_at')
+    else: # Default to 'all' if tab is invalid or not 'uncategorized'
+        url_items = base_queryset.order_by('-last_updated_at', '-created_at')
+        tab = 'all' # Ensure tab context is correct
+
+    context = {
+        'url_items': url_items,
+        'active_tab': tab,
+    }
+    return render(request, 'url_manager/url_list.html', context)
 
 @login_required
 def url_add(request):
