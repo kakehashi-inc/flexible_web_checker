@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans 'URL一覧' %} | Flexible Web Checker{% endblock %}
+
+{% block content %}
+<div class="max-w-6xl mx-auto">
+    <div class="flex justify-between items-center mb-6">
+        <h1 class="text-2xl font-bold text-gray-800">{% trans 'URL一覧' %}</h1>
+        <div>
+            <a href="{% url 'url_manager:url_add' %}" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition duration-300">
+                {% trans '新規URL追加' %}
+            </a>
+        </div>
+    </div>
+    
+    {% if url_items %}
+        <div class="bg-white shadow-md rounded-lg overflow-hidden">
+            <table class="min-w-full">
+                <thead>
+                    <tr class="bg-gray-100">
+                        <th class="py-3 px-4 text-left">{% trans 'タイトル' %}</th>
+                        <th class="py-3 px-4 text-left hidden md:table-cell">{% trans 'URL' %}</th>
+                        <th class="py-3 px-4 text-left hidden md:table-cell">{% trans 'チェックタイプ' %}</th>
+                        <th class="py-3 px-4 text-left">{% trans '最終更新' %}</th>
+                        <th class="py-3 px-4 text-center">{% trans 'アクション' %}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for url_item in url_items %}
+                        <tr class="border-t border-gray-200 hover:bg-gray-50">
+                            <td class="py-3 px-4">
+                                <div class="flex items-center">
+                                    {% if url_item.thumbnail %}
+                                        <img src="{{ url_item.thumbnail.url }}" alt="{{ url_item.title }}" class="w-10 h-10 object-cover rounded mr-3">
+                                    {% else %}
+                                        <div class="w-10 h-10 bg-gray-200 rounded mr-3 flex items-center justify-center">
+                                            <span class="text-gray-500 text-xs">{% trans '画像なし' %}</span>
+                                        </div>
+                                    {% endif %}
+                                    <a href="{% url 'url_manager:url_detail' url_item.id %}" class="text-blue-600 hover:text-blue-800 font-medium">
+                                        {{ url_item.title }}
+                                    </a>
+                                </div>
+                            </td>
+                            <td class="py-3 px-4 hidden md:table-cell">
+                                <a href="{{ url_item.url }}" target="_blank" class="text-gray-600 hover:text-blue-600 truncate block max-w-xs">
+                                    {{ url_item.url }}
+                                </a>
+                            </td>
+                            <td class="py-3 px-4 hidden md:table-cell">
+                                {% if url_item.check_type == 'RSS' %}
+                                    <span class="bg-green-100 text-green-800 text-xs font-medium px-2 py-1 rounded">RSS</span>
+                                {% elif url_item.check_type == 'HTML_STANDARD' %}
+                                    <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2 py-1 rounded">HTML標準</span>
+                                {% elif url_item.check_type == 'HTML_CUSTOM' %}
+                                    <span class="bg-purple-100 text-purple-800 text-xs font-medium px-2 py-1 rounded">HTMLカスタム</span>
+                                {% endif %}
+                            </td>
+                            <td class="py-3 px-4">
+                                {% if url_item.last_updated_at %}
+                                    <span class="text-gray-600">{{ url_item.last_updated_at|date:"Y/m/d H:i" }}</span>
+                                {% else %}
+                                    <span class="text-gray-400">{% trans '未更新' %}</span>
+                                {% endif %}
+                            </td>
+                            <td class="py-3 px-4 text-center">
+                                <div class="flex justify-center space-x-2">
+                                    <a href="{% url 'url_manager:url_check' url_item.id %}" class="text-blue-600 hover:text-blue-800" title="{% trans '更新チェック' %}">
+                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+                                        </svg>
+                                    </a>
+                                    <a href="{% url 'url_manager:url_edit' url_item.id %}" class="text-yellow-600 hover:text-yellow-800" title="{% trans '編集' %}">
+                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
+                                        </svg>
+                                    </a>
+                                    <a href="{% url 'url_manager:url_delete' url_item.id %}" class="text-red-600 hover:text-red-800" title="{% trans '削除' %}">
+                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    {% else %}
+        <div class="bg-white shadow-md rounded-lg p-6 text-center">
+            <p class="text-gray-600 mb-4">{% trans 'URLが登録されていません。' %}</p>
+            <a href="{% url 'url_manager:url_add' %}" class="text-blue-600 hover:text-blue-800">
+                {% trans '新しいURLを追加する' %} →
+            </a>
+        </div>
+    {% endif %}
+</div>
+{% endblock %}
