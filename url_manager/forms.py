@@ -42,8 +42,6 @@ class UrlItemForm(forms.ModelForm):
             return "OR"
 
         return html_custom_condition
-
-
 class BulkUrlAddForm(forms.Form):
     """複数URL一括追加フォーム"""
 
