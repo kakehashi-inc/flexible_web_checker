@@ -183,3 +183,7 @@ deploy*.sh
 .specstory
 wget-log
 
+
+# Media files (user uploads, generated thumbnails, etc.)
+media/
+

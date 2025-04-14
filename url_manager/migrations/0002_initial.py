@@ -11,13 +11,18 @@ class Migration(migrations.Migration):
 
     dependencies = [
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
-        ('url_manager', '0001_initial'),
+        ("url_manager", "0001_initial"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='urlitem',
-            name='user',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='url_items', to=settings.AUTH_USER_MODEL, verbose_name='ユーザー'),
+            model_name="urlitem",
+            name="user",
+            field=models.ForeignKey(
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="url_items",
+                to=settings.AUTH_USER_MODEL,
+                verbose_name="ユーザー",
+            ),
         ),
     ]
