@@ -64,7 +64,7 @@
                 {% endif %}
                 <form action="{% url 'set_language' %}" method="post" class="py-2">
                     {% csrf_token %}
-                    <input name="next" type="hidden" value="{{ redirect_to }}">
+                    <input name="next" type="hidden" value="{{ request.get_full_path|urlencode }}">
                     <button type="submit" name="language" value="ja" class="block py-1 w-full text-left">日本語</button>
                     <button type="submit" name="language" value="en" class="block py-1 w-full text-left">English</button>
                 </form>
