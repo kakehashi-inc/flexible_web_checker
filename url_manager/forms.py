@@ -42,3 +42,37 @@ class UrlItemForm(forms.ModelForm):
             return "OR"
 
         return html_custom_condition
+
+
+class BulkUrlAddForm(forms.Form):
+    """一括URL追加フォーム"""
+    
+    urls = forms.CharField(
+        label=_("URL一覧"),
+        widget=forms.Textarea(
+            attrs={
+                "rows": 10,
+                "placeholder": _("URLを1行に1つずつ入力してください。\n例:\nhttps://example.com\nhttps://example.org")
+            }
+        ),
+        help_text=_("URLを1行に1つずつ入力してください。タイトルは自動的に取得されます。")
+    )
+    
+    check_type = forms.ChoiceField(
+        label=_("チェックタイプ"),
+        choices=UrlItem.CHECK_TYPE_CHOICES,
+        initial="HTML_STANDARD",
+    )
+    
+    def clean_urls(self):
+        urls = self.cleaned_data.get("urls", "")
+        url_list = [url.strip() for url in urls.split("\n") if url.strip()]
+        
+        if not url_list:
+            raise forms.ValidationError(_("少なくとも1つのURLを入力してください。"))
+        
+        for url in url_list:
+            if not url.startswith(("http://", "https://")):
+                raise forms.ValidationError(_("無効なURLが含まれています: %(url)s"), params={"url": url})
+        
+        return url_list

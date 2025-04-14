@@ -30,7 +30,7 @@
                 <nav class="hidden md:flex space-x-4 items-center"> {# Added items-center #}
                     {% if user.is_authenticated %}
                         {# User icon + nickname link #}
-                        <a href="{% url 'user_accounts:profile' %}" class="flex items-center hover:text-blue-200">
+                        <a href="{% url 'user_accounts:mypage' %}" class="flex items-center hover:text-blue-200">
                             {# Ensure user icon exists or add a placeholder #}
                             {% load static %}
                             <img src="{% static 'icons/user.svg' %}" alt="{% trans 'ユーザーアイコン' %}" class="w-5 h-5 inline-block mr-1">
@@ -64,7 +64,7 @@
             <div id="mobile-menu" class="hidden md:hidden mt-2 pb-2">
                 {% if user.is_authenticated %}
                     {# User icon + nickname link for mobile #}
-                    <a href="{% url 'user_accounts:profile' %}" class="flex items-center py-2">
+                    <a href="{% url 'user_accounts:mypage' %}" class="flex items-center py-2">
                         {% load static %}
                         <img src="{% static 'icons/user.svg' %}" alt="{% trans 'ユーザーアイコン' %}" class="w-5 h-5 inline-block mr-1">
                         <span>{{ user.nickname|default:user.email }}</span>

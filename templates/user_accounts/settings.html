@@ -11,13 +11,13 @@
             
             <div class="space-y-6">
                 <div class="border-b border-gray-200 pb-6">
-                    <h2 class="text-lg font-semibold text-gray-700 mb-4">{% trans 'プロフィール' %}</h2>
+                    <h2 class="text-lg font-semibold text-gray-700 mb-4">{% trans 'マイページ' %}</h2>
                     <div class="flex items-center justify-between">
                         <div>
                             <p class="text-gray-600">{% trans 'ニックネーム' %}: {{ user.nickname }}</p>
                             <p class="text-gray-600">{% trans 'メールアドレス' %}: {{ user.email }}</p>
                         </div>
-                        <a href="{% url 'user_accounts:profile_edit' %}" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition duration-300">
+                        <a href="{% url 'user_accounts:edit_mypage' %}" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition duration-300">
                             {% trans '編集' %}
                         </a>
                     </div>
@@ -40,14 +40,14 @@
                         
                         <div class="space-y-4">
                             <div class="flex items-center">
-                                <input id="email_notification" name="email_notification" type="checkbox" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded" {% if user.profile.email_notification %}checked{% endif %}>
+                                <input id="email_notification" name="email_notification" type="checkbox" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded" {% if user.user_settings.email_notification %}checked{% endif %}>
                                 <label for="email_notification" class="ml-2 block text-gray-700">
                                     {% trans 'メール通知を受け取る' %}
                                 </label>
                             </div>
                             
                             <div class="flex items-center">
-                                <input id="browser_notification" name="browser_notification" type="checkbox" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded" {% if user.profile.browser_notification %}checked{% endif %}>
+                                <input id="browser_notification" name="browser_notification" type="checkbox" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded" {% if user.user_settings.browser_notification %}checked{% endif %}>
                                 <label for="browser_notification" class="ml-2 block text-gray-700">
                                     {% trans 'ブラウザ通知を受け取る' %}
                                 </label>

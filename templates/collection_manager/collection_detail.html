@@ -6,15 +6,29 @@
 {% block content %}
 <div class="max-w-6xl mx-auto">
     <div class="mb-6">
-        <a href="{% url 'collection_manager:collection_list' %}" class="text-blue-600 hover:text-blue-800">
-            ← {% trans 'コレクション一覧に戻る' %}
-        </a>
+        <h1 class="text-2xl font-bold text-gray-800 mb-4">{{ collection.name }}</h1>
+        <div class="border-b border-gray-200">
+            <nav class="-mb-px flex space-x-8" aria-label="Tabs">
+                <a href="{% url 'url_manager:url_list' %}?tab=all"
+                   class="border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm">
+                    {% trans 'すべて' %}
+                </a>
+                <a href="{% url 'collection_manager:collection_list' %}"
+                   class="border-blue-500 text-blue-600 whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm">
+                    {% trans 'コレクション' %}
+                </a>
+                <a href="{% url 'url_manager:url_list' %}?tab=uncategorized"
+                   class="border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm">
+                    {% trans '未分類' %}
+                </a>
+            </nav>
+        </div>
     </div>
     
     <div class="bg-white shadow-md rounded-lg overflow-hidden mb-6">
         <div class="p-6">
             <div class="flex justify-between items-start">
-                <h1 class="text-2xl font-bold text-gray-800 mb-2">{{ collection.name }}</h1>
+                <h2 class="text-xl font-semibold text-gray-800 mb-2">{% trans 'コレクション情報' %}</h2>
                 <div class="flex space-x-2">
                     <a href="{% url 'collection_manager:collection_edit' collection.id %}" class="bg-yellow-600 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded-md transition duration-300">
                         {% trans '編集' %}
@@ -41,7 +55,7 @@
             <div class="flex justify-between items-center mb-6">
                 <h2 class="text-xl font-semibold text-gray-800">{% trans 'URL一覧' %}</h2>
                 <div>
-                    <a href="{% url 'collection_manager:collection_add_url' collection.id %}" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition duration-300">
+                    <a href="{% url 'url_manager:url_list' %}?tab=all" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition duration-300">
                         {% trans 'URLを追加' %}
                     </a>
                 </div>
@@ -121,7 +135,7 @@
             {% else %}
                 <div class="text-center py-8">
                     <p class="text-gray-600 mb-4">{% trans 'このコレクションにはURLが登録されていません。' %}</p>
-                    <a href="{% url 'collection_manager:collection_add_url' collection.id %}" class="text-blue-600 hover:text-blue-800">
+                    <a href="{% url 'url_manager:url_list' %}?tab=all" class="text-blue-600 hover:text-blue-800">
                         {% trans 'URLを追加する' %} →
                     </a>
                 </div>

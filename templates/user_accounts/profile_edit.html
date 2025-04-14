@@ -1,12 +1,12 @@
 {% extends 'base.html' %}
 {% load i18n %}
 
-{% block title %}{% trans 'プロフィール編集' %} | Flexible Web Checker{% endblock %}
+{% block title %}{% trans 'マイページ編集' %} | Flexible Web Checker{% endblock %}
 
 {% block content %}
 <div class="max-w-md mx-auto">
     <div class="bg-white shadow-md rounded-lg p-6">
-        <h1 class="text-2xl font-bold text-blue-600 mb-6 text-center">{% trans 'プロフィール編集' %}</h1>
+        <h1 class="text-2xl font-bold text-blue-600 mb-6 text-center">{% trans 'マイページ編集' %}</h1>
         
         <form method="post" class="space-y-4">
             {% csrf_token %}
@@ -72,8 +72,8 @@
         </form>
         
         <div class="mt-6 border-t border-gray-200 pt-4 text-center">
-            <a href="{% url 'user_accounts:profile' %}" class="text-blue-600 hover:text-blue-800">
-                {% trans 'プロフィールに戻る' %}
+            <a href="{% url 'user_accounts:mypage' %}" class="text-blue-600 hover:text-blue-800">
+                {% trans 'マイページに戻る' %}
             </a>
         </div>
     </div>
