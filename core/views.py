@@ -12,46 +12,9 @@ from .tasks import check_all_urls_task
 def home(request):
     """ホームページビュー"""
     if request.user.is_authenticated:
-        return redirect('core:dashboard')
+        return redirect('url_manager:url_list') # Redirect to URL list
     
     return render(request, 'core/home.html')
-
-@login_required
-def dashboard(request):
-    """ダッシュボードビュー"""
-    recent_updates = UrlItem.objects.filter(
-        user=request.user,
-        last_updated_at__isnull=False
-    ).order_by('-last_updated_at')[:10]
-    
-    error_urls = UrlItem.objects.filter(
-        user=request.user,
-        error_count__gt=0
-    ).order_by('-error_count')[:5]
-    
-    collections = Collection.objects.filter(
-        user=request.user
-    ).annotate(
-        url_count=Count('url_items')
-    ).order_by('-url_count')[:5]
-    
-    total_urls = UrlItem.objects.filter(user=request.user).count()
-    total_collections = Collection.objects.filter(user=request.user).count()
-    total_updated_today = UrlItem.objects.filter(
-        user=request.user,
-        last_updated_at__date=timezone.now().date()
-    ).count()
-    
-    context = {
-        'recent_updates': recent_updates,
-        'error_urls': error_urls,
-        'collections': collections,
-        'total_urls': total_urls,
-        'total_collections': total_collections,
-        'total_updated_today': total_updated_today,
-    }
-    
-    return render(request, 'core/dashboard.html', context)
 
 @login_required
 def about(request):
@@ -68,4 +31,4 @@ def check_all_urls(request):
     if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
         return JsonResponse({'status': 'success'})
     else:
-        return redirect('core:dashboard')
+        return redirect('url_manager:url_list') # Redirect to URL list
