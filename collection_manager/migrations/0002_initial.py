@@ -9,14 +9,19 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
-        ('collection_manager', '0001_initial'),
-        ('url_manager', '0001_initial'),
+        ("collection_manager", "0001_initial"),
+        ("url_manager", "0001_initial"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='urlitemcollection',
-            name='url_item',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='collections', to='url_manager.urlitem', verbose_name='URL項目'),
+            model_name="urlitemcollection",
+            name="url_item",
+            field=models.ForeignKey(
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="collections",
+                to="url_manager.urlitem",
+                verbose_name="URL項目",
+            ),
         ),
     ]

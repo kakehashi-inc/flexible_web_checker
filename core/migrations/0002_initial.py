@@ -9,14 +9,21 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
-        ('core', '0001_initial'),
-        ('url_manager', '0001_initial'),
+        ("core", "0001_initial"),
+        ("url_manager", "0001_initial"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='notification',
-            name='url_item',
-            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='notifications', to='url_manager.urlitem', verbose_name='URL項目'),
+            model_name="notification",
+            name="url_item",
+            field=models.ForeignKey(
+                blank=True,
+                null=True,
+                on_delete=django.db.models.deletion.SET_NULL,
+                related_name="notifications",
+                to="url_manager.urlitem",
+                verbose_name="URL項目",
+            ),
         ),
     ]
