@@ -26,7 +26,10 @@ class UrlItem(models.Model):
     url = models.URLField(_("URL"), max_length=2000)
     title = models.CharField(_("タイトル"), max_length=255)
     thumbnail = models.ImageField(
-        _("サムネイル"), upload_to="thumbnails/", null=True, blank=True
+        _("モバイルサムネイル"), upload_to="thumbnails/", null=True, blank=True
+    )
+    pc_thumbnail = models.ImageField(
+        _("PCサムネイル"), upload_to="pc_thumbnails/", null=True, blank=True
     )
     check_type = models.CharField(
         _("チェックタイプ"), max_length=20, choices=CHECK_TYPE_CHOICES

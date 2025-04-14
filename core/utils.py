@@ -33,12 +33,25 @@ def get_page_title(url):
         return url
 
 
-def take_screenshot(url, output_path=None):
-    """URLのスクリーンショットを取得する"""
+def take_screenshot(url, output_path=None, device_type="mobile"):
+    """URLのスクリーンショットを取得する
+    
+    Args:
+        url: キャプチャするURL
+        output_path: 出力先パス（Noneの場合はバイナリを返す）
+        device_type: デバイスタイプ（"mobile"または"pc"）
+    """
     try:
         options = Options()
         options.add_argument("--headless")
-        options.add_argument("--window-size=390,844")  # iPhone 12 Pro size
+        
+        if device_type == "mobile":
+            # iPhone 12 Pro size
+            window_size = "390,844"
+        else:
+            window_size = "1920,1080"
+            
+        options.add_argument(f"--window-size={window_size}")
 
         driver = webdriver.Firefox(options=options)
         driver.get(url)

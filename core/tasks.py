@@ -84,10 +84,15 @@ def check_url_update(url_item_id):
 
             if not url_item.thumbnail:
                 try:
-                    screenshot_path = f"thumbnails/{url_item_id}.png"
-                    full_path = f"{settings.MEDIA_ROOT}/{screenshot_path}"
-                    take_screenshot(url_item.url, full_path)
-                    url_item.thumbnail = screenshot_path
+                    mobile_screenshot_path = f"thumbnails/{url_item_id}.png"
+                    mobile_full_path = f"{settings.MEDIA_ROOT}/{mobile_screenshot_path}"
+                    take_screenshot(url_item.url, mobile_full_path, device_type="mobile")
+                    url_item.thumbnail = mobile_screenshot_path
+                    
+                    pc_screenshot_path = f"pc_thumbnails/{url_item_id}.png"
+                    pc_full_path = f"{settings.MEDIA_ROOT}/{pc_screenshot_path}"
+                    take_screenshot(url_item.url, pc_full_path, device_type="pc")
+                    url_item.pc_thumbnail = pc_screenshot_path
                 except Exception as e:
                     logger.error(
                         f"Error taking screenshot for {url_item.url}: {str(e)}"
@@ -132,13 +137,19 @@ def update_thumbnail(url_item_id):
         if not url_item.is_active:
             return False
 
-        logger.info(f"Updating thumbnail for URL: {url_item.url}")
+        logger.info(f"Updating thumbnails for URL: {url_item.url}")
 
         try:
-            screenshot_path = f"thumbnails/{url_item_id}.png"
-            full_path = f"{settings.MEDIA_ROOT}/{screenshot_path}"
-            take_screenshot(url_item.url, full_path)
-            url_item.thumbnail = screenshot_path
+            mobile_screenshot_path = f"thumbnails/{url_item_id}.png"
+            mobile_full_path = f"{settings.MEDIA_ROOT}/{mobile_screenshot_path}"
+            take_screenshot(url_item.url, mobile_full_path, device_type="mobile")
+            url_item.thumbnail = mobile_screenshot_path
+            
+            pc_screenshot_path = f"pc_thumbnails/{url_item_id}.png"
+            pc_full_path = f"{settings.MEDIA_ROOT}/{pc_screenshot_path}"
+            take_screenshot(url_item.url, pc_full_path, device_type="pc")
+            url_item.pc_thumbnail = pc_screenshot_path
+            
             url_item.save()
             return True
         except Exception as e:

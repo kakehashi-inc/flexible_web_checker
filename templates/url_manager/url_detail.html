@@ -84,14 +84,50 @@
                 
                 <div>
                     <div class="mb-4">
-                        <h2 class="text-lg font-semibold text-gray-700 mb-2">{% trans 'サムネイル' %}</h2>
-                        {% if url_item.thumbnail %}
-                            <img src="{{ url_item.thumbnail.url }}" alt="{{ url_item.title }}" class="w-full h-auto rounded-md border border-gray-200">
-                        {% else %}
-                            <div class="w-full h-48 bg-gray-200 rounded-md flex items-center justify-center">
-                                <span class="text-gray-500">{% trans 'サムネイルなし' %}</span>
+                        <h2 class="text-lg font-semibold text-gray-700 mb-2">{% trans 'スクリーンショット' %}</h2>
+                        
+                        <!-- スクリーンショットタブ -->
+                        <div class="mb-4">
+                            <div class="border-b border-gray-200">
+                                <nav class="-mb-px flex" aria-label="Tabs">
+                                    <a id="mobile-tab" href="#" class="tab-link py-2 px-4 border-b-2 font-medium text-sm border-blue-500 text-blue-600">
+                                        {% trans 'モバイル' %}
+                                    </a>
+                                    <a id="pc-tab" href="#" class="tab-link py-2 px-4 border-b-2 border-transparent font-medium text-sm text-gray-500 hover:text-gray-700 hover:border-gray-300">
+                                        {% trans 'PC' %}
+                                    </a>
+                                </nav>
                             </div>
-                        {% endif %}
+                            
+                            <!-- モバイルスクリーンショット -->
+                            <div id="mobile-screenshot" class="tab-content mt-4">
+                                {% if url_item.thumbnail %}
+                                    <img src="{{ url_item.thumbnail.url }}" alt="{{ url_item.title }}" class="w-full h-auto rounded-md border border-gray-200">
+                                {% else %}
+                                    <div class="w-full h-48 bg-gray-200 rounded-md flex items-center justify-center">
+                                        <span class="text-gray-500">{% trans 'モバイルサムネイルなし' %}</span>
+                                    </div>
+                                {% endif %}
+                            </div>
+                            
+                            <!-- PCスクリーンショット -->
+                            <div id="pc-screenshot" class="tab-content mt-4 hidden">
+                                {% if url_item.pc_thumbnail %}
+                                    <img src="{{ url_item.pc_thumbnail.url }}" alt="{{ url_item.title }}" class="w-full h-auto rounded-md border border-gray-200">
+                                {% else %}
+                                    <div class="w-full h-48 bg-gray-200 rounded-md flex items-center justify-center">
+                                        <span class="text-gray-500">{% trans 'PCサムネイルなし' %}</span>
+                                    </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                        
+                        <!-- サムネイル更新ボタン -->
+                        <div class="mt-2">
+                            <a href="{% url 'url_manager:url_update_thumbnail' url_item.id %}" class="inline-block bg-blue-500 hover:bg-blue-600 text-white font-medium py-1 px-3 rounded-md text-sm transition duration-200">
+                                {% trans 'スクリーンショットを更新' %}
+                            </a>
+                        </div>
                     </div>
                     
                     <div class="mb-4">
@@ -130,4 +166,33 @@
         </div>
     </div>
 </div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const tabs = document.querySelectorAll('.tab-link');
+        const contents = document.querySelectorAll('.tab-content');
+        
+        tabs.forEach(tab => {
+            tab.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // すべてのタブとコンテンツの選択状態をリセット
+                tabs.forEach(t => {
+                    t.classList.remove('border-blue-500', 'text-blue-600');
+                    t.classList.add('border-transparent', 'text-gray-500');
+                });
+                contents.forEach(c => c.classList.add('hidden'));
+                
+                // クリックされたタブとそれに対応するコンテンツをアクティブ化
+                this.classList.add('border-blue-500', 'text-blue-600');
+                this.classList.remove('border-transparent', 'text-gray-500');
+                
+                const contentId = this.id.replace('-tab', '-screenshot');
+                document.getElementById(contentId).classList.remove('hidden');
+            });
+        });
+    });
+</script>
 {% endblock %}
