@@ -54,7 +54,7 @@ class UserLoginForm(forms.Form):
 
 
 class UserProfileForm(forms.ModelForm):
-    """ユーザープロフィール編集フォーム"""
+    """マイページ編集フォーム"""
 
     class Meta:
         model = User

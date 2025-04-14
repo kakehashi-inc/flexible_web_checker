@@ -1,7 +1,9 @@
+import logging
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.contrib.admin.views.decorators import staff_member_required
-
+from django.core.paginator import Paginator
+from django.conf import settings
 from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
 from django.contrib import messages
@@ -12,29 +14,47 @@ from .forms import UrlItemForm, BulkUrlAddForm # Add BulkUrlAddForm
 from core.utils import get_page_title, take_screenshot
 from core.tasks import check_url_update, update_thumbnail
 
+logger = logging.getLogger(__name__)
+
 
 @login_required
 def url_list(request):
     """URL一覧ビュー (タブ対応)"""
     tab = request.GET.get("tab", "all")  # Default to 'all' tab
+    sort = request.GET.get("sort", "updated_desc")  # デフォルトは更新日の降順
 
     base_queryset = UrlItem.objects.filter(
         user=request.user
     )  # pylint: disable=no-member
 
     if tab == "uncategorized":
-        url_items = base_queryset.filter(collections__isnull=True).order_by(
-            "-last_updated_at", "-created_at"
-        )
+        queryset = base_queryset.filter(collections__isnull=True)
     elif tab == "all":
-        url_items = base_queryset.order_by("-last_updated_at", "-created_at")
-    else:  # Default to 'all' if tab is invalid or not 'uncategorized'
-        url_items = base_queryset.order_by("-last_updated_at", "-created_at")
+        queryset = base_queryset
+    else:  # Default to 'all' if tab is invalid
+        queryset = base_queryset
         tab = "all"  # Ensure tab context is correct
 
+    if sort == "updated_desc":
+        queryset = queryset.order_by("-last_updated_at", "-created_at")
+    elif sort == "updated_asc":
+        queryset = queryset.order_by("last_updated_at", "created_at")
+    elif sort == "created_desc":
+        queryset = queryset.order_by("-created_at")
+    elif sort == "created_asc":
+        queryset = queryset.order_by("created_at")
+    elif sort == "title":
+        queryset = queryset.order_by("title")
+
+    paginator = Paginator(queryset, settings.ITEMS_PER_PAGE)
+    page_number = request.GET.get("page", 1)
+    page_obj = paginator.get_page(page_number)
+
     context = {
-        "url_items": url_items,
+        "url_items": page_obj,
+        "page_obj": page_obj,
         "active_tab": tab,
+        "current_sort": sort,
     }
     return render(request, "url_manager/url_list.html", context)
 
@@ -53,8 +73,11 @@ def url_add(request):
 
             url_item.save()
 
-            check_url_update.delay(url_item.id)
-            update_thumbnail.delay(url_item.id)
+            try:
+                check_url_update.delay(url_item.id)
+                update_thumbnail.delay(url_item.id)
+            except Exception as e:
+                logger.error(f"Error scheduling tasks for URL {url_item.id}: {str(e)}")
 
             messages.success(request, _("URLを追加しました。"))
             return redirect("url_manager:url_list")
@@ -110,7 +133,10 @@ def url_check(request, url_id):
     """URL更新チェックビュー"""
     url_item = get_object_or_404(UrlItem, id=url_id, user=request.user)
 
-    check_url_update.delay(url_item.id)
+    try:
+        check_url_update.delay(url_item.id)
+    except Exception as e:
+        logger.error(f"Error scheduling update check for URL {url_item.id}: {str(e)}")
 
     messages.success(request, _("更新チェックを開始しました。"))
 
@@ -125,7 +151,10 @@ def url_update_thumbnail(request, url_id):
     """URLサムネイル更新ビュー"""
     url_item = get_object_or_404(UrlItem, id=url_id, user=request.user)
 
-    update_thumbnail.delay(url_item.id)
+    try:
+        update_thumbnail.delay(url_item.id)
+    except Exception as e:
+        logger.error(f"Error scheduling thumbnail update for URL {url_item.id}: {str(e)}")
 
     messages.success(request, _("サムネイルの更新を開始しました。"))
 
@@ -165,8 +194,11 @@ def url_bulk_add(request):
                         title=title,
                         check_type='HTML_STANDARD' # Default check type
                     )
-                    check_url_update.delay(url_item.id)
-                    update_thumbnail.delay(url_item.id)
+                    try:
+                        check_url_update.delay(url_item.id)
+                        update_thumbnail.delay(url_item.id)
+                    except Exception as e:
+                        logger.error(f"Error scheduling tasks for URL {url_item.id}: {str(e)}")
                     added_count += 1
                 except Exception as e:
                     print(f"Error adding URL {url_str}: {e}") # Basic logging for now

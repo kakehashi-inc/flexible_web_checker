@@ -132,19 +132,19 @@ def logout_view(request):
 
 @login_required
 def profile(request):
-    """プロフィールビュー"""
-    return render(request, "user_accounts/profile.html", {"user": request.user})
+    """マイページビュー"""
+    return render(request, "user_accounts/mypage.html", {"user": request.user})
 
 
 @login_required
 def edit_profile(request):
-    """プロフィール編集ビュー"""
+    """マイページ編集ビュー"""
     if request.method == "POST":
         form = UserProfileForm(request.POST, instance=request.user)
         if form.is_valid():
             form.save()
-            messages.success(request, _("プロフィールを更新しました。"))
-            return redirect("user_accounts:profile")
+            messages.success(request, _("マイページを更新しました。"))
+            return redirect("user_accounts:mypage")
     else:
         form = UserProfileForm(instance=request.user)
 

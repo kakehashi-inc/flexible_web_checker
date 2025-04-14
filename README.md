@@ -8,9 +8,9 @@ Flexible Web Checkerは、指定したWebページの更新を定期的にチェ
 
 -   **バックエンド:** Python, Django, Celery
 -   **フロントエンド:** HTML, Tailwind CSS, JavaScript
--   **データベース:** SQLite (デフォルト), PostgreSQL (推奨)
--   **非同期処理:** Redis (Celery Broker)
--   **その他:** requests, beautifulsoup4, Pillow
+-   **データベース:** SQLite (デフォルト), MySQL (接続数増加時)
+-   **非同期処理:** Celery
+-   **その他:** requests, beautifulsoup4, Pillow, Selenium
 
 ## セットアップ方法
 
@@ -37,7 +37,7 @@ pip install -r requirements.txt
 
 ### 4. 環境変数の設定
 
-`.env.example` ファイルをコピーして `.env` ファイルを作成し、必要な設定（データベース接続情報、Redis接続情報など）を記述します。
+`.env.example` ファイルをコピーして `.env` ファイルを作成し、必要な設定（データベース接続情報、メール設定など）を記述します。
 
 ```bash
 cp .env.example .env
@@ -89,6 +89,6 @@ celery -A flexible_web_checker beat -l info --scheduler django_celery_beat.sched
 詳細なドキュメントは `Documents/` ディレクトリを参照してください。
 
 -   `Documents/テーブル定義.md`: データベースのテーブル定義。
--   `Documents/setup_apache_rhel.md`: RHEL系OS向けのApache + mod_wsgiデプロイ手順。
--   `Documents/setup_apache_ubuntu.md`: Ubuntu/Debian系OS向けのApache + mod_wsgiデプロイ手順。
+-   `Documents/setup_apache_rhel.md`: RHEL系OS向けのApache + Gunicornデプロイ手順。
+-   `Documents/setup_apache_ubuntu.md`: Ubuntu/Debian系OS向けのApache + Gunicornデプロイ手順。
 -   `Documents/仕様書案.md`: アプリケーションの仕様に関する詳細。
