@@ -45,6 +45,13 @@
                         </div>
 
                     <div class="mt-6">
+                        {# Password Change Link #}
+                        <div class="mt-6">
+                            <a href="{% url 'user_accounts:password_change' %}" class="block text-blue-600 hover:text-blue-800">
+                                {% trans 'パスワードを変更する' %}
+                            </a>
+                        </div>
+
                         <a href="{% url 'user_accounts:edit_profile' %}" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition duration-300">
                             {% trans 'プロフィールを編集' %}
                         </a>
