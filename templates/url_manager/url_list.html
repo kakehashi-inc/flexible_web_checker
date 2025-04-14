@@ -30,9 +30,6 @@
         {# Show buttons only on 'all' or 'uncategorized' tabs #}
         {% if active_tab == 'all' or active_tab == 'uncategorized' %}
         <div class="flex space-x-2">
-             <a href="{% url 'url_manager:url_bulk_add' %}" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-md transition duration-300">
-                 {% trans '一括追加' %}
-             </a>
              <a href="{% url 'url_manager:url_add' %}" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition duration-300">
                  {% trans '新規URL追加' %}
              </a>
