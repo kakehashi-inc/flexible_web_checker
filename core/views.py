@@ -1,4 +1,6 @@
 from django.shortcuts import render, redirect
+from django.contrib.admin.views.decorators import staff_member_required
+
 from django.contrib.auth.decorators import login_required
 from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
@@ -21,7 +23,7 @@ def about(request):
     """アバウトページビュー"""
     return render(request, 'core/about.html')
 
-@login_required
+@staff_member_required # Restrict check_all_urls to staff/superusers
 def check_all_urls(request):
     """すべてのURL更新チェックビュー"""
     check_all_urls_task.delay(request.user.pk)

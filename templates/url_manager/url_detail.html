@@ -110,13 +110,15 @@
                         {% endif %}
                     </div>
                     
+                    {% comment %} Error Information Section {% endcomment %}
                     {% if url_item.error_count > 0 %}
-                    <div class="mb-4">
-                        <h2 class="text-lg font-semibold text-red-600 mb-2">{% trans 'エラー情報' %}</h2>
-                        <p class="mb-2">{% trans 'エラー回数' %}: {{ url_item.error_count }}</p>
+                    <div class="mb-4 p-4 bg-red-50 border border-red-200 rounded-md">
+                        <h2 class="text-lg font-semibold text-red-700 mb-2">{% trans 'エラー情報' %}</h2>
+                        <p class="mb-2 text-red-700">{% trans 'エラー回数' %}: {{ url_item.error_count }}</p>
                         {% if url_item.last_error_message %}
-                        <div class="bg-red-50 border border-red-200 text-red-700 p-3 rounded-md">
-                            {{ url_item.last_error_message }}
+                        <div class="mt-2 p-3 bg-red-100 border border-red-300 text-red-800 rounded-md text-sm">
+                            <p class="font-medium">{% trans '最終エラーメッセージ:' %}</p>
+                            <pre class="whitespace-pre-wrap break-words mt-1">{{ url_item.last_error_message }}</pre>
                         </div>
                         {% endif %}
                     </div>
