@@ -8,10 +8,19 @@
     <title>{% block title %}Flexible Web Checker{% endblock %}</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-    <link rel="icon" type="image/svg+xml" href="{% static 'favicon.svg' %}">
-    <link rel="icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicon-32x32.png' %}"> {# Assuming 32x32 exists or will be created #}
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicon-16x16.png' %}"> {# Assuming 16x16 exists or will be created #}
     <link rel="manifest" href="{% static 'site.webmanifest' %}">
+    <link rel="shortcut icon" href="{% static 'favicon.ico' %}">
+    <meta name="msapplication-TileColor" content="#da532c"> {# Default color from generator #}
+    <meta name="theme-color" content="#ffffff"> {# Default color from generator #}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}"> {# Re-adding the css link #}
+
     {% block extra_css %}{% endblock %}
+
+    <meta name="theme-color" content="#ffffff">
+
 </head>
 <body class="bg-gray-100 min-h-screen">
     <header class="bg-blue-600 text-white shadow-md">

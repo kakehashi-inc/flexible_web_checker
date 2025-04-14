@@ -1,5 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
+from django.contrib.admin.views.decorators import staff_member_required
+
 from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
 from django.contrib import messages
@@ -102,6 +104,8 @@ def url_delete(request, url_id):
 
 
 @login_required
+@staff_member_required
+
 def url_check(request, url_id):
     """URL更新チェックビュー"""
     url_item = get_object_or_404(UrlItem, id=url_id, user=request.user)
@@ -139,12 +143,12 @@ def url_bulk_add(request):
             urls_to_add = form.cleaned_data['urls']
             added_count = 0
             error_urls = []
-            
+
             for url_str in urls_to_add:
                 if not url_str.startswith(('http://', 'https://')):
                     error_urls.append(f"{url_str} ({_('無効な形式')})")
                     continue
-                    
+
                 if UrlItem.objects.filter(user=request.user, url=url_str).exists():
                     error_urls.append(f"{url_str} ({_('登録済み')})")
                     continue
@@ -172,10 +176,10 @@ def url_bulk_add(request):
                 messages.success(request, _('{count}件のURLを追加しました。').format(count=added_count))
             if error_urls:
                 error_html = _('以下のURLは追加できませんでした:') + '<ul class="list-disc list-inside">' + "".join([f"<li>{err}</li>" for err in error_urls]) + "</ul>"
-                messages.error(request, error_html, extra_tags='safe') 
+                messages.error(request, error_html, extra_tags='safe')
 
             return redirect('url_manager:url_list')
     else:
         form = BulkUrlAddForm()
-    
+
     return render(request, 'url_manager/url_bulk_add.html', {'form': form})

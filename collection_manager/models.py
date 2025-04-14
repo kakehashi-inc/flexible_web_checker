@@ -24,7 +24,8 @@ class Collection(models.Model):
         ordering = ["order", "name"]
 
     def __str__(self):
-        return self.name
+        return str(self.name)
+
 
 
 class UrlItemCollection(models.Model):

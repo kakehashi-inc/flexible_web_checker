@@ -8,6 +8,7 @@ from django.http import JsonResponse
 from .tasks import check_all_urls_task
 
 
+
 def home(request):
     """ホームページビュー"""
     if request.user.is_authenticated:
@@ -19,6 +20,8 @@ def home(request):
 @login_required
 def about(request):
     """アバウトページビュー"""
+    return render(request, "core/about.html")
+
     return render(request, "core/about.html")
 
 

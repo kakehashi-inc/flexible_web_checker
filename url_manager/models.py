@@ -64,4 +64,4 @@ class UrlItem(models.Model):
         ordering = ["-last_updated_at", "-created_at"]
 
     def __str__(self):
-        return self.title
+        return str(self.title) if self.title else str(self.url)

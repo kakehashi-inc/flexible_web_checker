@@ -18,6 +18,7 @@ from .forms import (
 )
 
 
+
 def register(request):
     """ユーザー登録ビュー"""
     if request.method == "POST":
@@ -70,6 +71,7 @@ def verify_email(request, token):
     """メールアドレス確認ビュー"""
     token_obj = get_object_or_404(EmailConfirmationToken, token=token)
 
+
     if not token_obj.is_valid():
         messages.error(
             request, _("トークンの有効期限が切れています。再度登録を行ってください。")
@@ -97,6 +99,7 @@ def login_view(request):
             email = form.cleaned_data["email"]
             password = form.cleaned_data["password"]
             user = authenticate(request, email=email, password=password)
+
 
             if user is not None:
                 if user.is_active:
@@ -212,6 +215,7 @@ def password_reset_request(request):
 def password_reset(request, token):
     """パスワードリセットビュー"""
     token_obj = get_object_or_404(PasswordResetToken, token=token)
+
 
     if not token_obj.is_valid():
         messages.error(
