@@ -9,6 +9,10 @@ from django.core.mail import send_mail
 from django.template.loader import render_to_string
 from django.urls import reverse
 from .models import User, EmailConfirmationToken, PasswordResetToken
+from .forms import (
+    UserRegistrationForm, UserLoginForm, UserProfileForm,
+    PasswordResetRequestForm, PasswordResetForm
+)
 
 def register(request):
     """ユーザー登録ビュー"""
