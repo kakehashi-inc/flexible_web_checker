@@ -1,3 +1,5 @@
+import logging
+logger = logging.getLogger(__name__)
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.utils import timezone
@@ -159,10 +161,11 @@ def url_bulk_add(request):
                     update_thumbnail.delay(url_item.id)
                     added_count += 1
                 except Exception as e:
-                    print(f"Error adding URL {url_str}: {e}")  # Basic logging for now
+                    logger.error(f"Error scheduling tasks for URL {url_str}: {e}")
                     error_urls.append(
-                        f"{url_str} ({_('追加エラー')})"
-                    )  # Simplified error message
+                        f"{url_str} ({_('追加成功、バックグラウンドタスク開始エラー')})"
+                    )
+                    added_count += 1
 
             if added_count > 0:
                 messages.success(
