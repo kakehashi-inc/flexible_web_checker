@@ -55,7 +55,7 @@
             <div class="flex justify-between items-center mb-6">
                 <h2 class="text-xl font-semibold text-gray-800">{% trans 'URL一覧' %}</h2>
                 <div>
-                    <a href="{% url 'collection_manager:collection_add_url' collection.id %}" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition duration-300">
+                    <a href="{% url 'url_manager:url_list' %}?tab=all" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition duration-300">
                         {% trans 'URLを追加' %}
                     </a>
                 </div>
@@ -135,7 +135,7 @@
             {% else %}
                 <div class="text-center py-8">
                     <p class="text-gray-600 mb-4">{% trans 'このコレクションにはURLが登録されていません。' %}</p>
-                    <a href="{% url 'collection_manager:collection_add_url' collection.id %}" class="text-blue-600 hover:text-blue-800">
+                    <a href="{% url 'url_manager:url_list' %}?tab=all" class="text-blue-600 hover:text-blue-800">
                         {% trans 'URLを追加する' %} →
                     </a>
                 </div>
