@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans '更新チェック結果' %}: {{ url_item.title }} | Flexible Web Checker{% endblock %}
+
+{% block content %}
+<div class="max-w-2xl mx-auto">
+    <div class="mb-6">
+        <a href="{% url 'url_manager:url_detail' url_item.id %}" class="text-blue-600 hover:text-blue-800">
+            ← {% trans 'URL詳細に戻る' %}
+        </a>
+    </div>
+    
+    <div class="bg-white shadow-md rounded-lg overflow-hidden">
+        <div class="p-6">
+            <h1 class="text-2xl font-bold text-gray-800 mb-6">{% trans '更新チェック結果' %}: {{ url_item.title }}</h1>
+            
+            <div class="mb-6">
+                <h2 class="text-lg font-semibold text-gray-700 mb-2">{% trans 'URL' %}</h2>
+                <a href="{{ url_item.url }}" target="_blank" class="text-blue-600 hover:text-blue-800 break-all">
+                    {{ url_item.url }}
+                </a>
+            </div>
+            
+            <div class="mb-6">
+                <h2 class="text-lg font-semibold text-gray-700 mb-2">{% trans 'チェック日時' %}</h2>
+                <p>{{ check_time|date:"Y/m/d H:i:s" }}</p>
+            </div>
+            
+            {% if is_updated %}
+                <div class="bg-green-50 border border-green-200 text-green-700 p-4 rounded-md mb-6">
+                    <div class="flex items-center">
+                        <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                        <h3 class="text-lg font-semibold">{% trans '更新あり' %}</h3>
+                    </div>
+                    <p class="mt-2">{% trans 'このURLは最後のチェック以降に更新されています。' %}</p>
+                </div>
+            {% else %}
+                <div class="bg-gray-50 border border-gray-200 text-gray-700 p-4 rounded-md mb-6">
+                    <div class="flex items-center">
+                        <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                        <h3 class="text-lg font-semibold">{% trans '更新なし' %}</h3>
+                    </div>
+                    <p class="mt-2">{% trans 'このURLは最後のチェック以降に更新されていません。' %}</p>
+                </div>
+            {% endif %}
+            
+            {% if error %}
+                <div class="bg-red-50 border border-red-200 text-red-700 p-4 rounded-md mb-6">
+                    <div class="flex items-center">
+                        <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                        <h3 class="text-lg font-semibold">{% trans 'エラー' %}</h3>
+                    </div>
+                    <p class="mt-2">{{ error }}</p>
+                </div>
+            {% endif %}
+            
+            <div class="flex justify-between pt-4">
+                <a href="{% url 'url_manager:url_detail' url_item.id %}" class="bg-gray-500 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-md transition duration-300">
+                    {% trans '戻る' %}
+                </a>
+                <a href="{% url 'url_manager:url_check' url_item.id %}" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition duration-300">
+                    {% trans '再チェック' %}
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

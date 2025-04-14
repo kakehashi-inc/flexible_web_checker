@@ -1,0 +1,71 @@
+{% load i18n %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% trans '通知' %}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .content {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        .button {
+            display: inline-block;
+            background-color: #3b82f6;
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        .footer {
+            margin-top: 30px;
+            font-size: 12px;
+            color: #666;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>{% trans '更新通知' %}</h1>
+    </div>
+    
+    <div class="content">
+        <p>{% trans 'こんにちは' %}, {{ user.nickname }}!</p>
+        
+        <p>{% trans '登録しているURLに更新がありました。' %}</p>
+        
+        <div style="margin: 20px 0; padding: 15px; border: 1px solid #e2e8f0; border-radius: 5px;">
+            <h2 style="margin-top: 0; color: #2563eb;">{{ url_item.title }}</h2>
+            <p><a href="{{ url_item.url }}" style="color: #2563eb; text-decoration: underline;">{{ url_item.url }}</a></p>
+            <p>{% trans '最終更新' %}: {{ url_item.last_updated_at|date:"Y/m/d H:i" }}</p>
+        </div>
+        
+        <p style="text-align: center;">
+            <a href="{{ detail_url }}" class="button">{% trans '詳細を確認' %}</a>
+        </p>
+    </div>
+    
+    <div class="footer">
+        <p>{% trans 'このメールはFlexible Web Checkerから自動的に送信されています。' %}</p>
+        <p>{% trans 'メール通知の設定は' %} <a href="{{ settings_url }}" style="color: #2563eb;">{% trans 'こちら' %}</a> {% trans 'から変更できます。' %}</p>
+        <p>&copy; {% now "Y" %} Flexible Web Checker</p>
+    </div>
+</body>
+</html>
