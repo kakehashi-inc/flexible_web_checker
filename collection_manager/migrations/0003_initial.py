@@ -11,17 +11,22 @@ class Migration(migrations.Migration):
 
     dependencies = [
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
-        ('collection_manager', '0002_initial'),
+        ("collection_manager", "0002_initial"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='collection',
-            name='user',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='collections', to=settings.AUTH_USER_MODEL, verbose_name='ユーザー'),
+            model_name="collection",
+            name="user",
+            field=models.ForeignKey(
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="collections",
+                to=settings.AUTH_USER_MODEL,
+                verbose_name="ユーザー",
+            ),
         ),
         migrations.AlterUniqueTogether(
-            name='urlitemcollection',
-            unique_together={('url_item', 'collection')},
+            name="urlitemcollection",
+            unique_together={("url_item", "collection")},
         ),
     ]

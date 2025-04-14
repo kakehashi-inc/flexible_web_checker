@@ -7,22 +7,32 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='Notification',
+            name="Notification",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('message', models.TextField(verbose_name='メッセージ')),
-                ('is_read', models.BooleanField(default=False, verbose_name='既読')),
-                ('created_at', models.DateTimeField(auto_now_add=True, verbose_name='作成日時')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("message", models.TextField(verbose_name="メッセージ")),
+                ("is_read", models.BooleanField(default=False, verbose_name="既読")),
+                (
+                    "created_at",
+                    models.DateTimeField(auto_now_add=True, verbose_name="作成日時"),
+                ),
             ],
             options={
-                'verbose_name': '通知',
-                'verbose_name_plural': '通知',
-                'ordering': ['-created_at'],
+                "verbose_name": "通知",
+                "verbose_name_plural": "通知",
+                "ordering": ["-created_at"],
             },
         ),
     ]
