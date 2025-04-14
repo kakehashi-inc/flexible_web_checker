@@ -172,3 +172,14 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+# Project files
+requirements.txt.md5
+
+# Etc
+*.cache.sqlite*
+deploy*.sh
+/*.sql
+.specstory
+wget-log
+
