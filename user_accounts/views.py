@@ -18,6 +18,7 @@ from .forms import (
 )
 
 
+
 def register(request):
     """ユーザー登録ビュー"""
     if request.method == "POST":
@@ -27,7 +28,7 @@ def register(request):
             user.is_active = False  # User is inactive until email is verified
             user.save()
 
-            token = EmailConfirmationToken.objects.create(  # pylint: disable=no-member
+            token = EmailConfirmationToken.objects.create(
                 user=user,
                 expires_at=timezone.now()
                 + timezone.timedelta(seconds=settings.EMAIL_CONFIRMATION_TIMEOUT),
@@ -70,6 +71,7 @@ def verify_email(request, token):
     """メールアドレス確認ビュー"""
     token_obj = get_object_or_404(EmailConfirmationToken, token=token)
 
+
     if not token_obj.is_valid():
         messages.error(
             request, _("トークンの有効期限が切れています。再度登録を行ってください。")
@@ -81,9 +83,7 @@ def verify_email(request, token):
     user.email_verified_at = timezone.now()
     user.save()
 
-    EmailConfirmationToken.objects.filter(
-        user=user
-    ).delete()  # pylint: disable=no-member
+    EmailConfirmationToken.objects.filter(user=user).delete()
 
     messages.success(
         request, _("メールアドレスの確認が完了しました。ログインしてください。")
@@ -100,10 +100,11 @@ def login_view(request):
             password = form.cleaned_data["password"]
             user = authenticate(request, email=email, password=password)
 
+
             if user is not None:
                 if user.is_active:
                     login(request, user)
-                    next_url = request.GET.get("next", "core:dashboard")
+                    next_url = request.GET.get("next", "url_manager:url_list") # Redirect to URL list after login
                     return redirect(next_url)
                 else:
                     messages.error(
@@ -157,9 +158,9 @@ def password_reset_request(request):
         if form.is_valid():
             email = form.cleaned_data["email"]
             try:
-                user = User.objects.get(email=email)  # pylint: disable=no-member
+                user = User.objects.get(email=email)
 
-                token = PasswordResetToken.objects.create(  # pylint: disable=no-member
+                token = PasswordResetToken.objects.create(
                     user=user,
                     expires_at=timezone.now()
                     + timezone.timedelta(seconds=settings.PASSWORD_RESET_TIMEOUT),
@@ -197,7 +198,7 @@ def password_reset_request(request):
                     ),
                 )
                 return redirect("user_accounts:login")
-            except User.DoesNotExist:  # pylint: disable=no-member
+            except User.DoesNotExist:
                 messages.success(
                     request,
                     _(
@@ -214,6 +215,7 @@ def password_reset_request(request):
 def password_reset(request, token):
     """パスワードリセットビュー"""
     token_obj = get_object_or_404(PasswordResetToken, token=token)
+
 
     if not token_obj.is_valid():
         messages.error(
@@ -233,9 +235,7 @@ def password_reset(request, token):
             user.set_password(password)
             user.save()
 
-            PasswordResetToken.objects.filter(
-                user=user
-            ).delete()  # pylint: disable=no-member
+            PasswordResetToken.objects.filter(user=user).delete()
 
             messages.success(
                 request,

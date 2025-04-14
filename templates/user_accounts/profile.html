@@ -37,8 +37,22 @@
                         </div>
                     </div>
                     
+                        {# Logout Button #}
+                        <div class="mt-8 text-center">
+                            <a href="{% url 'user_accounts:logout' %}" class="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-md transition duration-300">
+                                {% trans 'ログアウト' %}
+                            </a>
+                        </div>
+
                     <div class="mt-6">
-                        <a href="{% url 'user_accounts:profile_edit' %}" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition duration-300">
+                        {# Password Change Link #}
+                        <div class="mt-6">
+                            <a href="{% url 'user_accounts:password_change' %}" class="block text-blue-600 hover:text-blue-800">
+                                {% trans 'パスワードを変更する' %}
+                            </a>
+                        </div>
+
+                        <a href="{% url 'user_accounts:edit_profile' %}" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition duration-300">
                             {% trans 'プロフィールを編集' %}
                         </a>
                     </div>

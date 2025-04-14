@@ -30,8 +30,11 @@ class User(AbstractUser):
         return self.nickname or self.email
 
 
+
+
 class UserProfile(models.Model):
     """ユーザープロファイルモデル"""
+
 
     user = models.OneToOneField(
         User,
@@ -52,8 +55,9 @@ class UserProfile(models.Model):
         return f"{self.user.nickname or self.user.email} のプロファイル"
 
 
-class EmailConfirmationToken(models.Model):  # pylint: disable=no-member
+class EmailConfirmationToken(models.Model):
     """メールアドレス確認用トークン"""
+
 
     user = models.ForeignKey(
         User,
@@ -72,13 +76,15 @@ class EmailConfirmationToken(models.Model):  # pylint: disable=no-member
     def __str__(self):
         return f"{self.user.email} - {self.token}"
 
+
     def is_valid(self):
         """トークンが有効かどうかを確認する"""
         return timezone.now() <= self.expires_at
 
 
-class PasswordResetToken(models.Model):  # pylint: disable=no-member
+class PasswordResetToken(models.Model):
     """パスワードリセット用トークン"""
+
 
     user = models.ForeignKey(
         User,

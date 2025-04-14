@@ -42,26 +42,3 @@ class UrlItemForm(forms.ModelForm):
             return "OR"
 
         return html_custom_condition
-class BulkUrlAddForm(forms.Form):
-    """複数URL一括追加フォーム"""
-
-    urls = forms.CharField(
-        widget=forms.Textarea(
-            attrs={
-                "rows": 10,
-                "placeholder": _(
-                    "https://example.com\nhttps://anotherexample.org\n..."
-                ),
-            }
-        ),
-        label=_("URLリスト (改行区切り)"),
-        help_text=_("追加したいURLを改行で区切って入力してください。"),
-        required=False,  # Rely on clean_urls for empty check
-    )
-
-    def clean_urls(self):
-        urls_text = self.cleaned_data.get("urls", "")
-        url_list = [url.strip() for url in urls_text.splitlines() if url.strip()]
-        if not url_list:
-            raise forms.ValidationError(_("少なくとも1つのURLを入力してください。"))
-        return url_list

@@ -26,14 +26,17 @@
     <header class="bg-blue-600 text-white shadow-md">
         <div class="container mx-auto px-4 py-3">
             <div class="flex justify-between items-center">
-                <a href="{% url 'core:home' %}" class="text-xl font-bold">Flexible Web Checker</a>
-                <nav class="hidden md:flex space-x-4">
+                <a href="{% url 'url_manager:url_list' %}" class="text-xl font-bold">Flexible Web Checker</a> {# System name links to URL list #}
+                <nav class="hidden md:flex space-x-4 items-center"> {# Added items-center #}
                     {% if user.is_authenticated %}
-                        <a href="{% url 'core:dashboard' %}" class="hover:text-blue-200">{% trans 'ダッシュボード' %}</a>
-                        <a href="{% url 'url_manager:url_list' %}" class="hover:text-blue-200">{% trans 'URL管理' %}</a>
-                        <a href="{% url 'collection_manager:collection_list' %}" class="hover:text-blue-200">{% trans 'コレクション' %}</a>
-                        <a href="{% url 'user_accounts:profile' %}" class="hover:text-blue-200">{% trans 'プロフィール' %}</a>
-                        <a href="{% url 'user_accounts:logout' %}" class="hover:text-blue-200">{% trans 'ログアウト' %}</a>
+                        {# User icon + nickname link #}
+                        <a href="{% url 'user_accounts:profile' %}" class="flex items-center hover:text-blue-200">
+                            {# Ensure user icon exists or add a placeholder #}
+                            {% load static %}
+                            <img src="{% static 'icons/user.svg' %}" alt="{% trans 'ユーザーアイコン' %}" class="w-5 h-5 inline-block mr-1">
+                            <span>{{ user.nickname|default:user.email }}</span>
+                        </a>
+                        {# Logout link is now on profile page, removed from here #}
                     {% else %}
                         <a href="{% url 'user_accounts:login' %}" class="hover:text-blue-200">{% trans 'ログイン' %}</a>
                         <a href="{% url 'user_accounts:register' %}" class="hover:text-blue-200">{% trans '登録' %}</a>
@@ -45,7 +48,7 @@
                         <div id="language-menu" class="hidden absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg z-10">
                             <form action="{% url 'set_language' %}" method="post" class="py-1">
                                 {% csrf_token %}
-                                <input name="next" type="hidden" value="{{ redirect_to }}">
+                                <input name="next" type="hidden" value="{{ request.get_full_path|urlencode }}">
                                 <button type="submit" name="language" value="ja" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 w-full text-left">日本語</button>
                                 <button type="submit" name="language" value="en" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 w-full text-left">English</button>
                             </form>
@@ -60,18 +63,20 @@
             </div>
             <div id="mobile-menu" class="hidden md:hidden mt-2 pb-2">
                 {% if user.is_authenticated %}
-                    <a href="{% url 'core:dashboard' %}" class="block py-2">{% trans 'ダッシュボード' %}</a>
-                    <a href="{% url 'url_manager:url_list' %}" class="block py-2">{% trans 'URL管理' %}</a>
-                    <a href="{% url 'collection_manager:collection_list' %}" class="block py-2">{% trans 'コレクション' %}</a>
-                    <a href="{% url 'user_accounts:profile' %}" class="block py-2">{% trans 'プロフィール' %}</a>
-                    <a href="{% url 'user_accounts:logout' %}" class="block py-2">{% trans 'ログアウト' %}</a>
+                    {# User icon + nickname link for mobile #}
+                    <a href="{% url 'user_accounts:profile' %}" class="flex items-center py-2">
+                        {% load static %}
+                        <img src="{% static 'icons/user.svg' %}" alt="{% trans 'ユーザーアイコン' %}" class="w-5 h-5 inline-block mr-1">
+                        <span>{{ user.nickname|default:user.email }}</span>
+                    </a>
+                    {# Logout link is now on profile page, removed from here #}
                 {% else %}
                     <a href="{% url 'user_accounts:login' %}" class="block py-2">{% trans 'ログイン' %}</a>
                     <a href="{% url 'user_accounts:register' %}" class="block py-2">{% trans '登録' %}</a>
                 {% endif %}
                 <form action="{% url 'set_language' %}" method="post" class="py-2">
                     {% csrf_token %}
-                    <input name="next" type="hidden" value="{{ redirect_to }}">
+                    <input name="next" type="hidden" value="{{ request.get_full_path|urlencode }}">
                     <button type="submit" name="language" value="ja" class="block py-1 w-full text-left">日本語</button>
                     <button type="submit" name="language" value="en" class="block py-1 w-full text-left">English</button>
                 </form>
@@ -113,17 +118,26 @@
             document.getElementById('mobile-menu').classList.toggle('hidden');
         });
 
-        // Language dropdown toggle
-        document.getElementById('language-dropdown').addEventListener('click', function() {
-            document.getElementById('language-menu').classList.toggle('hidden');
-        });
+        // Language dropdown toggle (Desktop)
+        const langButtonDesktop = document.getElementById('language-dropdown'); // Use the existing ID
+        const langMenuDesktop = document.getElementById('language-menu'); // Use the existing ID
+        if (langButtonDesktop && langMenuDesktop) {
+            langButtonDesktop.addEventListener('click', function(event) {
+                event.stopPropagation(); // Prevent click from immediately closing menu
+                langMenuDesktop.classList.toggle('hidden');
+            });
+        }
 
-        // Close language dropdown when clicking outside
+        // Close language dropdown when clicking outside (Desktop)
         document.addEventListener('click', function(event) {
-            if (!event.target.closest('#language-dropdown') && !event.target.closest('#language-menu')) {
-                document.getElementById('language-menu').classList.add('hidden');
+            if (langMenuDesktop && !langMenuDesktop.classList.contains('hidden')) {
+                if (!langButtonDesktop.contains(event.target) && !langMenuDesktop.contains(event.target)) {
+                    langMenuDesktop.classList.add('hidden');
+                }
             }
         });
+
+        // Note: Mobile language selection uses direct form submission, no JS toggle needed.
     </script>
     {% block extra_js %}{% endblock %}
 </body>

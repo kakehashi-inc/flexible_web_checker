@@ -1,19 +1,21 @@
 import hashlib
 import json
-import requests
+import logging
+import os
+import time
+from io import BytesIO
+
 import feedparser
+import requests
 from bs4 import BeautifulSoup
 from django.conf import settings
+from django.core.files.base import ContentFile  # Added missing import
 from django.utils import timezone
+from PIL import Image
 from selenium import webdriver
+from selenium.common.exceptions import WebDriverException
 from selenium.webdriver.firefox.options import Options
 from selenium.webdriver.firefox.service import Service
-from selenium.common.exceptions import WebDriverException
-import time
-import os
-import logging
-from PIL import Image
-from io import BytesIO
 
 logger = logging.getLogger(__name__)
 

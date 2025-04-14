@@ -27,6 +27,7 @@ class Collection(models.Model):
         return str(self.name)
 
 
+
 class UrlItemCollection(models.Model):
     """URL項目とコレクションの中間テーブル"""
 
