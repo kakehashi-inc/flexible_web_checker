@@ -7,7 +7,7 @@ Flexible Web Checkerは、指定したWebページの更新を定期的にチェ
 ## 技術スタック
 
 -   **バックエンド:** Python, Django, Celery
--   **フロントエンド:** HTML, Tailwind CSS, JavaScript
+-   **フロントエンド:** HTML, Tailwind CSS, TypeScript(JavaScript)
 -   **データベース:** SQLite (デフォルト), MySQL (接続数増加時)
 -   **非同期処理:** Celery
 -   **その他:** requests, beautifulsoup4, Pillow, Selenium
