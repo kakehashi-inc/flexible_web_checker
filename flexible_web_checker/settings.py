@@ -11,27 +11,28 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 import os
+import environ
 from pathlib import Path
-from dotenv import load_dotenv
-
-load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+
+# Read .env file
+env = environ.Env()
+env.read_env(os.path.join(BASE_DIR, '.env'))
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv(
-    "SECRET_KEY", "django-insecure-jxo192hzxo73af6_pm$ru_-a%y1$%mfj^m870ssg3h^m-xrur1"
-)
+SECRET_KEY = env("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv("DEBUG", "True").lower() in ("true", "1", "t")
+DEBUG = env.bool('DEBUG', default=False)
 
-ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "*").split(",")
+ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
 
 # Application definition
@@ -85,12 +86,12 @@ WSGI_APPLICATION = "flexible_web_checker.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-DB_ENGINE = os.getenv("DB_ENGINE")
-DB_NAME = os.getenv("DB_NAME")
-DB_USER = os.getenv("DB_USER")
-DB_PASSWORD = os.getenv("DB_PASSWORD")
-DB_HOST = os.getenv("DB_HOST")
-DB_PORT = os.getenv("DB_PORT")
+DB_ENGINE = env("DB_ENGINE")
+DB_NAME = env("DB_NAME")
+DB_USER = env("DB_USER")
+DB_PASSWORD = env("DB_PASSWORD")
+DB_HOST = env("DB_HOST")
+DB_PORT = env("DB_PORT")
 
 if all([DB_ENGINE, DB_NAME, DB_USER, DB_PASSWORD, DB_HOST, DB_PORT]):
     DATABASES = {
@@ -160,31 +161,30 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 AUTH_USER_MODEL = "user_accounts.User"
 
-EMAIL_BACKEND = os.getenv(
-    "EMAIL_BACKEND", "django.core.mail.backends.console.EmailBackend"
-)
-EMAIL_HOST = os.getenv("EMAIL_HOST", "")
-EMAIL_PORT = int(os.getenv("EMAIL_PORT", 587))
-EMAIL_USE_TLS = os.getenv("EMAIL_USE_TLS", "True").lower() in ("true", "1", "t")
-EMAIL_USE_SSL = os.getenv("EMAIL_USE_SSL", "False").lower() in ("true", "1", "t")
-EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER", "")
-EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD", "")
-DEFAULT_FROM_EMAIL = os.getenv("DEFAULT_FROM_EMAIL", "noreply@example.com")
+# Mail settings
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = env('EMAIL_HOST', default='localhost')
+EMAIL_PORT = env.int('EMAIL_PORT', default=1025)
+EMAIL_HOST_USER = env('EMAIL_HOST_USER', default='')
+EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD', default='')
+EMAIL_USE_TLS = env.bool('EMAIL_USE_TLS', default=False)
+EMAIL_USE_SSL = env.bool('EMAIL_USE_SSL', default=False)
+EMAIL_TIMEOUT = env.int('EMAIL_TIMEOUT', default=None)
+EMAIL_SSL_KEYFILE = env('EMAIL_SSL_KEYFILE', default=None)
+EMAIL_SSL_CERTFILE = env('EMAIL_SSL_CERTFILE', default=None)
+DEFAULT_FROM_EMAIL = env('DEFAULT_FROM_EMAIL', default='"CocoKite" <nobody@coco-kite.com>')
 
-EMAIL_CONFIRMATION_TIMEOUT = int(
-    os.getenv("EMAIL_CONFIRMATION_TIMEOUT", 3600)
-)  # 1 hour in seconds
-PASSWORD_RESET_TIMEOUT = int(
-    os.getenv("PASSWORD_RESET_TIMEOUT", 3600)
-)  # 1 hour in seconds
+EMAIL_CONFIRMATION_TIMEOUT = env.int("EMAIL_CONFIRMATION_TIMEOUT", default=3600)
 
-CELERY_BROKER_URL = os.getenv("CELERY_BROKER_URL", "memory://")
+PASSWORD_RESET_TIMEOUT = env.int("PASSWORD_RESET_TIMEOUT", default=3600)
+
+CELERY_BROKER_URL = env("CELERY_BROKER_URL", "memory://")
 CELERY_RESULT_BACKEND = "django-db"
 CELERY_ACCEPT_CONTENT = ["application/json"]
 CELERY_TASK_SERIALIZER = "json"
 CELERY_RESULT_SERIALIZER = "json"
 CELERY_TIMEZONE = TIME_ZONE
 
-UPDATE_CHECK_SCHEDULE = os.getenv("UPDATE_CHECK_SCHEDULE", "0 * * * *")
+UPDATE_CHECK_SCHEDULE = env("UPDATE_CHECK_SCHEDULE", "0 * * * *")
 
-ITEMS_PER_PAGE = int(os.getenv("ITEMS_PER_PAGE", 20))
+ITEMS_PER_PAGE = env.int("ITEMS_PER_PAGE", default=20)
