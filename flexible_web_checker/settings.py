@@ -86,29 +86,33 @@ WSGI_APPLICATION = "flexible_web_checker.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-DB_ENGINE = env("DB_ENGINE")
-DB_NAME = env("DB_NAME")
-DB_USER = env("DB_USER")
-DB_PASSWORD = env("DB_PASSWORD")
-DB_HOST = env("DB_HOST")
-DB_PORT = env("DB_PORT")
+# データベース設定の存在確認
+DB_CONFIG_KEYS = ['DB_HOST', 'DB_PORT', 'DB_DATABASE', 'DB_USERNAME', 'DB_PASSWORD']
+MISSING_DB_CONFIGS = [key for key in DB_CONFIG_KEYS if not env(key, default=None)]
 
-if all([DB_ENGINE, DB_NAME, DB_USER, DB_PASSWORD, DB_HOST, DB_PORT]):
+# すべての設定が存在しない場合はSQLite、一部のみ存在する場合はエラーを表示
+if len(MISSING_DB_CONFIGS) == len(DB_CONFIG_KEYS):
     DATABASES = {
-        "default": {
-            "ENGINE": DB_ENGINE,
-            "NAME": DB_NAME,
-            "USER": DB_USER,
-            "PASSWORD": DB_PASSWORD,
-            "HOST": DB_HOST,
-            "PORT": DB_PORT,
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
         }
     }
+elif len(MISSING_DB_CONFIGS) > 0:
+    from django.core.exceptions import ImproperlyConfigured
+    raise ImproperlyConfigured(f'データベース設定に問題があります。以下の設定が不足しています：{", ".join(MISSING_DB_CONFIGS)}')
 else:
     DATABASES = {
-        "default": {
-            "ENGINE": "django.db.backends.sqlite3",
-            "NAME": BASE_DIR / "db.sqlite3",
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': env('DB_DATABASE'),
+            'USER': env('DB_USERNAME'),
+            'PASSWORD': env('DB_PASSWORD'),
+            'HOST': env('DB_HOST'),
+            'PORT': env('DB_PORT'),
+            'OPTIONS': {
+                'charset': 'utf8mb4',
+            },
         }
     }
 
