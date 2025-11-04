@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans '通知' %} | Flexible Web Checker{% endblock %}
+
+{% block content %}
+<div class="max-w-4xl mx-auto">
+    <div class="bg-white shadow-md rounded-lg overflow-hidden mb-6">
+        <div class="p-6">
+            <h1 class="text-2xl font-bold text-gray-800 mb-6">{% trans '通知' %}</h1>
+            
+            {% if notifications %}
+                <div class="space-y-4">
+                    {% for notification in notifications %}
+                        <div class="border-b border-gray-200 pb-4 {% if not notification.is_read %}bg-blue-50 p-3 rounded-md{% endif %}">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <h2 class="text-lg font-semibold text-gray-700">
+                                        {% if notification.url_item %}
+                                            <a href="{% url 'url_manager:url_detail' notification.url_item.id %}" class="text-blue-600 hover:text-blue-800">
+                                                {{ notification.url_item.title }}
+                                            </a>
+                                        {% else %}
+                                            {% trans 'システム通知' %}
+                                        {% endif %}
+                                    </h2>
+                                    <p class="text-sm text-gray-500">{{ notification.created_at|date:"Y/m/d H:i" }}</p>
+                                </div>
+                                
+                                {% if not notification.is_read %}
+                                    <form method="post" action="{% url 'core:mark_notification_read' notification.id %}">
+                                        {% csrf_token %}
+                                        <button type="submit" class="text-sm text-blue-600 hover:text-blue-800">
+                                            {% trans '既読にする' %}
+                                        </button>
+                                    </form>
+                                {% endif %}
+                            </div>
+                            
+                            <div class="mt-2">
+                                <p class="text-gray-700">{{ notification.message }}</p>
+                                
+                                {% if notification.url_item %}
+                                    <div class="mt-2">
+                                        <a href="{{ notification.url_item.url }}" target="_blank" class="text-sm text-blue-600 hover:text-blue-800 break-all">
+                                            {{ notification.url_item.url }}
+                                        </a>
+                                    </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+                
+                <div class="mt-6">
+                    {% include 'core/pagination.html' with page_obj=notifications %}
+                </div>
+                
+                {% if unread_count > 0 %}
+                    <div class="mt-6 text-right">
+                        <form method="post" action="{% url 'core:mark_all_notifications_read' %}">
+                            {% csrf_token %}
+                            <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition duration-300">
+                                {% trans 'すべて既読にする' %}
+                            </button>
+                        </form>
+                    </div>
+                {% endif %}
+            {% else %}
+                <div class="text-center py-8">
+                    <svg class="w-16 h-16 text-gray-400 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4"></path>
+                    </svg>
+                    <p class="text-gray-500 text-lg">{% trans '通知はありません' %}</p>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

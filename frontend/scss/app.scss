@@ -1,0 +1,24 @@
+@charset "utf-8";
+
+@use "app/variables" as variables;
+
+@use "@fortawesome/fontawesome-free/scss/fontawesome" with (
+    $fa-font-path: variables.$fa-font-path
+);
+@use "@fortawesome/fontawesome-free/scss/regular" with (
+    $fa-font-path: variables.$fa-font-path
+);
+@use "@fortawesome/fontawesome-free/scss/solid" with (
+    $fa-font-path: variables.$fa-font-path
+);
+@use "@fortawesome/fontawesome-free/scss/brands" with (
+    $fa-font-path: variables.$fa-font-path
+);
+
+@use 'app/font_notosans' with (
+    $font-base-path: variables.$font-base-path
+);
+
+@use "app/device";
+@use "app/data_show";
+@use "app/screen_font";

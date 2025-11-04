@@ -1,0 +1,22 @@
+.scroll-x {
+    overflow-x: auto;
+}
+
+.scroll-y {
+    overflow-y: auto;
+}
+
+.scroll-xy {
+    overflow-x: auto;
+    overflow-y: auto;
+}
+
+.overflow-hide {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.text-wrap-all {
+    word-break: break-all;
+}

@@ -1,0 +1,141 @@
+@use "../modules/device_def" as device_def;
+
+.device-block {
+    display: block !important;
+}
+.device-block-sm {
+    display: none !important;
+}
+
+.device-flex {
+    display: flex !important;
+}
+.device-flex-sm {
+    display: none !important;
+}
+
+@media (max-width: device_def.$screen-md-down) {
+    .device-block {
+        display: none !important;
+    }
+    .device-block-sm {
+        display: block !important;
+    }
+
+    .device-flex {
+        display: none !important;
+    }
+    .device-flex-sm {
+        display: flex !important;
+    }
+}
+
+.rs-height-1 {
+    height: 12px !important;
+    @media (max-width: device_def.$screen-sm-down) {
+        height: 6px !important;
+    }
+    @media (min-width: device_def.$screen-sm) and (max-width: device_def.$screen-lg-down) {
+        height: 10px !important;
+    }
+}
+
+.rs-height-2 {
+    height: 24px !important;
+    @media (max-width: device_def.$screen-sm-down) {
+        height: 12px !important;
+    }
+    @media (min-width: device_def.$screen-sm) and (max-width: device_def.$screen-lg-down) {
+        height: 20px !important;
+    }
+}
+
+.rs-height-3 {
+    height: 36px !important;
+    @media (max-width: device_def.$screen-sm-down) {
+        height: 18px !important;
+    }
+    @media (min-width: device_def.$screen-sm) and (max-width: device_def.$screen-lg-down) {
+        height: 30px !important;
+    }
+}
+
+.rs-height-4 {
+    height: 48px !important;
+    @media (max-width: device_def.$screen-sm-down) {
+        height: 24px !important;
+    }
+    @media (min-width: device_def.$screen-sm) and (max-width: device_def.$screen-lg-down) {
+        height: 40px !important;
+    }
+}
+
+.rs-height-5 {
+    height: 60px !important;
+    @media (max-width: device_def.$screen-sm-down) {
+        height: 30px !important;
+    }
+    @media (min-width: device_def.$screen-sm) and (max-width: device_def.$screen-lg-down) {
+        height: 50px !important;
+    }
+}
+
+.fit-fs-title {
+    font-size: 64px !important;
+    @media (max-width: device_def.$screen-sm-down) {
+        font-size: 30px !important;
+    }
+    @media (min-width: device_def.$screen-sm) and (max-width: device_def.$screen-lg-down) {
+        font-size: 52px !important;
+    }
+}
+
+.fit-fs-subtitle {
+    font-size: 44px !important;
+    @media (max-width: device_def.$screen-sm-down) {
+        font-size: 20px !important;
+    }
+    @media (min-width: device_def.$screen-sm) and (max-width: device_def.$screen-lg-down) {
+        font-size: 34px !important;
+    }
+}
+
+.fit-fs-section {
+    font-size: 33px !important;
+    @media (max-width: device_def.$screen-sm-down) {
+        font-size: 18px !important;
+    }
+    @media (min-width: device_def.$screen-sm) and (max-width: device_def.$screen-lg-down) {
+        font-size: 26px !important;
+    }
+}
+
+.fit-fs-big {
+    font-size: 22px !important;
+    @media (max-width: device_def.$screen-sm-down) {
+        font-size: 16px !important;
+    }
+    @media (min-width: device_def.$screen-sm) and (max-width: device_def.$screen-lg-down) {
+        font-size: 18px !important;
+    }
+}
+
+.fit-fs-normal {
+    font-size: 16px !important;
+    @media (max-width: device_def.$screen-sm-down) {
+        font-size: 13px !important;
+    }
+    @media (min-width: device_def.$screen-sm) and (max-width: device_def.$screen-lg-down) {
+        font-size: 14px !important;
+    }
+}
+
+.fit-fs-small {
+    font-size: 12px !important;
+    @media (max-width: device_def.$screen-sm-down) {
+        font-size: 9px !important;
+    }
+    @media (min-width: device_def.$screen-sm) and (max-width: device_def.$screen-lg-down) {
+        font-size: 10px !important;
+    }
+}

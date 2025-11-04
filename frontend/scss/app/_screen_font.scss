@@ -1,0 +1,102 @@
+@use "../modules/device_def" as device_def;
+
+.max-w-xs {
+    max-width: 375px;
+}
+.max-w-sm {
+    max-width: device_def.$screen-sm;
+}
+.max-w-md {
+    max-width: device_def.$screen-md;
+}
+.max-w-lg {
+    max-width: device_def.$screen-lg;
+}
+.max-w-xl {
+    max-width: device_def.$screen-xl;
+}
+.max-w-xxl {
+    max-width: device_def.$screen-xxl;
+}
+
+.fw-100 {
+    font-weight: 100;
+}
+.fw-200 {
+    font-weight: 200;
+}
+.fw-300 {
+    font-weight: 300;
+}
+.fw-400 {
+    font-weight: 400;
+}
+.fw-500 {
+    font-weight: 500;
+}
+.fw-700 {
+    font-weight: 700;
+}
+.fw-900 {
+    font-weight: 900;
+}
+
+// ブラウザデフォルトゴシック
+.font-browser-sans-serif {
+    font-family: sans-serif;
+}
+// ブラウザデフォルト明朝
+.font-browser-serif {
+    font-family: serif;
+}
+// ブラウザデフォルト等倍
+.font-browser-mono {
+    font-family: monospace;
+}
+// OSデフォルトゴシック
+.font-os-sans-serif {
+    font-family:
+        /* Windows */
+        "Yu Gothic",
+        "YuGothic",
+        "游ゴシック",
+        "游ゴシック体",
+        "Meiryo",
+        "メイリオ",
+        /* macOS, iOS */ "Hiragino Sans",
+        "Hiragino Kaku Gothic ProN",
+        "ヒラギノ角ゴ ProN W3",
+        /* Linux */ "Noto Sans CJK JP",
+        "Noto Sans JP",
+        sans-serif;
+}
+// OSデフォルト明朝
+.font-os-serif {
+    font-family:
+        /* Windows */
+        "Yu Mincho",
+        "YuMincho",
+        "游明朝",
+        "游明朝体",
+        /* macOS, iOS */ "Hiragino Mincho",
+        "Hiragino Mincho ProN",
+        "ヒラギノ明朝 ProN W3",
+        /* Linux */ "Noto Serif CJK JP",
+        "Noto Serif JP",
+        serif;
+}
+// OSデフォルト等倍
+.font-os-mono {
+    font-family:
+        /* Windows */
+        "MS Gothic",
+        "ＭＳ ゴシック",
+        /* macOS */ "Osaka-mono",
+        /* Linux */ "Noto Sans Mono CJK JP",
+        "Noto Sans Mono JP",
+        monospace;
+}
+// 源ノ角ゴシック
+.font-sans-serif {
+    font-family: 'Noto Sans JP', sans-serif;
+}

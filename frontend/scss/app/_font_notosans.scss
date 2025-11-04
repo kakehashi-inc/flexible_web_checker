@@ -1,0 +1,65 @@
+$font-base-path: null !default;
+
+@font-face {
+    font-family: 'Noto Sans JP';
+    font-style: normal;
+    font-weight: 100;
+    src: url('#{$font-base-path}/NotoSansCJKjp/NotoSansCJKjp-Thin.woff2') format('woff2'),
+        url('#{$font-base-path}/NotoSansCJKjp/NotoSansCJKjp-Thin.woff') format('woff'),
+        url('#{$font-base-path}/NotoSansCJKjp/NotoSansCJKjp-Thin.ttf') format('truetype'),
+        url('#{$font-base-path}/NotoSansCJKjp/NotoSansCJKjp-Thin.eot') format('embedded-opentype');
+}
+@font-face {
+    font-family: 'Noto Sans JP';
+    font-style: normal;
+    font-weight: 200;
+    src: url('#{$font-base-path}/NotoSansCJKjp/NotoSansCJKjp-Light.woff2') format('woff2'),
+        url('#{$font-base-path}/NotoSansCJKjp/NotoSansCJKjp-Light.woff') format('woff'),
+        url('#{$font-base-path}/NotoSansCJKjp/NotoSansCJKjp-Light.ttf') format('truetype'),
+        url('#{$font-base-path}/NotoSansCJKjp/NotoSansCJKjp-Light.eot') format('embedded-opentype');
+}
+@font-face {
+    font-family: 'Noto Sans JP';
+    font-style: normal;
+    font-weight: 300;
+    src: url('#{$font-base-path}/NotoSansCJKjp/NotoSansCJKjp-DemiLight.woff2') format('woff2'),
+        url('#{$font-base-path}/NotoSansCJKjp/NotoSansCJKjp-DemiLight.woff') format('woff'),
+        url('#{$font-base-path}/NotoSansCJKjp/NotoSansCJKjp-DemiLight.ttf') format('truetype'),
+        url('#{$font-base-path}/NotoSansCJKjp/NotoSansCJKjp-DemiLight.eot') format('embedded-opentype');
+}
+@font-face {
+    font-family: 'Noto Sans JP';
+    font-style: normal;
+    font-weight: 400;
+    src: url('#{$font-base-path}/NotoSansCJKjp/NotoSansCJKjp-Regular.woff2') format('woff2'),
+        url('#{$font-base-path}/NotoSansCJKjp/NotoSansCJKjp-Regular.woff') format('woff'),
+        url('#{$font-base-path}/NotoSansCJKjp/NotoSansCJKjp-Regular.ttf') format('truetype'),
+        url('#{$font-base-path}/NotoSansCJKjp/NotoSansCJKjp-Regular.eot') format('embedded-opentype');
+}
+@font-face {
+    font-family: 'Noto Sans JP';
+    font-style: normal;
+    font-weight: 500;
+    src: url('#{$font-base-path}/NotoSansCJKjp/NotoSansCJKjp-Medium.woff2') format('woff2'),
+        url('#{$font-base-path}/NotoSansCJKjp/NotoSansCJKjp-Medium.woff') format('woff'),
+        url('#{$font-base-path}/NotoSansCJKjp/NotoSansCJKjp-Medium.ttf') format('truetype'),
+        url('#{$font-base-path}/NotoSansCJKjp/NotoSansCJKjp-Medium.eot') format('embedded-opentype');
+}
+@font-face {
+    font-family: 'Noto Sans JP';
+    font-style: normal;
+    font-weight: 700;
+    src: url('#{$font-base-path}/NotoSansCJKjp/NotoSansCJKjp-Bold.woff2') format('woff2'),
+        url('#{$font-base-path}/NotoSansCJKjp/NotoSansCJKjp-Bold.woff') format('woff'),
+        url('#{$font-base-path}/NotoSansCJKjp/NotoSansCJKjp-Bold.ttf') format('truetype'),
+        url('#{$font-base-path}/NotoSansCJKjp/NotoSansCJKjp-Bold.eot') format('embedded-opentype');
+}
+@font-face {
+    font-family: 'Noto Sans JP';
+    font-style: normal;
+    font-weight: 900;
+    src: url('#{$font-base-path}/NotoSansCJKjp/NotoSansCJKjp-Black.woff2') format('woff2'),
+        url('#{$font-base-path}/NotoSansCJKjp/NotoSansCJKjp-Black.woff') format('woff'),
+        url('#{$font-base-path}/NotoSansCJKjp/NotoSansCJKjp-Black.ttf') format('truetype'),
+        url('#{$font-base-path}/NotoSansCJKjp/NotoSansCJKjp-Black.eot') format('embedded-opentype');
+}
