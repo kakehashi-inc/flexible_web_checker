@@ -31,17 +31,14 @@ def register(request):
 
             token = EmailConfirmationToken.objects.create(
                 user=user,
-                expires_at=timezone.now()
-                + timezone.timedelta(seconds=settings.EMAIL_CONFIRMATION_TIMEOUT),
+                expires_at=timezone.now() + timezone.timedelta(seconds=settings.EMAIL_CONFIRMATION_TIMEOUT),
             )
 
-            verification_url = request.build_absolute_uri(
-                reverse("bookmark:verify_email", kwargs={"token": token.token})
-            )
+            verification_url = request.build_absolute_uri(reverse("bookmark:verify_email", kwargs={"token": token.token}))
 
             subject = _("email_confirmation_subject")
             message = render_to_string(
-                "bookmark/email/verify_email.html",
+                "email/verify_email.html",
                 {
                     "user": user,
                     "verification_url": verification_url,
@@ -58,14 +55,12 @@ def register(request):
                 html_message=message,
             )
 
-            messages.success(
-                request, _("registration_complete_confirm_email")
-            )
+            messages.success(request, _("registration_complete_confirm_email"))
             return redirect("bookmark:login")
     else:
         form = UserRegistrationForm()
 
-    return render(request, "bookmark/user_accounts/register.html", {"form": form})
+    return render(request, "user_accounts/register.html", {"form": form})
 
 
 def verify_email(request, token):
@@ -73,9 +68,7 @@ def verify_email(request, token):
     token_obj = get_object_or_404(EmailConfirmationToken, token=token)
 
     if not token_obj.is_valid():
-        messages.error(
-            request, _("token_expired_please_register_again")
-        )
+        messages.error(request, _("token_expired_please_register_again"))
         return redirect("bookmark:register")
 
     user = token_obj.user
@@ -85,9 +78,7 @@ def verify_email(request, token):
 
     EmailConfirmationToken.objects.filter(user=user).delete()
 
-    messages.success(
-        request, _("email_confirmed_please_login")
-    )
+    messages.success(request, _("email_confirmed_please_login"))
     return redirect("bookmark:login")
 
 
@@ -106,18 +97,13 @@ def login_view(request):
                     next_url = request.GET.get("next", "bookmark:url_list")
                     return redirect(next_url)
                 else:
-                    messages.error(
-                        request,
-                        _("account_not_activated")
-                    )
+                    messages.error(request, _("account_not_activated"))
             else:
-                messages.error(
-                    request, _("invalid_email_or_password")
-                )
+                messages.error(request, _("invalid_email_or_password"))
     else:
         form = UserLoginForm()
 
-    return render(request, "bookmark/user_accounts/login.html", {"form": form})
+    return render(request, "user_accounts/login.html", {"form": form})
 
 
 def logout_view(request):
@@ -130,7 +116,7 @@ def logout_view(request):
 @login_required
 def profile(request):
     """マイページビュー"""
-    return render(request, "bookmark/user_accounts/mypage.html", {"user": request.user})
+    return render(request, "user_accounts/mypage.html", {"user": request.user})
 
 
 @login_required
@@ -145,7 +131,7 @@ def edit_profile(request):
     else:
         form = UserProfileForm(instance=request.user)
 
-    return render(request, "bookmark/user_accounts/edit_profile.html", {"form": form})
+    return render(request, "user_accounts/edit_profile.html", {"form": form})
 
 
 def password_reset_request(request):
@@ -159,19 +145,14 @@ def password_reset_request(request):
 
                 token = PasswordResetToken.objects.create(
                     user=user,
-                    expires_at=timezone.now()
-                    + timezone.timedelta(seconds=settings.PASSWORD_RESET_TIMEOUT),
+                    expires_at=timezone.now() + timezone.timedelta(seconds=settings.PASSWORD_RESET_TIMEOUT),
                 )
 
-                reset_url = request.build_absolute_uri(
-                    reverse(
-                        "bookmark:password_reset", kwargs={"token": token.token}
-                    )
-                )
+                reset_url = request.build_absolute_uri(reverse("bookmark:password_reset", kwargs={"token": token.token}))
 
                 subject = _("password_reset_subject")
                 message = render_to_string(
-                    "bookmark/email/password_reset.html",
+                    "email/password_reset.html",
                     {
                         "user": user,
                         "reset_url": reset_url,
@@ -188,21 +169,15 @@ def password_reset_request(request):
                     html_message=message,
                 )
 
-                messages.success(
-                    request,
-                    _("password_reset_email_sent")
-                )
+                messages.success(request, _("password_reset_email_sent"))
                 return redirect("bookmark:login")
             except User.DoesNotExist:
-                messages.success(
-                    request,
-                    _("password_reset_email_sent")
-                )
+                messages.success(request, _("password_reset_email_sent"))
                 return redirect("bookmark:login")
     else:
         form = PasswordResetRequestForm()
 
-    return render(request, "bookmark/user_accounts/password_reset_request.html", {"form": form})
+    return render(request, "user_accounts/password_reset_request.html", {"form": form})
 
 
 def password_reset(request, token):
@@ -210,10 +185,7 @@ def password_reset(request, token):
     token_obj = get_object_or_404(PasswordResetToken, token=token)
 
     if not token_obj.is_valid():
-        messages.error(
-            request,
-            _("token_expired_reset_password_again")
-        )
+        messages.error(request, _("token_expired_reset_password_again"))
         return redirect("bookmark:password_reset_request")
 
     user = token_obj.user
@@ -235,17 +207,17 @@ def password_reset(request, token):
     else:
         form = PasswordResetForm()
 
-    return render(
-        request, "bookmark/user_accounts/password_reset.html", {"form": form, "token": token}
-    )
+    return render(request, "user_accounts/password_reset.html", {"form": form, "token": token})
 
 
 class PasswordChangeView(auth_views.PasswordChangeView):
     """パスワード変更ビュー"""
+
     template_name = "registration/password_change_form.html"
     success_url = "/accounts/password/change/done/"
 
 
 class PasswordChangeDoneView(auth_views.PasswordChangeDoneView):
     """パスワード変更完了ビュー"""
+
     template_name = "registration/password_change_done.html"

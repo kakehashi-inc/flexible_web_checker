@@ -9,15 +9,15 @@
         <h1 class="text-2xl font-bold text-gray-800 mb-4">{{ collection.name }}</h1>
         <div class="border-b border-gray-200">
             <nav class="-mb-px flex space-x-8" aria-label="Tabs">
-                <a href="{% url 'url_manager:url_list' %}?tab=all"
+                <a href="{% url 'bookmark:url_list' %}?tab=all"
                    class="border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm">
                     {% trans 'all' %}
                 </a>
-                <a href="{% url 'collection_manager:collection_list' %}"
+                <a href="{% url 'bookmark:collection_list' %}"
                    class="border-blue-500 text-blue-600 whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm">
                     {% trans 'collection' %}
                 </a>
-                <a href="{% url 'url_manager:url_list' %}?tab=uncategorized"
+                <a href="{% url 'bookmark:url_list' %}?tab=uncategorized"
                    class="border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm">
                     {% trans 'uncategorized' %}
                 </a>
@@ -30,10 +30,10 @@
             <div class="flex justify-between items-start">
                 <h2 class="text-xl font-semibold text-gray-800 mb-2">{% trans 'collection_info' %}</h2>
                 <div class="flex space-x-2">
-                    <a href="{% url 'collection_manager:collection_edit' collection.id %}" class="bg-yellow-600 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded-md transition duration-300">
+                    <a href="{% url 'bookmark:collection_edit' collection.id %}" class="bg-yellow-600 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded-md transition duration-300">
                         {% trans 'edit' %}
                     </a>
-                    <a href="{% url 'collection_manager:collection_delete' collection.id %}" class="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-md transition duration-300">
+                    <a href="{% url 'bookmark:collection_delete' collection.id %}" class="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-md transition duration-300">
                         {% trans 'delete' %}
                     </a>
                 </div>
@@ -55,7 +55,7 @@
             <div class="flex justify-between items-center mb-6">
                 <h2 class="text-xl font-semibold text-gray-800">{% trans 'url_list' %}</h2>
                 <div>
-                    <a href="{% url 'url_manager:url_list' %}?tab=all" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition duration-300">
+                    <a href="{% url 'bookmark:url_list' %}?tab=all" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition duration-300">
                         {% trans 'add_url' %}
                     </a>
                 </div>
@@ -86,7 +86,7 @@
                                                     <span class="text-gray-500 text-xs">{% trans 'no_image' %}</span>
                                                 </div>
                                             {% endif %}
-                                            <a href="{% url 'url_manager:url_detail' url_item.id %}" class="text-blue-600 hover:text-blue-800 font-medium">
+                                            <a href="{% url 'bookmark:url_detail' url_item.id %}" class="text-blue-600 hover:text-blue-800 font-medium">
                                                 {{ url_item.title }}
                                             </a>
                                         </div>
@@ -114,12 +114,12 @@
                                     </td>
                                     <td class="py-3 px-4 text-center">
                                         <div class="flex justify-center space-x-2">
-                                            <a href="{% url 'url_manager:url_check' url_item.id %}" class="text-blue-600 hover:text-blue-800" title="{% trans 'check_update' %}">
+                                            <a href="{% url 'bookmark:url_check' url_item.id %}" class="text-blue-600 hover:text-blue-800" title="{% trans 'check_update' %}">
                                                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
                                                 </svg>
                                             </a>
-                                            <a href="{% url 'collection_manager:collection_remove_url' collection.id url_item.id %}" class="text-red-600 hover:text-red-800" title="{% trans 'remove_from_collection' %}">
+                                            <a href="{% url 'bookmark:collection_remove_url' collection.id url_item.id %}" class="text-red-600 hover:text-red-800" title="{% trans 'remove_from_collection' %}">
                                                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
                                                 </svg>
@@ -135,7 +135,7 @@
             {% else %}
                 <div class="text-center py-8">
                     <p class="text-gray-600 mb-4">{% trans 'no_urls_in_collection' %}</p>
-                    <a href="{% url 'url_manager:url_list' %}?tab=all" class="text-blue-600 hover:text-blue-800">
+                    <a href="{% url 'bookmark:url_list' %}?tab=all" class="text-blue-600 hover:text-blue-800">
                         {% trans 'add_url_to_collection' %} →
                     </a>
                 </div>

@@ -17,7 +17,7 @@
                                 <div>
                                     <h2 class="text-lg font-semibold text-gray-700">
                                         {% if notification.url_item %}
-                                            <a href="{% url 'url_manager:url_detail' notification.url_item.id %}" class="text-blue-600 hover:text-blue-800">
+                                            <a href="{% url 'bookmark:url_detail' notification.url_item.id %}" class="text-blue-600 hover:text-blue-800">
                                                 {{ notification.url_item.title }}
                                             </a>
                                         {% else %}
@@ -28,7 +28,7 @@
                                 </div>
                                 
                                 {% if not notification.is_read %}
-                                    <form method="post" action="{% url 'core:mark_notification_read' notification.id %}">
+                                    <form method="post" action="{% url 'bookmark:mark_notification_read' notification.id %}">
                                         {% csrf_token %}
                                         <button type="submit" class="text-sm text-blue-600 hover:text-blue-800">
                                             {% trans 'mark_as_read' %}
@@ -58,7 +58,7 @@
                 
                 {% if unread_count > 0 %}
                     <div class="mt-6 text-right">
-                        <form method="post" action="{% url 'core:mark_all_notifications_read' %}">
+                        <form method="post" action="{% url 'bookmark:mark_all_notifications_read' %}">
                             {% csrf_token %}
                             <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition duration-300">
                                 {% trans 'mark_all_as_read' %}

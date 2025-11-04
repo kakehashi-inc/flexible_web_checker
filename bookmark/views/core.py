@@ -5,9 +5,6 @@ from django.utils.translation import gettext_lazy as _
 from django.contrib import messages
 from django.http import JsonResponse
 from django.core.paginator import Paginator
-from django.conf import settings
-
-from bookmark.tasks.url_check import check_all_urls_task
 
 
 def home(request):
@@ -15,13 +12,13 @@ def home(request):
     if request.user.is_authenticated:
         return redirect("bookmark:url_list")
 
-    return render(request, "bookmark/core/home.html")
+    return render(request, "core/home.html")
 
 
 @login_required
 def about(request):
     """アバウトページビュー"""
-    return render(request, "bookmark/core/about.html")
+    return render(request, "core/about.html")
 
 
 @staff_member_required
@@ -59,20 +56,20 @@ def job_management(request):
     from django_celery_results.models import TaskResult
 
     # 定期実行タスクの取得
-    periodic_tasks = PeriodicTask.objects.all().order_by('-last_run_at')
+    periodic_tasks = PeriodicTask.objects.all().order_by("-last_run_at")
 
     # タスク実行履歴の取得（最新100件）
-    task_results = TaskResult.objects.all().order_by('-date_done')[:100]
+    task_results = TaskResult.objects.all().order_by("-date_done")[:100]
 
     # ページネーション
     paginator = Paginator(task_results, 20)
-    page_number = request.GET.get('page', 1)
+    page_number = request.GET.get("page", 1)
     page_obj = paginator.get_page(page_number)
 
     context = {
-        'periodic_tasks': periodic_tasks,
-        'task_results': page_obj,
-        'page_obj': page_obj,
+        "periodic_tasks": periodic_tasks,
+        "task_results": page_obj,
+        "page_obj": page_obj,
     }
 
-    return render(request, "bookmark/core/job_management.html", context)
+    return render(request, "core/job_management.html", context)

@@ -61,7 +61,7 @@
             </div>
             
             <div class="text-center mt-4">
-                <a href="{% url 'user_accounts:password_reset_request' %}" class="text-sm text-blue-600 hover:text-blue-800">
+                <a href="{% url 'bookmark:password_reset_request' %}" class="text-sm text-blue-600 hover:text-blue-800">
                     {% trans 'forgot_password' %}
                 </a>
             </div>
@@ -69,7 +69,7 @@
         
         <div class="mt-6 border-t border-gray-200 pt-4 text-center">
             <p class="text-gray-600 mb-2">{% trans 'dont_have_account' %}</p>
-            <a href="{% url 'user_accounts:register' %}" class="text-blue-600 hover:text-blue-800">
+            <a href="{% url 'bookmark:register' %}" class="text-blue-600 hover:text-blue-800">
                 {% trans 'register_new_account' %}
             </a>
         </div>

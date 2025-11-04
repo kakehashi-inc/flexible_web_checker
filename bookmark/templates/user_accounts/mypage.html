@@ -39,7 +39,7 @@
 
                         {# Logout Button #}
                         <div class="mt-8 text-center">
-                            <a href="{% url 'user_accounts:logout' %}" class="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-md transition duration-300">
+                            <a href="{% url 'bookmark:logout' %}" class="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-md transition duration-300">
                                 {% trans 'logout' %}
                             </a>
                         </div>
@@ -47,12 +47,12 @@
                     <div class="mt-6">
                         {# Password Change Link #}
                         <div class="mt-6">
-                            <a href="{% url 'user_accounts:password_change' %}" class="block text-blue-600 hover:text-blue-800">
+                            <a href="{% url 'bookmark:password_change' %}" class="block text-blue-600 hover:text-blue-800">
                                 {% trans 'change_password' %}
                             </a>
                         </div>
 
-                        <a href="{% url 'user_accounts:edit_mypage' %}" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition duration-300">
+                        <a href="{% url 'bookmark:edit_mypage' %}" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition duration-300">
                             {% trans 'edit_my_page' %}
                         </a>
                     </div>

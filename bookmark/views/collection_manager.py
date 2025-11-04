@@ -12,9 +12,7 @@ from bookmark.forms.collection_manager import CollectionForm
 def collection_list(request):
     """コレクション一覧ビュー"""
     collections = Collection.objects.filter(user=request.user).order_by("order", "name")
-    return render(
-        request, "bookmark/collection_manager/collection_list.html", {"collections": collections}
-    )
+    return render(request, "collection_manager/collection_list.html", {"collections": collections})
 
 
 @login_required
@@ -26,37 +24,29 @@ def collection_add(request):
             collection = form.save(commit=False)
             collection.user = request.user
 
-            max_order = (
-                Collection.objects.filter(user=request.user).order_by("-order").first()
-            )
+            max_order = Collection.objects.filter(user=request.user).order_by("-order").first()
             collection.order = (max_order.order + 1) if max_order else 0
 
             collection.save()
             messages.success(request, _("collection_added"))
-            return redirect(
-                "bookmark:collection_detail", collection_id=collection.pk
-            )
+            return redirect("bookmark:collection_detail", collection_id=collection.pk)
     else:
         form = CollectionForm()
 
-    return render(request, "bookmark/collection_manager/collection_add.html", {"form": form})
+    return render(request, "collection_manager/collection_add.html", {"form": form})
 
 
 @login_required
 def collection_detail(request, collection_id):
     """コレクション詳細ビュー"""
     collection = get_object_or_404(Collection, pk=collection_id, user=request.user)
-    url_items = UrlItem.objects.filter(collections__collection=collection).order_by(
-        "-last_updated_at"
-    )
+    url_items = UrlItem.objects.filter(collections__collection=collection).order_by("-last_updated_at")
 
-    other_url_items = UrlItem.objects.filter(user=request.user).exclude(
-        collections__collection=collection
-    )
+    other_url_items = UrlItem.objects.filter(user=request.user).exclude(collections__collection=collection)
 
     return render(
         request,
-        "bookmark/collection_manager/collection_detail.html",
+        "collection_manager/collection_detail.html",
         {
             "collection": collection,
             "url_items": url_items,
@@ -75,15 +65,13 @@ def collection_edit(request, collection_id):
         if form.is_valid():
             form.save()
             messages.success(request, _("collection_updated"))
-            return redirect(
-                "bookmark:collection_detail", collection_id=collection.pk
-            )
+            return redirect("bookmark:collection_detail", collection_id=collection.pk)
     else:
         form = CollectionForm(instance=collection)
 
     return render(
         request,
-        "bookmark/collection_manager/collection_edit.html",
+        "collection_manager/collection_edit.html",
         {"form": form, "collection": collection},
     )
 
@@ -98,9 +86,7 @@ def collection_delete(request, collection_id):
         messages.success(request, _("collection_deleted"))
         return redirect("bookmark:collection_list")
 
-    return render(
-        request, "bookmark/collection_manager/collection_delete.html", {"collection": collection}
-    )
+    return render(request, "collection_manager/collection_delete.html", {"collection": collection})
 
 
 @login_required
@@ -109,9 +95,7 @@ def collection_add_url(request, collection_id, url_id):
     collection = get_object_or_404(Collection, pk=collection_id, user=request.user)
     url_item = get_object_or_404(UrlItem, pk=url_id, user=request.user)
 
-    if not UrlItemCollection.objects.filter(
-        collection=collection, url_item=url_item
-    ).exists():
+    if not UrlItemCollection.objects.filter(collection=collection, url_item=url_item).exists():
         UrlItemCollection.objects.create(collection=collection, url_item=url_item)
         messages.success(request, _("url_added_to_collection"))
     else:
@@ -120,9 +104,7 @@ def collection_add_url(request, collection_id, url_id):
     if request.headers.get("X-Requested-With") == "XMLHttpRequest":
         return JsonResponse({"status": "success"})
     else:
-        return redirect(
-            "bookmark:collection_detail", collection_id=collection.pk
-        )
+        return redirect("bookmark:collection_detail", collection_id=collection.pk)
 
 
 @login_required
@@ -137,6 +119,4 @@ def collection_remove_url(request, collection_id, url_id):
     if request.headers.get("X-Requested-With") == "XMLHttpRequest":
         return JsonResponse({"status": "success"})
     else:
-        return redirect(
-            "bookmark:collection_detail", collection_id=collection.pk
-        )
+        return redirect("bookmark:collection_detail", collection_id=collection.pk)

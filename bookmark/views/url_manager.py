@@ -4,14 +4,13 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.admin.views.decorators import staff_member_required
 from django.core.paginator import Paginator
 from django.conf import settings
-from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
 from django.contrib import messages
 from django.http import JsonResponse
 
 from bookmark.models import UrlItem
 from bookmark.forms.url_manager import UrlItemForm, BulkUrlAddForm
-from bookmark.utils import get_page_title, take_screenshot
+from bookmark.utils import get_page_title
 from bookmark.tasks.url_check import check_url_update
 from bookmark.tasks.thumbnail import update_thumbnail
 
@@ -55,7 +54,7 @@ def url_list(request):
         "active_tab": tab,
         "current_sort": sort,
     }
-    return render(request, "bookmark/url_manager/url_list.html", context)
+    return render(request, "url_manager/url_list.html", context)
 
 
 @login_required
@@ -83,14 +82,14 @@ def url_add(request):
     else:
         form = UrlItemForm()
 
-    return render(request, "bookmark/url_manager/url_add.html", {"form": form})
+    return render(request, "url_manager/url_add.html", {"form": form})
 
 
 @login_required
 def url_detail(request, url_id):
     """URL詳細ビュー"""
     url_item = get_object_or_404(UrlItem, id=url_id, user=request.user)
-    return render(request, "bookmark/url_manager/url_detail.html", {"url_item": url_item})
+    return render(request, "url_manager/url_detail.html", {"url_item": url_item})
 
 
 @login_required
@@ -107,9 +106,7 @@ def url_edit(request, url_id):
     else:
         form = UrlItemForm(instance=url_item)
 
-    return render(
-        request, "bookmark/url_manager/url_edit.html", {"form": form, "url_item": url_item}
-    )
+    return render(request, "url_manager/url_edit.html", {"form": form, "url_item": url_item})
 
 
 @login_required
@@ -122,7 +119,7 @@ def url_delete(request, url_id):
         messages.success(request, _("url_deleted"))
         return redirect("bookmark:url_list")
 
-    return render(request, "bookmark/url_manager/url_delete.html", {"url_item": url_item})
+    return render(request, "url_manager/url_delete.html", {"url_item": url_item})
 
 
 @login_required
@@ -165,15 +162,15 @@ def url_update_thumbnail(request, url_id):
 @login_required
 def url_bulk_add(request):
     """複数URL一括追加ビュー"""
-    if request.method == 'POST':
+    if request.method == "POST":
         form = BulkUrlAddForm(request.POST)
         if form.is_valid():
-            urls_to_add = form.cleaned_data['urls']
+            urls_to_add = form.cleaned_data["urls"]
             added_count = 0
             error_urls = []
 
             for url_str in urls_to_add:
-                if not url_str.startswith(('http://', 'https://')):
+                if not url_str.startswith(("http://", "https://")):
                     error_urls.append(f"{url_str} ({_('invalid_format')})")
                     continue
 
@@ -185,14 +182,9 @@ def url_bulk_add(request):
                     title = get_page_title(url_str)
                     if not title:
                         title = url_str
-                        messages.warning(request, _('failed_to_get_title_will_use_url').format(url=url_str))
+                        messages.warning(request, _("failed_to_get_title_will_use_url").format(url=url_str))
 
-                    url_item = UrlItem.objects.create(
-                        user=request.user,
-                        url=url_str,
-                        title=title,
-                        check_type='HTML_STANDARD'
-                    )
+                    url_item = UrlItem.objects.create(user=request.user, url=url_str, title=title, check_type="HTML_STANDARD")
                     try:
                         check_url_update.delay(url_item.id)
                         update_thumbnail.delay(url_item.id)
@@ -204,13 +196,13 @@ def url_bulk_add(request):
                     error_urls.append(f"{url_str} ({_('add_error')})")
 
             if added_count > 0:
-                messages.success(request, _('url_bulk_added_count').format(count=added_count))
+                messages.success(request, _("url_bulk_added_count").format(count=added_count))
             if error_urls:
-                error_html = _('failed_to_add_urls_list') + '<ul class="list-disc list-inside">' + "".join([f"<li>{err}</li>" for err in error_urls]) + "</ul>"
-                messages.error(request, error_html, extra_tags='safe')
+                error_html = _("failed_to_add_urls_list") + '<ul class="list-disc list-inside">' + "".join([f"<li>{err}</li>" for err in error_urls]) + "</ul>"
+                messages.error(request, error_html, extra_tags="safe")
 
-            return redirect('bookmark:url_list')
+            return redirect("bookmark:url_list")
     else:
         form = BulkUrlAddForm()
 
-    return render(request, 'bookmark/url_manager/url_bulk_add.html', {'form': form})
+    return render(request, "bookmark/url_manager/url_bulk_add.html", {"form": form})

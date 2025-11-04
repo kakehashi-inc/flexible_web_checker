@@ -26,11 +26,11 @@
     <header class="bg-blue-600 text-white shadow-md">
         <div class="container mx-auto px-4 py-3">
             <div class="flex justify-between items-center">
-                <a href="{% url 'url_manager:url_list' %}" class="text-xl font-bold">Flexible Web Checker</a> {# System name links to URL list #}
+                <a href="{% url 'bookmark:url_list' %}" class="text-xl font-bold">Flexible Web Checker</a> {# System name links to URL list #}
                 <nav class="hidden md:flex space-x-4 items-center"> {# Added items-center #}
                     {% if user.is_authenticated %}
                         {# User icon + nickname link #}
-                        <a href="{% url 'user_accounts:mypage' %}" class="flex items-center hover:text-blue-200">
+                        <a href="{% url 'bookmark:mypage' %}" class="flex items-center hover:text-blue-200">
                             {# Ensure user icon exists or add a placeholder #}
                             {% load static %}
                             <img src="{% static 'icons/user.svg' %}" alt="{% trans 'user_icon' %}" class="w-5 h-5 inline-block mr-1">
@@ -38,15 +38,15 @@
                         </a>
                         {# Logout link is now on profile page, removed from here #}
                     {% else %}
-                        <a href="{% url 'user_accounts:login' %}" class="hover:text-blue-200">{% trans 'login' %}</a>
-                        <a href="{% url 'user_accounts:register' %}" class="hover:text-blue-200">{% trans 'register' %}</a>
+                        <a href="{% url 'bookmark:login' %}" class="hover:text-blue-200">{% trans 'login' %}</a>
+                        <a href="{% url 'bookmark:register' %}" class="hover:text-blue-200">{% trans 'register' %}</a>
                     {% endif %}
                     <div class="relative inline-block text-left">
                         <button id="language-dropdown" class="hover:text-blue-200">
                             {% trans 'language' %} ▼
                         </button>
                         <div id="language-menu" class="hidden absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg z-10">
-                            <form action="{% url 'set_language' %}" method="post" class="py-1">
+                            <form action="{% url 'bookmark:set_language' %}" method="post" class="py-1">
                                 {% csrf_token %}
                                 <input name="next" type="hidden" value="{{ request.get_full_path|urlencode }}">
                                 <button type="submit" name="language" value="ja" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 w-full text-left">日本語</button>
@@ -64,17 +64,17 @@
             <div id="mobile-menu" class="hidden md:hidden mt-2 pb-2">
                 {% if user.is_authenticated %}
                     {# User icon + nickname link for mobile #}
-                    <a href="{% url 'user_accounts:mypage' %}" class="flex items-center py-2">
+                    <a href="{% url 'bookmark:mypage' %}" class="flex items-center py-2">
                         {% load static %}
                         <img src="{% static 'icons/user.svg' %}" alt="{% trans 'user_icon' %}" class="w-5 h-5 inline-block mr-1">
                         <span>{{ user.nickname|default:user.email }}</span>
                     </a>
                     {# Logout link is now on profile page, removed from here #}
                 {% else %}
-                    <a href="{% url 'user_accounts:login' %}" class="block py-2">{% trans 'login' %}</a>
-                    <a href="{% url 'user_accounts:register' %}" class="block py-2">{% trans 'register' %}</a>
+                    <a href="{% url 'bookmark:login' %}" class="block py-2">{% trans 'login' %}</a>
+                    <a href="{% url 'bookmark:register' %}" class="block py-2">{% trans 'register' %}</a>
                 {% endif %}
-                <form action="{% url 'set_language' %}" method="post" class="py-2">
+                <form action="{% url 'bookmark:set_language' %}" method="post" class="py-2">
                     {% csrf_token %}
                     <input name="next" type="hidden" value="{{ request.get_full_path|urlencode }}">
                     <button type="submit" name="language" value="ja" class="block py-1 w-full text-left">日本語</button>
@@ -105,7 +105,7 @@
                     <p>&copy; 2025 Flexible Web Checker</p>
                 </div>
                 <div>
-                    <a href="{% url 'core:about' %}" class="hover:text-blue-300">{% trans 'about_this_site' %}</a>
+                    <a href="{% url 'bookmark:about' %}" class="hover:text-blue-300">{% trans 'about_this_site' %}</a>
                 </div>
             </div>
         </div>

@@ -8,7 +8,7 @@
     <div class="flex justify-between items-center mb-6">
         <h1 class="text-2xl font-bold text-gray-800">{% trans 'collection_list' %}</h1>
         <div>
-            <a href="{% url 'collection_manager:collection_add' %}" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition duration-300">
+            <a href="{% url 'bookmark:collection_add' %}" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition duration-300">
                 {% trans 'create_new_collection' %}
             </a>
         </div>
@@ -20,7 +20,7 @@
                 <div class="bg-white shadow-md rounded-lg overflow-hidden">
                     <div class="p-5">
                         <h2 class="text-xl font-semibold text-blue-600 mb-2">
-                            <a href="{% url 'collection_manager:collection_detail' collection.id %}">
+                            <a href="{% url 'bookmark:collection_detail' collection.id %}">
                                 {{ collection.name }}
                             </a>
                         </h2>
@@ -33,14 +33,14 @@
                     </div>
                     <div class="bg-gray-50 px-5 py-3 border-t border-gray-200">
                         <div class="flex justify-between">
-                            <a href="{% url 'collection_manager:collection_detail' collection.id %}" class="text-blue-600 hover:text-blue-800">
+                            <a href="{% url 'bookmark:collection_detail' collection.id %}" class="text-blue-600 hover:text-blue-800">
                                 {% trans 'details' %}
                             </a>
                             <div class="flex space-x-3">
-                                <a href="{% url 'collection_manager:collection_edit' collection.id %}" class="text-yellow-600 hover:text-yellow-800">
+                                <a href="{% url 'bookmark:collection_edit' collection.id %}" class="text-yellow-600 hover:text-yellow-800">
                                     {% trans 'edit' %}
                                 </a>
-                                <a href="{% url 'collection_manager:collection_delete' collection.id %}" class="text-red-600 hover:text-red-800">
+                                <a href="{% url 'bookmark:collection_delete' collection.id %}" class="text-red-600 hover:text-red-800">
                                     {% trans 'delete' %}
                                 </a>
                             </div>
@@ -52,7 +52,7 @@
     {% else %}
         <div class="bg-white shadow-md rounded-lg p-6 text-center">
             <p class="text-gray-600 mb-4">{% trans 'no_collections_created' %}</p>
-            <a href="{% url 'collection_manager:collection_add' %}" class="text-blue-600 hover:text-blue-800">
+            <a href="{% url 'bookmark:collection_add' %}" class="text-blue-600 hover:text-blue-800">
                 {% trans 'create_new_collection_link' %} →
             </a>
         </div>

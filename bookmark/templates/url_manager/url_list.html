@@ -24,16 +24,16 @@
         <h1 class="text-2xl font-bold text-gray-800 mb-4">{% trans 'url_list' %}</h1>
         <div class="border-b border-gray-200">
             <nav class="-mb-px flex space-x-8" aria-label="Tabs">
-                <a href="{% url 'url_manager:url_list' %}?tab=all"
+                <a href="{% url 'bookmark:url_list' %}?tab=all"
                    class="{% if active_tab == 'all' %}border-blue-500 text-blue-600{% else %}border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300{% endif %} whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm">
                     {% trans 'all' %}
                 </a>
-                <a href="{% url 'collection_manager:collection_list' %}"
+                <a href="{% url 'bookmark:collection_list' %}"
                    class="border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm">
                     {% trans 'collection' %}
                 </a>
 
-                <a href="{% url 'url_manager:url_list' %}?tab=uncategorized"
+                <a href="{% url 'bookmark:url_list' %}?tab=uncategorized"
                    class="{% if active_tab == 'uncategorized' %}border-blue-500 text-blue-600{% else %}border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300{% endif %} whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm">
                     {% trans 'uncategorized' %}
                 </a>
@@ -57,11 +57,11 @@
         {# 右側のボタン #}
         {% if active_tab == 'all' or active_tab == 'uncategorized' %}
         <div class="flex space-x-2">
-            <a href="{% url 'url_manager:url_bulk_add' %}" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-md transition duration-300">
+            <a href="{% url 'bookmark:url_bulk_add' %}" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-md transition duration-300">
                 {% trans 'bulk_add' %}
             </a>
 
-             <a href="{% url 'url_manager:url_add' %}" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition duration-300">
+             <a href="{% url 'bookmark:url_add' %}" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition duration-300">
                  {% trans 'add_new_url' %}
              </a>
         </div>
@@ -93,7 +93,7 @@
                                             <span class="text-gray-500 text-xs">{% trans 'no_image' %}</span>
                                         </div>
                                     {% endif %}
-                                    <a href="{% url 'url_manager:url_detail' url_item.id %}" class="text-blue-600 hover:text-blue-800 font-medium">
+                                    <a href="{% url 'bookmark:url_detail' url_item.id %}" class="text-blue-600 hover:text-blue-800 font-medium">
                                         {{ url_item.title }}
                                     </a>
                                 </div>
@@ -140,18 +140,18 @@
                             <td class="py-3 px-4 text-center">
                                 <div class="flex justify-center space-x-2">
                                     {% if user.is_staff or user.is_superuser %}
-                                    <a href="{% url 'url_manager:url_check' url_item.id %}" class="text-blue-600 hover:text-blue-800" title="{% trans 'check_update' %}">
+                                    <a href="{% url 'bookmark:url_check' url_item.id %}" class="text-blue-600 hover:text-blue-800" title="{% trans 'check_update' %}">
                                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
                                         </svg>
                                     </a>
                                     {% endif %}
-                                    <a href="{% url 'url_manager:url_edit' url_item.id %}" class="text-yellow-600 hover:text-yellow-800" title="{% trans 'edit' %}">
+                                    <a href="{% url 'bookmark:url_edit' url_item.id %}" class="text-yellow-600 hover:text-yellow-800" title="{% trans 'edit' %}">
                                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
                                         </svg>
                                     </a>
-                                    <a href="{% url 'url_manager:url_delete' url_item.id %}" class="text-red-600 hover:text-red-800" title="{% trans 'delete' %}">
+                                    <a href="{% url 'bookmark:url_delete' url_item.id %}" class="text-red-600 hover:text-red-800" title="{% trans 'delete' %}">
                                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
                                         </svg>
@@ -212,7 +212,7 @@
                     {% endif %}
                 </p>
                 {% if active_tab == 'all' or active_tab == 'uncategorized' %}
-                <a href="{% url 'url_manager:url_add' %}" class="text-blue-600 hover:text-blue-800">
+                <a href="{% url 'bookmark:url_add' %}" class="text-blue-600 hover:text-blue-800">
                     {% trans 'add_new_url' %} →
                 </a>
                 {% endif %}
