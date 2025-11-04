@@ -179,7 +179,7 @@ msgstr "既読"
 #: bookmark/models/notification.py:30
 #: bookmark/templates/core/notification.html:4
 #: bookmark/templates/core/notification.html:10
-#: bookmark/templates/user_accounts/email/notification_email.html:8
+#: bookmark/templates/emails/notification_email.html:8
 msgid "notification"
 msgstr "通知"
 
@@ -506,7 +506,7 @@ msgstr "作成日"
 #: bookmark/templates/url_manager/url_detail_fixed.html:105
 #: bookmark/templates/url_manager/url_detail_new.html:105
 #: bookmark/templates/url_manager/url_list.html:80
-#: bookmark/templates/user_accounts/email/notification_email.html:57
+#: bookmark/templates/emails/notification_email.html:57
 msgid "last_updated"
 msgstr "最終更新"
 
@@ -1244,82 +1244,82 @@ msgstr "アカウントを削除"
 msgid "edit_mypage"
 msgstr "マイページ編集"
 
-#: bookmark/templates/user_accounts/email/email_verification_email.html:8
-#: bookmark/templates/user_accounts/email/email_verification_email.html:46
+#: bookmark/templates/emails/email_verification_email.html:8
+#: bookmark/templates/emails/email_verification_email.html:46
 msgid "email_confirmation"
 msgstr "メールアドレス確認"
 
-#: bookmark/templates/user_accounts/email/email_verification_email.html:50
-#: bookmark/templates/user_accounts/email/notification_email.html:50
-#: bookmark/templates/user_accounts/email/password_reset_email.html:50
+#: bookmark/templates/emails/email_verification_email.html:50
+#: bookmark/templates/emails/notification_email.html:50
+#: bookmark/templates/emails/password_reset_email.html:50
 msgid "hello"
 msgstr "こんにちは"
 
-#: bookmark/templates/user_accounts/email/email_verification_email.html:52
+#: bookmark/templates/emails/email_verification_email.html:52
 msgid "email_verification_message"
 msgstr ""
 "Flexible Web Checkerへのご登録ありがとうございます。以下のリンクをクリックし"
 "て、メールアドレスを確認してください。Flexible Web Checkerへのご登録ありがと"
 "うございます。以下のリンクをクリックして、メールアドレスを確認してください。"
 
-#: bookmark/templates/user_accounts/email/email_verification_email.html:55
+#: bookmark/templates/emails/email_verification_email.html:55
 msgid "verify_email_address"
 msgstr "メールアドレス"
 
-#: bookmark/templates/user_accounts/email/email_verification_email.html:58
-#: bookmark/templates/user_accounts/email/password_reset_email.html:58
+#: bookmark/templates/emails/email_verification_email.html:58
+#: bookmark/templates/emails/password_reset_email.html:58
 msgid "or_paste_url_in_browser"
 msgstr "または、以下のURLをブラウザに貼り付けてください："
 
-#: bookmark/templates/user_accounts/email/email_verification_email.html:61
-#: bookmark/templates/user_accounts/email/password_reset_email.html:61
+#: bookmark/templates/emails/email_verification_email.html:61
+#: bookmark/templates/emails/password_reset_email.html:61
 msgid "link_valid_24_hours"
 msgstr "このリンクは24時間有効です。"
 
-#: bookmark/templates/user_accounts/email/email_verification_email.html:63
+#: bookmark/templates/emails/email_verification_email.html:63
 msgid "ignore_if_not_requested"
 msgstr "アカウント登録をリクエストしていない場合は、このメールを無視してください"
 "アカウント登録をリクエストしていない場合は、このメールを無視してください。ア"
 "カウント登録をリクエストしていない場合は、このメールを無視してください。"
 
-#: bookmark/templates/user_accounts/email/email_verification_email.html:67
-#: bookmark/templates/user_accounts/email/password_reset_email.html:67
+#: bookmark/templates/emails/email_verification_email.html:67
+#: bookmark/templates/emails/password_reset_email.html:67
 msgid "auto_email_no_reply"
 msgstr "このメールは自動送信です。返信しないでください"
 "このメールはFlexible Web Checkerから自動的に送信されています。返信しないでく"
 "ださい。このメールはFlexible Web Checkerから自動的に送信されています。返信し"
 "ないでください。"
 
-#: bookmark/templates/user_accounts/email/notification_email.html:46
+#: bookmark/templates/emails/notification_email.html:46
 msgid "update_notification"
 msgstr "通知"
 
-#: bookmark/templates/user_accounts/email/notification_email.html:52
+#: bookmark/templates/emails/notification_email.html:52
 msgid "registered_urls_have_updates"
 msgstr "登録しているURLに更新がありました。"
 
-#: bookmark/templates/user_accounts/email/notification_email.html:61
+#: bookmark/templates/emails/notification_email.html:61
 msgid "view_details"
 msgstr "詳細"
 
-#: bookmark/templates/user_accounts/email/notification_email.html:66
+#: bookmark/templates/emails/notification_email.html:66
 msgid "this_is_automated_email"
 msgstr "このメールはFlexible Web Checkerから自動的に送信されています。"
 
-#: bookmark/templates/user_accounts/email/notification_email.html:67
+#: bookmark/templates/emails/notification_email.html:67
 msgid "email_notification_settings_can_be_changed_at"
 msgstr "メール通知の設定は"
 
-#: bookmark/templates/user_accounts/email/notification_email.html:67
+#: bookmark/templates/emails/notification_email.html:67
 msgid "here"
 msgstr "こちら"
 
-#: bookmark/templates/user_accounts/email/notification_email.html:67
+#: bookmark/templates/emails/notification_email.html:67
 msgid "text_after_settings_link"
 msgstr "から変更できます。"
 
-#: bookmark/templates/user_accounts/email/password_reset_email.html:8
-#: bookmark/templates/user_accounts/email/password_reset_email.html:46
+#: bookmark/templates/emails/password_reset_email.html:8
+#: bookmark/templates/emails/password_reset_email.html:46
 #: bookmark/templates/user_accounts/password_reset.html:4
 #: bookmark/templates/user_accounts/password_reset.html:9
 #: bookmark/templates/user_accounts/password_reset_request.html:4
@@ -1327,7 +1327,7 @@ msgstr "から変更できます。"
 msgid "password_reset"
 msgstr "パスワードリセットトークン"
 
-#: bookmark/templates/user_accounts/email/password_reset_email.html:52
+#: bookmark/templates/emails/password_reset_email.html:52
 msgid "password_reset_message"
 msgstr ""
 "Flexible Web Checkerのパスワードリセットをリクエストしました。以下のリンクを"
@@ -1335,11 +1335,11 @@ msgstr ""
 "ワードリセットをリクエストしました。以下のリンクをクリックして、新しいパス"
 "ワードを設定してください。"
 
-#: bookmark/templates/user_accounts/email/password_reset_email.html:55
+#: bookmark/templates/emails/password_reset_email.html:55
 msgid "reset_password"
 msgstr "新しいパスワード"
 
-#: bookmark/templates/user_accounts/email/password_reset_email.html:63
+#: bookmark/templates/emails/password_reset_email.html:63
 msgid "ignore_password_reset_if_not_requested"
 msgstr ""
 "パスワードリセットをリクエストしていない場合は、このメールを無視してくださ"
