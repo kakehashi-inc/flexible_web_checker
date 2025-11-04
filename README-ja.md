@@ -115,7 +115,15 @@ Flexible Web Checkerは、指定したWebページの更新を定期的にチェ
     python manage.py createsuperuser
     ```
 
-10. 開発サーバーの起動
+10. 定期タスクのセットアップ（URL更新チェックのスケジュール設定）
+
+    ```bash
+    python manage.py setup_periodic_tasks
+    ```
+
+    このコマンドは、`.env`ファイルの`UPDATE_CHECK_SCHEDULE`設定に基づいて、定期タスクの設定を初期化します。
+
+11. 開発サーバーの起動
 
     ```bash
     python manage.py runserver

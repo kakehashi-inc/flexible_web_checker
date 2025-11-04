@@ -115,7 +115,15 @@ Flexible Web Checker is a Django application that periodically checks specified 
     python manage.py createsuperuser
     ```
 
-10. Start development server
+10. Setup periodic tasks (for scheduled URL checks)
+
+    ```bash
+    python manage.py setup_periodic_tasks
+    ```
+
+    This command initializes the periodic task configuration based on the `UPDATE_CHECK_SCHEDULE` setting in your `.env` file.
+
+11. Start development server
 
     ```bash
     python manage.py runserver
