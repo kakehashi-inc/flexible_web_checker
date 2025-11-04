@@ -1,0 +1,112 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-04-14 03:51+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+# User model translations
+msgid "メールアドレス"
+msgstr "Email Address"
+
+msgid "ニックネーム"
+msgstr "Nickname"
+
+msgid "有効"
+msgstr "Active"
+
+msgid "このユーザーがアクティブかどうかを指定します。アカウントを削除する代わりに、これを選択解除してください。"
+msgstr "Designates whether this user is active. Unselect this instead of deleting accounts."
+
+msgid "メール認証日時"
+msgstr "Email Verification Date"
+
+msgid "ユーザー"
+msgstr "User"
+
+msgid "トークン"
+msgstr "Token"
+
+msgid "作成日時"
+msgstr "Created At"
+
+msgid "有効期限"
+msgstr "Expires At"
+
+msgid "メール確認トークン"
+msgstr "Email Confirmation Token"
+
+msgid "パスワードリセットトークン"
+msgstr "Password Reset Token"
+
+# URL model translations
+msgid "URL"
+msgstr "URL"
+
+msgid "タイトル"
+msgstr "Title"
+
+msgid "サムネイル"
+msgstr "Thumbnail"
+
+msgid "チェックタイプ"
+msgstr "Check Type"
+
+msgid "HTMLセレクタ"
+msgstr "HTML Selector"
+
+msgid "複数のセレクタを指定する場合は、改行で区切ってください"
+msgstr "Separate multiple selectors with line breaks"
+
+msgid "HTMLカスタム条件"
+msgstr "HTML Custom Condition"
+
+msgid "最終チェック日時"
+msgstr "Last Checked At"
+
+msgid "最終更新日時"
+msgstr "Last Updated At"
+
+msgid "最終コンテンツハッシュ"
+msgstr "Last Content Hash"
+
+msgid "更新日時"
+msgstr "Updated At"
+
+msgid "エラー回数"
+msgstr "Error Count"
+
+msgid "最終エラーメッセージ"
+msgstr "Last Error Message"
+
+msgid "URL項目"
+msgstr "URL Item"
+
+# Collection model translations
+msgid "名前"
+msgstr "Name"
+
+msgid "並び順"
+msgstr "Order"
+
+msgid "コレクション"
+msgstr "Collection"
+
+msgid "URL項目-コレクション"
+msgstr "URL Item-Collection"
+
+msgid "追加日時"
+msgstr "Added At"

@@ -51,12 +51,9 @@ INSTALLED_APPS = [
     'django_apscheduler',
     "django_celery_results",
     "django_celery_beat",
-    "user_accounts",
-    "url_manager",
-    "collection_manager",
-    "core",
+    "bookmark",
 ]
-AUTH_USER_MODEL = 'user_accounts.User'
+AUTH_USER_MODEL = 'bookmark.User'
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
@@ -75,7 +72,7 @@ ROOT_URLCONF = "flexible_web_checker.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [BASE_DIR / "templates"],
+        "DIRS": [],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -265,7 +262,7 @@ APSCHEDULER_RUN_NOW_TIMEOUT = 30
 
 
 # CELERY
-CELERY_BROKER_URL = env("CELERY_BROKER_URL", "memory://")
+CELERY_BROKER_URL = env("CELERY_BROKER_URL", default="memory://")
 CELERY_RESULT_BACKEND = "django-db"
 CELERY_ACCEPT_CONTENT = ["application/json"]
 CELERY_TASK_SERIALIZER = "json"
@@ -297,4 +294,4 @@ PASSWORD_RESET_TIMEOUT = env.int("PASSWORD_RESET_TIMEOUT", default=3600)
 
 ITEMS_PER_PAGE = env.int("ITEMS_PER_PAGE", default=20)
 
-UPDATE_CHECK_SCHEDULE = env("UPDATE_CHECK_SCHEDULE", "0 * * * *")
+UPDATE_CHECK_SCHEDULE = env("UPDATE_CHECK_SCHEDULE", default="0 * * * *")

@@ -1,112 +1,1385 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-#, fuzzy
+# Translation file for flexible_web_checker
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: flexible_web_checker\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-14 03:51+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"POT-Creation-Date: 2023-04-22 00:00+0000\n"
+"PO-Revision-Date: 2023-04-22 00:00+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
 "Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-# User model translations
-msgid "メールアドレス"
-msgstr "Email Address"
+msgid " and var[-1] == "
+msgstr ""
 
-msgid "ニックネーム"
-msgstr "Nickname"
+msgid "%(app)s administration"
+msgstr ""
 
-msgid "有効"
-msgstr "Active"
+msgid "%(class_name)s %(instance)s"
+msgstr ""
 
-msgid "このユーザーがアクティブかどうかを指定します。アカウントを削除する代わりに、これを選択解除してください。"
-msgstr "Designates whether this user is active. Unselect this instead of deleting accounts."
+msgid "%(ct_name)s objects don’t have a get_absolute_url() method"
+msgstr ""
 
-msgid "メール認証日時"
-msgstr "Email Verification Date"
+msgid "%(from)s-%(to)s relationship"
+msgstr ""
 
-msgid "ユーザー"
-msgstr "User"
+msgid "%(from)s-%(to)s relationships"
+msgstr ""
 
-msgid "トークン"
-msgstr "Token"
+msgid "%(model_name)s with this %(field_label)s already exists."
+msgstr ""
 
-msgid "作成日時"
-msgstr "Created At"
+msgid "%(model_name)s with this %(field_labels)s already exists."
+msgstr ""
 
-msgid "有効期限"
-msgstr "Expires At"
+msgid "%(name)s object with primary key %(key)r does not exist."
+msgstr ""
 
-msgid "メール確認トークン"
-msgstr "Email Confirmation Token"
+msgid "%(name)s with ID “%(key)s” doesn’t exist. Perhaps it was deleted?"
+msgstr "Perhaps It Was Deleted"
 
-msgid "パスワードリセットトークン"
-msgstr "Password Reset Token"
+msgid "%s (descending)"
+msgstr ""
 
-# URL model translations
+msgid "%s GB"
+msgstr ""
+
+msgid "%s KB"
+msgstr ""
+
+msgid "%s MB"
+msgstr ""
+
+msgid "%s PB"
+msgstr ""
+
+msgid "%s TB"
+msgstr ""
+
+msgid "%s does not appear to be a urlpattern object"
+msgstr ""
+
+msgid "(Hidden field %(name)s) %(error)s"
+msgstr ""
+
+msgid ", "
+msgstr ""
+
+msgid "0 of %(cnt)s selected"
+msgstr ""
+
+msgid ":"
+msgstr ""
+
+msgid ":?.!"
+msgstr ""
+
+msgid "A JSON object"
+msgstr ""
+
+msgid "A user with that username already exists."
+msgstr ""
+
+msgid "AM"
+msgstr ""
+
+msgid "Action:"
+msgstr ""
+
+msgid "Add %s"
+msgstr ""
+
+msgid "Add another %(verbose_name)s"
+msgstr ""
+
+msgid "Added {name} “{object}”."
+msgstr ""
+
+msgid "Added “%(object)s”."
+msgstr ""
+
+msgid "Added."
+msgstr ""
+
+msgid "Addition"
+msgstr ""
+
+msgid "Administration"
+msgstr ""
+
+msgid "Administrative Documentation"
+msgstr ""
+
+msgid "Advanced options"
+msgstr ""
+
+msgid "All"
+msgstr ""
+
+msgid "All (Including Deleted)"
+msgstr ""
+
+msgid "All dates"
+msgstr ""
+
+msgid "Any date"
+msgstr ""
+
+msgid "App %(app_label)r not found"
+msgstr ""
+
+msgid "April"
+msgstr ""
+
+msgid "Are you sure?"
+msgstr ""
+
+msgid "August"
+msgstr ""
+
+msgid "Authentication and Authorization"
+msgstr ""
+
+msgid "Big (8 byte) integer"
+msgstr ""
+
+msgid "Boolean (Either True or False)"
+msgstr ""
+
+msgid "Boolean (Either True, False or None)"
+msgstr ""
+
+msgid "CSRF verification failed. Request aborted."
+msgstr ""
+
+msgid "Cannot delete %(name)s"
+msgstr ""
+
+msgid "Change"
+msgstr ""
+
+msgid "Change %s"
+msgstr ""
+
+msgid "Change history: %s"
+msgstr ""
+
+msgid "Change password: %s"
+msgstr ""
+
+msgid "Change:"
+msgstr ""
+
+msgid "Changed {fields} for {name} “{object}”."
+msgstr ""
+
+msgid "Changed {fields}."
+msgstr ""
+
+msgid "Changed “%(object)s” — %(changes)s"
+msgstr ""
+
+msgid "Clear"
+msgstr ""
+
+msgid "Comma-separated integers"
+msgstr ""
+
+msgid "Conflicting form data submitted. Please try again."
+msgstr ""
+
+msgid "Constraint “%(name)s” is violated."
+msgstr ""
+
+msgid "Content Types"
+msgstr ""
+
+msgid "Content type %(ct_id)s object %(obj_id)s doesn’t exist"
+msgstr ""
+
+msgid "Content type %(ct_id)s object has no associated model"
+msgstr ""
+
+msgid "Could not load JSON data."
+msgstr ""
+
+msgid "Currently"
+msgstr ""
+
+msgid "Currently:"
+msgstr ""
+
+msgid "Database error"
+msgstr ""
+
+msgid "Date (with time)"
+msgstr ""
+
+msgid "Date (without time)"
+msgstr ""
+
+msgid "Date out of range"
+msgstr ""
+
+msgid "Date:"
+msgstr ""
+
+msgid "December"
+msgstr ""
+
+msgid "Decimal number"
+msgstr ""
+
+msgid "Delete"
+msgstr ""
+
+msgid "Delete multiple objects"
+msgstr ""
+
+msgid "Deleted"
+msgstr ""
+
+msgid "Deleted Only"
+msgstr ""
+
+msgid "Deleted {name} “{object}”."
+msgstr ""
+
+msgid "Deleted “%(object)s.”"
+msgstr ""
+
+msgid "Deletion"
+msgstr ""
+
+msgid "Directory indexes are not allowed here."
+msgstr ""
+
+msgid "Disabled"
+msgstr ""
+
+msgid "Duration"
+msgstr ""
+
+msgid "Email"
+msgstr ""
+
+msgid "Email address"
+msgstr ""
+
+msgid "Empty"
+msgstr ""
+
+msgid "Empty list and “%(class_name)s.allow_empty” is False."
+msgstr ""
+
+msgid "Enabled"
+msgstr ""
+
+msgid "Ensure this value is %(limit_value)s (it is %(show_value)s)."
+msgstr ""
+
+msgid "Ensure this value is a multiple of step size %(limit_value)s."
+msgstr ""
+
+msgid "Ensure this value is greater than or equal to %(limit_value)s."
+msgstr ""
+
+msgid "Ensure this value is less than or equal to %(limit_value)s."
+msgstr ""
+
+msgid "Enter a complete value."
+msgstr ""
+
+msgid "Enter a list of values."
+msgstr ""
+
+msgid "Enter a number."
+msgstr ""
+
+msgid "Enter a valid %(protocol)s address."
+msgstr ""
+
+msgid "Enter a valid JSON."
+msgstr ""
+
+msgid "Enter a valid URL."
+msgstr ""
+
+msgid "Enter a valid UUID."
+msgstr ""
+
+msgid "Enter a valid date."
+msgstr ""
+
+msgid "Enter a valid date/time."
+msgstr ""
+
+msgid "Enter a valid domain name."
+msgstr ""
+
+msgid "Enter a valid duration."
+msgstr ""
+
+msgid "Enter a valid email address."
+msgstr ""
+
+msgid "Enter a valid integer."
+msgstr ""
+
+msgid "Enter a valid time."
+msgstr ""
+
+msgid "Enter a valid value."
+msgstr ""
+
+msgid "Enter a valid “slug” consisting of letters, numbers, underscores or hyphens."
+msgstr ""
+
+msgid "Enter a whole number."
+msgstr ""
+
+msgid "Enter new password"
+msgstr ""
+
+msgid "Enter only digits separated by commas."
+msgstr ""
+
+msgid "Enter the same password as before, for verification."
+msgstr ""
+
+msgid "Enter two numbers."
+msgstr ""
+
+msgid "Enter two valid date/times."
+msgstr ""
+
+msgid "Enter two valid dates."
+msgstr ""
+
+msgid "Enter two valid values."
+msgstr ""
+
+msgid "Enter two whole numbers."
+msgstr ""
+
+msgid "Extent Aggregate Field"
+msgstr ""
+
+msgid "February"
+msgstr ""
+
+msgid "Field filters"
+msgstr ""
+
+msgid "Field of type: %(field_type)s"
+msgstr ""
+
+msgid "File"
+msgstr ""
+
+msgid "File path"
+msgstr ""
+
+msgid "Flat Pages"
+msgstr ""
+
+msgid "Flatpage with url %(url)s already exists for site %(site)s"
+msgstr ""
+
+msgid "Floating point number"
+msgstr ""
+
+msgid "Forbidden"
+msgstr ""
+
+msgid "Foreign Key (type determined by related field)"
+msgstr ""
+
+msgid "Fri"
+msgstr ""
+
+msgid "Friday"
+msgstr ""
+
+msgid "GIS"
+msgstr ""
+
+msgid "Geometry collection"
+msgstr ""
+
+msgid "Hard delete selected soft deleted %(verbose_name_plural)s"
+msgstr ""
+
+msgid "Has date"
+msgstr ""
+
+msgid "Humanize"
+msgstr ""
+
+msgid "IP address"
+msgstr ""
+
+msgid "IPv4"
+msgstr ""
+
+msgid "IPv4 address"
+msgstr ""
+
+msgid "IPv4 or IPv6"
+msgstr ""
+
+msgid "IPv6"
+msgstr ""
+
+msgid "Image"
+msgstr ""
+
+msgid "Important dates"
+msgstr ""
+
+msgid "Input must be a JSON dictionary."
+msgstr ""
+
+msgid "Integer"
+msgstr ""
+
+msgid "Invalid date string “%(datestr)s” given format “%(format)s”"
+msgstr ""
+
+msgid "Invalid geometry type."
+msgstr ""
+
+msgid "Invalid geometry value."
+msgstr ""
+
+msgid "Invalid page (%(page_number)s): %(message)s"
+msgstr ""
+
+msgid "Item %(nth)s in the array did not validate:"
+msgstr ""
+
+msgid "January"
+msgstr ""
+
+msgid "July"
+msgstr ""
+
+msgid "June"
+msgstr ""
+
+msgid "Line string"
+msgstr ""
+
+msgid "Log in"
+msgstr ""
+
+msgid "LogEntry Object"
+msgstr ""
+
+msgid "Logged out"
+msgstr ""
+
+msgid "Lookup"
+msgstr ""
+
+msgid "Many-to-many relationship"
+msgstr ""
+
+msgid "Map of strings to strings/nulls"
+msgstr ""
+
+msgid "March"
+msgstr ""
+
+msgid "May"
+msgstr ""
+
+msgid "Messages"
+msgstr ""
+
+msgid "Model %(model_name)r not found in app %(app_label)r"
+msgstr ""
+
+msgid "Mon"
+msgstr ""
+
+msgid "Monday"
+msgstr ""
+
+msgid "More information is available with DEBUG=True."
+msgstr ""
+
+msgid "Multi polygon"
+msgstr ""
+
+msgid "Multi-line string"
+msgstr ""
+
+msgid "Multi-point"
+msgstr ""
+
+msgid "Multiple values may be separated by commas."
+msgstr ""
+
+msgid "Name"
+msgstr ""
+
+msgid "Nested arrays must have the same length."
+msgstr ""
+
+msgid "New password"
+msgstr ""
+
+msgid "New password confirmation"
+msgstr ""
+
+msgid "No"
+msgstr ""
+
+msgid "No %(verbose_name)s found matching the query"
+msgstr ""
+
+msgid "No %(verbose_name_plural)s available"
+msgstr ""
+
+msgid "No action selected."
+msgstr ""
+
+msgid "No date"
+msgstr ""
+
+msgid "No day specified"
+msgstr ""
+
+msgid "No feeds are registered."
+msgstr ""
+
+msgid "No fields changed."
+msgstr ""
+
+msgid "No file was submitted."
+msgstr ""
+
+msgid "No file was submitted. Check the encoding type on the form."
+msgstr ""
+
+msgid "No geometry value provided."
+msgstr ""
+
+msgid "No month specified"
+msgstr ""
+
+msgid "No password set."
+msgstr ""
+
+msgid "No week specified"
+msgstr ""
+
+msgid "No year specified"
+msgstr ""
+
+msgid "None"
+msgstr ""
+
+msgid "Not empty"
+msgstr ""
+
+msgid "November"
+msgstr ""
+
+msgid "Null characters are not allowed."
+msgstr ""
+
+msgid "October"
+msgstr ""
+
+msgid "Old password"
+msgstr ""
+
+msgid "One-to-one relationship"
+msgstr ""
+
+msgid "Order"
+msgstr ""
+
+msgid "Ordering"
+msgstr ""
+
+msgid "Override this name (see docs)"
+msgstr ""
+
+msgid "PM"
+msgstr ""
+
+msgid "Page is not “last”, nor can it be converted to an int."
+msgstr ""
+
+msgid "Password"
+msgstr ""
+
+msgid "Password change"
+msgstr ""
+
+msgid "Password change successful"
+msgstr ""
+
+msgid "Password changed successfully."
+msgstr ""
+
+msgid "Password confirmation"
+msgstr ""
+
+msgid "Password reset"
+msgstr ""
+
+msgid "Password reset complete"
+msgstr ""
+
+msgid "Password reset sent"
+msgstr ""
+
+msgid "Password reset unsuccessful"
+msgstr ""
+
+msgid "Password-based authentication"
+msgstr ""
+
+msgid "Password-based authentication was disabled."
+msgstr ""
+
+msgid "Past 7 days"
+msgstr ""
+
+msgid "Permissions"
+msgstr ""
+
+msgid "Personal info"
+msgstr ""
+
+msgid "Please correct the duplicate data for %(field)s."
+msgstr ""
+
+msgid "Please correct the duplicate values below."
+msgstr ""
+
+msgid "Point"
+msgstr ""
+
+msgid "Polygon"
+msgstr ""
+
+msgid "Positive big integer"
+msgstr ""
+
+msgid "Positive integer"
+msgstr ""
+
+msgid "Positive small integer"
+msgstr ""
+
+msgid "PostgreSQL extensions"
+msgstr ""
+
+msgid "Range query expects two values."
+msgstr ""
+
+msgid "Raster Field"
+msgstr ""
+
+msgid "Raw binary data"
+msgstr ""
+
+msgid "Redirects"
+msgstr ""
+
+msgid "Remove"
+msgstr ""
+
+msgid "Reset password"
+msgstr ""
+
+msgid "Sat"
+msgstr ""
+
+msgid "Saturday"
+msgstr ""
+
+msgid "Select %s"
+msgstr ""
+
+msgid "Select %s to change"
+msgstr ""
+
+msgid "Select %s to view"
+msgstr ""
+
+msgid "Select a lookup."
+msgstr ""
+
+msgid "Select all objects on this page for an action"
+msgstr ""
+
+msgid "Select this object for an action - {}"
+msgstr ""
+
+msgid "September"
+msgstr ""
+
+msgid "Sessions"
+msgstr ""
+
+msgid "Set password"
+msgstr ""
+
+msgid "Set password: %s"
+msgstr ""
+
+msgid "Site Maps"
+msgstr ""
+
+msgid "Sites"
+msgstr ""
+
+msgid "Slug %r isn’t registered."
+msgstr ""
+
+msgid "Slug (up to %(max_length)s)"
+msgstr ""
+
+msgid "Small integer"
+msgstr ""
+
+msgid "Some keys were missing: %(keys)s"
+msgstr ""
+
+msgid "Some unknown keys were provided: %(keys)s"
+msgstr ""
+
+msgid "Static Files"
+msgstr ""
+
+msgid "String (unlimited)"
+msgstr ""
+
+msgid "String (up to %(max_length)s)"
+msgstr ""
+
+msgid "Submit"
+msgstr ""
+
+msgid "Successfully deleted %(count)d %(items)s."
+msgstr ""
+
+msgid "Successfully hard deleted %(count)d %(items)s."
+msgstr ""
+
+msgid "Successfully undeleted %(count)d %(items)s."
+msgstr ""
+
+msgid "Sun"
+msgstr ""
+
+msgid "Sunday"
+msgstr ""
+
+msgid "Syndication"
+msgstr ""
+
+msgid "Text"
+msgstr ""
+
+msgid "That page contains no results"
+msgstr ""
+
+msgid "That page number is less than 1"
+msgstr ""
+
+msgid "That page number is not an integer"
+msgstr ""
+
+msgid "The %(name)s “%(obj)s” was deleted successfully."
+msgstr ""
+
+msgid "The base GIS field."
+msgstr ""
+
+msgid "The domain name cannot contain any spaces or tabs."
+msgstr ""
+
+msgid "The inline value did not match the parent instance."
+msgstr ""
+
+msgid "The number of days must be between {min_days} and {max_days}."
+msgstr ""
+
+msgid "The password is too similar to the %(verbose_name)s."
+msgstr ""
+
+msgid "The submitted file is empty."
+msgstr ""
+
+msgid "The two password fields didn’t match."
+msgstr ""
+
+msgid "The value of “%(key)s” is not a string or null."
+msgstr ""
+
+msgid "The {name} “{obj}” was added successfully."
+msgstr ""
+
+msgid "The {name} “{obj}” was changed successfully."
+msgstr ""
+
+msgid "This account is inactive."
+msgstr ""
+
+msgid "This field cannot be blank."
+msgstr ""
+
+msgid "This field cannot be null."
+msgstr ""
+
+msgid "This field is required."
+msgstr ""
+
+msgid "This is not a valid IPv6 address."
+msgstr ""
+
+msgid "This month"
+msgstr ""
+
+msgid "This password is entirely numeric."
+msgstr ""
+
+msgid "This password is too common."
+msgstr ""
+
+msgid "This year"
+msgstr ""
+
+msgid "Thu"
+msgstr ""
+
+msgid "Thursday"
+msgstr ""
+
+msgid "Time"
+msgstr ""
+
+msgid "Time:"
+msgstr ""
+
+msgid "Today"
+msgstr ""
+
+msgid "Tue"
+msgstr ""
+
+msgid "Tuesday"
+msgstr ""
+
 msgid "URL"
-msgstr "URL"
+msgstr ""
 
-msgid "タイトル"
-msgstr "Title"
+msgid "URL is missing a leading slash."
+msgstr ""
 
-msgid "サムネイル"
-msgstr "Thumbnail"
+msgid "URL is missing a trailing slash."
+msgstr ""
 
-msgid "チェックタイプ"
-msgstr "Check Type"
+msgid "Undelete selected %(verbose_name_plural)s"
+msgstr ""
 
-msgid "HTMLセレクタ"
-msgstr "HTML Selector"
+msgid "Universally unique identifier"
+msgstr ""
 
-msgid "複数のセレクタを指定する場合は、改行で区切ってください"
-msgstr "Separate multiple selectors with line breaks"
+msgid "Unknown"
+msgstr ""
 
-msgid "HTMLカスタム条件"
-msgstr "HTML Custom Condition"
+msgid "Value %(value)r is not a valid choice."
+msgstr ""
 
-msgid "最終チェック日時"
-msgstr "Last Checked At"
+msgid "Value must be valid JSON."
+msgstr ""
 
-msgid "最終更新日時"
-msgstr "Last Updated At"
+msgid "View %s"
+msgstr ""
 
-msgid "最終コンテンツハッシュ"
-msgstr "Last Content Hash"
+msgid "Wed"
+msgstr ""
 
-msgid "更新日時"
-msgstr "Updated At"
+msgid "Wednesday"
+msgstr ""
 
-msgid "エラー回数"
-msgstr "Error Count"
+msgid "Yes"
+msgstr ""
 
-msgid "最終エラーメッセージ"
-msgstr "Last Error Message"
+msgid "Yes, I'm sure"
+msgstr ""
 
-msgid "URL項目"
-msgstr "URL Item"
+msgid "Yesterday"
+msgstr ""
 
-# Collection model translations
-msgid "名前"
-msgstr "Name"
+msgid "You may edit it again below."
+msgstr ""
 
-msgid "並び順"
-msgstr "Order"
+msgid "Your password can’t be a commonly used password."
+msgstr ""
 
-msgid "コレクション"
-msgstr "Collection"
+msgid "Your password can’t be entirely numeric."
+msgstr ""
 
-msgid "URL項目-コレクション"
-msgstr "URL Item-Collection"
+msgid "_CallbackFileWrapper__fp"
+msgstr ""
 
-msgid "追加日時"
-msgstr "Added At"
+msgid "_distutils_hack"
+msgstr ""
+
+msgid "a.m."
+msgstr ""
+
+msgid "action flag"
+msgstr ""
+
+msgid "action time"
+msgstr ""
+
+msgid "active"
+msgstr ""
+
+msgid "algorithm"
+msgstr ""
+
+msgid "all %s"
+msgstr ""
+
+msgid "and"
+msgstr ""
+
+msgid "apr"
+msgstr ""
+
+msgid "aug"
+msgstr ""
+
+msgid "block size"
+msgstr ""
+
+msgid "change message"
+msgstr ""
+
+msgid "checksum"
+msgstr ""
+
+msgid "codename"
+msgstr ""
+
+msgid "contains"
+msgstr ""
+
+msgid "content"
+msgstr ""
+
+msgid "content type"
+msgstr ""
+
+msgid "content types"
+msgstr ""
+
+msgid "date"
+msgstr ""
+
+msgid "date joined"
+msgstr ""
+
+msgid "day"
+msgstr ""
+
+msgid "dec"
+msgstr ""
+
+msgid "display name"
+msgstr ""
+
+msgid "django"
+msgstr "Django"
+
+msgid "domain name"
+msgstr ""
+
+msgid "eight"
+msgstr ""
+
+msgid "email address"
+msgstr ""
+
+msgid "enable comments"
+msgstr ""
+
+msgid "ends with"
+msgstr ""
+
+msgid "error.cannotDeleteSelf"
+msgstr "You cannot delete yourself"
+
+msgid "error.contractStartDateRequired"
+msgstr "Contract start date is required"
+
+msgid "error.emailRequired"
+msgstr "Email is required"
+
+msgid "error.nameRequired"
+msgstr "Name is required"
+
+msgid "error.passwordRequired"
+msgstr "Password is required"
+
+msgid "error.usernameRequired"
+msgstr "Username is required"
+
+msgid "exclude"
+msgstr ""
+
+msgid "expire date"
+msgstr ""
+
+msgid "feb"
+msgstr ""
+
+msgid "filter:"
+msgstr ""
+
+msgid "first name"
+msgstr ""
+
+msgid "five"
+msgstr ""
+
+msgid "flat page"
+msgstr ""
+
+msgid "flat pages"
+msgstr ""
+
+msgid "four"
+msgstr ""
+
+msgid "group"
+msgstr ""
+
+msgid "groups"
+msgstr ""
+
+msgid "has any keys"
+msgstr ""
+
+msgid "has key"
+msgstr ""
+
+msgid "has keys"
+msgstr ""
+
+msgid "hash"
+msgstr ""
+
+msgid "hour"
+msgstr ""
+
+msgid "is contained by"
+msgstr ""
+
+msgid "is greater than"
+msgstr ""
+
+msgid "is greater than or equal to"
+msgstr ""
+
+msgid "is in"
+msgstr ""
+
+msgid "is in range"
+msgstr ""
+
+msgid "is less than"
+msgstr ""
+
+msgid "is less than or equal to"
+msgstr ""
+
+msgid "is null"
+msgstr ""
+
+msgid "iterations"
+msgstr ""
+
+msgid "jan"
+msgstr ""
+
+msgid "jul"
+msgstr ""
+
+msgid "jun"
+msgstr ""
+
+msgid "key"
+msgstr ""
+
+msgid "last login"
+msgstr ""
+
+msgid "last name"
+msgstr ""
+
+msgid "log entries"
+msgstr ""
+
+msgid "log entry"
+msgstr ""
+
+msgid "mar"
+msgstr ""
+
+msgid "matches regex"
+msgstr ""
+
+msgid "may"
+msgstr ""
+
+msgid "memory cost"
+msgstr ""
+
+msgid "midnight"
+msgstr ""
+
+msgid "minute"
+msgstr ""
+
+msgid "model:"
+msgstr ""
+
+msgid "month"
+msgstr ""
+
+msgid "name"
+msgstr ""
+
+msgid "nine"
+msgstr ""
+
+msgid "noon"
+msgstr ""
+
+msgid "nov"
+msgstr ""
+
+msgid "number of %s"
+msgstr ""
+
+msgid "object id"
+msgstr ""
+
+msgid "object repr"
+msgstr ""
+
+msgid "oct"
+msgstr ""
+
+msgid "one"
+msgstr ""
+
+msgid "open"
+msgstr ""
+
+msgid "overlaps"
+msgstr ""
+
+msgid "p.m."
+msgstr ""
+
+msgid "parallelism"
+msgstr ""
+
+msgid "password"
+msgstr ""
+
+msgid "permission"
+msgstr ""
+
+msgid "permissions"
+msgstr ""
+
+msgid "pkg_resources"
+msgstr ""
+
+msgid "pkgutil"
+msgstr ""
+
+msgid "pydoc"
+msgstr ""
+
+msgid "python model class name"
+msgstr ""
+
+msgid "redirect"
+msgstr ""
+
+msgid "redirect from"
+msgstr ""
+
+msgid "redirect to"
+msgstr ""
+
+msgid "redirects"
+msgstr ""
+
+msgid "registration required"
+msgstr ""
+
+msgid "related `%(app_label)s.%(object_name)s` objects"
+msgstr "Object Name S Objects"
+
+msgid "salt"
+msgstr ""
+
+msgid "search"
+msgstr ""
+
+msgid "second"
+msgstr ""
+
+msgid "sep"
+msgstr ""
+
+msgid "session"
+msgstr ""
+
+msgid "session data"
+msgstr ""
+
+msgid "session key"
+msgstr ""
+
+msgid "sessions"
+msgstr ""
+
+msgid "seven"
+msgstr ""
+
+msgid "show this help message and exit"
+msgstr ""
+
+msgid "site"
+msgstr ""
+
+msgid "sites"
+msgstr ""
+
+msgid "six"
+msgstr ""
+
+msgid "staff status"
+msgstr ""
+
+msgid "starts with"
+msgstr ""
+
+msgid "tag:"
+msgstr ""
+
+msgid "template name"
+msgstr ""
+
+msgid "the related `%(app_label)s.%(data_type)s` object"
+msgstr "Data Type S Object"
+
+msgid "three"
+msgstr ""
+
+msgid "time cost"
+msgstr ""
+
+msgid "title"
+msgstr ""
+
+msgid "today"
+msgstr ""
+
+msgid "tomorrow"
+msgstr ""
+
+msgid "two"
+msgstr ""
+
+msgid "user"
+msgstr ""
+
+msgid "user permissions"
+msgstr ""
+
+msgid "username"
+msgstr ""
+
+msgid "users"
+msgstr ""
+
+msgid "variety"
+msgstr ""
+
+msgid "version"
+msgstr ""
+
+msgid "view:"
+msgstr ""
+
+msgid "week day"
+msgstr ""
+
+msgid "work factor"
+msgstr ""
+
+msgid "year"
+msgstr ""
+
+msgid "yes,no"
+msgstr ""
+
+msgid "yes,no,maybe"
+msgstr ""
+
+msgid "yesterday"
+msgstr ""
+
+msgid "{en_key}"
+msgstr ""
+
+msgid "{key}"
+msgstr ""
+
+msgid "“%(path)s” does not exist"
+msgstr ""
+
+msgid "“%(pk)s” is not a valid value."
+msgstr ""
+
+msgid "Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only."
+msgstr ""
+
+msgid "Designates that this user has all permissions without explicitly assigning them."
+msgstr ""
+
+msgid "Designates whether the user can log into this admin site."
+msgstr ""
+
+msgid "Designates whether this user should be treated as active. Unselect this instead of deleting accounts."
+msgstr ""
+
+msgid "The groups this user belongs to. A user will get all permissions granted to each of their groups."
+msgstr ""
+
+msgid "Specific permissions for this user."
+msgstr ""

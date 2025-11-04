@@ -1,0 +1,112 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-04-14 03:51+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+# User model translations
+msgid "メールアドレス"
+msgstr "メールアドレス"
+
+msgid "ニックネーム"
+msgstr "ニックネーム"
+
+msgid "有効"
+msgstr "有効"
+
+msgid "このユーザーがアクティブかどうかを指定します。アカウントを削除する代わりに、これを選択解除してください。"
+msgstr "このユーザーがアクティブかどうかを指定します。アカウントを削除する代わりに、これを選択解除してください。"
+
+msgid "メール認証日時"
+msgstr "メール認証日時"
+
+msgid "ユーザー"
+msgstr "ユーザー"
+
+msgid "トークン"
+msgstr "トークン"
+
+msgid "作成日時"
+msgstr "作成日時"
+
+msgid "有効期限"
+msgstr "有効期限"
+
+msgid "メール確認トークン"
+msgstr "メール確認トークン"
+
+msgid "パスワードリセットトークン"
+msgstr "パスワードリセットトークン"
+
+# URL model translations
+msgid "URL"
+msgstr "URL"
+
+msgid "タイトル"
+msgstr "タイトル"
+
+msgid "サムネイル"
+msgstr "サムネイル"
+
+msgid "チェックタイプ"
+msgstr "チェックタイプ"
+
+msgid "HTMLセレクタ"
+msgstr "HTMLセレクタ"
+
+msgid "複数のセレクタを指定する場合は、改行で区切ってください"
+msgstr "複数のセレクタを指定する場合は、改行で区切ってください"
+
+msgid "HTMLカスタム条件"
+msgstr "HTMLカスタム条件"
+
+msgid "最終チェック日時"
+msgstr "最終チェック日時"
+
+msgid "最終更新日時"
+msgstr "最終更新日時"
+
+msgid "最終コンテンツハッシュ"
+msgstr "最終コンテンツハッシュ"
+
+msgid "更新日時"
+msgstr "更新日時"
+
+msgid "エラー回数"
+msgstr "エラー回数"
+
+msgid "最終エラーメッセージ"
+msgstr "最終エラーメッセージ"
+
+msgid "URL項目"
+msgstr "URL項目"
+
+# Collection model translations
+msgid "名前"
+msgstr "名前"
+
+msgid "並び順"
+msgstr "並び順"
+
+msgid "コレクション"
+msgstr "コレクション"
+
+msgid "URL項目-コレクション"
+msgstr "URL項目-コレクション"
+
+msgid "追加日時"
+msgstr "追加日時"
