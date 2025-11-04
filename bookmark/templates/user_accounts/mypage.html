@@ -104,7 +104,7 @@
                             <form method="post" action="{% url 'bookmark:check_all_urls' %}" class="inline-block w-full">
                                 {% csrf_token %}
                                 <button type="submit" onclick="return confirm('{% trans 'confirm_check_all_active_urls' %}')" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-md transition duration-300">
-                                    {% trans 'run_全_check_for_all' %}
+                                    {% trans 'run_check_for_all_urls' %}
                                 </button>
                             </form>
                         </div>

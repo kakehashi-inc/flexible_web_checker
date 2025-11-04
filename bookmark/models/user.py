@@ -13,9 +13,7 @@ class User(AbstractUser):
     is_active = models.BooleanField(
         _("active"),
         default=False,
-        help_text=_(
-            "designates_whether_user_active"
-        ),
+        help_text=_("designates_whether_user_active"),
     )
     email_verified_at = models.DateTimeField(_("email_verified_at"), null=True, blank=True)
 
