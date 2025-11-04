@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: flexible_web_checker\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-04 15:32+0900\n"
+"POT-Creation-Date: 2025-11-04 16:17+0900\n"
 "PO-Revision-Date: 2023-04-22 00:00+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -60,8 +60,6 @@ msgid "No such command {name!r}."
 msgstr ""
 
 #: venv/lib/python3.12/site-packages/click/core.py:2332
-#, fuzzy
-#| msgid "Value must be valid JSON."
 msgid "Value must be an iterable."
 msgstr "値は有効なJSONでなければなりません。"
 
@@ -96,14 +94,10 @@ msgid "%(prog)s, version %(version)s"
 msgstr ""
 
 #: venv/lib/python3.12/site-packages/click/decorators.py:522
-#, fuzzy
-#| msgid "show this help message and exit"
 msgid "Show the version and exit."
 msgstr "このヘルプメッセージを表示して終了"
 
 #: venv/lib/python3.12/site-packages/click/decorators.py:548
-#, fuzzy
-#| msgid "show this help message and exit"
 msgid "Show this message and exit."
 msgstr "このヘルプメッセージを表示して終了"
 
@@ -162,8 +156,6 @@ msgid_plural "(Possible options: {possibilities})"
 msgstr[0] ""
 
 #: venv/lib/python3.12/site-packages/click/exceptions.py:282
-#, fuzzy
-#| msgid "Unknown"
 msgid "unknown error"
 msgstr "不明"
 
@@ -193,8 +185,6 @@ msgid "Couldn't detect Bash version, shell completion is not supported."
 msgstr ""
 
 #: venv/lib/python3.12/site-packages/click/termui.py:162
-#, fuzzy
-#| msgid "New password confirmation"
 msgid "Repeat for confirmation"
 msgstr "新しいパスワード（確認）"
 
@@ -227,8 +217,6 @@ msgid ""
 msgstr ""
 
 #: venv/lib/python3.12/site-packages/click/types.py:369
-#, fuzzy
-#| msgid "Value %(value)r is not a valid choice."
 msgid "{value!r} is not {choice}."
 msgid_plural "{value!r} is not one of {choices}."
 msgstr[0] "値%(value)rは有効な選択肢ではありません。"
@@ -239,8 +227,6 @@ msgid_plural "{value!r} does not match the formats {formats}."
 msgstr[0] ""
 
 #: venv/lib/python3.12/site-packages/click/types.py:482
-#, fuzzy
-#| msgid "Value %(value)r is not a valid choice."
 msgid "{value!r} is not a valid {number_type}."
 msgstr "値%(value)rは有効な選択肢ではありません。"
 
@@ -254,8 +240,6 @@ msgid "{value!r} is not a valid boolean. Recognized values: {states}"
 msgstr ""
 
 #: venv/lib/python3.12/site-packages/click/types.py:747
-#, fuzzy
-#| msgid "Value %(value)r is not a valid choice."
 msgid "{value!r} is not a valid UUID."
 msgstr "値%(value)rは有効な選択肢ではありません。"
 
@@ -264,14 +248,10 @@ msgid "file"
 msgstr ""
 
 #: venv/lib/python3.12/site-packages/click/types.py:939
-#, fuzzy
-#| msgid "redirect"
 msgid "directory"
 msgstr "Redirect"
 
 #: venv/lib/python3.12/site-packages/click/types.py:941
-#, fuzzy
-#| msgid "File path"
 msgid "path"
 msgstr "ファイルパス"
 
@@ -369,10 +349,6 @@ msgstr ""
 "い。"
 
 #: venv/lib/python3.12/site-packages/django/core/validators.py:297
-#, fuzzy
-#| msgid ""
-#| "Enter a valid “slug” consisting of letters, numbers, underscores or "
-#| "hyphens."
 msgid ""
 "Enter a valid “slug” consisting of Unicode letters, numbers, underscores, or "
 "hyphens."
@@ -436,8 +412,7 @@ msgid ""
 msgstr ""
 
 #: venv/lib/python3.12/site-packages/django/core/validators.py:473
-#, fuzzy, python-format
-#| msgid "Ensure this value is %(limit_value)s (it is %(show_value)s)."
+#, python-format
 msgid ""
 "Ensure this value has at least %(limit_value)d character (it has "
 "%(show_value)d)."
@@ -445,12 +420,9 @@ msgid_plural ""
 "Ensure this value has at least %(limit_value)d characters (it has "
 "%(show_value)d)."
 msgstr[0] ""
-"この値が%(limit_value)sであることを確認してください（現在は%(show_value)sで"
-"す）。"
-
+"この値は最低%(limit_value)d文字必要です（現在%(show_value)d文字です）。"
 #: venv/lib/python3.12/site-packages/django/core/validators.py:491
-#, fuzzy, python-format
-#| msgid "Ensure this value is %(limit_value)s (it is %(show_value)s)."
+#, python-format
 msgid ""
 "Ensure this value has at most %(limit_value)d character (it has "
 "%(show_value)d)."
@@ -458,9 +430,7 @@ msgid_plural ""
 "Ensure this value has at most %(limit_value)d characters (it has "
 "%(show_value)d)."
 msgstr[0] ""
-"この値が%(limit_value)sであることを確認してください（現在は%(show_value)sで"
-"す）。"
-
+"この値は最大%(limit_value)d文字までです（現在%(show_value)d文字です）。"
 #: venv/lib/python3.12/site-packages/django/core/validators.py:514
 #: venv/lib/python3.12/site-packages/django/forms/fields.py:366
 #: venv/lib/python3.12/site-packages/django/forms/fields.py:405
@@ -509,10 +479,9 @@ msgid "%(model_name)s with this %(field_labels)s already exists."
 msgstr "この%(field_labels)sを持つ%(model_name)sは既に存在します。"
 
 #: venv/lib/python3.12/site-packages/django/db/models/constraints.py:22
-#, fuzzy, python-format
-#| msgid "Constraint “%(name)s” is violated."
+#, python-format
 msgid "Constraint “%(name)s” is violated."
-msgstr "制約「{name}」に違反しています。"
+msgstr "制約「%(name)s」に違反しています。"
 
 #: venv/lib/python3.12/site-packages/django/db/models/fields/__init__.py:134
 #, python-format
@@ -551,10 +520,9 @@ msgid "“%(value)s” value must be either True or False."
 msgstr ""
 
 #: venv/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1163
-#, fuzzy, python-format
-#| msgid "Boolean (Either True, False or None)"
+#, python-format
 msgid "“%(value)s” value must be either True, False, or None."
-msgstr "ブール値（True、False、またはNone）"
+msgstr "「%(value)s」はTrue、False、またはNoneである必要があります。"
 
 #: venv/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1165
 msgid "Boolean (Either True or False)"
@@ -730,10 +698,9 @@ msgid "Raw binary data"
 msgstr "生バイナリデータ"
 
 #: venv/lib/python3.12/site-packages/django/db/models/fields/__init__.py:2731
-#, fuzzy, python-format
-#| msgid "“%(pk)s” is not a valid value."
+#, python-format
 msgid "“%(value)s” is not a valid UUID."
-msgstr "「%(pk)s」は有効な値ではありません。"
+msgstr "「%(value)s」は有効なUUIDではありません。"
 
 #: venv/lib/python3.12/site-packages/django/db/models/fields/__init__.py:2733
 msgid "Universally unique identifier"
@@ -756,10 +723,9 @@ msgid "Value must be valid JSON."
 msgstr "値は有効なJSONでなければなりません。"
 
 #: venv/lib/python3.12/site-packages/django/db/models/fields/related.py:979
-#, fuzzy, python-format
-#| msgid "Value %(value)r is not a valid choice."
+#, python-format
 msgid "%(model)s instance with %(field)s %(value)r is not a valid choice."
-msgstr "値%(value)rは有効な選択肢ではありません。"
+msgstr "%(model)sインスタンスの%(field)s %(value)rは有効な選択肢ではありません。"
 
 #: venv/lib/python3.12/site-packages/django/db/models/fields/related.py:982
 msgid "Foreign Key (type determined by related field)"
@@ -920,18 +886,17 @@ msgid "Please correct the duplicate data for %(field)s."
 msgstr "%(field)sの重複データを修正してください。"
 
 #: venv/lib/python3.12/site-packages/django/forms/models.py:906
-#, fuzzy, python-format
-#| msgid "Please correct the duplicate data for %(field)s."
+#, python-format
 msgid "Please correct the duplicate data for %(field)s, which must be unique."
 msgstr "%(field)sの重複データを修正してください。"
 
 #: venv/lib/python3.12/site-packages/django/forms/models.py:913
-#, fuzzy, python-format
-#| msgid "Please correct the duplicate data for %(field)s."
+#, python-format
 msgid ""
 "Please correct the duplicate data for %(field_name)s which must be unique "
 "for the %(lookup)s in %(date_field)s."
-msgstr "%(field)sの重複データを修正してください。"
+msgstr ""
+"%(date_field)sの%(lookup)sで一意である必要がある%(field_name)sに重複データがあります。"
 
 #: venv/lib/python3.12/site-packages/django/forms/models.py:922
 msgid "Please correct the duplicate values below."
@@ -1205,36 +1170,26 @@ msgid "Feb."
 msgstr ""
 
 #: venv/lib/python3.12/site-packages/django/utils/dates.py:55
-#, fuzzy
-#| msgid "March"
 msgctxt "abbrev. month"
 msgid "March"
 msgstr "3月"
 
 #: venv/lib/python3.12/site-packages/django/utils/dates.py:56
-#, fuzzy
-#| msgid "April"
 msgctxt "abbrev. month"
 msgid "April"
 msgstr "4月"
 
 #: venv/lib/python3.12/site-packages/django/utils/dates.py:57
-#, fuzzy
-#| msgid "May"
 msgctxt "abbrev. month"
 msgid "May"
 msgstr "5月"
 
 #: venv/lib/python3.12/site-packages/django/utils/dates.py:58
-#, fuzzy
-#| msgid "June"
 msgctxt "abbrev. month"
 msgid "June"
 msgstr "6月"
 
 #: venv/lib/python3.12/site-packages/django/utils/dates.py:59
-#, fuzzy
-#| msgid "July"
 msgctxt "abbrev. month"
 msgid "July"
 msgstr "7月"
@@ -1265,85 +1220,61 @@ msgid "Dec."
 msgstr ""
 
 #: venv/lib/python3.12/site-packages/django/utils/dates.py:67
-#, fuzzy
-#| msgid "January"
 msgctxt "alt. month"
 msgid "January"
 msgstr "1月"
 
 #: venv/lib/python3.12/site-packages/django/utils/dates.py:68
-#, fuzzy
-#| msgid "February"
 msgctxt "alt. month"
 msgid "February"
 msgstr "2月"
 
 #: venv/lib/python3.12/site-packages/django/utils/dates.py:69
-#, fuzzy
-#| msgid "March"
 msgctxt "alt. month"
 msgid "March"
 msgstr "3月"
 
 #: venv/lib/python3.12/site-packages/django/utils/dates.py:70
-#, fuzzy
-#| msgid "April"
 msgctxt "alt. month"
 msgid "April"
 msgstr "4月"
 
 #: venv/lib/python3.12/site-packages/django/utils/dates.py:71
-#, fuzzy
-#| msgid "May"
 msgctxt "alt. month"
 msgid "May"
 msgstr "5月"
 
 #: venv/lib/python3.12/site-packages/django/utils/dates.py:72
-#, fuzzy
-#| msgid "June"
 msgctxt "alt. month"
 msgid "June"
 msgstr "6月"
 
 #: venv/lib/python3.12/site-packages/django/utils/dates.py:73
-#, fuzzy
-#| msgid "July"
 msgctxt "alt. month"
 msgid "July"
 msgstr "7月"
 
 #: venv/lib/python3.12/site-packages/django/utils/dates.py:74
-#, fuzzy
-#| msgid "August"
 msgctxt "alt. month"
 msgid "August"
 msgstr "8月"
 
 #: venv/lib/python3.12/site-packages/django/utils/dates.py:75
-#, fuzzy
-#| msgid "September"
 msgctxt "alt. month"
 msgid "September"
 msgstr "9月"
 
 #: venv/lib/python3.12/site-packages/django/utils/dates.py:76
-#, fuzzy
-#| msgid "October"
 msgctxt "alt. month"
 msgid "October"
 msgstr "10月"
 
 #: venv/lib/python3.12/site-packages/django/utils/dates.py:77
-#, fuzzy
-#| msgid "November"
 msgctxt "alt. month"
 msgid "November"
 msgstr "11月"
 
 #: venv/lib/python3.12/site-packages/django/utils/dates.py:78
-#, fuzzy
-#| msgid "December"
 msgctxt "alt. month"
 msgid "December"
 msgstr "12月"
@@ -1359,8 +1290,6 @@ msgid "%(truncated_text)s…"
 msgstr ""
 
 #: venv/lib/python3.12/site-packages/django/utils/text.py:287
-#, fuzzy
-#| msgid "four"
 msgid "or"
 msgstr "Four"
 
@@ -1401,11 +1330,10 @@ msgid_plural "%(num)d hours"
 msgstr[0] ""
 
 #: venv/lib/python3.12/site-packages/django/utils/timesince.py:13
-#, fuzzy, python-format
-#| msgid "minute"
+#, python-format
 msgid "%(num)d minute"
 msgid_plural "%(num)d minutes"
-msgstr[0] "Minute"
+msgstr[0] "%(num)d分"
 
 #: venv/lib/python3.12/site-packages/django/views/csrf.py:29
 msgid "Forbidden"
@@ -1492,10 +1420,9 @@ msgid ""
 msgstr ""
 
 #: venv/lib/python3.12/site-packages/django/views/generic/dates.py:720
-#, fuzzy, python-format
-#| msgid "Invalid date string “%(datestr)s” given format “%(format)s”"
+#, python-format
 msgid "Invalid date string “%(datestr)s” given format “%(format)s”"
-msgstr "無効な日付文字列「{datestr}」は形式「{format}」に合致しません"
+msgstr "無効な日付文字列「%(datestr)s」、形式「%(format)s」"
 
 #: venv/lib/python3.12/site-packages/django/views/generic/detail.py:56
 #, python-format
@@ -1512,10 +1439,9 @@ msgid "Invalid page (%(page_number)s): %(message)s"
 msgstr "無効なページ（%(page_number)s）：%(message)s"
 
 #: venv/lib/python3.12/site-packages/django/views/generic/list.py:173
-#, fuzzy, python-format
-#| msgid "Empty list and “%(class_name)s.allow_empty” is False."
+#, python-format
 msgid "Empty list and “%(class_name)s.allow_empty” is False."
-msgstr "リストが空であり、{class_name}s.allow_emptyがFalseです。"
+msgstr "リストが空であり、「%(class_name)s.allow_empty」がFalseです。"
 
 #: venv/lib/python3.12/site-packages/django/views/static.py:49
 msgid "Directory indexes are not allowed here."
@@ -1555,8 +1481,6 @@ msgid ""
 msgstr ""
 
 #: venv/lib/python3.12/site-packages/django/views/templates/default_urlconf.html:217
-#, fuzzy
-#| msgid "Administrative Documentation"
 msgid "Django Documentation"
 msgstr "管理ドキュメント"
 
@@ -1607,8 +1531,6 @@ msgid "Status"
 msgstr ""
 
 #: venv/lib/python3.12/site-packages/django_apscheduler/admin.py:160
-#, fuzzy
-#| msgid "Duration"
 msgid "Duration (sec)"
 msgstr "期間"
 
@@ -1672,7 +1594,5 @@ msgid "Unable to connect to qpid with SASL mechanism %s"
 msgstr ""
 
 #: venv/lib/python3.12/site-packages/timezone_field/rest_framework.py:10
-#, fuzzy
-#| msgid "This field is required."
 msgid "A valid timezone is required."
 msgstr "このフィールドは必須です。"
