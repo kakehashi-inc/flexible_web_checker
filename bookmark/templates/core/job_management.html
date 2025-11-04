@@ -1,0 +1,171 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans 'job_management' %} | Flexible Web Checker{% endblock %}
+
+{% block content %}
+<div class="max-w-7xl mx-auto">
+    <div class="mb-6">
+        <h1 class="text-2xl font-bold text-gray-800 mb-2">{% trans 'job_management' %}</h1>
+        <p class="text-gray-600">{% trans 'manage_background_jobs_description' %}</p>
+    </div>
+
+    <!-- 定期実行タスク -->
+    <div class="bg-white shadow-md rounded-lg overflow-hidden mb-6">
+        <div class="p-6">
+            <h2 class="text-xl font-bold text-gray-800 mb-4">{% trans 'periodic_tasks' %}</h2>
+            {% if periodic_tasks %}
+            <div class="overflow-x-auto">
+                <table class="min-w-full">
+                    <thead>
+                        <tr class="bg-gray-100">
+                            <th class="py-3 px-4 text-left">{% trans 'task_name' %}</th>
+                            <th class="py-3 px-4 text-left">{% trans 'schedule' %}</th>
+                            <th class="py-3 px-4 text-left">{% trans 'active' %}</th>
+                            <th class="py-3 px-4 text-left">{% trans 'last_run' %}</th>
+                            <th class="py-3 px-4 text-left">{% trans 'next_run' %}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for task in periodic_tasks %}
+                        <tr class="border-t border-gray-200 hover:bg-gray-50">
+                            <td class="py-3 px-4 font-medium">{{ task.name }}</td>
+                            <td class="py-3 px-4">
+                                {% if task.crontab %}
+                                    {{ task.crontab }}
+                                {% elif task.interval %}
+                                    {% trans 'Every' %} {{ task.interval }}
+                                {% else %}
+                                    -
+                                {% endif %}
+                            </td>
+                            <td class="py-3 px-4">
+                                {% if task.enabled %}
+                                    <span class="bg-green-100 text-green-800 text-xs font-medium px-2 py-1 rounded">{% trans 'active' %}</span>
+                                {% else %}
+                                    <span class="bg-red-100 text-red-800 text-xs font-medium px-2 py-1 rounded">{% trans 'inactive' %}</span>
+                                {% endif %}
+                            </td>
+                            <td class="py-3 px-4">
+                                {% if task.last_run_at %}
+                                    {{ task.last_run_at|date:"Y/m/d H:i:s" }}
+                                {% else %}
+                                    <span class="text-gray-400">{% trans 'not_executed' %}</span>
+                                {% endif %}
+                            </td>
+                            <td class="py-3 px-4">
+                                {% if task.enabled %}
+                                    <span class="text-gray-600">{% trans 'calculating' %}</span>
+                                {% else %}
+                                    <span class="text-gray-400">-</span>
+                                {% endif %}
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            {% else %}
+            <p class="text-gray-600">{% trans 'no_periodic_tasks_registered' %}</p>
+            {% endif %}
+        </div>
+    </div>
+
+    <!-- タスク実行履歴 -->
+    <div class="bg-white shadow-md rounded-lg overflow-hidden">
+        <div class="p-6">
+            <h2 class="text-xl font-bold text-gray-800 mb-4">{% trans 'task_execution_history' %}</h2>
+            {% if task_results %}
+            <div class="overflow-x-auto">
+                <table class="min-w-full">
+                    <thead>
+                        <tr class="bg-gray-100">
+                            <th class="py-3 px-4 text-left">{% trans 'task_id' %}</th>
+                            <th class="py-3 px-4 text-left">{% trans 'task_name' %}</th>
+                            <th class="py-3 px-4 text-left">{% trans 'status' %}</th>
+                            <th class="py-3 px-4 text-left">{% trans 'execution_datetime' %}</th>
+                            <th class="py-3 px-4 text-left">{% trans 'execution_time' %}</th>
+                            <th class="py-3 px-4 text-left">{% trans 'details' %}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for result in task_results %}
+                        <tr class="border-t border-gray-200 hover:bg-gray-50">
+                            <td class="py-3 px-4 font-mono text-xs">{{ result.task_id|truncatechars:20 }}</td>
+                            <td class="py-3 px-4">{{ result.task_name }}</td>
+                            <td class="py-3 px-4">
+                                {% if result.status == 'SUCCESS' %}
+                                    <span class="bg-green-100 text-green-800 text-xs font-medium px-2 py-1 rounded">{% trans 'success' %}</span>
+                                {% elif result.status == 'FAILURE' %}
+                                    <span class="bg-red-100 text-red-800 text-xs font-medium px-2 py-1 rounded">{% trans 'failure' %}</span>
+                                {% elif result.status == 'PENDING' %}
+                                    <span class="bg-yellow-100 text-yellow-800 text-xs font-medium px-2 py-1 rounded">{% trans 'pending' %}</span>
+                                {% elif result.status == 'STARTED' %}
+                                    <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2 py-1 rounded">{% trans 'running' %}</span>
+                                {% else %}
+                                    <span class="bg-gray-100 text-gray-800 text-xs font-medium px-2 py-1 rounded">{{ result.status }}</span>
+                                {% endif %}
+                            </td>
+                            <td class="py-3 px-4">{{ result.date_done|date:"Y/m/d H:i:s" }}</td>
+                            <td class="py-3 px-4">
+                                {% if result.date_done and result.date_created %}
+                                    {% widthratio result.date_done|timeuntil:result.date_created 1 1 %}s
+                                {% else %}
+                                    -
+                                {% endif %}
+                            </td>
+                            <td class="py-3 px-4">
+                                {% if result.status == 'FAILURE' and result.result %}
+                                    <details class="cursor-pointer">
+                                        <summary class="text-red-600 hover:text-red-800 text-sm">{% trans 'error_details' %}</summary>
+                                        <pre class="mt-2 p-2 bg-red-50 text-red-800 text-xs rounded overflow-auto max-h-40">{{ result.result }}</pre>
+                                    </details>
+                                {% else %}
+                                    -
+                                {% endif %}
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- ページネーション -->
+            {% if page_obj.has_other_pages %}
+            <div class="mt-6 flex justify-center">
+                <nav class="relative z-0 inline-flex rounded-md shadow-sm -space-x-px" aria-label="Pagination">
+                    {% if page_obj.has_previous %}
+                        <a href="?page={{ page_obj.previous_page_number }}" class="relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
+                            <span class="sr-only">{% trans 'previous' %}</span>
+                            &laquo;
+                        </a>
+                    {% endif %}
+
+                    {% for num in page_obj.paginator.page_range %}
+                        {% if page_obj.number == num %}
+                            <span class="relative inline-flex items-center px-4 py-2 border border-gray-300 bg-blue-50 text-sm font-medium text-blue-600">
+                                {{ num }}
+                            </span>
+                        {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+                            <a href="?page={{ num }}" class="relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50">
+                                {{ num }}
+                            </a>
+                        {% endif %}
+                    {% endfor %}
+
+                    {% if page_obj.has_next %}
+                        <a href="?page={{ page_obj.next_page_number }}" class="relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
+                            <span class="sr-only">{% trans 'next' %}</span>
+                            &raquo;
+                        </a>
+                    {% endif %}
+                </nav>
+            </div>
+            {% endif %}
+            {% else %}
+            <p class="text-gray-600">{% trans 'no_task_execution_history' %}</p>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}
