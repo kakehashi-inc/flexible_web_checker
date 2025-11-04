@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'layouts/user.html' %}
 {% load i18n %}
 
 {% block title %}
@@ -9,14 +9,14 @@
     {% endif %} | Flexible Web Checker
 {% endblock %}
 
-{% block content %}
+{% block main_content %}
 <div class="max-w-2xl mx-auto">
     <div class="mb-6">
         <a href="{% url 'bookmark:collection_list' %}" class="text-blue-600 hover:text-blue-800">
             ← {% trans 'back_to_collection_list' %}
         </a>
     </div>
-    
+
     <div class="bg-white shadow-md rounded-lg overflow-hidden">
         <div class="p-6">
             <h1 class="text-2xl font-bold text-gray-800 mb-6">
@@ -26,10 +26,10 @@
                     {% trans 'create_new_collection' %}
                 {% endif %}
             </h1>
-            
+
             <form method="post" class="space-y-6">
                 {% csrf_token %}
-                
+
                 {% if form.non_field_errors %}
                     <div class="bg-red-100 border border-red-200 text-red-700 px-4 py-3 rounded mb-4">
                         {% for error in form.non_field_errors %}
@@ -37,7 +37,7 @@
                         {% endfor %}
                     </div>
                 {% endif %}
-                
+
                 <div>
                     <label for="{{ form.name.id_for_label }}" class="block text-sm font-medium text-gray-700 mb-1">
                         {% trans 'name' %} <span class="text-red-600">*</span>
@@ -54,7 +54,7 @@
                         {% trans 'enter_collection_name' %}
                     </p>
                 </div>
-                
+
                 <div class="flex justify-between pt-4">
                     <a href="{% url 'bookmark:collection_list' %}" class="bg-gray-500 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-md transition duration-300">
                         {% trans 'cancel' %}

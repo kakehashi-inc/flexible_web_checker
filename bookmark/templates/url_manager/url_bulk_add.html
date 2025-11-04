@@ -1,9 +1,9 @@
-{% extends 'base.html' %}
+{% extends 'layouts/user.html' %}
 {% load i18n %}
 
 {% block title %}{% trans 'bulk_add_urls' %} | Flexible Web Checker{% endblock %}
 
-{% block content %}
+{% block main_content %}
 <div class="max-w-2xl mx-auto">
     <div class="mb-6">
         <a href="{% url 'bookmark:url_list' %}" class="text-blue-600 hover:text-blue-800">

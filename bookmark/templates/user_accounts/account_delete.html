@@ -1,22 +1,22 @@
-{% extends 'base.html' %}
+{% extends 'layouts/user.html' %}
 {% load i18n %}
 
 {% block title %}{% trans 'confirm_delete_account' %} | Flexible Web Checker{% endblock %}
 
-{% block content %}
+{% block main_content %}
 <div class="max-w-md mx-auto">
     <div class="bg-white shadow-md rounded-lg overflow-hidden">
         <div class="p-6">
             <h1 class="text-2xl font-bold text-red-600 mb-6 text-center">{% trans 'confirm_delete_account' %}</h1>
-            
+
             <div class="bg-red-50 border border-red-200 text-red-700 p-4 rounded-md mb-6">
                 <p class="font-medium">{% trans 'really_delete_account' %}</p>
                 <p class="mt-2">{% trans 'deletion_is_permanent' %}</p>
             </div>
-            
+
             <form method="post" class="space-y-6">
                 {% csrf_token %}
-                
+
                 <div class="space-y-4">
                     <div>
                         <label for="password" class="block text-sm font-medium text-gray-700 mb-1">
@@ -27,7 +27,7 @@
                             {% trans 'enter_current_password_to_confirm' %}
                         </p>
                     </div>
-                    
+
                     <div class="flex items-center">
                         <input id="confirm" name="confirm" type="checkbox" required class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
                         <label for="confirm" class="ml-2 block text-sm text-gray-700">
@@ -35,7 +35,7 @@
                         </label>
                     </div>
                 </div>
-                
+
                 <div class="flex justify-between pt-4">
                     <a href="{% url 'bookmark:settings' %}" class="bg-gray-500 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-md transition duration-300">
                         {% trans 'cancel' %}

@@ -5,17 +5,64 @@ from django.utils.translation import gettext_lazy as _
 from django.contrib import messages
 from django.http import JsonResponse
 from django.core.paginator import Paginator
+from django.utils import timezone
+from datetime import timedelta
 
 
 def home(request):
-    """ホームページビュー"""
+    """ホームページ/ダッシュボードビュー"""
     if request.user.is_authenticated:
-        return redirect("bookmark:url_list")
+        # ログイン済みユーザーにはダッシュボードを表示
+        from bookmark.models import UrlItem, Collection, UrlItemCollection
 
+        # URL統計
+        total_urls = UrlItem.objects.filter(user=request.user).count()
+        active_urls = UrlItem.objects.filter(user=request.user, is_active=True).count()
+        inactive_urls = total_urls - active_urls
+
+        # コレクション統計
+        total_collections = Collection.objects.filter(user=request.user).count()
+        urls_in_collections = UrlItemCollection.objects.filter(collection__user=request.user).values("url_item").distinct().count()
+        uncategorized_urls = total_urls - urls_in_collections
+
+        # 更新情報
+        today = timezone.now().date()
+        week_ago = timezone.now() - timedelta(days=7)
+
+        updated_today = UrlItem.objects.filter(user=request.user, last_updated_at__date=today).count()
+
+        updated_this_week = UrlItem.objects.filter(user=request.user, last_updated_at__gte=week_ago).count()
+
+        # 未読通知数（Notificationモデルがある場合）
+        try:
+            from bookmark.models import Notification
+
+            unread_notifications = Notification.objects.filter(user=request.user, is_read=False).count()
+        except:
+            unread_notifications = 0
+
+        # 最近更新されたURL（上位5件）
+        recent_updated_urls = UrlItem.objects.filter(user=request.user).order_by("-last_updated_at")[:5]
+
+        context = {
+            "total_urls": total_urls,
+            "active_urls": active_urls,
+            "inactive_urls": inactive_urls,
+            "total_collections": total_collections,
+            "urls_in_collections": urls_in_collections,
+            "uncategorized_urls": uncategorized_urls,
+            "updated_today": updated_today,
+            "updated_this_week": updated_this_week,
+            "unread_notifications": unread_notifications,
+            "recent_updated_urls": recent_updated_urls,
+        }
+
+        return render(request, "core/dashboard.html", context)
+
+    # 未ログインユーザーにはホームページを表示
     return render(request, "core/home.html")
 
 
-@login_required
 def about(request):
     """アバウトページビュー"""
     return render(request, "core/about.html")

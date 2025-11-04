@@ -114,7 +114,7 @@ All settings use `django-environ`. Copy `.env.example` → `.env` and configure:
 - `UPDATE_CHECK_SCHEDULE` (cron expression for periodic checks)
 
 ### Template Structure
-- Base: `bookmark/templates/base.html`
+- Base: `bookmark/templates/layouts/base.html`
 - Organized by feature: `core/`, `url_manager/`, `collection_manager/`, `user_accounts/`, `registration/`
 - Uses Tailwind utility classes + custom SCSS (`frontend/scss/app.scss`)
 

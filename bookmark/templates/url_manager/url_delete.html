@@ -1,33 +1,33 @@
-{% extends 'base.html' %}
+{% extends 'layouts/user.html' %}
 {% load i18n %}
 
 {% block title %}{% trans 'confirm_remove_url' %}: {{ url_item.title }} | Flexible Web Checker{% endblock %}
 
-{% block content %}
+{% block main_content %}
 <div class="max-w-md mx-auto">
     <div class="mb-6">
         <a href="{% url 'bookmark:url_detail' url_item.id %}" class="text-blue-600 hover:text-blue-800">
             ← {% trans 'back_to_url_detail' %}
         </a>
     </div>
-    
+
     <div class="bg-white shadow-md rounded-lg overflow-hidden">
         <div class="p-6">
             <h1 class="text-2xl font-bold text-red-600 mb-6 text-center">{% trans 'confirm_remove_url' %}</h1>
-            
+
             <div class="bg-red-50 border border-red-200 text-red-700 p-4 rounded-md mb-6">
                 <p class="font-medium">{% trans 'confirm_delete_url' %}</p>
                 <p class="mt-2">{{ url_item.title }}</p>
                 <p class="text-sm mt-2">{{ url_item.url }}</p>
             </div>
-            
+
             <p class="text-gray-600 mb-6">
                 {% trans 'url_delete_warning' %}
             </p>
-            
+
             <form method="post" class="space-y-4">
                 {% csrf_token %}
-                
+
                 <div class="flex justify-between">
                     <a href="{% url 'bookmark:url_detail' url_item.id %}" class="bg-gray-500 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-md transition duration-300">
                         {% trans 'cancel' %}

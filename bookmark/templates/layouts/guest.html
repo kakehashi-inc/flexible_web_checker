@@ -1,0 +1,128 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block header %}
+<header class="bg-blue-600 text-white shadow-md">
+    <div class="container mx-auto px-4 py-3">
+        <div class="flex justify-between items-center">
+            <a href="{% url 'bookmark:url_list' %}" class="text-xl font-bold">Flexible Web Checker</a> {# System name links to URL list #}
+            <nav class="hidden md:flex space-x-4 items-center"> {# Added items-center #}
+                {% if user.is_authenticated %}
+                    {# User icon + nickname link #}
+                    <a href="{% url 'bookmark:mypage' %}" class="flex items-center hover:text-blue-200">
+                        {# Ensure user icon exists or add a placeholder #}
+                        {% load static %}
+                        <img src="{% static 'icons/user.svg' %}" alt="{% trans 'user_icon' %}" class="w-5 h-5 inline-block mr-1">
+                        <span>{{ user.nickname|default:user.email }}</span>
+                    </a>
+                    {# Logout link is now on profile page, removed from here #}
+                {% else %}
+                    <a href="{% url 'bookmark:login' %}" class="hover:text-blue-200">{% trans 'login' %}</a>
+                    <a href="{% url 'bookmark:register' %}" class="hover:text-blue-200">{% trans 'register' %}</a>
+                {% endif %}
+                <div class="relative inline-block text-left">
+                    <button id="language-dropdown" class="hover:text-blue-200">
+                        {% trans 'language' %} ▼
+                    </button>
+                    <div id="language-menu" class="hidden absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg z-10">
+                        <form action="{% url 'bookmark:set_language' %}" method="post" class="py-1">
+                            {% csrf_token %}
+                            <input name="next" type="hidden" value="{{ request.get_full_path|urlencode }}">
+                            <button type="submit" name="language" value="ja" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 w-full text-left">日本語</button>
+                            <button type="submit" name="language" value="en" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 w-full text-left">English</button>
+                        </form>
+                    </div>
+                </div>
+            </nav>
+            <button id="mobile-menu-button" class="md:hidden text-white">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden mt-2 pb-2">
+            {% if user.is_authenticated %}
+                {# User icon + nickname link for mobile #}
+                <a href="{% url 'bookmark:mypage' %}" class="flex items-center py-2">
+                    {% load static %}
+                    <img src="{% static 'icons/user.svg' %}" alt="{% trans 'user_icon' %}" class="w-5 h-5 inline-block mr-1">
+                    <span>{{ user.nickname|default:user.email }}</span>
+                </a>
+                {# Logout link is now on profile page, removed from here #}
+            {% else %}
+                <a href="{% url 'bookmark:login' %}" class="block py-2">{% trans 'login' %}</a>
+                <a href="{% url 'bookmark:register' %}" class="block py-2">{% trans 'register' %}</a>
+            {% endif %}
+            <form action="{% url 'bookmark:set_language' %}" method="post" class="py-2">
+                {% csrf_token %}
+                <input name="next" type="hidden" value="{{ request.get_full_path|urlencode }}">
+                <button type="submit" name="language" value="ja" class="block py-1 w-full text-left">日本語</button>
+                <button type="submit" name="language" value="en" class="block py-1 w-full text-left">English</button>
+            </form>
+        </div>
+    </div>
+</header>
+{% endblock %}
+
+{% block content %}
+<main class="container mx-auto px-4 py-6">
+    {% if messages %}
+        <div class="messages mb-6">
+            {% for message in messages %}
+                <div class="p-4 mb-4 rounded-md {% if message.tags == 'error' %}bg-red-100 text-red-700{% elif message.tags == 'success' %}bg-green-100 text-green-700{% elif message.tags == 'warning' %}bg-yellow-100 text-yellow-700{% elif message.tags == 'info' %}bg-blue-100 text-blue-700{% else %}bg-gray-100 text-gray-700{% endif %}">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+
+    {% block main_content %}{% endblock %}
+</main>
+{% endblock %}
+
+{% block footer %}
+<footer class="bg-gray-800 text-white py-6 mt-auto">
+    <div class="container mx-auto px-4">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+            <div class="mb-4 md:mb-0">
+                <p>&copy; 2025 Flexible Web Checker</p>
+            </div>
+            <div>
+                <a href="{% url 'bookmark:about' %}" class="hover:text-blue-300">{% trans 'about_this_site' %}</a>
+            </div>
+        </div>
+    </div>
+</footer>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/main.js' %}"></script>
+<script>
+    // Mobile menu toggle
+    document.getElementById('mobile-menu-button').addEventListener('click', function() {
+        document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+
+    // Language dropdown toggle (Desktop)
+    const langButtonDesktop = document.getElementById('language-dropdown'); // Use the existing ID
+    const langMenuDesktop = document.getElementById('language-menu'); // Use the existing ID
+    if (langButtonDesktop && langMenuDesktop) {
+        langButtonDesktop.addEventListener('click', function(event) {
+            event.stopPropagation(); // Prevent click from immediately closing menu
+            langMenuDesktop.classList.toggle('hidden');
+        });
+    }
+
+    // Close language dropdown when clicking outside (Desktop)
+    document.addEventListener('click', function(event) {
+        if (langMenuDesktop && !langMenuDesktop.classList.contains('hidden')) {
+            if (!langButtonDesktop.contains(event.target) && !langMenuDesktop.contains(event.target)) {
+                langMenuDesktop.classList.add('hidden');
+            }
+        }
+    });
+
+    // Note: Mobile language selection uses direct form submission, no JS toggle needed.
+</script>
+{% endblock %}

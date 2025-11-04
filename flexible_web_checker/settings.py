@@ -180,7 +180,9 @@ LOCALE_PATHS = [
     BASE_DIR / 'bookmark' / 'locale'
 ]
 
-#LOGIN_URL = '/login/'
+LOGIN_URL = '/login/'
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
 
 LANGUAGE_COOKIE_NAME = 'django_language'
 LANGUAGE_COOKIE_AGE = 86400 * 30

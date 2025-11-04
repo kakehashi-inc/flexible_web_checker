@@ -1,0 +1,144 @@
+{% extends 'layouts/user.html' %}
+{% load i18n %}
+
+{% block title %}{% trans 'dashboard' %} | Flexible Web Checker{% endblock %}
+
+{% block main_content %}
+<div class="max-w-7xl mx-auto">
+    <h1 class="text-3xl font-bold text-gray-800 mb-6">{% trans 'dashboard' %}</h1>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+        <!-- URL統計カード -->
+        <div class="bg-white shadow-md rounded-lg p-6">
+            <div class="flex items-center justify-between mb-4">
+                <h2 class="text-xl font-semibold text-gray-700">{% trans 'url_statistics' %}</h2>
+                <i class="fas fa-link text-blue-600 text-2xl"></i>
+            </div>
+            <div class="space-y-2">
+                <div class="flex justify-between">
+                    <span class="text-gray-600">{% trans 'total_urls' %}:</span>
+                    <span class="font-bold text-gray-800">{{ total_urls }}</span>
+                </div>
+                <div class="flex justify-between">
+                    <span class="text-gray-600">{% trans 'active_urls' %}:</span>
+                    <span class="font-bold text-green-600">{{ active_urls }}</span>
+                </div>
+                <div class="flex justify-between">
+                    <span class="text-gray-600">{% trans 'inactive_urls' %}:</span>
+                    <span class="font-bold text-gray-500">{{ inactive_urls }}</span>
+                </div>
+            </div>
+            <a href="{% url 'bookmark:url_list' %}" class="mt-4 block text-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition duration-300">
+                {% trans 'view_all_urls' %}
+            </a>
+        </div>
+
+        <!-- コレクション統計カード -->
+        <div class="bg-white shadow-md rounded-lg p-6">
+            <div class="flex items-center justify-between mb-4">
+                <h2 class="text-xl font-semibold text-gray-700">{% trans 'collection_statistics' %}</h2>
+                <i class="fas fa-folder text-green-600 text-2xl"></i>
+            </div>
+            <div class="space-y-2">
+                <div class="flex justify-between">
+                    <span class="text-gray-600">{% trans 'total_collections' %}:</span>
+                    <span class="font-bold text-gray-800">{{ total_collections }}</span>
+                </div>
+                <div class="flex justify-between">
+                    <span class="text-gray-600">{% trans 'urls_in_collections' %}:</span>
+                    <span class="font-bold text-green-600">{{ urls_in_collections }}</span>
+                </div>
+                <div class="flex justify-between">
+                    <span class="text-gray-600">{% trans 'uncategorized_urls' %}:</span>
+                    <span class="font-bold text-orange-600">{{ uncategorized_urls }}</span>
+                </div>
+            </div>
+            <a href="{% url 'bookmark:collection_list' %}" class="mt-4 block text-center bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-md transition duration-300">
+                {% trans 'view_all_collections' %}
+            </a>
+        </div>
+
+        <!-- 更新情報カード -->
+        <div class="bg-white shadow-md rounded-lg p-6">
+            <div class="flex items-center justify-between mb-4">
+                <h2 class="text-xl font-semibold text-gray-700">{% trans 'recent_updates' %}</h2>
+                <i class="fas fa-bell text-yellow-600 text-2xl"></i>
+            </div>
+            <div class="space-y-2">
+                <div class="flex justify-between">
+                    <span class="text-gray-600">{% trans 'updated_today' %}:</span>
+                    <span class="font-bold text-blue-600">{{ updated_today }}</span>
+                </div>
+                <div class="flex justify-between">
+                    <span class="text-gray-600">{% trans 'updated_this_week' %}:</span>
+                    <span class="font-bold text-green-600">{{ updated_this_week }}</span>
+                </div>
+                <div class="flex justify-between">
+                    <span class="text-gray-600">{% trans 'unread_notifications' %}:</span>
+                    <span class="font-bold text-red-600">{{ unread_notifications }}</span>
+                </div>
+            </div>
+            <a href="{% url 'bookmark:url_list' %}?tab=updated" class="mt-4 block text-center bg-yellow-600 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded-md transition duration-300">
+                {% trans 'view_updates' %}
+            </a>
+        </div>
+    </div>
+
+    <!-- 最近更新されたURL -->
+    {% if recent_updated_urls %}
+    <div class="bg-white shadow-md rounded-lg p-6 mb-8">
+        <h2 class="text-2xl font-bold text-gray-800 mb-4">{% trans 'recently_updated_urls' %}</h2>
+        <div class="space-y-4">
+            {% for url_item in recent_updated_urls %}
+            <div class="border-b border-gray-200 pb-4 last:border-b-0 last:pb-0">
+                <div class="flex items-start justify-between">
+                    <div class="flex-1">
+                        <a href="{% url 'bookmark:url_detail' url_item.id %}" class="text-lg font-semibold text-blue-600 hover:text-blue-800">
+                            {{ url_item.title|default:url_item.url }}
+                        </a>
+                        <p class="text-sm text-gray-600 mt-1">{{ url_item.url }}</p>
+                        <p class="text-xs text-gray-500 mt-1">
+                            {% trans 'last_updated' %}: {{ url_item.last_updated_at|date:"Y-m-d H:i" }}
+                        </p>
+                    </div>
+                    <div class="ml-4">
+                        {% if url_item.has_update %}
+                        <span class="inline-block px-3 py-1 text-xs font-semibold text-white bg-red-600 rounded-full">
+                            {% trans 'status_updated' %}
+                        </span>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <a href="{% url 'bookmark:url_list' %}" class="mt-4 block text-center text-blue-600 hover:text-blue-800 font-semibold">
+            {% trans 'view_all_urls' %} →
+        </a>
+    </div>
+    {% endif %}
+
+    <!-- クイックアクション -->
+    <div class="bg-white shadow-md rounded-lg p-6">
+        <h2 class="text-2xl font-bold text-gray-800 mb-4">{% trans 'quick_actions' %}</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <a href="{% url 'bookmark:url_add' %}" class="flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-6 rounded-md transition duration-300">
+                <i class="fas fa-plus-circle mr-2"></i>
+                {% trans 'add_url' %}
+            </a>
+            <a href="{% url 'bookmark:collection_add' %}" class="flex items-center justify-center bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-6 rounded-md transition duration-300">
+                <i class="fas fa-folder-plus mr-2"></i>
+                {% trans 'add_collection' %}
+            </a>
+            <a href="{% url 'bookmark:url_list' %}?tab=all" class="flex items-center justify-center bg-purple-600 hover:bg-purple-700 text-white font-bold py-4 px-6 rounded-md transition duration-300">
+                <i class="fas fa-list mr-2"></i>
+                {% trans 'all_urls' %}
+            </a>
+            <a href="{% url 'bookmark:mypage' %}" class="flex items-center justify-center bg-gray-600 hover:bg-gray-700 text-white font-bold py-4 px-6 rounded-md transition duration-300">
+                <i class="fas fa-user-cog mr-2"></i>
+                {% trans 'settings' %}
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}

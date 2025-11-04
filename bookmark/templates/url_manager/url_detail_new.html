@@ -1,16 +1,16 @@
-{% extends 'base.html' %}
+{% extends 'layouts/user.html' %}
 {% load i18n %}
 
 {% block title %}{{ url_item.title }} | Flexible Web Checker{% endblock %}
 
-{% block content %}
+{% block main_content %}
 <div class="max-w-4xl mx-auto">
     <div class="mb-6">
         <a href="{% url 'bookmark:url_list' %}" class="text-blue-600 hover:text-blue-800">
             ← {% trans 'back_to_url_list' %}
         </a>
     </div>
-    
+
     <div class="bg-white shadow-md rounded-lg overflow-hidden mb-6">
         <div class="p-6">
             <div class="flex justify-between items-start">
@@ -27,7 +27,7 @@
                     </a>
                 </div>
             </div>
-            
+
             <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                     <div class="mb-4">
@@ -36,7 +36,7 @@
                             {{ url_item.url }}
                         </a>
                     </div>
-                    
+
                     <div class="mb-4">
                         <h2 class="text-lg font-semibold text-gray-700 mb-2">{% trans 'check_type' %}</h2>
                         {% if url_item.check_type == 'RSS' %}
@@ -47,12 +47,12 @@
                             <span class="bg-purple-100 text-purple-800 text-sm font-medium px-2.5 py-0.5 rounded">{% trans "check_type_html_custom" %}</span>
                         {% endif %}
                     </div>
-                    
+
                     {% if url_item.check_type == 'HTML_CUSTOM' %}
                     <div class="mb-4">
                         <h2 class="text-lg font-semibold text-gray-700 mb-2">{% trans 'html_selector' %}</h2>
                         <pre class="bg-gray-100 p-3 rounded-md text-sm overflow-x-auto">{{ url_item.html_selector }}</pre>
-                        
+
                         <h2 class="text-lg font-semibold text-gray-700 mt-4 mb-2">{% trans 'condition' %}</h2>
                         {% if url_item.html_custom_condition == 'OR' %}
                             <p>{% trans 'any_change_or' %}</p>
@@ -61,7 +61,7 @@
                         {% endif %}
                     </div>
                     {% endif %}
-                    
+
                     <div class="mb-4">
                         <h2 class="text-lg font-semibold text-gray-700 mb-2">{% trans 'collection' %}</h2>
                         {% if url_item.collections.all %}
@@ -79,7 +79,7 @@
                         {% endif %}
                     </div>
                 </div>
-                
+
                 <div>
                     <div class="mb-4">
                         <h2 class="text-lg font-semibold text-gray-700 mb-2">{% trans 'thumbnail' %}</h2>
@@ -91,7 +91,7 @@
                             </div>
                         {% endif %}
                     </div>
-                    
+
                     <div class="mb-4">
                         <h2 class="text-lg font-semibold text-gray-700 mb-2">{% trans 'last_check' %}</h2>
                         {% if url_item.last_checked_at %}
@@ -100,7 +100,7 @@
                             <p class="text-gray-500">{% trans 'not_checked_yet' %}</p>
                         {% endif %}
                     </div>
-                    
+
                     <div class="mb-4">
                         <h2 class="text-lg font-semibold text-gray-700 mb-2">{% trans 'last_updated' %}</h2>
                         {% if url_item.last_updated_at %}
@@ -109,7 +109,7 @@
                             <p class="text-gray-500">{% trans 'not_updated_yet' %}</p>
                         {% endif %}
                     </div>
-                    
+
                     {% if url_item.error_count > 0 %}
                     <div class="mb-4">
                         <h2 class="text-lg font-semibold text-red-600 mb-2">{% trans 'error_info' %}</h2>

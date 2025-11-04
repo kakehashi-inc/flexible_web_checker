@@ -17,327 +17,441 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: bookmark/admin/user_accounts.py:21
-msgid "permissions"
-msgstr "Permissions"
+#: bookmark/templates/core/job_management.html:37
+msgid "Every"
+msgstr "Every"
 
-#: bookmark/admin/user_accounts.py:33
-msgid "important_dates"
-msgstr "Important Dates"
+#: bookmark/templates/core/about.html:14
+msgid "about_description"
+msgstr "Flexible Web Checker is a service that automatically detects and notifies updates to registered websites.Flexible Web Checker is a tool for flexibly monitoring website updates. It detects updates in various ways to ensure you don't miss updates to your favorite websites.Flexible Web Checker is a tool for flexibly monitoring website updates. It detects updates in various ways to ensure you don't miss updates to your favorite websites."
 
-#: bookmark/forms/url_manager.py:20
-msgid "html_selector_placeholder"
-msgstr ""
-"Example: div.content\n"
-"#main-content h2"
+#: bookmark/templates/core/about.html:9
+msgid "about_flexible_web_checker"
+msgstr "About Flexible Web Checker"
 
-#: bookmark/forms/url_manager.py:30
-msgid "html_custom_selector_required"
-msgstr "If you select HTML Custom check type, please enter HTML selector."
+#: bookmark/templates/core/about.html:17
+msgid "about_tech_description"
+msgstr "It reliably detects website updates using three detection methods: RSS, HTML Standard, and HTML Custom."
 
-#: bookmark/forms/url_manager.py:49
-#: bookmark/templates/collection_manager/collection_detail.html:56
-#: bookmark/templates/url_manager/url_list.html:5
-#: bookmark/templates/url_manager/url_list.html:24
-msgid "url_list"
-msgstr "URL List"
+#: bookmark/templates/layouts/base.html:108 bookmark/templates/core/about.html:4
+msgid "about_this_site"
+msgstr "About This Site"
 
-#: bookmark/forms/url_manager.py:53
-msgid "url_bulk_placeholder"
-msgstr ""
-"Enter one URL per line.\n"
-"Example:\n"
-"https://example.com\n"
-"https://example.org"
+#: bookmark/templates/user_accounts/email_verification_complete.html:21
+msgid "account_activated_message"
+msgstr "Your account has been activated. You can now log in."
 
-#: bookmark/forms/url_manager.py:56
-msgid "url_bulk_help_text"
-msgstr "Enter one URL per line. Title will be automatically fetched."
+#: bookmark/templates/user_accounts/settings.html:67
+msgid "account_delete_final_warning"
+msgstr "Deleting your account will permanently delete all your data. This action cannot be undone.If you delete your account, all your data will be permanently deleted. This operation cannot be undone.If you delete your account, all your data will be permanently deleted. This operation cannot be undone."
 
-#: bookmark/forms/url_manager.py:60 bookmark/models/url_item.py:32
-#: bookmark/templates/collection_manager/collection_detail.html:71
-#: bookmark/templates/url_manager/url_detail.html:43
-#: bookmark/templates/url_manager/url_detail_fixed.html:41
-#: bookmark/templates/url_manager/url_detail_new.html:41
-#: bookmark/templates/url_manager/url_form.html:77
-#: bookmark/templates/url_manager/url_list.html:79
-msgid "check_type"
-msgstr "Check Type"
+#: bookmark/templates/user_accounts/mypage.html:15
+msgid "account_info"
+msgstr "Account Information"
 
-#: bookmark/forms/url_manager.py:70
-msgid "at_least_one_url_required"
-msgstr "At least one URL is required."
+#: bookmark/views/user_accounts.py:111
+msgid "account_not_activated"
+msgstr "Your account has not been activated. Please verify your email address."
 
-#: bookmark/forms/url_manager.py:74
-msgid "invalid_url_in_list"
-msgstr "Invalid URL in list: %(url)s"
+#: bookmark/templates/user_accounts/settings.html:4 bookmark/templates/user_accounts/settings.html:10
+msgid "account_settings"
+msgstr "Account Settings"
 
-#: bookmark/forms/user_accounts.py:11 bookmark/forms/user_accounts.py:51
-#: bookmark/templates/user_accounts/account_delete.html:23
-#: bookmark/templates/user_accounts/login.html:38
-#: bookmark/templates/user_accounts/register.html:66
-#: bookmark/templates/user_accounts/settings.html:27
-msgid "password"
-msgstr "Password"
+#: bookmark/templates/collection_manager/collection_detail.html:73 bookmark/templates/url_manager/url_list.html:81
+msgid "actions"
+msgstr "Actions"
 
-#: bookmark/forms/user_accounts.py:16
-msgid "password_confirm"
-msgstr "Password (Confirm)"
+#: bookmark/models/url_item.py:59 bookmark/models/user.py:14 bookmark/templates/core/job_management.html:24 bookmark/templates/core/job_management.html:44
+msgid "active"
+msgstr "Active"
 
-#: bookmark/forms/user_accounts.py:36 bookmark/forms/user_accounts.py:85
-msgid "passwords_do_not_match"
-msgstr "Passwords do not match."
+#: bookmark/templates/core/dashboard.html
+msgid "active_urls"
+msgstr "Active URLs"
 
-#: bookmark/forms/user_accounts.py:50 bookmark/forms/user_accounts.py:65
-#: bookmark/models/user.py:11 bookmark/templates/user_accounts/login.html:24
-#: bookmark/templates/user_accounts/mypage.html:29
-#: bookmark/templates/user_accounts/password_reset.html:28
-#: bookmark/templates/user_accounts/password_reset_request.html:28
-#: bookmark/templates/user_accounts/profile_edit.html:52
-#: bookmark/templates/user_accounts/register.html:24
-#: bookmark/templates/user_accounts/settings.html:18
-msgid "email_address"
-msgstr "Email Address"
+#: bookmark/templates/collection_manager/collection_add.html:42 bookmark/templates/collection_manager/collection_add_url.html:53 bookmark/templates/url_manager/url_add.html:53
+msgid "add"
+msgstr "Add"
 
-#: bookmark/forms/user_accounts.py:72
-#: bookmark/templates/user_accounts/password_change.html:38
-#: bookmark/templates/user_accounts/password_reset_confirm.html:25
-msgid "new_password"
-msgstr "New Password"
+#: bookmark/templates/collection_manager/collection_add.html:4 bookmark/templates/collection_manager/collection_add.html:10 bookmark/templates/core/dashboard.html
+msgid "add_collection"
+msgstr "Add Collection"
 
-#: bookmark/forms/user_accounts.py:77
-msgid "new_password_confirm"
-msgstr "New Password (Confirm)"
+#: bookmark/views/url_manager.py
+msgid "add_error"
+msgstr "Add error"
 
-#: bookmark/models/collection.py:13 bookmark/models/notification.py:15
-#: bookmark/models/url_item.py:24 bookmark/models/user.py:24
-#: bookmark/models/user.py:38 bookmark/models/user.py:60
-#: bookmark/models/user.py:85
-msgid "user"
-msgstr "User"
+#: bookmark/templates/url_manager/url_add.html:4 bookmark/templates/url_manager/url_add.html:16 bookmark/templates/url_manager/url_form.html:8 bookmark/templates/url_manager/url_form.html:26 bookmark/templates/url_manager/url_list.html:65 bookmark/templates/url_manager/url_list.html:216
+msgid "add_new_url"
+msgstr "Add New URL"
 
-#: bookmark/models/collection.py:15
-#: bookmark/templates/collection_manager/collection_form.html:43
-msgid "name"
-msgstr "Name"
+#: bookmark/templates/collection_manager/collection_add_url.html:4 bookmark/templates/collection_manager/collection_add_url.html:17 bookmark/templates/collection_manager/collection_detail.html:59 bookmark/templates/core/dashboard.html
+msgid "add_url"
+msgstr "Add URL"
 
-#: bookmark/models/collection.py:16
-msgid "order"
-msgstr "Order"
+#: bookmark/templates/collection_manager/collection_detail.html:139
+msgid "add_url_to_collection"
+msgstr "Add URL to Collection"
 
-#: bookmark/models/collection.py:17 bookmark/models/notification.py:27
-#: bookmark/models/url_item.py:53 bookmark/models/user.py:42
-#: bookmark/models/user.py:63 bookmark/models/user.py:88
-msgid "created_at"
-msgstr "Created At"
-
-#: bookmark/models/collection.py:18 bookmark/models/url_item.py:54
-#: bookmark/models/user.py:43
-msgid "updated_at"
-msgstr "Updated At"
-
-#: bookmark/models/collection.py:21 bookmark/models/collection.py:42
-#: bookmark/templates/collection_manager/collection_detail.html:18
-#: bookmark/templates/url_manager/url_detail.html:68
-#: bookmark/templates/url_manager/url_detail_fixed.html:66
-#: bookmark/templates/url_manager/url_detail_new.html:66
-#: bookmark/templates/url_manager/url_form.html:152
-#: bookmark/templates/url_manager/url_list.html:33
-msgid "collection"
-msgstr "Collection"
-
-#: bookmark/models/collection.py:22
-msgid "collections"
-msgstr "Collections"
-
-#: bookmark/models/collection.py:36 bookmark/models/notification.py:23
-#: bookmark/models/url_item.py:62
-msgid "url_item"
-msgstr "URL Item"
+#: bookmark/templates/core/home.html:26
+msgid "add_urls_to_monitor"
+msgstr "Add URLs to monitor"
 
 #: bookmark/models/collection.py:44
 msgid "added_at"
 msgstr "Added At"
 
-#: bookmark/models/collection.py:47
-msgid "url_item_collection"
-msgstr "URL Item Collection"
+#: bookmark/templates/user_accounts/mypage.html:96
+msgid "admin_menu"
+msgstr "Admin Menu"
 
-#: bookmark/models/collection.py:48
-msgid "url_item_collections"
-msgstr "URL Item Collections"
+#: bookmark/templates/collection_manager/collection_detail.html:14 bookmark/templates/url_manager/url_list.html:29
+msgid "all"
+msgstr "All"
 
-#: bookmark/models/notification.py:25
-msgid "message"
-msgstr "Message"
+#: bookmark/templates/url_manager/url_detail.html:62 bookmark/templates/url_manager/url_detail_fixed.html:60 bookmark/templates/url_manager/url_detail_new.html:60
+msgid "all_change_and"
+msgstr "All changes (AND)"
 
-#: bookmark/models/notification.py:26
-msgid "is_read"
-msgstr "Is Read"
+#: bookmark/templates/core/dashboard.html
+msgid "all_urls"
+msgstr "All URLs"
 
-#: bookmark/models/notification.py:30
-#: bookmark/templates/core/notification.html:4
-#: bookmark/templates/core/notification.html:10
-#: bookmark/templates/emails/notification_email.html:8
-msgid "notification"
-msgstr "Notification"
+#: bookmark/templates/user_accounts/register.html:103
+msgid "already_have_account"
+msgstr "Already have an account?"
 
-#: bookmark/models/notification.py:31
-msgid "notifications"
-msgstr "Notifications"
+#: bookmark/views/url_manager.py
+msgid "already_registered"
+msgstr "Already registered"
 
-#: bookmark/models/url_item.py:10
-msgid "check_type_rss"
-msgstr "RSS Feed"
+#: bookmark/templates/url_manager/url_detail.html:60 bookmark/templates/url_manager/url_detail_fixed.html:58 bookmark/templates/url_manager/url_detail_new.html:58
+msgid "any_change_or"
+msgstr "Any change (OR)"
 
-#: bookmark/models/url_item.py:11
-#: bookmark/templates/collection_manager/collection_detail.html:103
-#: bookmark/templates/url_manager/url_detail.html:47
-#: bookmark/templates/url_manager/url_detail_fixed.html:45
-#: bookmark/templates/url_manager/url_detail_new.html:45
-#: bookmark/templates/url_manager/url_list.html:120
-msgid "check_type_html_standard"
-msgstr "HTML Standard (entire body)"
+#: bookmark/templates/core/about.html:63
+msgid "async_task_celery"
+msgstr "Async Tasks: Celery + Redis"
 
-#: bookmark/models/url_item.py:12
-#: bookmark/templates/collection_manager/collection_detail.html:105
-#: bookmark/templates/url_manager/url_detail.html:49
-#: bookmark/templates/url_manager/url_detail_fixed.html:47
-#: bookmark/templates/url_manager/url_detail_new.html:47
-#: bookmark/templates/url_manager/url_list.html:122
-msgid "check_type_html_custom"
-msgstr "HTML Custom (selector specified)"
+#: bookmark/forms/url_manager.py:70
+msgid "at_least_one_url_required"
+msgstr "At least one URL is required."
 
-#: bookmark/models/url_item.py:16
-msgid "html_condition_or"
-msgstr "OR Condition"
+#: bookmark/templates/emails/email_verification_email.html:67 bookmark/templates/emails/password_reset_email.html:67
+msgid "auto_email_no_reply"
+msgstr "This is an automated email. Please do not reply.This email is automatically sent from Flexible Web Checker. Do not reply.This email is automatically sent from Flexible Web Checker. Do not reply."
 
-#: bookmark/models/url_item.py:17
-msgid "html_condition_and"
-msgstr "AND Condition"
+#: bookmark/templates/core/home.html:64
+msgid "auto_generate_thumbnails"
+msgstr "Auto-generate thumbnails"
 
-#: bookmark/models/url_item.py:26
-#: bookmark/templates/collection_manager/collection_add_url.html:33
-#: bookmark/templates/collection_manager/collection_detail.html:70
-#: bookmark/templates/url_manager/url_check_result.html:19
-#: bookmark/templates/url_manager/url_detail.html:36
-#: bookmark/templates/url_manager/url_detail_fixed.html:34
-#: bookmark/templates/url_manager/url_detail_new.html:34
-#: bookmark/templates/url_manager/url_form.html:43
-#: bookmark/templates/url_manager/url_list.html:78
-msgid "url"
-msgstr "URL"
+#: bookmark/templates/url_manager/url_check_result.html:66
+msgid "back"
+msgstr "Back"
 
-#: bookmark/models/url_item.py:27
-#: bookmark/templates/collection_manager/collection_detail.html:69
-#: bookmark/templates/url_manager/url_form.html:60
-#: bookmark/templates/url_manager/url_list.html:53
-#: bookmark/templates/url_manager/url_list.html:77
-msgid "title"
-msgstr "Title"
+#: bookmark/templates/collection_manager/collection_add_url.html:10 bookmark/templates/collection_manager/collection_delete.html:10 bookmark/templates/collection_manager/collection_remove_url.html:10
+msgid "back_to_collection_detail"
+msgstr "Back to Collection Detail"
 
-#: bookmark/models/url_item.py:29
-#: bookmark/templates/url_manager/url_detail.html:87
-#: bookmark/templates/url_manager/url_detail_fixed.html:85
-#: bookmark/templates/url_manager/url_detail_new.html:85
-#: bookmark/templates/url_manager/url_form.html:130
-msgid "thumbnail"
-msgstr "Thumbnail"
+#: bookmark/templates/collection_manager/collection_form.html:16
+msgid "back_to_collection_list"
+msgstr "Back to Collection List"
 
-#: bookmark/models/url_item.py:35
-#: bookmark/templates/url_manager/url_detail.html:55
-#: bookmark/templates/url_manager/url_detail_fixed.html:53
-#: bookmark/templates/url_manager/url_detail_new.html:53
-#: bookmark/templates/url_manager/url_form.html:95
-msgid "html_selector"
-msgstr "HTML Selector"
+#: bookmark/templates/user_accounts/email_verification.html:25 bookmark/templates/user_accounts/password_reset_done.html:25
+msgid "back_to_home"
+msgstr "Back to Home"
 
-#: bookmark/models/url_item.py:38
-msgid "separate_selectors_with_newlines"
-msgstr "If you specify multiple selectors, separate them with newlines"
+#: bookmark/templates/user_accounts/password_reset_request.html:49
+msgid "back_to_login"
+msgstr "Back to Collection List"
 
-#: bookmark/models/url_item.py:41
-msgid "html_custom_condition"
-msgstr "HTML Custom Condition"
+#: bookmark/templates/user_accounts/password_reset.html:49
+msgid "back_to_login_page"
+msgstr "Back to Collection Detail"
 
-#: bookmark/models/url_item.py:48
-msgid "last_checked_at"
-msgstr "Last Checked At"
+#: bookmark/templates/registration/password_change_done.html:13 bookmark/templates/user_accounts/password_change.html:76 bookmark/templates/user_accounts/profile_edit.html:76
+msgid "back_to_mypage"
+msgstr "Back to My Page"
 
-#: bookmark/models/url_item.py:49
-msgid "last_updated_at"
-msgstr "Last Updated At"
+#: bookmark/templates/url_manager/url_check_result.html:10 bookmark/templates/url_manager/url_delete.html:10
+msgid "back_to_url_detail"
+msgstr "Back to URL Detail"
 
-#: bookmark/models/url_item.py:51
-msgid "last_content_hash"
-msgstr "Last Content Hash"
+#: bookmark/templates/url_manager/url_add.html:10 bookmark/templates/url_manager/url_bulk_add.html:10 bookmark/templates/url_manager/url_detail.html:10 bookmark/templates/url_manager/url_detail_fixed.html:10 bookmark/templates/url_manager/url_detail_new.html:10 bookmark/templates/url_manager/url_form.html:16
+msgid "back_to_url_list"
+msgstr "Back to URL List"
 
-#: bookmark/models/url_item.py:55
-#: bookmark/templates/url_manager/url_detail.html:120
-#: bookmark/templates/url_manager/url_detail_fixed.html:116
-#: bookmark/templates/url_manager/url_detail_new.html:116
-msgid "error_count"
-msgstr "Error Count"
-
-#: bookmark/models/url_item.py:57
-#: bookmark/templates/url_manager/url_detail.html:123
-msgid "last_error_message"
-msgstr "Last Error Message:"
-
-#: bookmark/models/url_item.py:59 bookmark/models/user.py:14
-#: bookmark/templates/core/job_management.html:24
-#: bookmark/templates/core/job_management.html:44
-msgid "active"
-msgstr "Active"
-
-#: bookmark/models/url_item.py:63
-msgid "url_items"
-msgstr "URL Items"
-
-#: bookmark/models/user.py:12 bookmark/templates/user_accounts/mypage.html:19
-#: bookmark/templates/user_accounts/profile_edit.html:24
-#: bookmark/templates/user_accounts/register.html:52
-#: bookmark/templates/user_accounts/settings.html:17
-msgid "nickname"
-msgstr "Nickname"
-
-#: bookmark/models/user.py:16
-msgid "designates_whether_user_active"
-msgstr ""
-"Designates whether this user should be treated as active. Unselect this "
-"instead of deleting accounts."
-
-#: bookmark/models/user.py:18
-msgid "email_verified_at"
-msgstr "Email Verified At"
-
-#: bookmark/models/user.py:25
-msgid "users"
-msgstr "Users"
-
-#: bookmark/models/user.py:40
-msgid "email_notification"
-msgstr "Email Notification"
+#: bookmark/templates/core/about.html:61
+msgid "backend_django_python"
+msgstr "Backend: Django 5.2 (Python 3.12+)"
 
 #: bookmark/models/user.py:41
 msgid "browser_notification"
 msgstr "Browser Notification"
 
-#: bookmark/models/user.py:46
-msgid "user_profile"
-msgstr "User Profile"
+#: bookmark/templates/url_manager/url_bulk_add.html:51 bookmark/templates/url_manager/url_list.html:61
+msgid "bulk_add"
+msgstr "Bulk Add"
 
-#: bookmark/models/user.py:47
-msgid "user_profiles"
-msgstr "User Profiles"
+#: bookmark/templates/url_manager/url_bulk_add.html:4 bookmark/templates/url_manager/url_bulk_add.html:16
+msgid "bulk_add_urls"
+msgstr "Bulk Add URLs"
 
-#: bookmark/models/user.py:62 bookmark/models/user.py:87
-msgid "token"
-msgstr "Token"
+#: bookmark/templates/core/job_management.html:58
+msgid "calculating"
+msgstr "Calculating"
 
-#: bookmark/models/user.py:64 bookmark/models/user.py:89
-msgid "expires_at"
-msgstr "Expires At"
+#: bookmark/templates/core/home.html:56
+msgid "can_monitor_rss_html_elements"
+msgstr "Can monitor RSS, HTML, and specific elements"
+
+#: bookmark/templates/collection_manager/collection_add.html:39 bookmark/templates/collection_manager/collection_add_url.html:50 bookmark/templates/collection_manager/collection_delete.html:33 bookmark/templates/collection_manager/collection_form.html:60 bookmark/templates/collection_manager/collection_remove_url.html:34 bookmark/templates/registration/password_change_form.html:44 bookmark/templates/url_manager/url_add.html:50 bookmark/templates/url_manager/url_bulk_add.html:48 bookmark/templates/url_manager/url_delete.html:33 bookmark/templates/url_manager/url_form.html:169 bookmark/templates/user_accounts/account_delete.html:41 bookmark/templates/user_accounts/edit_profile.html:44
+msgid "cancel"
+msgstr "Cancel"
+
+#: bookmark/templates/user_accounts/settings.html:31
+msgid "change"
+msgstr "Change"
+
+#: bookmark/templates/registration/password_change_form.html:47 bookmark/templates/user_accounts/mypage.html:51 bookmark/templates/user_accounts/password_change.html:69 bookmark/templates/user_accounts/password_reset_confirm.html:56 bookmark/templates/user_accounts/settings.html:29
+msgid "change_password"
+msgstr "Change Password"
+
+#: bookmark/templates/user_accounts/profile_edit.html:63
+msgid "changing_email_requires_verification"
+msgstr "Changing your email address requires verification of the new address."
+
+#: bookmark/templates/url_manager/url_check_result.html:26
+msgid "check_datetime"
+msgstr "Check Date/Time"
+
+#: bookmark/templates/core/home.html:29
+msgid "check_for_updates"
+msgstr "Check for updates"
+
+#: bookmark/templates/url_manager/url_check_result.html:4 bookmark/templates/url_manager/url_check_result.html:16
+msgid "check_result"
+msgstr "Check Result"
+
+#: bookmark/forms/url_manager.py:60 bookmark/models/url_item.py:32 bookmark/templates/collection_manager/collection_detail.html:71 bookmark/templates/url_manager/url_detail.html:43 bookmark/templates/url_manager/url_detail_fixed.html:41 bookmark/templates/url_manager/url_detail_new.html:41 bookmark/templates/url_manager/url_form.html:77 bookmark/templates/url_manager/url_list.html:79
+msgid "check_type"
+msgstr "Check Type"
+
+#: bookmark/models/url_item.py:12 bookmark/templates/collection_manager/collection_detail.html:105 bookmark/templates/url_manager/url_detail.html:49 bookmark/templates/url_manager/url_detail_fixed.html:47 bookmark/templates/url_manager/url_detail_new.html:47 bookmark/templates/url_manager/url_list.html:122
+msgid "check_type_html_custom"
+msgstr "HTML Custom (selector specified)"
+
+#: bookmark/models/url_item.py:11 bookmark/templates/collection_manager/collection_detail.html:103 bookmark/templates/url_manager/url_detail.html:47 bookmark/templates/url_manager/url_detail_fixed.html:45 bookmark/templates/url_manager/url_detail_new.html:45 bookmark/templates/url_manager/url_list.html:120
+msgid "check_type_html_standard"
+msgstr "HTML Standard (entire body)"
+
+#: bookmark/models/url_item.py:10
+msgid "check_type_rss"
+msgstr "RSS Feed"
+
+#: bookmark/templates/collection_manager/collection_detail.html:117 bookmark/templates/url_manager/url_detail.html:21 bookmark/templates/url_manager/url_detail_fixed.html:20 bookmark/templates/url_manager/url_detail_new.html:20 bookmark/templates/url_manager/url_list.html:143
+msgid "check_update"
+msgstr "Check Update"
+
+#: bookmark/models/collection.py:21 bookmark/models/collection.py:42 bookmark/templates/collection_manager/collection_detail.html:18 bookmark/templates/url_manager/url_detail.html:68 bookmark/templates/url_manager/url_detail_fixed.html:66 bookmark/templates/url_manager/url_detail_new.html:66 bookmark/templates/url_manager/url_form.html:152 bookmark/templates/url_manager/url_list.html:33
+msgid "collection"
+msgstr "Collection"
+
+#: bookmark/views/collection_manager.py:35
+msgid "collection_added"
+msgstr "Collection added"
+
+#: bookmark/templates/user_accounts/mypage.html:72
+msgid "collection_count"
+msgstr "Collections"
+
+#: bookmark/templates/collection_manager/collection_delete.html:25
+msgid "collection_delete_warning"
+msgstr "This action cannot be undone. Deleting a collection will not delete the URLs in it.This operation cannot be undone. Deleting the collection will not delete the URLs in the collection.This operation cannot be undone. Deleting the collection will not delete the URLs in the collection."
+
+#: bookmark/views/collection_manager.py:98
+msgid "collection_deleted"
+msgstr "Collection deleted"
+
+#: bookmark/templates/collection_manager/collection_detail.html:31
+msgid "collection_info"
+msgstr "Collection Info"
+
+#: bookmark/templates/collection_manager/collection_list.html:4 bookmark/templates/collection_manager/collection_list.html:9
+msgid "collection_list"
+msgstr "Collection List"
+
+#: bookmark/templates/core/home.html:59
+msgid "collection_management"
+msgstr "Collection Management"
+
+#: bookmark/templates/core/dashboard.html
+msgid "collection_statistics"
+msgstr "Collection Statistics"
+
+#: bookmark/views/collection_manager.py:77
+msgid "collection_updated"
+msgstr "Collection updated"
+
+#: bookmark/models/collection.py:22
+msgid "collections"
+msgstr "Collections"
+
+#: bookmark/templates/url_manager/url_detail.html:58 bookmark/templates/url_manager/url_detail_fixed.html:56 bookmark/templates/url_manager/url_detail_new.html:56 bookmark/templates/url_manager/url_form.html:112
+msgid "condition"
+msgstr "Condition"
+
+#: bookmark/templates/user_accounts/account_delete.html:34
+msgid "confirm_account_and_data_deletion"
+msgstr "Confirm account and data deletion"
+
+#: bookmark/templates/user_accounts/mypage.html:106
+msgid "confirm_check_all_active_urls"
+msgstr "Check all active URLs?"
+
+#: bookmark/templates/user_accounts/account_delete.html:4 bookmark/templates/user_accounts/account_delete.html:10
+msgid "confirm_delete_account"
+msgstr "Confirm Delete Account"
+
+#: bookmark/templates/collection_manager/collection_delete.html:4 bookmark/templates/collection_manager/collection_delete.html:16
+msgid "confirm_delete_collection"
+msgstr "Confirm Delete Collection"
+
+#: bookmark/templates/collection_manager/collection_delete.html:19
+msgid "confirm_delete_collection_message"
+msgstr "Are you sure you want to delete this collection?"
+
+#: bookmark/templates/url_manager/url_delete.html:19
+msgid "confirm_delete_url"
+msgstr "Confirm Delete URL"
+
+#: bookmark/templates/collection_manager/collection_remove_url.html:4 bookmark/templates/collection_manager/collection_remove_url.html:16 bookmark/templates/url_manager/url_delete.html:4 bookmark/templates/url_manager/url_delete.html:16
+msgid "confirm_remove_url"
+msgstr "Confirm Remove URL"
+
+#: bookmark/templates/collection_manager/collection_remove_url.html:19
+msgid "confirm_remove_url_from_collection"
+msgstr "Do you want to remove this URL from the collection?"
+
+#: bookmark/templates/core/home.html:25
+msgid "create_account"
+msgstr "Create an account"
+
+#: bookmark/templates/collection_manager/collection_form.html:8 bookmark/templates/collection_manager/collection_form.html:26 bookmark/templates/collection_manager/collection_list.html:12
+msgid "create_new_collection"
+msgstr "Create New Collection"
+
+#: bookmark/templates/collection_manager/collection_list.html:56
+msgid "create_new_collection_link"
+msgstr "Create a new collection"
+
+#: bookmark/templates/collection_manager/collection_add_url.html:59
+msgid "create_new_url"
+msgstr "Create New URL"
+
+#: bookmark/templates/collection_manager/collection_add_url.html:64
+msgid "create_new_url_button"
+msgstr "Create New URL"
+
+#: bookmark/templates/collection_manager/collection_add_url.html:61
+msgid "create_new_url_if_not_in_list"
+msgstr "If the URL you want to add is not in the list, create a new URL.If the URL you want to add is not in the list, please create a new URL.If the URL you want to add is not in the list, please create a new URL."
+
+#: bookmark/templates/collection_manager/collection_detail.html:44 bookmark/templates/collection_manager/collection_list.html:31
+msgid "created"
+msgstr "Created"
+
+#: bookmark/templates/url_manager/url_list.html:52
+msgid "created_asc"
+msgstr "Created (oldest first)"
+
+#: bookmark/models/collection.py:17 bookmark/models/notification.py:27 bookmark/models/url_item.py:53 bookmark/models/user.py:42 bookmark/models/user.py:63 bookmark/models/user.py:88
+msgid "created_at"
+msgstr "Created At"
+
+#: bookmark/templates/url_manager/url_list.html:51
+msgid "created_desc"
+msgstr "Created (newest first)"
+
+#: bookmark/templates/user_accounts/password_change.html:24
+msgid "current_password"
+msgstr "New Password"
+
+#: bookmark/templates/core/dashboard.html
+msgid "dashboard"
+msgstr "Dashboard"
+
+#: bookmark/templates/core/about.html:64
+msgid "database_sqlite_mysql"
+msgstr "Database: SQLite / MySQL / PostgreSQL"
+
+#: bookmark/templates/url_manager/url_list.html:133
+msgid "days_ago"
+msgstr "days ago"
+
+#: bookmark/templates/collection_manager/collection_delete.html:36 bookmark/templates/collection_manager/collection_detail.html:37 bookmark/templates/collection_manager/collection_list.html:44 bookmark/templates/collection_manager/collection_remove_url.html:37 bookmark/templates/url_manager/url_delete.html:36 bookmark/templates/url_manager/url_detail.html:28 bookmark/templates/url_manager/url_detail_fixed.html:26 bookmark/templates/url_manager/url_detail_new.html:26 bookmark/templates/url_manager/url_list.html:154
+msgid "delete"
+msgstr "Delete"
+
+#: bookmark/templates/user_accounts/account_delete.html:44 bookmark/templates/user_accounts/settings.html:66 bookmark/templates/user_accounts/settings.html:69
+msgid "delete_account"
+msgstr "Delete Account"
+
+#: bookmark/templates/user_accounts/account_delete.html:14
+msgid "deletion_is_permanent"
+msgstr "Deletion is permanent"
+
+#: bookmark/models/user.py:16
+msgid "designates_whether_user_active"
+msgstr "Designates whether this user should be treated as active. Unselect this instead of deleting accounts."
+
+#: bookmark/templates/collection_manager/collection_list.html:37 bookmark/templates/core/job_management.html:88
+msgid "details"
+msgstr "Details"
+
+#: bookmark/templates/core/home.html:16
+msgid "detect_website_updates_various_methods"
+msgstr "Detect website updates with various methods"
+
+#: bookmark/templates/core/about.html:34
+msgid "detection_methods"
+msgstr "Detection Methods"
+
+#: bookmark/templates/user_accounts/login.html:71
+msgid "dont_have_account"
+msgstr "Don't have an account?"
+
+#: bookmark/templates/collection_manager/collection_detail.html:34 bookmark/templates/collection_manager/collection_list.html:41 bookmark/templates/url_manager/url_detail.html:25 bookmark/templates/url_manager/url_detail_fixed.html:23 bookmark/templates/url_manager/url_detail_new.html:23 bookmark/templates/url_manager/url_list.html:149 bookmark/templates/user_accounts/settings.html:21
+msgid "edit"
+msgstr "Edit"
+
+#: bookmark/templates/collection_manager/collection_form.html:6 bookmark/templates/collection_manager/collection_form.html:24
+msgid "edit_collection"
+msgstr "Edit Collection"
+
+#: bookmark/templates/user_accounts/mypage.html:56
+msgid "edit_my_page"
+msgstr "Edit My Page"
+
+#: bookmark/templates/user_accounts/edit_profile.html:4 bookmark/templates/user_accounts/edit_profile.html:10 bookmark/templates/user_accounts/profile_edit.html:4 bookmark/templates/user_accounts/profile_edit.html:9
+msgid "edit_mypage"
+msgstr "Edit My Page"
+
+#: bookmark/templates/url_manager/url_form.html:6 bookmark/templates/url_manager/url_form.html:24
+msgid "edit_url"
+msgstr "Edit URL"
+
+#: bookmark/forms/user_accounts.py:50 bookmark/forms/user_accounts.py:65 bookmark/models/user.py:11 bookmark/templates/user_accounts/login.html:24 bookmark/templates/user_accounts/mypage.html:29 bookmark/templates/user_accounts/password_reset.html:28 bookmark/templates/user_accounts/password_reset_request.html:28 bookmark/templates/user_accounts/profile_edit.html:52 bookmark/templates/user_accounts/register.html:24 bookmark/templates/user_accounts/settings.html:18
+msgid "email_address"
+msgstr "Email Address"
+
+#: bookmark/templates/emails/email_verification_email.html:8 bookmark/templates/emails/email_verification_email.html:46
+msgid "email_confirmation"
+msgstr "Email Confirmation"
+
+#: bookmark/views/user_accounts.py:42
+msgid "email_confirmation_subject"
+msgstr "[Flexible Web Checker] Email Confirmation"
 
 #: bookmark/models/user.py:67
 msgid "email_confirmation_token"
@@ -347,546 +461,81 @@ msgstr "Email Confirmation Token"
 msgid "email_confirmation_tokens"
 msgstr "Email Confirmation Tokens"
 
-#: bookmark/models/user.py:92
-msgid "password_reset_token"
-msgstr "Password Reset Token"
+#: bookmark/views/user_accounts.py:89
+msgid "email_confirmed_please_login"
+msgstr "Email confirmed. Please log in"
 
-#: bookmark/models/user.py:93
-msgid "password_reset_tokens"
-msgstr "Password Reset Tokens"
+#: bookmark/models/user.py:40
+msgid "email_notification"
+msgstr "Email Notification"
 
-#: bookmark/templates/base.html:36 bookmark/templates/base.html:69
-msgid "user_icon"
-msgstr "User Icon"
+#: bookmark/templates/emails/notification_email.html:67
+msgid "email_notification_settings_can_be_changed_at"
+msgstr "Email notification settings can be changed at"
 
-#: bookmark/templates/base.html:41 bookmark/templates/base.html:74
-#: bookmark/templates/core/home.html:44
-#: bookmark/templates/user_accounts/email_verification_complete.html:25
-#: bookmark/templates/user_accounts/login.html:4
-#: bookmark/templates/user_accounts/login.html:9
-#: bookmark/templates/user_accounts/login.html:59
-#: bookmark/templates/user_accounts/password_reset_complete.html:25
-#: bookmark/templates/user_accounts/register.html:105
-msgid "login"
-msgstr "Login"
+#: bookmark/templates/user_accounts/email_verification.html:4 bookmark/templates/user_accounts/email_verification.html:9
+msgid "email_verification"
+msgstr "Email Notification"
 
-#: bookmark/templates/base.html:42 bookmark/templates/base.html:75
-#: bookmark/templates/user_accounts/register.html:97
-msgid "register"
-msgstr "Register"
+#: bookmark/templates/user_accounts/email_verification_complete.html:4 bookmark/templates/user_accounts/email_verification_complete.html:9
+msgid "email_verification_complete"
+msgstr "Email Verification CompleteEmail Verification CompleteThank you for registering with Flexible Web Checker. Please click the link below to verify your email address."
 
-#: bookmark/templates/base.html:46
-msgid "language"
-msgstr "Language"
+#: bookmark/templates/user_accounts/email_verification.html:21
+msgid "email_verification_instructions"
+msgstr "Click the link in the email to verify your email address"
 
-#: bookmark/templates/base.html:108 bookmark/templates/core/about.html:4
-msgid "about_this_site"
-msgstr "About This Site"
+#: bookmark/templates/emails/email_verification_email.html:52
+msgid "email_verification_message"
+msgstr "Thank you for registering with Flexible Web Checker. Please click the link below to verify your email address.Thank you for registering with Flexible Web Checker. Please click the link below to verify your email address."
 
-#: bookmark/templates/collection_manager/collection_add.html:4
-#: bookmark/templates/collection_manager/collection_add.html:10
-msgid "add_collection"
-msgstr "Add Collection"
+#: bookmark/templates/user_accounts/email_verification.html:17
+msgid "email_verification_sent"
+msgstr "Email verification sentWe've sent you a verification email.Thank you for registering with Flexible Web Checker. Please click the link below to verify your email address."
 
-#: bookmark/templates/collection_manager/collection_add.html:39
-#: bookmark/templates/collection_manager/collection_add_url.html:50
-#: bookmark/templates/collection_manager/collection_delete.html:33
-#: bookmark/templates/collection_manager/collection_form.html:60
-#: bookmark/templates/collection_manager/collection_remove_url.html:34
-#: bookmark/templates/registration/password_change_form.html:44
-#: bookmark/templates/url_manager/url_add.html:50
-#: bookmark/templates/url_manager/url_bulk_add.html:48
-#: bookmark/templates/url_manager/url_delete.html:33
-#: bookmark/templates/url_manager/url_form.html:169
-#: bookmark/templates/user_accounts/account_delete.html:41
-#: bookmark/templates/user_accounts/edit_profile.html:44
-msgid "cancel"
-msgstr "Cancel"
+#: bookmark/models/user.py:18
+msgid "email_verified_at"
+msgstr "Email Verified At"
 
-#: bookmark/templates/collection_manager/collection_add.html:42
-#: bookmark/templates/collection_manager/collection_add_url.html:53
-#: bookmark/templates/url_manager/url_add.html:53
-msgid "add"
-msgstr "Add"
-
-#: bookmark/templates/collection_manager/collection_add_url.html:4
-#: bookmark/templates/collection_manager/collection_add_url.html:17
-#: bookmark/templates/collection_manager/collection_detail.html:59
-msgid "add_url"
-msgstr "Add URL"
-
-#: bookmark/templates/collection_manager/collection_add_url.html:10
-#: bookmark/templates/collection_manager/collection_delete.html:10
-#: bookmark/templates/collection_manager/collection_remove_url.html:10
-msgid "back_to_collection_detail"
-msgstr "Back to Collection Detail"
-
-#: bookmark/templates/collection_manager/collection_add_url.html:44
-msgid "select_urls_to_add_to_collection"
-msgstr "Select URLs to add to collection"
-
-#: bookmark/templates/collection_manager/collection_add_url.html:59
-msgid "create_new_url"
-msgstr "Create New URL"
-
-#: bookmark/templates/collection_manager/collection_add_url.html:61
-msgid "create_new_url_if_not_in_list"
-msgstr "If the URL you want to add is not in the list, create a new URL."
-"If the URL you want to add is not in the list, please create a new URL.If "
-"the URL you want to add is not in the list, please create a new URL."
-
-#: bookmark/templates/collection_manager/collection_add_url.html:64
-msgid "create_new_url_button"
-msgstr "Create New URL"
-
-#: bookmark/templates/collection_manager/collection_delete.html:4
-#: bookmark/templates/collection_manager/collection_delete.html:16
-msgid "confirm_delete_collection"
-msgstr "Confirm Delete Collection"
-
-#: bookmark/templates/collection_manager/collection_delete.html:19
-msgid "confirm_delete_collection_message"
-msgstr "Are you sure you want to delete this collection?"
-
-#: bookmark/templates/collection_manager/collection_delete.html:21
-#: bookmark/templates/collection_manager/collection_detail.html:47
-#: bookmark/templates/collection_manager/collection_list.html:28
-msgid "url_count"
-msgstr "URL Count"
-
-#: bookmark/templates/collection_manager/collection_delete.html:25
-msgid "collection_delete_warning"
-msgstr "This action cannot be undone. Deleting a collection will not delete the URLs in it."
-"This operation cannot be undone. Deleting the collection will not delete the "
-"URLs in the collection.This operation cannot be undone. Deleting the "
-"collection will not delete the URLs in the collection."
-
-#: bookmark/templates/collection_manager/collection_delete.html:36
-#: bookmark/templates/collection_manager/collection_detail.html:37
-#: bookmark/templates/collection_manager/collection_list.html:44
-#: bookmark/templates/collection_manager/collection_remove_url.html:37
-#: bookmark/templates/url_manager/url_delete.html:36
-#: bookmark/templates/url_manager/url_detail.html:28
-#: bookmark/templates/url_manager/url_detail_fixed.html:26
-#: bookmark/templates/url_manager/url_detail_new.html:26
-#: bookmark/templates/url_manager/url_list.html:154
-msgid "delete"
-msgstr "Delete"
-
-#: bookmark/templates/collection_manager/collection_detail.html:14
-#: bookmark/templates/url_manager/url_list.html:29
-msgid "all"
-msgstr "All"
-
-#: bookmark/templates/collection_manager/collection_detail.html:22
-#: bookmark/templates/url_manager/url_list.html:38
-msgid "uncategorized"
-msgstr "Uncategorized"
-
-#: bookmark/templates/collection_manager/collection_detail.html:31
-msgid "collection_info"
-msgstr "Collection Info"
-
-#: bookmark/templates/collection_manager/collection_detail.html:34
-#: bookmark/templates/collection_manager/collection_list.html:41
-#: bookmark/templates/url_manager/url_detail.html:25
-#: bookmark/templates/url_manager/url_detail_fixed.html:23
-#: bookmark/templates/url_manager/url_detail_new.html:23
-#: bookmark/templates/url_manager/url_list.html:149
-#: bookmark/templates/user_accounts/settings.html:21
-msgid "edit"
-msgstr "Edit"
-
-#: bookmark/templates/collection_manager/collection_detail.html:44
-#: bookmark/templates/collection_manager/collection_list.html:31
-msgid "created"
-msgstr "Created"
-
-#: bookmark/templates/collection_manager/collection_detail.html:72
-#: bookmark/templates/url_manager/url_detail.html:107
-#: bookmark/templates/url_manager/url_detail_fixed.html:105
-#: bookmark/templates/url_manager/url_detail_new.html:105
-#: bookmark/templates/url_manager/url_list.html:80
-#: bookmark/templates/emails/notification_email.html:57
-msgid "last_updated"
-msgstr "Last Updated"
-
-#: bookmark/templates/collection_manager/collection_detail.html:73
-#: bookmark/templates/url_manager/url_list.html:81
-msgid "actions"
-msgstr "Actions"
-
-#: bookmark/templates/collection_manager/collection_detail.html:86
-#: bookmark/templates/url_manager/url_list.html:93
-msgid "no_image"
-msgstr "No Image"
-
-#: bookmark/templates/collection_manager/collection_detail.html:112
-#: bookmark/templates/url_manager/url_check_result.html:46
-#: bookmark/templates/url_manager/url_list.html:137
-msgid "not_updated"
-msgstr "Not Updated"
-
-#: bookmark/templates/collection_manager/collection_detail.html:117
-#: bookmark/templates/url_manager/url_detail.html:21
-#: bookmark/templates/url_manager/url_detail_fixed.html:20
-#: bookmark/templates/url_manager/url_detail_new.html:20
-#: bookmark/templates/url_manager/url_list.html:143
-msgid "check_update"
-msgstr "Check Update"
-
-#: bookmark/templates/collection_manager/collection_detail.html:122
-msgid "remove_from_collection"
-msgstr "Remove from Collection"
-
-#: bookmark/templates/collection_manager/collection_detail.html:137
-msgid "no_urls_in_collection"
-msgstr "There are no URLs registered in this collection."
-
-#: bookmark/templates/collection_manager/collection_detail.html:139
-msgid "add_url_to_collection"
-msgstr "Add URL to Collection"
-
-#: bookmark/templates/collection_manager/collection_form.html:6
-#: bookmark/templates/collection_manager/collection_form.html:24
-msgid "edit_collection"
-msgstr "Edit Collection"
-
-#: bookmark/templates/collection_manager/collection_form.html:8
-#: bookmark/templates/collection_manager/collection_form.html:26
-#: bookmark/templates/collection_manager/collection_list.html:12
-msgid "create_new_collection"
-msgstr "Create New Collection"
-
-#: bookmark/templates/collection_manager/collection_form.html:16
-msgid "back_to_collection_list"
-msgstr "Back to Collection List"
+#: bookmark/templates/user_accounts/email_verification_complete.html:17
+msgid "email_verified_successfully"
+msgstr "Email Verified At"
 
 #: bookmark/templates/collection_manager/collection_form.html:54
 msgid "enter_collection_name"
 msgstr "Enter collection name"
 
-#: bookmark/templates/collection_manager/collection_form.html:63
-#: bookmark/templates/url_manager/url_form.html:172
-#: bookmark/templates/user_accounts/edit_profile.html:47
-#: bookmark/templates/user_accounts/profile_edit.html:69
-#: bookmark/templates/user_accounts/settings.html:58
-msgid "save"
-msgstr "Save"
-
-#: bookmark/templates/collection_manager/collection_list.html:4
-#: bookmark/templates/collection_manager/collection_list.html:9
-msgid "collection_list"
-msgstr "Collection List"
-
-#: bookmark/templates/collection_manager/collection_list.html:37
-#: bookmark/templates/core/job_management.html:88
-msgid "details"
-msgstr "Details"
-
-#: bookmark/templates/collection_manager/collection_list.html:54
-msgid "no_collections_created"
-msgstr "No collections have been created yet."
-
-#: bookmark/templates/collection_manager/collection_list.html:56
-msgid "create_new_collection_link"
-msgstr "Create a new collection"
-
-#: bookmark/templates/collection_manager/collection_remove_url.html:4
-#: bookmark/templates/collection_manager/collection_remove_url.html:16
-#: bookmark/templates/url_manager/url_delete.html:4
-#: bookmark/templates/url_manager/url_delete.html:16
-msgid "confirm_remove_url"
-msgstr "Confirm Remove URL"
-
-#: bookmark/templates/collection_manager/collection_remove_url.html:19
-msgid "confirm_remove_url_from_collection"
-msgstr "Do you want to remove this URL from the collection?"
-
-#: bookmark/templates/collection_manager/collection_remove_url.html:25
-msgid "url_removed_from_collection_only"
-msgstr "This URL will be removed from the collection, but the URL itself will not be deleted."
-"This URL will be removed from the collection, but the URL itself will not be "
-"deleted.This URL will be removed from the collection, but the URL itself "
-"will not be deleted."
-
-#: bookmark/templates/core/about.html:9
-msgid "about_flexible_web_checker"
-msgstr "About Flexible Web Checker"
-
-#: bookmark/templates/core/about.html:12
-msgid "overview"
-msgstr "Overview"
-
-#: bookmark/templates/core/about.html:14
-msgid "about_description"
-msgstr ""
-"Flexible Web Checker is a service that automatically detects and notifies "
-"updates to registered websites.Flexible Web Checker is a tool for flexibly "
-"monitoring website updates. It detects updates in various ways to ensure you "
-"don't miss updates to your favorite websites.Flexible Web Checker is a tool "
-"for flexibly monitoring website updates. It detects updates in various ways "
-"to ensure you don't miss updates to your favorite websites."
-
-#: bookmark/templates/core/about.html:17
-msgid "about_tech_description"
-msgstr ""
-"It reliably detects website updates using three detection methods: RSS, HTML "
-"Standard, and HTML Custom."
-
-#: bookmark/templates/core/about.html:22 bookmark/templates/core/home.html:14
-msgid "main_features"
-msgstr "Main Features"
-
-#: bookmark/templates/core/about.html:24
-msgid "multiple_detection_methods"
-msgstr "Multiple detection methods (RSS, HTML Standard, HTML Custom)"
-
-#: bookmark/templates/core/about.html:25
-msgid "url_collection_management"
-msgstr "Organize and manage URLs with collections"
-
-#: bookmark/templates/core/about.html:26
-msgid "website_thumbnail_display"
-msgstr "Website thumbnail display"
-
-#: bookmark/templates/core/about.html:27
-msgid "periodic_update_check"
-msgstr "Periodic update checking"
-
-#: bookmark/templates/core/about.html:28
-msgid "user_account_management"
-msgstr "User account management"
-
-#: bookmark/templates/core/about.html:29
-msgid "multilingual_support"
-msgstr "Multilingual support (Japanese and English)"
-
-#: bookmark/templates/core/about.html:34
-msgid "detection_methods"
-msgstr "Detection Methods"
-
-#: bookmark/templates/core/about.html:37
-msgid "rss_feed"
-msgstr "RSS Feed"
-
-#: bookmark/templates/core/about.html:39
-msgid "rss_feed_description"
-msgstr ""
-"Periodically checks RSS feeds and detects new entries. Ideal for blogs and "
-"news sites.For websites that provide RSS feeds, monitors the latest entries "
-"in the feed to detect updates. This is the most efficient method.For "
-"websites that provide RSS feeds, monitors the latest entries in the feed to "
-"detect updates. This is the most efficient method."
-
-#: bookmark/templates/core/about.html:44
-msgid "html_standard"
-msgstr "HTML Standard"
-
-#: bookmark/templates/core/about.html:46
-msgid "html_standard_description"
-msgstr ""
-"Checks the entire HTML content of a webpage and detects changes. Suitable "
-"for small sites or sites with infrequent updates.Monitors the entire HTML of "
-"a web page to detect content changes. Suitable for sites that do not provide "
-"RSS feeds.Monitors the entire HTML of a web page to detect content changes. "
-"Suitable for sites that do not provide RSS feeds."
-
-#: bookmark/templates/core/about.html:51
-msgid "html_custom"
-msgstr "HTML Custom"
-
-#: bookmark/templates/core/about.html:53
-msgid "html_custom_description"
-msgstr ""
-"Detects changes to specific elements specified by CSS selectors. Useful when "
-"you want to monitor only specific sections.Uses CSS selectors to monitor "
-"changes to specific parts of a web page. Useful when you want to track only "
-"specific elements.Uses CSS selectors to monitor changes to specific parts of "
-"a web page. Useful when you want to track only specific elements."
-
-#: bookmark/templates/core/about.html:59
-msgid "technical_info"
-msgstr "Technical Information"
-
-#: bookmark/templates/core/about.html:61
-msgid "backend_django_python"
-msgstr "Backend: Django 5.2 (Python 3.12+)"
-
-#: bookmark/templates/core/about.html:62
-msgid "frontend_tech"
-msgstr "Frontend: TypeScript, React 19, Tailwind CSS 4"
-
-#: bookmark/templates/core/about.html:63
-msgid "async_task_celery"
-msgstr "Async Tasks: Celery + Redis"
-
-#: bookmark/templates/core/about.html:64
-msgid "database_sqlite_mysql"
-msgstr "Database: SQLite / MySQL / PostgreSQL"
-
-#: bookmark/templates/core/about.html:65
-msgid "screenshot_selenium_firefox"
-msgstr "Screenshot: Playwright"
-
-#: bookmark/templates/core/about.html:66
-msgid "html_parsing_beautifulsoup"
-msgstr "HTML Parsing: BeautifulSoup4"
-
-#: bookmark/templates/core/about.html:67
-msgid "rss_parsing_feedparser"
-msgstr "RSS Parsing: feedparser"
-
-#: bookmark/templates/core/home.html:4
-msgid "home"
-msgstr "Home"
-
-#: bookmark/templates/core/home.html:9
-msgid "welcome_to_flexible_web_checker"
-msgstr "Welcome to Flexible Web Checker"
-
-#: bookmark/templates/core/home.html:10
-msgid "track_favorite_websites_description"
-msgstr "Track updates on your favorite websites"
-
-#: bookmark/templates/core/home.html:16
-msgid "detect_website_updates_various_methods"
-msgstr "Detect website updates with various methods"
-
-#: bookmark/templates/core/home.html:17
-msgid "monitor_rss_html_elements"
-msgstr "Monitor RSS, HTML pages, and specific elements"
-
-#: bookmark/templates/core/home.html:18
-msgid "organize_urls_in_collections"
-msgstr "Organize URLs in collections"
-
-#: bookmark/templates/core/home.html:19
-msgid "notify_on_updates"
-msgstr "Get notified on updates"
-
-#: bookmark/templates/core/home.html:23
-msgid "how_to_use"
-msgstr "How to Use"
-
-#: bookmark/templates/core/home.html:25
-msgid "create_account"
-msgstr "Create an account"
-
-#: bookmark/templates/core/home.html:26
-msgid "add_urls_to_monitor"
-msgstr "Add URLs to monitor"
-
-#: bookmark/templates/core/home.html:27
-msgid "select_update_check_method"
-msgstr "Select update check method"
-
-#: bookmark/templates/core/home.html:28
-msgid "organize_urls_as_needed"
-msgstr "Organize URLs as needed"
-
-#: bookmark/templates/core/home.html:29
-msgid "check_for_updates"
-msgstr "Check for updates"
-
-#: bookmark/templates/core/home.html:37
-msgid "go_to_dashboard"
-msgstr "Go to Dashboard"
-
-#: bookmark/templates/core/home.html:41
-msgid "register_now"
-msgstr "Register Now"
-
-#: bookmark/templates/core/home.html:51
-msgid "features_of_flexible_web_checker"
-msgstr "Features of Flexible Web Checker"
-
-#: bookmark/templates/core/home.html:55
-msgid "flexible_update_detection"
-msgstr "Flexible Update Detection"
-
-#: bookmark/templates/core/home.html:56
-msgid "can_monitor_rss_html_elements"
-msgstr "Can monitor RSS, HTML, and specific elements"
-
-#: bookmark/templates/core/home.html:59
-msgid "collection_management"
-msgstr "Collection Management"
-
-#: bookmark/templates/core/home.html:60
-msgid "organize_and_group_websites"
-msgstr "Organize and group websites"
-
-#: bookmark/templates/core/home.html:63
-msgid "thumbnail_display"
-msgstr "Thumbnail Display"
-
-#: bookmark/templates/core/home.html:64
-msgid "auto_generate_thumbnails"
-msgstr "Auto-generate thumbnails"
-
-#: bookmark/templates/core/job_management.html:4
-#: bookmark/templates/core/job_management.html:9
-#: bookmark/templates/user_accounts/mypage.html:102
-msgid "job_management"
-msgstr "Job Management"
-
-#: bookmark/templates/core/job_management.html:10
-msgid "manage_background_jobs_description"
-msgstr "Manage background jobs"
-
-#: bookmark/templates/core/job_management.html:16
-msgid "periodic_tasks"
-msgstr "Periodic Tasks"
-
-#: bookmark/templates/core/job_management.html:22
-#: bookmark/templates/core/job_management.html:84
-msgid "task_name"
-msgstr "Task Name"
-
-#: bookmark/templates/core/job_management.html:23
-msgid "schedule"
-msgstr "Schedule"
-
-#: bookmark/templates/core/job_management.html:25
-msgid "last_run"
-msgstr "Last Run"
-
-#: bookmark/templates/core/job_management.html:26
-msgid "next_run"
-msgstr "Next Run"
-
-#: bookmark/templates/core/job_management.html:37
-msgid "Every"
-msgstr "Every"
-
-#: bookmark/templates/core/job_management.html:46
-msgid "inactive"
-msgstr "Inactive"
-
-#: bookmark/templates/core/job_management.html:53
-msgid "not_executed"
-msgstr "Not Executed"
-
-#: bookmark/templates/core/job_management.html:58
-msgid "calculating"
-msgstr "Calculating"
-
-#: bookmark/templates/core/job_management.html:69
-msgid "no_periodic_tasks_registered"
-msgstr "No periodic tasks registered"
-
-#: bookmark/templates/core/job_management.html:77
-msgid "task_execution_history"
-msgstr "Task Execution History"
-
-#: bookmark/templates/core/job_management.html:83
-msgid "task_id"
-msgstr "Task ID"
-
-#: bookmark/templates/core/job_management.html:85
-msgid "status"
-msgstr "Status"
+#: bookmark/templates/user_accounts/account_delete.html:27
+msgid "enter_current_password_to_confirm"
+msgstr "Enter your current password to confirm"
+
+#: bookmark/templates/url_manager/url_form.html:71
+msgid "enter_title_for_url"
+msgstr "Enter title for URL"
+
+#: bookmark/templates/url_manager/url_form.html:54
+msgid "enter_url_to_monitor"
+msgstr "Enter URL to monitor"
+
+#: bookmark/templates/url_manager/url_check_result.html:58
+msgid "error"
+msgstr "Error"
+
+#: bookmark/models/url_item.py:55 bookmark/templates/url_manager/url_detail.html:120 bookmark/templates/url_manager/url_detail_fixed.html:116 bookmark/templates/url_manager/url_detail_new.html:116
+msgid "error_count"
+msgstr "Error Count"
+
+#: bookmark/templates/core/job_management.html:120
+msgid "error_details"
+msgstr "Error Details"
+
+#: bookmark/templates/url_manager/url_detail.html:119 bookmark/templates/url_manager/url_detail_fixed.html:115 bookmark/templates/url_manager/url_detail_new.html:115
+msgid "error_info"
+msgstr "Error Information"
+
+#: bookmark/views/core.py:43
+msgid "error_occurred"
+msgstr "Error Count"
 
 #: bookmark/templates/core/job_management.html:86
 msgid "execution_datetime"
@@ -896,697 +545,779 @@ msgstr "Execution Date/Time"
 msgid "execution_time"
 msgstr "Execution Time"
 
-#: bookmark/templates/core/job_management.html:98
-msgid "success"
-msgstr "Success"
+#: bookmark/models/user.py:64 bookmark/models/user.py:89
+msgid "expires_at"
+msgstr "Expires At"
+
+#: bookmark/views/url_manager.py:209
+msgid "failed_to_add_urls_list"
+msgstr "Failed to add URLs:"
+
+#: bookmark/views/url_manager.py:188
+msgid "failed_to_get_title_will_use_url"
+msgstr "Failed to get title. Using URL: {url}"
 
 #: bookmark/templates/core/job_management.html:100
 msgid "failure"
 msgstr "Failure"
 
-#: bookmark/templates/core/job_management.html:102
-msgid "pending"
-msgstr "Pending"
+#: bookmark/templates/core/home.html:51
+msgid "features_of_flexible_web_checker"
+msgstr "Features of Flexible Web Checker"
 
-#: bookmark/templates/core/job_management.html:104
-msgid "running"
-msgstr "Running"
-
-#: bookmark/templates/core/job_management.html:120
-msgid "error_details"
-msgstr "Error Details"
-
-#: bookmark/templates/core/job_management.html:139
-#: bookmark/templates/core/pagination.html:17
-#: bookmark/templates/core/pagination.html:33
-#: bookmark/templates/url_manager/url_list.html:173
-#: bookmark/templates/url_manager/url_list.html:177
-msgid "previous"
-msgstr "Previous"
-
-#: bookmark/templates/core/job_management.html:158
-#: bookmark/templates/core/pagination.html:54
-#: bookmark/templates/core/pagination.html:70
-#: bookmark/templates/url_manager/url_list.html:195
-#: bookmark/templates/url_manager/url_list.html:199
-msgid "next"
-msgstr "Next"
-
-#: bookmark/templates/core/job_management.html:166
-msgid "no_task_execution_history"
-msgstr "No task execution history"
-
-#: bookmark/templates/core/notification.html:24
-msgid "system_notifications"
-msgstr "System Notifications"
-
-#: bookmark/templates/core/notification.html:34
-msgid "mark_as_read"
-msgstr "Mark as read"
-
-#: bookmark/templates/core/notification.html:64
-msgid "mark_all_as_read"
-msgstr "Mark all as read"
-
-#: bookmark/templates/core/notification.html:74
-msgid "no_notifications"
-msgstr "No notifications"
-
-#: bookmark/templates/core/pagination.html:5
-msgid "pagination"
-msgstr "Pagination"
-
-#: bookmark/templates/core/pagination.html:8
-#: bookmark/templates/core/pagination.html:24
+#: bookmark/templates/core/pagination.html:8 bookmark/templates/core/pagination.html:24
 msgid "first"
 msgstr "First"
 
-#: bookmark/templates/core/pagination.html:60
-#: bookmark/templates/core/pagination.html:76
-msgid "last"
-msgstr "Last"
-
-#: bookmark/templates/registration/password_change_done.html:4
-#: bookmark/templates/registration/password_change_done.html:10
-msgid "password_change_done"
-msgstr "Password Change Complete"
-
-#: bookmark/templates/registration/password_change_done.html:11
-#: bookmark/templates/user_accounts/password_reset_complete.html:17
-msgid "password_changed_successfully"
-msgstr "Password changed successfully!"
-
-#: bookmark/templates/registration/password_change_done.html:13
-#: bookmark/templates/user_accounts/password_change.html:76
-#: bookmark/templates/user_accounts/profile_edit.html:76
-msgid "back_to_mypage"
-msgstr "Back to My Page"
-
-#: bookmark/templates/registration/password_change_form.html:4
-#: bookmark/templates/registration/password_change_form.html:10
-#: bookmark/templates/user_accounts/password_change.html:4
-#: bookmark/templates/user_accounts/password_change.html:9
-msgid "password_change"
-msgstr "Change Password"
-
-#: bookmark/templates/registration/password_change_form.html:47
-#: bookmark/templates/user_accounts/mypage.html:51
-#: bookmark/templates/user_accounts/password_change.html:69
-#: bookmark/templates/user_accounts/password_reset_confirm.html:56
-#: bookmark/templates/user_accounts/settings.html:29
-msgid "change_password"
-msgstr "Change Password"
-
-#: bookmark/templates/url_manager/url_add.html:4
-#: bookmark/templates/url_manager/url_add.html:16
-#: bookmark/templates/url_manager/url_form.html:8
-#: bookmark/templates/url_manager/url_form.html:26
-#: bookmark/templates/url_manager/url_list.html:65
-#: bookmark/templates/url_manager/url_list.html:216
-msgid "add_new_url"
-msgstr "Add New URL"
-
-#: bookmark/templates/url_manager/url_add.html:10
-#: bookmark/templates/url_manager/url_bulk_add.html:10
-#: bookmark/templates/url_manager/url_detail.html:10
-#: bookmark/templates/url_manager/url_detail_fixed.html:10
-#: bookmark/templates/url_manager/url_detail_new.html:10
-#: bookmark/templates/url_manager/url_form.html:16
-msgid "back_to_url_list"
-msgstr "Back to URL List"
-
-#: bookmark/templates/url_manager/url_bulk_add.html:4
-#: bookmark/templates/url_manager/url_bulk_add.html:16
-msgid "bulk_add_urls"
-msgstr "Bulk Add URLs"
-
-#: bookmark/templates/url_manager/url_bulk_add.html:51
-#: bookmark/templates/url_manager/url_list.html:61
-msgid "bulk_add"
-msgstr "Bulk Add"
-
-#: bookmark/templates/url_manager/url_check_result.html:4
-#: bookmark/templates/url_manager/url_check_result.html:16
-msgid "check_result"
-msgstr "Check Result"
-
-#: bookmark/templates/url_manager/url_check_result.html:10
-#: bookmark/templates/url_manager/url_delete.html:10
-msgid "back_to_url_detail"
-msgstr "Back to URL Detail"
-
-#: bookmark/templates/url_manager/url_check_result.html:26
-msgid "check_datetime"
-msgstr "Check Date/Time"
-
-#: bookmark/templates/url_manager/url_check_result.html:36
-msgid "updated"
-msgstr "Updated"
-
-#: bookmark/templates/url_manager/url_check_result.html:38
-msgid "url_has_been_updated"
-msgstr "URL has been updated"
-
-#: bookmark/templates/url_manager/url_check_result.html:48
-msgid "url_has_not_been_updated"
-msgstr "URL has not been updated"
-
-#: bookmark/templates/url_manager/url_check_result.html:58
-msgid "error"
-msgstr "Error"
-
-#: bookmark/templates/url_manager/url_check_result.html:66
-msgid "back"
-msgstr "Back"
-
-#: bookmark/templates/url_manager/url_check_result.html:69
-msgid "recheck"
-msgstr "Recheck"
-
-#: bookmark/templates/url_manager/url_delete.html:19
-msgid "confirm_delete_url"
-msgstr "Confirm Delete URL"
-
-#: bookmark/templates/url_manager/url_delete.html:25
-msgid "url_delete_warning"
-msgstr "This action cannot be undone. Deleting a URL will also remove it from all collections."
-"This operation cannot be undone. If you delete the URL, it will also be "
-"removed from all collections.This operation cannot be undone. If you delete "
-"the URL, it will also be removed from all collections."
-
-#: bookmark/templates/url_manager/url_detail.html:58
-#: bookmark/templates/url_manager/url_detail_fixed.html:56
-#: bookmark/templates/url_manager/url_detail_new.html:56
-#: bookmark/templates/url_manager/url_form.html:112
-msgid "condition"
-msgstr "Condition"
-
-#: bookmark/templates/url_manager/url_detail.html:60
-#: bookmark/templates/url_manager/url_detail_fixed.html:58
-#: bookmark/templates/url_manager/url_detail_new.html:58
-msgid "any_change_or"
-msgstr "Any change (OR)"
-
-#: bookmark/templates/url_manager/url_detail.html:62
-#: bookmark/templates/url_manager/url_detail_fixed.html:60
-#: bookmark/templates/url_manager/url_detail_new.html:60
-msgid "all_change_and"
-msgstr "All changes (AND)"
-
-#: bookmark/templates/url_manager/url_detail.html:80
-#: bookmark/templates/url_manager/url_detail_fixed.html:78
-#: bookmark/templates/url_manager/url_detail_new.html:78
-msgid "not_in_any_collection"
-msgstr "Not in any collection"
-
-#: bookmark/templates/url_manager/url_detail.html:92
-#: bookmark/templates/url_manager/url_detail_fixed.html:90
-#: bookmark/templates/url_manager/url_detail_new.html:90
-msgid "no_thumbnail"
-msgstr "No thumbnail"
-
-#: bookmark/templates/url_manager/url_detail.html:98
-#: bookmark/templates/url_manager/url_detail_fixed.html:96
-#: bookmark/templates/url_manager/url_detail_new.html:96
-#: bookmark/templates/user_accounts/mypage.html:82
-msgid "last_check"
-msgstr "Last Check"
-
-#: bookmark/templates/url_manager/url_detail.html:102
-#: bookmark/templates/url_manager/url_detail_fixed.html:100
-#: bookmark/templates/url_manager/url_detail_new.html:100
-msgid "not_checked_yet"
-msgstr "Not checked yet"
-
-#: bookmark/templates/url_manager/url_detail.html:111
-#: bookmark/templates/url_manager/url_detail_fixed.html:109
-#: bookmark/templates/url_manager/url_detail_new.html:109
-msgid "not_updated_yet"
-msgstr "Not updated yet"
-
-#: bookmark/templates/url_manager/url_detail.html:119
-#: bookmark/templates/url_manager/url_detail_fixed.html:115
-#: bookmark/templates/url_manager/url_detail_new.html:115
-msgid "error_info"
-msgstr "Error Information"
-
-#: bookmark/templates/url_manager/url_form.html:6
-#: bookmark/templates/url_manager/url_form.html:24
-msgid "edit_url"
-msgstr "Edit URL"
-
-#: bookmark/templates/url_manager/url_form.html:54
-msgid "enter_url_to_monitor"
-msgstr "Enter URL to monitor"
-
-#: bookmark/templates/url_manager/url_form.html:71
-msgid "enter_title_for_url"
-msgstr "Enter title for URL"
-
-#: bookmark/templates/url_manager/url_form.html:88
-msgid "select_check_method"
-msgstr "Select check method"
-
-#: bookmark/templates/url_manager/url_form.html:106
-msgid "html_selector_help"
-msgstr "Enter CSS selectors (one per line for multiple)"
-
-#: bookmark/templates/url_manager/url_form.html:123
-msgid "select_condition_for_multiple_selectors"
-msgstr "Select condition for multiple selectors"
-
-#: bookmark/templates/url_manager/url_form.html:146
-msgid "thumbnail_upload_help"
-msgstr "Upload a thumbnail image. If left blank, a screenshot will be automatically generated."
-"Upload a thumbnail image. If left blank, a screenshot will be automatically "
-"generated.Upload a thumbnail image. If left blank, a screenshot will be "
-"automatically generated."
-
-#: bookmark/templates/url_manager/url_form.html:163
-msgid "select_collections_for_url"
-msgstr "Select collections for this URL"
-
-#: bookmark/templates/url_manager/url_list.html:47
-msgid "sort_by"
-msgstr "Sort by"
-
-#: bookmark/templates/url_manager/url_list.html:49
-msgid "updated_desc"
-msgstr "Updated (newest first)"
-
-#: bookmark/templates/url_manager/url_list.html:50
-msgid "updated_asc"
-msgstr "Updated (oldest first)"
-
-#: bookmark/templates/url_manager/url_list.html:51
-msgid "created_desc"
-msgstr "Created (newest first)"
-
-#: bookmark/templates/url_manager/url_list.html:52
-msgid "created_asc"
-msgstr "Created (oldest first)"
-
-#: bookmark/templates/url_manager/url_list.html:107
-msgid "open_in_this_tab"
-msgstr "Open in this tab"
-
-#: bookmark/templates/url_manager/url_list.html:110
-msgid "open_in_new_tab"
-msgstr "Open in new tab"
-
-#: bookmark/templates/url_manager/url_list.html:129
-msgid "today"
-msgstr "Today"
-
-#: bookmark/templates/url_manager/url_list.html:131
-msgid "yesterday"
-msgstr "Yesterday"
-
-#: bookmark/templates/url_manager/url_list.html:133
-msgid "days_ago"
-msgstr "days ago"
-
-#: bookmark/templates/url_manager/url_list.html:209
-msgid "no_urls_registered"
-msgstr "No URLs registered"
-
-#: bookmark/templates/url_manager/url_list.html:211
-msgid "no_uncategorized_urls"
-msgstr "No uncategorized URLs"
-
-#: bookmark/templates/user_accounts/account_delete.html:4
-#: bookmark/templates/user_accounts/account_delete.html:10
-msgid "confirm_delete_account"
-msgstr "Confirm Delete Account"
-
-#: bookmark/templates/user_accounts/account_delete.html:13
-msgid "really_delete_account"
-msgstr "Do you really want to delete your account?"
-
-#: bookmark/templates/user_accounts/account_delete.html:14
-msgid "deletion_is_permanent"
-msgstr "Deletion is permanent"
-
-#: bookmark/templates/user_accounts/account_delete.html:27
-msgid "enter_current_password_to_confirm"
-msgstr "Enter your current password to confirm"
-
-#: bookmark/templates/user_accounts/account_delete.html:34
-msgid "confirm_account_and_data_deletion"
-msgstr "Confirm account and data deletion"
-
-#: bookmark/templates/user_accounts/account_delete.html:44
-#: bookmark/templates/user_accounts/settings.html:66
-#: bookmark/templates/user_accounts/settings.html:69
-msgid "delete_account"
-msgstr "Delete Account"
-
-#: bookmark/templates/user_accounts/edit_profile.html:4
-#: bookmark/templates/user_accounts/edit_profile.html:10
-#: bookmark/templates/user_accounts/profile_edit.html:4
-#: bookmark/templates/user_accounts/profile_edit.html:9
-msgid "edit_mypage"
-msgstr "Edit My Page"
-
-#: bookmark/templates/emails/email_verification_email.html:8
-#: bookmark/templates/emails/email_verification_email.html:46
-msgid "email_confirmation"
-msgstr "Email Confirmation"
-
-#: bookmark/templates/emails/email_verification_email.html:50
-#: bookmark/templates/emails/notification_email.html:50
-#: bookmark/templates/emails/password_reset_email.html:50
-msgid "hello"
-msgstr "Hello"
-
-#: bookmark/templates/emails/email_verification_email.html:52
-msgid "email_verification_message"
-msgstr ""
-"Thank you for registering with Flexible Web Checker. Please click the link "
-"below to verify your email address.Thank you for registering with Flexible "
-"Web Checker. Please click the link below to verify your email address."
-
-#: bookmark/templates/emails/email_verification_email.html:55
-msgid "verify_email_address"
-msgstr "Email Address"
-
-#: bookmark/templates/emails/email_verification_email.html:58
-#: bookmark/templates/emails/password_reset_email.html:58
-msgid "or_paste_url_in_browser"
-msgstr "Or paste the following URL in your browser:"
-
-#: bookmark/templates/emails/email_verification_email.html:61
-#: bookmark/templates/emails/password_reset_email.html:61
-msgid "link_valid_24_hours"
-msgstr "This link is valid for 24 hours."
-
-#: bookmark/templates/emails/email_verification_email.html:63
-msgid "ignore_if_not_requested"
-msgstr "If you did not request account registration, please ignore this email."
-
-#: bookmark/templates/emails/email_verification_email.html:67
-#: bookmark/templates/emails/password_reset_email.html:67
-msgid "auto_email_no_reply"
-msgstr "This is an automated email. Please do not reply."
-"This email is automatically sent from Flexible Web Checker. Do not reply."
-"This email is automatically sent from Flexible Web Checker. Do not reply."
-
-#: bookmark/templates/emails/notification_email.html:46
-msgid "update_notification"
-msgstr "Notification"
-
-#: bookmark/templates/emails/notification_email.html:52
-msgid "registered_urls_have_updates"
-msgstr "Some of your registered URLs have been updated."
-
-#: bookmark/templates/emails/notification_email.html:61
-msgid "view_details"
-msgstr "Details"
-
-#: bookmark/templates/emails/notification_email.html:66
-msgid "this_is_automated_email"
-msgstr "This email is automatically sent from Flexible Web Checker."
-
-#: bookmark/templates/emails/notification_email.html:67
-msgid "email_notification_settings_can_be_changed_at"
-msgstr "Email notification settings can be changed at"
-
-#: bookmark/templates/emails/notification_email.html:67
-msgid "here"
-msgstr "here"
-
-#: bookmark/templates/emails/notification_email.html:67
-msgid "text_after_settings_link"
-msgstr "."
-
-#: bookmark/templates/emails/password_reset_email.html:8
-#: bookmark/templates/emails/password_reset_email.html:46
-#: bookmark/templates/user_accounts/password_reset.html:4
-#: bookmark/templates/user_accounts/password_reset.html:9
-#: bookmark/templates/user_accounts/password_reset_request.html:4
-#: bookmark/templates/user_accounts/password_reset_request.html:9
-msgid "password_reset"
-msgstr "Password Reset Token"
-
-#: bookmark/templates/emails/password_reset_email.html:52
-msgid "password_reset_message"
-msgstr ""
-"You have requested a password reset for Flexible Web Checker. Click the link "
-"below to set a new password.You have requested a password reset for Flexible "
-"Web Checker. Click the link below to set a new password."
-
-#: bookmark/templates/emails/password_reset_email.html:55
-msgid "reset_password"
-msgstr "New Password"
-
-#: bookmark/templates/emails/password_reset_email.html:63
-msgid "ignore_password_reset_if_not_requested"
-msgstr "If you did not request a password reset, please ignore this email."
-
-#: bookmark/templates/user_accounts/email_verification.html:4
-#: bookmark/templates/user_accounts/email_verification.html:9
-msgid "email_verification"
-msgstr "Email Notification"
-
-#: bookmark/templates/user_accounts/email_verification.html:17
-msgid "email_verification_sent"
-msgstr "Email verification sent"
-"We've sent you a verification email.Thank you for registering with Flexible "
-"Web Checker. Please click the link below to verify your email address."
-
-#: bookmark/templates/user_accounts/email_verification.html:21
-msgid "email_verification_instructions"
-msgstr "Click the link in the email to verify your email address"
-
-#: bookmark/templates/user_accounts/email_verification.html:25
-#: bookmark/templates/user_accounts/password_reset_done.html:25
-msgid "back_to_home"
-msgstr "Back to Home"
-
-#: bookmark/templates/user_accounts/email_verification_complete.html:4
-#: bookmark/templates/user_accounts/email_verification_complete.html:9
-msgid "email_verification_complete"
-msgstr "Email Verification Complete"
-"Email Verification CompleteThank you for registering with Flexible Web "
-"Checker. Please click the link below to verify your email address."
-
-#: bookmark/templates/user_accounts/email_verification_complete.html:17
-msgid "email_verified_successfully"
-msgstr "Email Verified At"
-
-#: bookmark/templates/user_accounts/email_verification_complete.html:21
-msgid "account_activated_message"
-msgstr "Your account has been activated. You can now log in."
-
-#: bookmark/templates/user_accounts/login.html:53
-msgid "keep_me_logged_in"
-msgstr "Keep me logged in"
+#: bookmark/templates/core/home.html:55
+msgid "flexible_update_detection"
+msgstr "Flexible Update Detection"
 
 #: bookmark/templates/user_accounts/login.html:65
 msgid "forgot_password"
 msgstr "Password"
 
-#: bookmark/templates/user_accounts/login.html:71
-msgid "dont_have_account"
-msgstr "Don't have an account?"
+#: bookmark/templates/core/about.html:62
+msgid "frontend_tech"
+msgstr "Frontend: TypeScript, React 19, Tailwind CSS 4"
 
-#: bookmark/templates/user_accounts/login.html:73
-#: bookmark/templates/user_accounts/register.html:4
-#: bookmark/templates/user_accounts/register.html:9
-msgid "register_new_account"
-msgstr "Create New Collection"
+#: bookmark/templates/core/home.html:37
+msgid "go_to_dashboard"
+msgstr "Go to Dashboard"
 
-#: bookmark/templates/user_accounts/mypage.html:4
-#: bookmark/templates/user_accounts/mypage.html:10
-#: bookmark/templates/user_accounts/settings.html:14
-msgid "my_page"
-msgstr "My Page"
+#: bookmark/templates/emails/email_verification_email.html:50 bookmark/templates/emails/notification_email.html:50 bookmark/templates/emails/password_reset_email.html:50
+msgid "hello"
+msgstr "Hello"
 
-#: bookmark/templates/user_accounts/mypage.html:15
-msgid "account_info"
-msgstr "Account Information"
+#: bookmark/templates/emails/notification_email.html:67
+msgid "here"
+msgstr "here"
 
-#: bookmark/templates/user_accounts/mypage.html:24
-#: bookmark/templates/user_accounts/profile_edit.html:38
-#: bookmark/templates/user_accounts/register.html:38
-msgid "username"
-msgstr "User"
+#: bookmark/templates/core/home.html:4
+msgid "home"
+msgstr "Home"
 
-#: bookmark/templates/user_accounts/mypage.html:34
-msgid "registration_date"
-msgstr "Registration Date"
+#: bookmark/templates/core/home.html:23
+msgid "how_to_use"
+msgstr "How to Use"
+
+#: bookmark/models/url_item.py:17
+msgid "html_condition_and"
+msgstr "AND Condition"
+
+#: bookmark/models/url_item.py:16
+msgid "html_condition_or"
+msgstr "OR Condition"
+
+#: bookmark/templates/core/about.html:51
+msgid "html_custom"
+msgstr "HTML Custom"
+
+#: bookmark/models/url_item.py:41
+msgid "html_custom_condition"
+msgstr "HTML Custom Condition"
+
+#: bookmark/templates/core/about.html:53
+msgid "html_custom_description"
+msgstr "Detects changes to specific elements specified by CSS selectors. Useful when you want to monitor only specific sections.Uses CSS selectors to monitor changes to specific parts of a web page. Useful when you want to track only specific elements.Uses CSS selectors to monitor changes to specific parts of a web page. Useful when you want to track only specific elements."
+
+#: bookmark/forms/url_manager.py:30
+msgid "html_custom_selector_required"
+msgstr "If you select HTML Custom check type, please enter HTML selector."
+
+#: bookmark/templates/core/about.html:66
+msgid "html_parsing_beautifulsoup"
+msgstr "HTML Parsing: BeautifulSoup4"
+
+#: bookmark/models/url_item.py:35 bookmark/templates/url_manager/url_detail.html:55 bookmark/templates/url_manager/url_detail_fixed.html:53 bookmark/templates/url_manager/url_detail_new.html:53 bookmark/templates/url_manager/url_form.html:95
+msgid "html_selector"
+msgstr "HTML Selector"
+
+#: bookmark/templates/url_manager/url_form.html:106
+msgid "html_selector_help"
+msgstr "Enter CSS selectors (one per line for multiple)"
+
+#: bookmark/forms/url_manager.py:20
+msgid "html_selector_placeholder"
+msgstr ""
+"Example: div.content\n"
+"#main-content h2"
+
+#: bookmark/templates/core/about.html:44
+msgid "html_standard"
+msgstr "HTML Standard"
+
+#: bookmark/templates/core/about.html:46
+msgid "html_standard_description"
+msgstr "Checks the entire HTML content of a webpage and detects changes. Suitable for small sites or sites with infrequent updates.Monitors the entire HTML of a web page to detect content changes. Suitable for sites that do not provide RSS feeds.Monitors the entire HTML of a web page to detect content changes. Suitable for sites that do not provide RSS feeds."
+
+#: bookmark/templates/emails/email_verification_email.html:63
+msgid "ignore_if_not_requested"
+msgstr "If you did not request account registration, please ignore this email."
+
+#: bookmark/templates/emails/password_reset_email.html:63
+msgid "ignore_password_reset_if_not_requested"
+msgstr "If you did not request a password reset, please ignore this email."
+
+#: bookmark/admin/user_accounts.py:33
+msgid "important_dates"
+msgstr "Important Dates"
+
+#: bookmark/templates/core/job_management.html:46
+msgid "inactive"
+msgstr "Inactive"
+
+#: bookmark/templates/core/dashboard.html
+msgid "inactive_urls"
+msgstr "Inactive URLs"
+
+#: bookmark/views/user_accounts.py:115
+msgid "invalid_email_or_password"
+msgstr "Invalid email or password"
+
+#: bookmark/views/url_manager.py
+msgid "invalid_format"
+msgstr "Invalid format"
+
+#: bookmark/forms/url_manager.py:74
+msgid "invalid_url_in_list"
+msgstr "Invalid URL in list: %(url)s"
+
+#: bookmark/models/notification.py:26
+msgid "is_read"
+msgstr "Is Read"
+
+#: bookmark/templates/core/job_management.html:4 bookmark/templates/core/job_management.html:9 bookmark/templates/user_accounts/mypage.html:102
+msgid "job_management"
+msgstr "Job Management"
+
+#: bookmark/templates/user_accounts/login.html:53
+msgid "keep_me_logged_in"
+msgstr "Keep me logged in"
+
+#: bookmark/templates/layouts/base.html:46
+msgid "language"
+msgstr "Language"
+
+#: bookmark/templates/core/pagination.html:60 bookmark/templates/core/pagination.html:76
+msgid "last"
+msgstr "Last"
+
+#: bookmark/templates/url_manager/url_detail.html:98 bookmark/templates/url_manager/url_detail_fixed.html:96 bookmark/templates/url_manager/url_detail_new.html:96 bookmark/templates/user_accounts/mypage.html:82
+msgid "last_check"
+msgstr "Last Check"
+
+#: bookmark/models/url_item.py:48
+msgid "last_checked_at"
+msgstr "Last Checked At"
+
+#: bookmark/models/url_item.py:51
+msgid "last_content_hash"
+msgstr "Last Content Hash"
+
+#: bookmark/models/url_item.py:57 bookmark/templates/url_manager/url_detail.html:123
+msgid "last_error_message"
+msgstr "Last Error Message:"
+
+#: bookmark/templates/core/job_management.html:25
+msgid "last_run"
+msgstr "Last Run"
+
+#: bookmark/templates/collection_manager/collection_detail.html:72 bookmark/templates/url_manager/url_detail.html:107 bookmark/templates/url_manager/url_detail_fixed.html:105 bookmark/templates/url_manager/url_detail_new.html:105 bookmark/templates/url_manager/url_list.html:80 bookmark/templates/emails/notification_email.html:57 bookmark/templates/core/dashboard.html
+msgid "last_updated"
+msgstr "Last Updated"
+
+#: bookmark/models/url_item.py:49
+msgid "last_updated_at"
+msgstr "Last Updated At"
+
+#: bookmark/templates/emails/email_verification_email.html:61 bookmark/templates/emails/password_reset_email.html:61
+msgid "link_valid_24_hours"
+msgstr "This link is valid for 24 hours."
+
+#: bookmark/views/user_accounts.py:126
+msgid "logged_out"
+msgstr "Logged out"
+
+#: bookmark/templates/layouts/base.html:41 bookmark/templates/layouts/base.html:74 bookmark/templates/core/home.html:44 bookmark/templates/user_accounts/email_verification_complete.html:25 bookmark/templates/user_accounts/login.html:4 bookmark/templates/user_accounts/login.html:9 bookmark/templates/user_accounts/login.html:59 bookmark/templates/user_accounts/password_reset_complete.html:25 bookmark/templates/user_accounts/register.html:105
+msgid "login"
+msgstr "Login"
 
 #: bookmark/templates/user_accounts/mypage.html:43
 msgid "logout"
 msgstr "Logout"
 
-#: bookmark/templates/user_accounts/mypage.html:56
-msgid "edit_my_page"
-msgstr "Edit My Page"
+#: bookmark/templates/core/about.html:22 bookmark/templates/core/home.html:14
+msgid "main_features"
+msgstr "Main Features"
 
-#: bookmark/templates/user_accounts/mypage.html:63
-msgid "statistics"
-msgstr "Statistics"
+#: bookmark/templates/core/job_management.html:10
+msgid "manage_background_jobs_description"
+msgstr "Manage background jobs"
 
-#: bookmark/templates/user_accounts/mypage.html:67
-msgid "registered_url_count"
-msgstr "Registered URLs"
+#: bookmark/templates/core/notification.html:64
+msgid "mark_all_as_read"
+msgstr "Mark all as read"
 
-#: bookmark/templates/user_accounts/mypage.html:72
-msgid "collection_count"
-msgstr "Collections"
+#: bookmark/templates/core/notification.html:34
+msgid "mark_as_read"
+msgstr "Mark as read"
 
-#: bookmark/templates/user_accounts/mypage.html:77
-msgid "update_detection_count"
-msgstr "Updates Detected"
+#: bookmark/models/notification.py:25
+msgid "message"
+msgstr "Message"
 
-#: bookmark/templates/user_accounts/mypage.html:96
-msgid "admin_menu"
-msgstr "Admin Menu"
+#: bookmark/templates/core/home.html:17
+msgid "monitor_rss_html_elements"
+msgstr "Monitor RSS, HTML pages, and specific elements"
 
-#: bookmark/templates/user_accounts/mypage.html:99
-msgid "user_management"
-msgstr "User Management"
+#: bookmark/templates/core/about.html:29
+msgid "multilingual_support"
+msgstr "Multilingual support (Japanese and English)"
 
-#: bookmark/templates/user_accounts/mypage.html:106
-msgid "confirm_check_all_active_urls"
-msgstr "Check all active URLs?"
+#: bookmark/templates/core/about.html:24
+msgid "multiple_detection_methods"
+msgstr "Multiple detection methods (RSS, HTML Standard, HTML Custom)"
 
-#: bookmark/templates/user_accounts/mypage.html:107
-msgid "run_check_for_all_urls"
-msgstr "Run Check for All URLs"
+#: bookmark/templates/user_accounts/mypage.html:4 bookmark/templates/user_accounts/mypage.html:10 bookmark/templates/user_accounts/settings.html:14
+msgid "my_page"
+msgstr "My Page"
 
-#: bookmark/templates/user_accounts/password_change.html:24
-msgid "current_password"
+#: bookmark/views/user_accounts.py:143
+msgid "mypage_updated"
+msgstr "My page updated"
+
+#: bookmark/models/collection.py:15 bookmark/templates/collection_manager/collection_form.html:43
+msgid "name"
+msgstr "Name"
+
+#: bookmark/forms/user_accounts.py:72 bookmark/templates/user_accounts/password_change.html:38 bookmark/templates/user_accounts/password_reset_confirm.html:25
+msgid "new_password"
 msgstr "New Password"
 
-#: bookmark/templates/user_accounts/password_change.html:49
-#: bookmark/templates/user_accounts/password_reset_confirm.html:36
-#: bookmark/templates/user_accounts/register.html:77
-msgid "password_requirements"
-msgstr ""
-"Password must be at least 8 characters long and contain both letters and "
-"numbers.Password must be at least 8 characters long and contain both letters "
-"and numbers."
+#: bookmark/forms/user_accounts.py:77
+msgid "new_password_confirm"
+msgstr "New Password (Confirm)"
 
-#: bookmark/templates/user_accounts/password_change.html:55
-#: bookmark/templates/user_accounts/password_reset_confirm.html:42
+#: bookmark/templates/user_accounts/password_change.html:55 bookmark/templates/user_accounts/password_reset_confirm.html:42
 msgid "new_password_confirmation"
 msgstr "New Password (Confirm)"
 
-#: bookmark/templates/user_accounts/password_reset.html:12
-msgid "password_reset_request_message"
-msgstr "We will send you a password reset link via email"
+#: bookmark/templates/core/job_management.html:158 bookmark/templates/core/pagination.html:54 bookmark/templates/core/pagination.html:70 bookmark/templates/url_manager/url_list.html:195 bookmark/templates/url_manager/url_list.html:199
+msgid "next"
+msgstr "Next"
 
-#: bookmark/templates/user_accounts/password_reset.html:42
-#: bookmark/templates/user_accounts/password_reset_request.html:42
-msgid "send_reset_link"
-msgstr "Send Reset Link"
+#: bookmark/templates/core/job_management.html:26
+msgid "next_run"
+msgstr "Next Run"
 
-#: bookmark/templates/user_accounts/password_reset.html:49
-msgid "back_to_login_page"
-msgstr "Back to Collection Detail"
+#: bookmark/models/user.py:12 bookmark/templates/user_accounts/mypage.html:19 bookmark/templates/user_accounts/profile_edit.html:24 bookmark/templates/user_accounts/register.html:52 bookmark/templates/user_accounts/settings.html:17
+msgid "nickname"
+msgstr "Nickname"
 
-#: bookmark/templates/user_accounts/password_reset_complete.html:4
-#: bookmark/templates/user_accounts/password_reset_complete.html:9
-msgid "password_reset_complete"
-msgstr "Password Reset Complete"
-"Password Reset CompleteYou have requested a password reset for Flexible Web "
-"Checker. Click the link below to set a new password."
+#: bookmark/templates/collection_manager/collection_list.html:54
+msgid "no_collections_created"
+msgstr "No collections have been created yet."
 
-#: bookmark/templates/user_accounts/password_reset_complete.html:21
-msgid "you_can_now_login_with_new_password"
-msgstr "You can now log in with your new password."
+#: bookmark/templates/collection_manager/collection_detail.html:86 bookmark/templates/url_manager/url_list.html:93
+msgid "no_image"
+msgstr "No Image"
 
-#: bookmark/templates/user_accounts/password_reset_confirm.html:4
-#: bookmark/templates/user_accounts/password_reset_confirm.html:9
-msgid "set_new_password"
-msgstr "New Password"
+#: bookmark/templates/core/notification.html:74
+msgid "no_notifications"
+msgstr "No notifications"
 
-#: bookmark/templates/user_accounts/password_reset_confirm.html:62
-msgid "password_reset_link_invalid"
-msgstr "Password reset link is invalid"
+#: bookmark/templates/core/job_management.html:69
+msgid "no_periodic_tasks_registered"
+msgstr "No periodic tasks registered"
 
-#: bookmark/templates/user_accounts/password_reset_confirm.html:66
-msgid "request_new_reset_link"
-msgstr "Create a new collection"
+#: bookmark/templates/core/job_management.html:166
+msgid "no_task_execution_history"
+msgstr "No task execution history"
 
-#: bookmark/templates/user_accounts/password_reset_done.html:4
-#: bookmark/templates/user_accounts/password_reset_done.html:9
-msgid "password_reset_email_sent_title"
-msgstr "Password Reset Email Sent"
-"Password Reset Email SentPassword reset email has been sent. Please reset "
-"your password from the link in the email."
+#: bookmark/templates/url_manager/url_detail.html:92 bookmark/templates/url_manager/url_detail_fixed.html:90 bookmark/templates/url_manager/url_detail_new.html:90
+msgid "no_thumbnail"
+msgstr "No thumbnail"
 
-#: bookmark/templates/user_accounts/password_reset_done.html:17
-msgid "password_reset_email_sent_message"
-msgstr "Password reset email has been sent"
-"We've sent you a password reset email.Password reset email has been sent. "
-"Please reset your password from the link in the email."
+#: bookmark/templates/url_manager/url_list.html:211
+msgid "no_uncategorized_urls"
+msgstr "No uncategorized URLs"
 
-#: bookmark/templates/user_accounts/password_reset_done.html:21
-msgid "password_reset_email_instructions"
-msgstr "Please reset your password using the link in the email"
+#: bookmark/templates/collection_manager/collection_detail.html:137
+msgid "no_urls_in_collection"
+msgstr "There are no URLs registered in this collection."
 
-#: bookmark/templates/user_accounts/password_reset_request.html:12
-msgid "password_reset_request_instructions"
-msgstr "Enter your email address. We will send you a password reset link."
+#: bookmark/templates/url_manager/url_list.html:209
+msgid "no_urls_registered"
+msgstr "No URLs registered"
 
-#: bookmark/templates/user_accounts/password_reset_request.html:49
-msgid "back_to_login"
-msgstr "Back to Collection List"
+#: bookmark/templates/url_manager/url_detail.html:102 bookmark/templates/url_manager/url_detail_fixed.html:100 bookmark/templates/url_manager/url_detail_new.html:100
+msgid "not_checked_yet"
+msgstr "Not checked yet"
 
-#: bookmark/templates/user_accounts/profile_edit.html:63
-msgid "changing_email_requires_verification"
-msgstr "Changing your email address requires verification of the new address."
+#: bookmark/templates/core/job_management.html:53
+msgid "not_executed"
+msgstr "Not Executed"
 
-#: bookmark/templates/user_accounts/register.html:83
-msgid "password_confirmation"
-msgstr "Password (Confirm)"
+#: bookmark/templates/url_manager/url_detail.html:80 bookmark/templates/url_manager/url_detail_fixed.html:78 bookmark/templates/url_manager/url_detail_new.html:78
+msgid "not_in_any_collection"
+msgstr "Not in any collection"
 
-#: bookmark/templates/user_accounts/register.html:103
-msgid "already_have_account"
-msgstr "Already have an account?"
+#: bookmark/templates/collection_manager/collection_detail.html:112 bookmark/templates/url_manager/url_check_result.html:46 bookmark/templates/url_manager/url_list.html:137
+msgid "not_updated"
+msgstr "Not Updated"
 
-#: bookmark/templates/user_accounts/settings.html:4
-#: bookmark/templates/user_accounts/settings.html:10
-msgid "account_settings"
-msgstr "Account Settings"
+#: bookmark/templates/url_manager/url_detail.html:111 bookmark/templates/url_manager/url_detail_fixed.html:109 bookmark/templates/url_manager/url_detail_new.html:109
+msgid "not_updated_yet"
+msgstr "Not updated yet"
 
-#: bookmark/templates/user_accounts/settings.html:31
-msgid "change"
-msgstr "Change"
+#: bookmark/models/notification.py:30 bookmark/templates/core/notification.html:4 bookmark/templates/core/notification.html:10 bookmark/templates/emails/notification_email.html:8
+msgid "notification"
+msgstr "Notification"
 
 #: bookmark/templates/user_accounts/settings.html:37
 msgid "notification_settings"
 msgstr "Notifications"
 
-#: bookmark/templates/user_accounts/settings.html:45
-msgid "receive_email_notifications"
-msgstr "Email Notification"
+#: bookmark/models/notification.py:31
+msgid "notifications"
+msgstr "Notifications"
+
+#: bookmark/templates/core/home.html:19
+msgid "notify_on_updates"
+msgstr "Get notified on updates"
+
+#: bookmark/templates/url_manager/url_list.html:110
+msgid "open_in_new_tab"
+msgstr "Open in new tab"
+
+#: bookmark/templates/url_manager/url_list.html:107
+msgid "open_in_this_tab"
+msgstr "Open in this tab"
+
+#: bookmark/templates/emails/email_verification_email.html:58 bookmark/templates/emails/password_reset_email.html:58
+msgid "or_paste_url_in_browser"
+msgstr "Or paste the following URL in your browser:"
+
+#: bookmark/models/collection.py:16
+msgid "order"
+msgstr "Order"
+
+#: bookmark/templates/core/home.html:60
+msgid "organize_and_group_websites"
+msgstr "Organize and group websites"
+
+#: bookmark/templates/core/home.html:28
+msgid "organize_urls_as_needed"
+msgstr "Organize URLs as needed"
+
+#: bookmark/templates/core/home.html:18
+msgid "organize_urls_in_collections"
+msgstr "Organize URLs in collections"
+
+#: bookmark/templates/core/about.html:12
+msgid "overview"
+msgstr "Overview"
+
+#: bookmark/templates/core/pagination.html:5
+msgid "pagination"
+msgstr "Pagination"
+
+#: bookmark/forms/user_accounts.py:11 bookmark/forms/user_accounts.py:51 bookmark/templates/user_accounts/account_delete.html:23 bookmark/templates/user_accounts/login.html:38 bookmark/templates/user_accounts/register.html:66 bookmark/templates/user_accounts/settings.html:27
+msgid "password"
+msgstr "Password"
+
+#: bookmark/templates/registration/password_change_form.html:4 bookmark/templates/registration/password_change_form.html:10 bookmark/templates/user_accounts/password_change.html:4 bookmark/templates/user_accounts/password_change.html:9
+msgid "password_change"
+msgstr "Change Password"
+
+#: bookmark/templates/registration/password_change_done.html:4 bookmark/templates/registration/password_change_done.html:10
+msgid "password_change_done"
+msgstr "Password Change Complete"
+
+#: bookmark/templates/registration/password_change_done.html:11 bookmark/templates/user_accounts/password_reset_complete.html:17
+msgid "password_changed_successfully"
+msgstr "Password changed successfully!"
+
+#: bookmark/forms/user_accounts.py:16
+msgid "password_confirm"
+msgstr "Password (Confirm)"
+
+#: bookmark/templates/user_accounts/register.html:83
+msgid "password_confirmation"
+msgstr "Password (Confirm)"
+
+#: bookmark/templates/user_accounts/password_change.html:49 bookmark/templates/user_accounts/password_reset_confirm.html:36 bookmark/templates/user_accounts/register.html:77
+msgid "password_requirements"
+msgstr "Password must be at least 8 characters long and contain both letters and numbers.Password must be at least 8 characters long and contain both letters and numbers."
+
+#: bookmark/templates/emails/password_reset_email.html:8 bookmark/templates/emails/password_reset_email.html:46 bookmark/templates/user_accounts/password_reset.html:4 bookmark/templates/user_accounts/password_reset.html:9 bookmark/templates/user_accounts/password_reset_request.html:4 bookmark/templates/user_accounts/password_reset_request.html:9
+msgid "password_reset"
+msgstr "Password Reset Token"
+
+#: bookmark/templates/user_accounts/password_reset_complete.html:4 bookmark/templates/user_accounts/password_reset_complete.html:9
+msgid "password_reset_complete"
+msgstr "Password Reset CompletePassword Reset CompleteYou have requested a password reset for Flexible Web Checker. Click the link below to set a new password."
+
+#: bookmark/templates/user_accounts/password_reset_done.html:21
+msgid "password_reset_email_instructions"
+msgstr "Please reset your password using the link in the email"
+
+#: bookmark/views/user_accounts.py:193 bookmark/views/user_accounts.py:199
+msgid "password_reset_email_sent"
+msgstr "Password reset email has been sentPassword reset email has been sent. Please reset your password from the link in the email.Password reset email has been sent. Please reset your password from the link in the email."
+
+#: bookmark/templates/user_accounts/password_reset_done.html:17
+msgid "password_reset_email_sent_message"
+msgstr "Password reset email has been sentWe've sent you a password reset email.Password reset email has been sent. Please reset your password from the link in the email."
+
+#: bookmark/templates/user_accounts/password_reset_done.html:4 bookmark/templates/user_accounts/password_reset_done.html:9
+msgid "password_reset_email_sent_title"
+msgstr "Password Reset Email SentPassword Reset Email SentPassword reset email has been sent. Please reset your password from the link in the email."
+
+#: bookmark/templates/user_accounts/password_reset_confirm.html:62
+msgid "password_reset_link_invalid"
+msgstr "Password reset link is invalid"
+
+#: bookmark/templates/emails/password_reset_email.html:52
+msgid "password_reset_message"
+msgstr "You have requested a password reset for Flexible Web Checker. Click the link below to set a new password.You have requested a password reset for Flexible Web Checker. Click the link below to set a new password."
+
+#: bookmark/templates/user_accounts/password_reset_request.html:12
+msgid "password_reset_request_instructions"
+msgstr "Enter your email address. We will send you a password reset link."
+
+#: bookmark/templates/user_accounts/password_reset.html:12
+msgid "password_reset_request_message"
+msgstr "We will send you a password reset link via email"
+
+#: bookmark/views/user_accounts.py:172
+msgid "password_reset_subject"
+msgstr "[Flexible Web Checker] Password Reset"
+
+#: bookmark/views/user_accounts.py:232
+msgid "password_reset_success_login_message"
+msgstr "Your password has been reset. You can now log in with your new passwordYou have requested a password reset for Flexible Web Checker. Click the link below to set a new password.You have requested a password reset for Flexible Web Checker. Click the link below to set a new password."
+
+#: bookmark/models/user.py:92
+msgid "password_reset_token"
+msgstr "Password Reset Token"
+
+#: bookmark/models/user.py:93
+msgid "password_reset_tokens"
+msgstr "Password Reset Tokens"
+
+#: bookmark/forms/user_accounts.py:36 bookmark/forms/user_accounts.py:85
+msgid "passwords_do_not_match"
+msgstr "Passwords do not match."
+
+#: bookmark/templates/core/job_management.html:102
+msgid "pending"
+msgstr "Pending"
+
+#: bookmark/templates/core/job_management.html:16
+msgid "periodic_tasks"
+msgstr "Periodic Tasks"
+
+#: bookmark/templates/core/about.html:27
+msgid "periodic_update_check"
+msgstr "Periodic update checking"
+
+#: bookmark/admin/user_accounts.py:21
+msgid "permissions"
+msgstr "Permissions"
+
+#: bookmark/templates/core/job_management.html:139 bookmark/templates/core/pagination.html:17 bookmark/templates/core/pagination.html:33 bookmark/templates/url_manager/url_list.html:173 bookmark/templates/url_manager/url_list.html:177
+msgid "previous"
+msgstr "Previous"
+
+#: bookmark/templates/core/dashboard.html
+msgid "quick_actions"
+msgstr "Quick Actions"
+
+#: bookmark/templates/user_accounts/account_delete.html:13
+msgid "really_delete_account"
+msgstr "Do you really want to delete your account?"
 
 #: bookmark/templates/user_accounts/settings.html:52
 msgid "receive_browser_notifications"
 msgstr "Browser Notification"
 
-#: bookmark/templates/user_accounts/settings.html:67
-msgid "account_delete_final_warning"
-msgstr "Deleting your account will permanently delete all your data. This action cannot be undone."
-"If you delete your account, all your data will be permanently deleted. This "
-"operation cannot be undone.If you delete your account, all your data will be "
-"permanently deleted. This operation cannot be undone."
+#: bookmark/templates/user_accounts/settings.html:45
+msgid "receive_email_notifications"
+msgstr "Email Notification"
 
-#: bookmark/views/collection_manager.py:35
-msgid "collection_added"
-msgstr "Collection added"
+#: bookmark/templates/core/dashboard.html
+msgid "recent_updates"
+msgstr "Recent Updates"
 
-#: bookmark/views/collection_manager.py:77
-msgid "collection_updated"
-msgstr "Collection updated"
+#: bookmark/templates/core/dashboard.html
+msgid "recently_updated_urls"
+msgstr "Recently Updated URLs"
 
-#: bookmark/views/collection_manager.py:98
-msgid "collection_deleted"
-msgstr "Collection deleted"
+#: bookmark/templates/url_manager/url_check_result.html:69
+msgid "recheck"
+msgstr "Recheck"
+
+#: bookmark/templates/layouts/base.html:42 bookmark/templates/layouts/base.html:75 bookmark/templates/user_accounts/register.html:97
+msgid "register"
+msgstr "Register"
+
+#: bookmark/templates/user_accounts/login.html:73 bookmark/templates/user_accounts/register.html:4 bookmark/templates/user_accounts/register.html:9
+msgid "register_new_account"
+msgstr "Create New Collection"
+
+#: bookmark/templates/core/home.html:41
+msgid "register_now"
+msgstr "Register Now"
+
+#: bookmark/templates/user_accounts/mypage.html:67
+msgid "registered_url_count"
+msgstr "Registered URLs"
+
+#: bookmark/templates/emails/notification_email.html:52
+msgid "registered_urls_have_updates"
+msgstr "Some of your registered URLs have been updated."
+
+#: bookmark/views/user_accounts.py:62
+msgid "registration_complete_confirm_email"
+msgstr "Registration complete. Please confirm your email address"
+
+#: bookmark/templates/user_accounts/mypage.html:34
+msgid "registration_date"
+msgstr "Registration Date"
+
+#: bookmark/templates/collection_manager/collection_detail.html:122
+msgid "remove_from_collection"
+msgstr "Remove from Collection"
+
+#: bookmark/templates/user_accounts/password_reset_confirm.html:66
+msgid "request_new_reset_link"
+msgstr "Create a new collection"
+
+#: bookmark/templates/emails/password_reset_email.html:55
+msgid "reset_password"
+msgstr "New Password"
+
+#: bookmark/templates/core/about.html:37
+msgid "rss_feed"
+msgstr "RSS Feed"
+
+#: bookmark/templates/core/about.html:39
+msgid "rss_feed_description"
+msgstr "Periodically checks RSS feeds and detects new entries. Ideal for blogs and news sites.For websites that provide RSS feeds, monitors the latest entries in the feed to detect updates. This is the most efficient method.For websites that provide RSS feeds, monitors the latest entries in the feed to detect updates. This is the most efficient method."
+
+#: bookmark/templates/core/about.html:67
+msgid "rss_parsing_feedparser"
+msgstr "RSS Parsing: feedparser"
+
+#: bookmark/templates/user_accounts/mypage.html:107
+msgid "run_check_for_all_urls"
+msgstr "Run Check for All URLs"
+
+#: bookmark/templates/core/job_management.html:104
+msgid "running"
+msgstr "Running"
+
+#: bookmark/templates/collection_manager/collection_form.html:63 bookmark/templates/url_manager/url_form.html:172 bookmark/templates/user_accounts/edit_profile.html:47 bookmark/templates/user_accounts/profile_edit.html:69 bookmark/templates/user_accounts/settings.html:58
+msgid "save"
+msgstr "Save"
+
+#: bookmark/templates/core/job_management.html:23
+msgid "schedule"
+msgstr "Schedule"
+
+#: bookmark/templates/core/about.html:65
+msgid "screenshot_selenium_firefox"
+msgstr "Screenshot: Playwright"
+
+#: bookmark/templates/url_manager/url_form.html:88
+msgid "select_check_method"
+msgstr "Select check method"
+
+#: bookmark/templates/url_manager/url_form.html:163
+msgid "select_collections_for_url"
+msgstr "Select collections for this URL"
+
+#: bookmark/templates/url_manager/url_form.html:123
+msgid "select_condition_for_multiple_selectors"
+msgstr "Select condition for multiple selectors"
+
+#: bookmark/templates/core/home.html:27
+msgid "select_update_check_method"
+msgstr "Select update check method"
+
+#: bookmark/templates/collection_manager/collection_add_url.html:44
+msgid "select_urls_to_add_to_collection"
+msgstr "Select URLs to add to collection"
+
+#: bookmark/templates/user_accounts/password_reset.html:42 bookmark/templates/user_accounts/password_reset_request.html:42
+msgid "send_reset_link"
+msgstr "Send Reset Link"
+
+#: bookmark/models/url_item.py:38
+msgid "separate_selectors_with_newlines"
+msgstr "If you specify multiple selectors, separate them with newlines"
+
+#: bookmark/templates/user_accounts/password_reset_confirm.html:4 bookmark/templates/user_accounts/password_reset_confirm.html:9
+msgid "set_new_password"
+msgstr "New Password"
+
+#: bookmark/templates/core/dashboard.html
+msgid "settings"
+msgstr "Settings"
+
+#: bookmark/templates/url_manager/url_list.html:47
+msgid "sort_by"
+msgstr "Sort by"
+
+#: bookmark/templates/user_accounts/mypage.html:63
+msgid "statistics"
+msgstr "Statistics"
+
+#: bookmark/templates/core/job_management.html:85
+msgid "status"
+msgstr "Status"
+
+#: bookmark/templates/core/dashboard.html
+msgid "status_updated"
+msgstr "Updated"
+
+#: bookmark/templates/core/job_management.html:98
+msgid "success"
+msgstr "Success"
+
+#: bookmark/templates/core/notification.html:24
+msgid "system_notifications"
+msgstr "System Notifications"
+
+#: bookmark/templates/core/job_management.html:77
+msgid "task_execution_history"
+msgstr "Task Execution History"
+
+#: bookmark/templates/core/job_management.html:83
+msgid "task_id"
+msgstr "Task ID"
+
+#: bookmark/templates/core/job_management.html:22 bookmark/templates/core/job_management.html:84
+msgid "task_name"
+msgstr "Task Name"
+
+#: bookmark/templates/core/about.html:59
+msgid "technical_info"
+msgstr "Technical Information"
+
+#: bookmark/templates/emails/notification_email.html:67
+msgid "text_after_settings_link"
+msgstr "."
+
+#: bookmark/templates/emails/notification_email.html:66
+msgid "this_is_automated_email"
+msgstr "This email is automatically sent from Flexible Web Checker."
+
+#: bookmark/models/url_item.py:29 bookmark/templates/url_manager/url_detail.html:87 bookmark/templates/url_manager/url_detail_fixed.html:85 bookmark/templates/url_manager/url_detail_new.html:85 bookmark/templates/url_manager/url_form.html:130
+msgid "thumbnail"
+msgstr "Thumbnail"
+
+#: bookmark/templates/core/home.html:63
+msgid "thumbnail_display"
+msgstr "Thumbnail Display"
+
+#: bookmark/views/url_manager.py:157
+msgid "thumbnail_update_started"
+msgstr "Thumbnail update started"
+
+#: bookmark/templates/url_manager/url_form.html:146
+msgid "thumbnail_upload_help"
+msgstr "Upload a thumbnail image. If left blank, a screenshot will be automatically generated.Upload a thumbnail image. If left blank, a screenshot will be automatically generated.Upload a thumbnail image. If left blank, a screenshot will be automatically generated."
+
+#: bookmark/models/url_item.py:27 bookmark/templates/collection_manager/collection_detail.html:69 bookmark/templates/url_manager/url_form.html:60 bookmark/templates/url_manager/url_list.html:53 bookmark/templates/url_manager/url_list.html:77
+msgid "title"
+msgstr "Title"
+
+#: bookmark/templates/url_manager/url_list.html:129
+msgid "today"
+msgstr "Today"
+
+#: bookmark/models/user.py:62 bookmark/models/user.py:87
+msgid "token"
+msgstr "Token"
+
+#: bookmark/views/user_accounts.py:77
+msgid "token_expired_please_register_again"
+msgstr "Token has expired. Please register again"
+
+#: bookmark/views/user_accounts.py:215
+msgid "token_expired_reset_password_again"
+msgstr "The token has expired. Please request a password reset again."
+
+#: bookmark/templates/core/dashboard.html
+msgid "total_collections"
+msgstr "Total Collections"
+
+#: bookmark/templates/core/dashboard.html
+msgid "total_urls"
+msgstr "Total URLs"
+
+#: bookmark/templates/core/home.html:10
+msgid "track_favorite_websites_description"
+msgstr "Track updates on your favorite websites"
+
+#: bookmark/templates/collection_manager/collection_detail.html:22 bookmark/templates/url_manager/url_list.html:38
+msgid "uncategorized"
+msgstr "Uncategorized"
+
+#: bookmark/templates/core/dashboard.html
+msgid "uncategorized_urls"
+msgstr "Uncategorized URLs"
+
+#: bookmark/templates/core/dashboard.html
+msgid "unread_notifications"
+msgstr "Unread Notifications"
+
+#: bookmark/views/url_manager.py:139
+msgid "update_check_started"
+msgstr "Update check started"
+
+#: bookmark/templates/user_accounts/mypage.html:77
+msgid "update_detection_count"
+msgstr "Updates Detected"
+
+#: bookmark/templates/emails/notification_email.html:46
+msgid "update_notification"
+msgstr "Notification"
+
+#: bookmark/templates/url_manager/url_check_result.html:36
+msgid "updated"
+msgstr "Updated"
+
+#: bookmark/templates/url_manager/url_list.html:50
+msgid "updated_asc"
+msgstr "Updated (oldest first)"
+
+#: bookmark/models/collection.py:18 bookmark/models/url_item.py:54 bookmark/models/user.py:43
+msgid "updated_at"
+msgstr "Updated At"
+
+#: bookmark/templates/url_manager/url_list.html:49
+msgid "updated_desc"
+msgstr "Updated (newest first)"
+
+#: bookmark/templates/core/dashboard.html
+msgid "updated_this_week"
+msgstr "Updated This Week"
+
+#: bookmark/templates/core/dashboard.html
+msgid "updated_today"
+msgstr "Updated Today"
+
+#: bookmark/models/url_item.py:26 bookmark/templates/collection_manager/collection_add_url.html:33 bookmark/templates/collection_manager/collection_detail.html:70 bookmark/templates/url_manager/url_check_result.html:19 bookmark/templates/url_manager/url_detail.html:36 bookmark/templates/url_manager/url_detail_fixed.html:34 bookmark/templates/url_manager/url_detail_new.html:34 bookmark/templates/url_manager/url_form.html:43 bookmark/templates/url_manager/url_list.html:78
+msgid "url"
+msgstr "URL"
+
+#: bookmark/views/url_manager.py:81
+msgid "url_added"
+msgstr "URL added"
 
 #: bookmark/views/collection_manager.py:116
 msgid "url_added_to_collection"
@@ -1596,113 +1327,154 @@ msgstr "URL added to collection"
 msgid "url_already_in_collection"
 msgstr "URL is already in the collection"
 
-#: bookmark/views/collection_manager.py:135
-msgid "url_removed_from_collection"
-msgstr "URL removed from collection"
+#: bookmark/views/url_manager.py:207
+msgid "url_bulk_added_count"
+msgstr "Added {count} URLs"
 
-#: bookmark/views/core.py:43
-msgid "error_occurred"
-msgstr "Error Count"
+#: bookmark/forms/url_manager.py:56
+msgid "url_bulk_help_text"
+msgstr "Enter one URL per line. Title will be automatically fetched."
+
+#: bookmark/forms/url_manager.py:53
+msgid "url_bulk_placeholder"
+msgstr ""
+"Enter one URL per line.\n"
+"Example:\n"
+"https://example.com\n"
+"https://example.org"
 
 #: bookmark/views/core.py:45
 msgid "url_check_started_for_count"
 msgstr "Started update check for {count} URLs"
 
-#: bookmark/views/url_manager.py:81
-msgid "url_added"
-msgstr "URL added"
+#: bookmark/templates/core/about.html:25
+msgid "url_collection_management"
+msgstr "Organize and manage URLs with collections"
 
-#: bookmark/views/url_manager.py:105
-msgid "url_updated"
-msgstr "URL updated"
+#: bookmark/templates/collection_manager/collection_delete.html:21 bookmark/templates/collection_manager/collection_detail.html:47 bookmark/templates/collection_manager/collection_list.html:28
+msgid "url_count"
+msgstr "URL Count"
+
+#: bookmark/templates/url_manager/url_delete.html:25
+msgid "url_delete_warning"
+msgstr "This action cannot be undone. Deleting a URL will also remove it from all collections.This operation cannot be undone. If you delete the URL, it will also be removed from all collections.This operation cannot be undone. If you delete the URL, it will also be removed from all collections."
 
 #: bookmark/views/url_manager.py:122
 msgid "url_deleted"
 msgstr "URL deleted"
 
-#: bookmark/views/url_manager.py:139
-msgid "update_check_started"
-msgstr "Update check started"
+#: bookmark/templates/url_manager/url_check_result.html:38
+msgid "url_has_been_updated"
+msgstr "URL has been updated"
 
-#: bookmark/views/url_manager.py:157
-msgid "thumbnail_update_started"
-msgstr "Thumbnail update started"
+#: bookmark/templates/url_manager/url_check_result.html:48
+msgid "url_has_not_been_updated"
+msgstr "URL has not been updated"
 
-#: bookmark/views/url_manager.py:188
-msgid "failed_to_get_title_will_use_url"
-msgstr "Failed to get title. Using URL: {url}"
+#: bookmark/models/collection.py:36 bookmark/models/notification.py:23 bookmark/models/url_item.py:62
+msgid "url_item"
+msgstr "URL Item"
 
-#: bookmark/views/url_manager.py:207
-msgid "url_bulk_added_count"
-msgstr "Added {count} URLs"
+#: bookmark/models/collection.py:47
+msgid "url_item_collection"
+msgstr "URL Item Collection"
 
-#: bookmark/views/url_manager.py:209
-msgid "failed_to_add_urls_list"
-msgstr "Failed to add URLs:"
+#: bookmark/models/collection.py:48
+msgid "url_item_collections"
+msgstr "URL Item Collections"
 
-#: bookmark/views/user_accounts.py:42
-msgid "email_confirmation_subject"
-msgstr "[Flexible Web Checker] Email Confirmation"
+#: bookmark/models/url_item.py:63
+msgid "url_items"
+msgstr "URL Items"
 
-#: bookmark/views/user_accounts.py:62
-msgid "registration_complete_confirm_email"
-msgstr "Registration complete. Please confirm your email address"
+#: bookmark/forms/url_manager.py:49 bookmark/templates/collection_manager/collection_detail.html:56 bookmark/templates/url_manager/url_list.html:5 bookmark/templates/url_manager/url_list.html:24
+msgid "url_list"
+msgstr "URL List"
 
-#: bookmark/views/user_accounts.py:77
-msgid "token_expired_please_register_again"
-msgstr "Token has expired. Please register again"
+#: bookmark/views/collection_manager.py:135
+msgid "url_removed_from_collection"
+msgstr "URL removed from collection"
 
-#: bookmark/views/user_accounts.py:89
-msgid "email_confirmed_please_login"
-msgstr "Email confirmed. Please log in"
+#: bookmark/templates/collection_manager/collection_remove_url.html:25
+msgid "url_removed_from_collection_only"
+msgstr "This URL will be removed from the collection, but the URL itself will not be deleted.This URL will be removed from the collection, but the URL itself will not be deleted.This URL will be removed from the collection, but the URL itself will not be deleted."
 
-#: bookmark/views/user_accounts.py:111
-msgid "account_not_activated"
-msgstr "Your account has not been activated. Please verify your email address."
+#: bookmark/templates/core/dashboard.html
+msgid "url_statistics"
+msgstr "URL Statistics"
 
-#: bookmark/views/user_accounts.py:115
-msgid "invalid_email_or_password"
-msgstr "Invalid email or password"
+#: bookmark/views/url_manager.py:105
+msgid "url_updated"
+msgstr "URL updated"
 
-#: bookmark/views/user_accounts.py:126
-msgid "logged_out"
-msgstr "Logged out"
+#: bookmark/templates/core/dashboard.html
+msgid "urls_in_collections"
+msgstr "URLs in Collections"
 
-#: bookmark/views/user_accounts.py:143
-msgid "mypage_updated"
-msgstr "My page updated"
+#: bookmark/models/collection.py:13 bookmark/models/notification.py:15 bookmark/models/url_item.py:24 bookmark/models/user.py:24 bookmark/models/user.py:38 bookmark/models/user.py:60 bookmark/models/user.py:85
+msgid "user"
+msgstr "User"
 
-#: bookmark/views/user_accounts.py:172
-msgid "password_reset_subject"
-msgstr "[Flexible Web Checker] Password Reset"
+#: bookmark/templates/core/about.html:28
+msgid "user_account_management"
+msgstr "User account management"
 
-#: bookmark/views/user_accounts.py:193 bookmark/views/user_accounts.py:199
-msgid "password_reset_email_sent"
-msgstr "Password reset email has been sent"
-"Password reset email has been sent. Please reset your password from the link "
-"in the email.Password reset email has been sent. Please reset your password "
-"from the link in the email."
+#: bookmark/templates/layouts/base.html:36 bookmark/templates/layouts/base.html:69
+msgid "user_icon"
+msgstr "User Icon"
 
-#: bookmark/views/user_accounts.py:215
-msgid "token_expired_reset_password_again"
-msgstr "The token has expired. Please request a password reset again."
+#: bookmark/templates/user_accounts/mypage.html:99
+msgid "user_management"
+msgstr "User Management"
 
-#: bookmark/views/user_accounts.py:232
-msgid "password_reset_success_login_message"
-msgstr ""
-"Your password has been reset. You can now log in with your new passwordYou "
-"have requested a password reset for Flexible Web Checker. Click the link "
-"below to set a new password.You have requested a password reset for Flexible "
-"Web Checker. Click the link below to set a new password."
+#: bookmark/models/user.py:46
+msgid "user_profile"
+msgstr "User Profile"
 
-#: bookmark/views/url_manager.py
-msgid "invalid_format"
-msgstr "Invalid format"
+#: bookmark/models/user.py:47
+msgid "user_profiles"
+msgstr "User Profiles"
 
-#: bookmark/views/url_manager.py
-msgid "already_registered"
-msgstr "Already registered"
+#: bookmark/templates/user_accounts/mypage.html:24 bookmark/templates/user_accounts/profile_edit.html:38 bookmark/templates/user_accounts/register.html:38
+msgid "username"
+msgstr "User"
 
-#: bookmark/views/url_manager.py
-msgid "add_error"
-msgstr "Add error"
+#: bookmark/models/user.py:25
+msgid "users"
+msgstr "Users"
+
+#: bookmark/templates/emails/email_verification_email.html:55
+msgid "verify_email_address"
+msgstr "Email Address"
+
+#: bookmark/templates/core/dashboard.html
+msgid "view_all_collections"
+msgstr "View All Collections"
+
+#: bookmark/templates/core/dashboard.html
+msgid "view_all_urls"
+msgstr "View All URLs"
+
+#: bookmark/templates/emails/notification_email.html:61
+msgid "view_details"
+msgstr "Details"
+
+#: bookmark/templates/core/dashboard.html
+msgid "view_updates"
+msgstr "View Updates"
+
+#: bookmark/templates/core/about.html:26
+msgid "website_thumbnail_display"
+msgstr "Website thumbnail display"
+
+#: bookmark/templates/core/home.html:9
+msgid "welcome_to_flexible_web_checker"
+msgstr "Welcome to Flexible Web Checker"
+
+#: bookmark/templates/url_manager/url_list.html:131
+msgid "yesterday"
+msgstr "Yesterday"
+
+#: bookmark/templates/user_accounts/password_reset_complete.html:21
+msgid "you_can_now_login_with_new_password"
+msgstr "You can now log in with your new password."

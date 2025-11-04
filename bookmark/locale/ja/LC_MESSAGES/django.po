@@ -17,328 +17,441 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: bookmark/admin/user_accounts.py:21
-msgid "permissions"
-msgstr "権限"
+#: bookmark/templates/core/job_management.html:37
+msgid "Every"
+msgstr "毎"
 
-#: bookmark/admin/user_accounts.py:33
-msgid "important_dates"
-msgstr "重要な日付"
+#: bookmark/templates/core/about.html:14
+msgid "about_description"
+msgstr "Flexible Web Checkerは、登録したウェブサイトの更新を自動的に検知し、通知するサービスです。Flexible Web Checkerは、Webサイトの更新を柔軟に監視するためのツールです。お気に入りのWebサイトの更新を見逃さないように、さまざまな方法で更新を検出します。Flexible Web Checkerは、Webサイトの更新を柔軟に監視するためのツールです。お気に入りのWebサイトの更新を見逃さないように、さまざまな方法で更新を検出します。"
 
-#: bookmark/forms/url_manager.py:20
-msgid "html_selector_placeholder"
-msgstr ""
-"例: div.content\n"
-"#main-content h2"
+#: bookmark/templates/core/about.html:9
+msgid "about_flexible_web_checker"
+msgstr "Flexible Web Checker について"
 
-#: bookmark/forms/url_manager.py:30
-msgid "html_custom_selector_required"
-msgstr ""
-"HTMLカスタムチェックタイプを選択した場合は、HTMLセレクタを入力してください。"
+#: bookmark/templates/core/about.html:17
+msgid "about_tech_description"
+msgstr "RSS、HTML標準、HTMLカスタムの3つの検知方法を使用して、様々なウェブサイトの更新を確実に検知します。"
 
-#: bookmark/forms/url_manager.py:49
-#: bookmark/templates/collection_manager/collection_detail.html:56
-#: bookmark/templates/url_manager/url_list.html:5
-#: bookmark/templates/url_manager/url_list.html:24
-msgid "url_list"
-msgstr "URL一覧"
+#: bookmark/templates/layouts/base.html:108 bookmark/templates/core/about.html:4
+msgid "about_this_site"
+msgstr "このサイトについて"
 
-#: bookmark/forms/url_manager.py:53
-msgid "url_bulk_placeholder"
-msgstr ""
-"URLを1行に1つずつ入力してください。\n"
-"例:\n"
-"https://example.com\n"
-"https://example.org"
+#: bookmark/templates/user_accounts/email_verification_complete.html:21
+msgid "account_activated_message"
+msgstr "アカウントが有効化されました。ログインしてご利用ください"
 
-#: bookmark/forms/url_manager.py:56
-msgid "url_bulk_help_text"
-msgstr "URLを1行に1つずつ入力してください。タイトルは自動的に取得されます。"
+#: bookmark/templates/user_accounts/settings.html:67
+msgid "account_delete_final_warning"
+msgstr "アカウントを削除すると、すべてのデータが完全に削除されます。この操作は元に戻せません。アカウントを削除すると、すべてのデータが完全に削除されます。この操作は元に戻せません。アカウントを削除すると、すべてのデータが完全に削除されます。この操作は元に戻せません。"
 
-#: bookmark/forms/url_manager.py:60 bookmark/models/url_item.py:32
-#: bookmark/templates/collection_manager/collection_detail.html:71
-#: bookmark/templates/url_manager/url_detail.html:43
-#: bookmark/templates/url_manager/url_detail_fixed.html:41
-#: bookmark/templates/url_manager/url_detail_new.html:41
-#: bookmark/templates/url_manager/url_form.html:77
-#: bookmark/templates/url_manager/url_list.html:79
-msgid "check_type"
-msgstr "チェックタイプ"
+#: bookmark/templates/user_accounts/mypage.html:15
+msgid "account_info"
+msgstr "アカウント情報"
 
-#: bookmark/forms/url_manager.py:70
-msgid "at_least_one_url_required"
-msgstr "少なくとも1つのURLを入力してください。"
+#: bookmark/views/user_accounts.py:111
+msgid "account_not_activated"
+msgstr "アカウントが有効化されていません。メールアドレスの確認を行ってくださいアカウントが有効化されていません。メールアドレスの確認を行ってください。アカウントが有効化されていません。メールアドレスの確認を行ってください。"
 
-#: bookmark/forms/url_manager.py:74
-msgid "invalid_url_in_list"
-msgstr "無効なURLが含まれています: %(url)s"
+#: bookmark/templates/user_accounts/settings.html:4 bookmark/templates/user_accounts/settings.html:10
+msgid "account_settings"
+msgstr "アカウント設定"
 
-#: bookmark/forms/user_accounts.py:11 bookmark/forms/user_accounts.py:51
-#: bookmark/templates/user_accounts/account_delete.html:23
-#: bookmark/templates/user_accounts/login.html:38
-#: bookmark/templates/user_accounts/register.html:66
-#: bookmark/templates/user_accounts/settings.html:27
-msgid "password"
-msgstr "パスワード"
+#: bookmark/templates/collection_manager/collection_detail.html:73 bookmark/templates/url_manager/url_list.html:81
+msgid "actions"
+msgstr "アクション"
 
-#: bookmark/forms/user_accounts.py:16
-msgid "password_confirm"
-msgstr "パスワード(確認)"
+#: bookmark/models/url_item.py:59 bookmark/models/user.py:14 bookmark/templates/core/job_management.html:24 bookmark/templates/core/job_management.html:44
+msgid "active"
+msgstr "有効"
 
-#: bookmark/forms/user_accounts.py:36 bookmark/forms/user_accounts.py:85
-msgid "passwords_do_not_match"
-msgstr "パスワードが一致しません。"
+#: bookmark/templates/core/dashboard.html
+msgid "active_urls"
+msgstr "有効なURL"
 
-#: bookmark/forms/user_accounts.py:50 bookmark/forms/user_accounts.py:65
-#: bookmark/models/user.py:11 bookmark/templates/user_accounts/login.html:24
-#: bookmark/templates/user_accounts/mypage.html:29
-#: bookmark/templates/user_accounts/password_reset.html:28
-#: bookmark/templates/user_accounts/password_reset_request.html:28
-#: bookmark/templates/user_accounts/profile_edit.html:52
-#: bookmark/templates/user_accounts/register.html:24
-#: bookmark/templates/user_accounts/settings.html:18
-msgid "email_address"
-msgstr "メールアドレス"
+#: bookmark/templates/collection_manager/collection_add.html:42 bookmark/templates/collection_manager/collection_add_url.html:53 bookmark/templates/url_manager/url_add.html:53
+msgid "add"
+msgstr "追加"
 
-#: bookmark/forms/user_accounts.py:72
-#: bookmark/templates/user_accounts/password_change.html:38
-#: bookmark/templates/user_accounts/password_reset_confirm.html:25
-msgid "new_password"
-msgstr "新しいパスワード"
+#: bookmark/templates/collection_manager/collection_add.html:4 bookmark/templates/collection_manager/collection_add.html:10 bookmark/templates/core/dashboard.html
+msgid "add_collection"
+msgstr "コレクション追加"
 
-#: bookmark/forms/user_accounts.py:77
-msgid "new_password_confirm"
-msgstr "新しいパスワード(確認)"
+#: bookmark/views/url_manager.py
+msgid "add_error"
+msgstr "追加エラー"
 
-#: bookmark/models/collection.py:13 bookmark/models/notification.py:15
-#: bookmark/models/url_item.py:24 bookmark/models/user.py:24
-#: bookmark/models/user.py:38 bookmark/models/user.py:60
-#: bookmark/models/user.py:85
-msgid "user"
-msgstr "ユーザー"
+#: bookmark/templates/url_manager/url_add.html:4 bookmark/templates/url_manager/url_add.html:16 bookmark/templates/url_manager/url_form.html:8 bookmark/templates/url_manager/url_form.html:26 bookmark/templates/url_manager/url_list.html:65 bookmark/templates/url_manager/url_list.html:216
+msgid "add_new_url"
+msgstr "新しいURL追加"
 
-#: bookmark/models/collection.py:15
-#: bookmark/templates/collection_manager/collection_form.html:43
-msgid "name"
-msgstr "名前"
+#: bookmark/templates/collection_manager/collection_add_url.html:4 bookmark/templates/collection_manager/collection_add_url.html:17 bookmark/templates/collection_manager/collection_detail.html:59 bookmark/templates/core/dashboard.html
+msgid "add_url"
+msgstr "URL追加"
 
-#: bookmark/models/collection.py:16
-msgid "order"
-msgstr "順序"
+#: bookmark/templates/collection_manager/collection_detail.html:139
+msgid "add_url_to_collection"
+msgstr "URLをコレクションに追加"
 
-#: bookmark/models/collection.py:17 bookmark/models/notification.py:27
-#: bookmark/models/url_item.py:53 bookmark/models/user.py:42
-#: bookmark/models/user.py:63 bookmark/models/user.py:88
-msgid "created_at"
-msgstr "作成日時"
-
-#: bookmark/models/collection.py:18 bookmark/models/url_item.py:54
-#: bookmark/models/user.py:43
-msgid "updated_at"
-msgstr "更新日時"
-
-#: bookmark/models/collection.py:21 bookmark/models/collection.py:42
-#: bookmark/templates/collection_manager/collection_detail.html:18
-#: bookmark/templates/url_manager/url_detail.html:68
-#: bookmark/templates/url_manager/url_detail_fixed.html:66
-#: bookmark/templates/url_manager/url_detail_new.html:66
-#: bookmark/templates/url_manager/url_form.html:152
-#: bookmark/templates/url_manager/url_list.html:33
-msgid "collection"
-msgstr "コレクション"
-
-#: bookmark/models/collection.py:22
-msgid "collections"
-msgstr "コレクション"
-
-#: bookmark/models/collection.py:36 bookmark/models/notification.py:23
-#: bookmark/models/url_item.py:62
-msgid "url_item"
-msgstr "URL項目"
+#: bookmark/templates/core/home.html:26
+msgid "add_urls_to_monitor"
+msgstr "監視するURLを追加"
 
 #: bookmark/models/collection.py:44
 msgid "added_at"
 msgstr "追加日時"
 
-#: bookmark/models/collection.py:47
-msgid "url_item_collection"
-msgstr "URL項目コレクション"
+#: bookmark/templates/user_accounts/mypage.html:96
+msgid "admin_menu"
+msgstr "管理メニュー"
 
-#: bookmark/models/collection.py:48
-msgid "url_item_collections"
-msgstr "URL項目コレクション"
+#: bookmark/templates/collection_manager/collection_detail.html:14 bookmark/templates/url_manager/url_list.html:29
+msgid "all"
+msgstr "全て"
 
-#: bookmark/models/notification.py:25
-msgid "message"
-msgstr "メッセージ"
+#: bookmark/templates/url_manager/url_detail.html:62 bookmark/templates/url_manager/url_detail_fixed.html:60 bookmark/templates/url_manager/url_detail_new.html:60
+msgid "all_change_and"
+msgstr "すべての変更(AND)"
 
-#: bookmark/models/notification.py:26
-msgid "is_read"
-msgstr "既読"
+#: bookmark/templates/core/dashboard.html
+msgid "all_urls"
+msgstr "すべてのURL"
 
-#: bookmark/models/notification.py:30
-#: bookmark/templates/core/notification.html:4
-#: bookmark/templates/core/notification.html:10
-#: bookmark/templates/emails/notification_email.html:8
-msgid "notification"
-msgstr "通知"
+#: bookmark/templates/user_accounts/register.html:103
+msgid "already_have_account"
+msgstr "すでにアカウントをお持ちですか？"
 
-#: bookmark/models/notification.py:31
-msgid "notifications"
-msgstr "通知"
+#: bookmark/views/url_manager.py
+msgid "already_registered"
+msgstr "既に登録済み"
 
-#: bookmark/models/url_item.py:10
-msgid "check_type_rss"
-msgstr "RSSフィード"
+#: bookmark/templates/url_manager/url_detail.html:60 bookmark/templates/url_manager/url_detail_fixed.html:58 bookmark/templates/url_manager/url_detail_new.html:58
+msgid "any_change_or"
+msgstr "いずれかの変更(OR)"
 
-#: bookmark/models/url_item.py:11
-#: bookmark/templates/collection_manager/collection_detail.html:103
-#: bookmark/templates/url_manager/url_detail.html:47
-#: bookmark/templates/url_manager/url_detail_fixed.html:45
-#: bookmark/templates/url_manager/url_detail_new.html:45
-#: bookmark/templates/url_manager/url_list.html:120
-msgid "check_type_html_standard"
-msgstr "HTML標準(body全体)"
+#: bookmark/templates/core/about.html:63
+msgid "async_task_celery"
+msgstr "非同期タスク: Celery + Redis"
 
-#: bookmark/models/url_item.py:12
-#: bookmark/templates/collection_manager/collection_detail.html:105
-#: bookmark/templates/url_manager/url_detail.html:49
-#: bookmark/templates/url_manager/url_detail_fixed.html:47
-#: bookmark/templates/url_manager/url_detail_new.html:47
-#: bookmark/templates/url_manager/url_list.html:122
-msgid "check_type_html_custom"
-msgstr "HTMLカスタム(セレクタ指定)"
+#: bookmark/forms/url_manager.py:70
+msgid "at_least_one_url_required"
+msgstr "少なくとも1つのURLを入力してください。"
 
-#: bookmark/models/url_item.py:16
-msgid "html_condition_or"
-msgstr "OR条件"
+#: bookmark/templates/emails/email_verification_email.html:67 bookmark/templates/emails/password_reset_email.html:67
+msgid "auto_email_no_reply"
+msgstr "このメールは自動送信です。返信しないでくださいこのメールはFlexible Web Checkerから自動的に送信されています。返信しないでください。このメールはFlexible Web Checkerから自動的に送信されています。返信しないでください。"
 
-#: bookmark/models/url_item.py:17
-msgid "html_condition_and"
-msgstr "AND条件"
+#: bookmark/templates/core/home.html:64
+msgid "auto_generate_thumbnails"
+msgstr "サムネイルを自動生成"
 
-#: bookmark/models/url_item.py:26
-#: bookmark/templates/collection_manager/collection_add_url.html:33
-#: bookmark/templates/collection_manager/collection_detail.html:70
-#: bookmark/templates/url_manager/url_check_result.html:19
-#: bookmark/templates/url_manager/url_detail.html:36
-#: bookmark/templates/url_manager/url_detail_fixed.html:34
-#: bookmark/templates/url_manager/url_detail_new.html:34
-#: bookmark/templates/url_manager/url_form.html:43
-#: bookmark/templates/url_manager/url_list.html:78
-msgid "url"
-msgstr "URL"
+#: bookmark/templates/url_manager/url_check_result.html:66
+msgid "back"
+msgstr "戻る"
 
-#: bookmark/models/url_item.py:27
-#: bookmark/templates/collection_manager/collection_detail.html:69
-#: bookmark/templates/url_manager/url_form.html:60
-#: bookmark/templates/url_manager/url_list.html:53
-#: bookmark/templates/url_manager/url_list.html:77
-msgid "title"
-msgstr "タイトル"
+#: bookmark/templates/collection_manager/collection_add_url.html:10 bookmark/templates/collection_manager/collection_delete.html:10 bookmark/templates/collection_manager/collection_remove_url.html:10
+msgid "back_to_collection_detail"
+msgstr "コレクション詳細に戻る"
 
-#: bookmark/models/url_item.py:29
-#: bookmark/templates/url_manager/url_detail.html:87
-#: bookmark/templates/url_manager/url_detail_fixed.html:85
-#: bookmark/templates/url_manager/url_detail_new.html:85
-#: bookmark/templates/url_manager/url_form.html:130
-msgid "thumbnail"
-msgstr "サムネイル"
+#: bookmark/templates/collection_manager/collection_form.html:16
+msgid "back_to_collection_list"
+msgstr "コレクション一覧に戻る"
 
-#: bookmark/models/url_item.py:35
-#: bookmark/templates/url_manager/url_detail.html:55
-#: bookmark/templates/url_manager/url_detail_fixed.html:53
-#: bookmark/templates/url_manager/url_detail_new.html:53
-#: bookmark/templates/url_manager/url_form.html:95
-msgid "html_selector"
-msgstr "HTMLセレクタ"
+#: bookmark/templates/user_accounts/email_verification.html:25 bookmark/templates/user_accounts/password_reset_done.html:25
+msgid "back_to_home"
+msgstr "ホームに戻る"
 
-#: bookmark/models/url_item.py:38
-msgid "separate_selectors_with_newlines"
-msgstr "複数のセレクタを指定する場合は、改行で区切ってください"
+#: bookmark/templates/user_accounts/password_reset_request.html:49
+msgid "back_to_login"
+msgstr "コレクション一覧に戻る"
 
-#: bookmark/models/url_item.py:41
-msgid "html_custom_condition"
-msgstr "HTMLカスタム条件"
+#: bookmark/templates/user_accounts/password_reset.html:49
+msgid "back_to_login_page"
+msgstr "コレクション詳細に戻る"
 
-#: bookmark/models/url_item.py:48
-msgid "last_checked_at"
-msgstr "最終チェック日時"
+#: bookmark/templates/registration/password_change_done.html:13 bookmark/templates/user_accounts/password_change.html:76 bookmark/templates/user_accounts/profile_edit.html:76
+msgid "back_to_mypage"
+msgstr "マイページに戻る"
 
-#: bookmark/models/url_item.py:49
-msgid "last_updated_at"
-msgstr "最終更新日時"
+#: bookmark/templates/url_manager/url_check_result.html:10 bookmark/templates/url_manager/url_delete.html:10
+msgid "back_to_url_detail"
+msgstr "URL詳細に戻る"
 
-#: bookmark/models/url_item.py:51
-msgid "last_content_hash"
-msgstr "最終コンテンツハッシュ"
+#: bookmark/templates/url_manager/url_add.html:10 bookmark/templates/url_manager/url_bulk_add.html:10 bookmark/templates/url_manager/url_detail.html:10 bookmark/templates/url_manager/url_detail_fixed.html:10 bookmark/templates/url_manager/url_detail_new.html:10 bookmark/templates/url_manager/url_form.html:16
+msgid "back_to_url_list"
+msgstr "URL一覧に戻る"
 
-#: bookmark/models/url_item.py:55
-#: bookmark/templates/url_manager/url_detail.html:120
-#: bookmark/templates/url_manager/url_detail_fixed.html:116
-#: bookmark/templates/url_manager/url_detail_new.html:116
-msgid "error_count"
-msgstr "エラー回数"
-
-#: bookmark/models/url_item.py:57
-#: bookmark/templates/url_manager/url_detail.html:123
-msgid "last_error_message"
-msgstr "最終エラーメッセージ:"
-
-#: bookmark/models/url_item.py:59 bookmark/models/user.py:14
-#: bookmark/templates/core/job_management.html:24
-#: bookmark/templates/core/job_management.html:44
-msgid "active"
-msgstr "有効"
-
-#: bookmark/models/url_item.py:63
-msgid "url_items"
-msgstr "URL項目"
-
-#: bookmark/models/user.py:12 bookmark/templates/user_accounts/mypage.html:19
-#: bookmark/templates/user_accounts/profile_edit.html:24
-#: bookmark/templates/user_accounts/register.html:52
-#: bookmark/templates/user_accounts/settings.html:17
-msgid "nickname"
-msgstr "ニックネーム"
-
-#: bookmark/models/user.py:16
-msgid "designates_whether_user_active"
-msgstr ""
-"このユーザーがアクティブかどうかを指定します。アカウントを削除する代わりに、"
-"これを選択解除してください。"
-
-#: bookmark/models/user.py:18
-msgid "email_verified_at"
-msgstr "メールアドレス確認日時"
-
-#: bookmark/models/user.py:25
-msgid "users"
-msgstr "ユーザー"
-
-#: bookmark/models/user.py:40
-msgid "email_notification"
-msgstr "メール通知"
+#: bookmark/templates/core/about.html:61
+msgid "backend_django_python"
+msgstr "バックエンド: Django 5.2 (Python 3.12+)"
 
 #: bookmark/models/user.py:41
 msgid "browser_notification"
 msgstr "ブラウザ通知"
 
-#: bookmark/models/user.py:46
-msgid "user_profile"
-msgstr "ユーザープロファイル"
+#: bookmark/templates/url_manager/url_bulk_add.html:51 bookmark/templates/url_manager/url_list.html:61
+msgid "bulk_add"
+msgstr "一括追加"
 
-#: bookmark/models/user.py:47
-msgid "user_profiles"
-msgstr "ユーザープロファイル"
+#: bookmark/templates/url_manager/url_bulk_add.html:4 bookmark/templates/url_manager/url_bulk_add.html:16
+msgid "bulk_add_urls"
+msgstr "URL一括追加"
 
-#: bookmark/models/user.py:62 bookmark/models/user.py:87
-msgid "token"
-msgstr "トークン"
+#: bookmark/templates/core/job_management.html:58
+msgid "calculating"
+msgstr "計算中"
 
-#: bookmark/models/user.py:64 bookmark/models/user.py:89
-msgid "expires_at"
-msgstr "有効期限"
+#: bookmark/templates/core/home.html:56
+msgid "can_monitor_rss_html_elements"
+msgstr "RSS、HTML、特定要素を監視可能"
+
+#: bookmark/templates/collection_manager/collection_add.html:39 bookmark/templates/collection_manager/collection_add_url.html:50 bookmark/templates/collection_manager/collection_delete.html:33 bookmark/templates/collection_manager/collection_form.html:60 bookmark/templates/collection_manager/collection_remove_url.html:34 bookmark/templates/registration/password_change_form.html:44 bookmark/templates/url_manager/url_add.html:50 bookmark/templates/url_manager/url_bulk_add.html:48 bookmark/templates/url_manager/url_delete.html:33 bookmark/templates/url_manager/url_form.html:169 bookmark/templates/user_accounts/account_delete.html:41 bookmark/templates/user_accounts/edit_profile.html:44
+msgid "cancel"
+msgstr "キャンセル"
+
+#: bookmark/templates/user_accounts/settings.html:31
+msgid "change"
+msgstr "変更"
+
+#: bookmark/templates/registration/password_change_form.html:47 bookmark/templates/user_accounts/mypage.html:51 bookmark/templates/user_accounts/password_change.html:69 bookmark/templates/user_accounts/password_reset_confirm.html:56 bookmark/templates/user_accounts/settings.html:29
+msgid "change_password"
+msgstr "パスワードを変更"
+
+#: bookmark/templates/user_accounts/profile_edit.html:63
+msgid "changing_email_requires_verification"
+msgstr "メールアドレスを変更すると、新しいアドレスの確認が必要になります。"
+
+#: bookmark/templates/url_manager/url_check_result.html:26
+msgid "check_datetime"
+msgstr "チェック日時"
+
+#: bookmark/templates/core/home.html:29
+msgid "check_for_updates"
+msgstr "更新をチェック"
+
+#: bookmark/templates/url_manager/url_check_result.html:4 bookmark/templates/url_manager/url_check_result.html:16
+msgid "check_result"
+msgstr "チェック結果"
+
+#: bookmark/forms/url_manager.py:60 bookmark/models/url_item.py:32 bookmark/templates/collection_manager/collection_detail.html:71 bookmark/templates/url_manager/url_detail.html:43 bookmark/templates/url_manager/url_detail_fixed.html:41 bookmark/templates/url_manager/url_detail_new.html:41 bookmark/templates/url_manager/url_form.html:77 bookmark/templates/url_manager/url_list.html:79
+msgid "check_type"
+msgstr "チェックタイプ"
+
+#: bookmark/models/url_item.py:12 bookmark/templates/collection_manager/collection_detail.html:105 bookmark/templates/url_manager/url_detail.html:49 bookmark/templates/url_manager/url_detail_fixed.html:47 bookmark/templates/url_manager/url_detail_new.html:47 bookmark/templates/url_manager/url_list.html:122
+msgid "check_type_html_custom"
+msgstr "HTMLカスタム(セレクタ指定)"
+
+#: bookmark/models/url_item.py:11 bookmark/templates/collection_manager/collection_detail.html:103 bookmark/templates/url_manager/url_detail.html:47 bookmark/templates/url_manager/url_detail_fixed.html:45 bookmark/templates/url_manager/url_detail_new.html:45 bookmark/templates/url_manager/url_list.html:120
+msgid "check_type_html_standard"
+msgstr "HTML標準(body全体)"
+
+#: bookmark/models/url_item.py:10
+msgid "check_type_rss"
+msgstr "RSSフィード"
+
+#: bookmark/templates/collection_manager/collection_detail.html:117 bookmark/templates/url_manager/url_detail.html:21 bookmark/templates/url_manager/url_detail_fixed.html:20 bookmark/templates/url_manager/url_detail_new.html:20 bookmark/templates/url_manager/url_list.html:143
+msgid "check_update"
+msgstr "更新チェック"
+
+#: bookmark/models/collection.py:21 bookmark/models/collection.py:42 bookmark/templates/collection_manager/collection_detail.html:18 bookmark/templates/url_manager/url_detail.html:68 bookmark/templates/url_manager/url_detail_fixed.html:66 bookmark/templates/url_manager/url_detail_new.html:66 bookmark/templates/url_manager/url_form.html:152 bookmark/templates/url_manager/url_list.html:33
+msgid "collection"
+msgstr "コレクション"
+
+#: bookmark/views/collection_manager.py:35
+msgid "collection_added"
+msgstr "コレクションを追加しました"
+
+#: bookmark/templates/user_accounts/mypage.html:72
+msgid "collection_count"
+msgstr "コレクション数"
+
+#: bookmark/templates/collection_manager/collection_delete.html:25
+msgid "collection_delete_warning"
+msgstr "この操作は元に戻せません。コレクションを削除しても、コレクション内のURLは削除されません。この操作は元に戻せません。コレクションを削除しても、コレクション内のURLは削除されません。この操作は元に戻せません。コレクションを削除しても、コレクション内のURLは削除されません。"
+
+#: bookmark/views/collection_manager.py:98
+msgid "collection_deleted"
+msgstr "コレクションを削除しました"
+
+#: bookmark/templates/collection_manager/collection_detail.html:31
+msgid "collection_info"
+msgstr "コレクション情報"
+
+#: bookmark/templates/collection_manager/collection_list.html:4 bookmark/templates/collection_manager/collection_list.html:9
+msgid "collection_list"
+msgstr "コレクション一覧"
+
+#: bookmark/templates/core/home.html:59
+msgid "collection_management"
+msgstr "コレクション管理"
+
+#: bookmark/templates/core/dashboard.html
+msgid "collection_statistics"
+msgstr "コレクション統計"
+
+#: bookmark/views/collection_manager.py:77
+msgid "collection_updated"
+msgstr "コレクションを更新しました"
+
+#: bookmark/models/collection.py:22
+msgid "collections"
+msgstr "コレクション"
+
+#: bookmark/templates/url_manager/url_detail.html:58 bookmark/templates/url_manager/url_detail_fixed.html:56 bookmark/templates/url_manager/url_detail_new.html:56 bookmark/templates/url_manager/url_form.html:112
+msgid "condition"
+msgstr "条件"
+
+#: bookmark/templates/user_accounts/account_delete.html:34
+msgid "confirm_account_and_data_deletion"
+msgstr "アカウントとデータの削除を確認"
+
+#: bookmark/templates/user_accounts/mypage.html:106
+msgid "confirm_check_all_active_urls"
+msgstr "すべての有効なURLをチェックしますか？"
+
+#: bookmark/templates/user_accounts/account_delete.html:4 bookmark/templates/user_accounts/account_delete.html:10
+msgid "confirm_delete_account"
+msgstr "アカウント削除確認"
+
+#: bookmark/templates/collection_manager/collection_delete.html:4 bookmark/templates/collection_manager/collection_delete.html:16
+msgid "confirm_delete_collection"
+msgstr "コレクション削除確認"
+
+#: bookmark/templates/collection_manager/collection_delete.html:19
+msgid "confirm_delete_collection_message"
+msgstr "本当にこのコレクションを削除しますか？"
+
+#: bookmark/templates/url_manager/url_delete.html:19
+msgid "confirm_delete_url"
+msgstr "URL削除確認"
+
+#: bookmark/templates/collection_manager/collection_remove_url.html:4 bookmark/templates/collection_manager/collection_remove_url.html:16 bookmark/templates/url_manager/url_delete.html:4 bookmark/templates/url_manager/url_delete.html:16
+msgid "confirm_remove_url"
+msgstr "URL削除確認"
+
+#: bookmark/templates/collection_manager/collection_remove_url.html:19
+msgid "confirm_remove_url_from_collection"
+msgstr "このURLをコレクションから削除しますか？"
+
+#: bookmark/templates/core/home.html:25
+msgid "create_account"
+msgstr "アカウント作成"
+
+#: bookmark/templates/collection_manager/collection_form.html:8 bookmark/templates/collection_manager/collection_form.html:26 bookmark/templates/collection_manager/collection_list.html:12
+msgid "create_new_collection"
+msgstr "新規コレクション作成"
+
+#: bookmark/templates/collection_manager/collection_list.html:56
+msgid "create_new_collection_link"
+msgstr "新しいコレクションを作成する"
+
+#: bookmark/templates/collection_manager/collection_add_url.html:59
+msgid "create_new_url"
+msgstr "新しいURLを作成"
+
+#: bookmark/templates/collection_manager/collection_add_url.html:64
+msgid "create_new_url_button"
+msgstr "新規URL作成"
+
+#: bookmark/templates/collection_manager/collection_add_url.html:61
+msgid "create_new_url_if_not_in_list"
+msgstr "追加したいURLがリストにない場合は、新しいURLを作成してください。"
+
+#: bookmark/templates/collection_manager/collection_detail.html:44 bookmark/templates/collection_manager/collection_list.html:31
+msgid "created"
+msgstr "作成日"
+
+#: bookmark/templates/url_manager/url_list.html:52
+msgid "created_asc"
+msgstr "作成日時(古い順)"
+
+#: bookmark/models/collection.py:17 bookmark/models/notification.py:27 bookmark/models/url_item.py:53 bookmark/models/user.py:42 bookmark/models/user.py:63 bookmark/models/user.py:88
+msgid "created_at"
+msgstr "作成日時"
+
+#: bookmark/templates/url_manager/url_list.html:51
+msgid "created_desc"
+msgstr "作成日時(新しい順)"
+
+#: bookmark/templates/user_accounts/password_change.html:24
+msgid "current_password"
+msgstr "新しいパスワード"
+
+#: bookmark/templates/core/dashboard.html
+msgid "dashboard"
+msgstr "ダッシュボード"
+
+#: bookmark/templates/core/about.html:64
+msgid "database_sqlite_mysql"
+msgstr "データベース: SQLite / MySQL / PostgreSQL"
+
+#: bookmark/templates/url_manager/url_list.html:133
+msgid "days_ago"
+msgstr "日前"
+
+#: bookmark/templates/collection_manager/collection_delete.html:36 bookmark/templates/collection_manager/collection_detail.html:37 bookmark/templates/collection_manager/collection_list.html:44 bookmark/templates/collection_manager/collection_remove_url.html:37 bookmark/templates/url_manager/url_delete.html:36 bookmark/templates/url_manager/url_detail.html:28 bookmark/templates/url_manager/url_detail_fixed.html:26 bookmark/templates/url_manager/url_detail_new.html:26 bookmark/templates/url_manager/url_list.html:154
+msgid "delete"
+msgstr "削除"
+
+#: bookmark/templates/user_accounts/account_delete.html:44 bookmark/templates/user_accounts/settings.html:66 bookmark/templates/user_accounts/settings.html:69
+msgid "delete_account"
+msgstr "アカウントを削除"
+
+#: bookmark/templates/user_accounts/account_delete.html:14
+msgid "deletion_is_permanent"
+msgstr "削除は取り消せません"
+
+#: bookmark/models/user.py:16
+msgid "designates_whether_user_active"
+msgstr "このユーザーがアクティブかどうかを指定します。アカウントを削除する代わりに、これを選択解除してください。"
+
+#: bookmark/templates/collection_manager/collection_list.html:37 bookmark/templates/core/job_management.html:88
+msgid "details"
+msgstr "詳細"
+
+#: bookmark/templates/core/home.html:16
+msgid "detect_website_updates_various_methods"
+msgstr "様々な方法でWebサイトの更新を検知"
+
+#: bookmark/templates/core/about.html:34
+msgid "detection_methods"
+msgstr "検知方法"
+
+#: bookmark/templates/user_accounts/login.html:71
+msgid "dont_have_account"
+msgstr "アカウントをお持ちでないですか？"
+
+#: bookmark/templates/collection_manager/collection_detail.html:34 bookmark/templates/collection_manager/collection_list.html:41 bookmark/templates/url_manager/url_detail.html:25 bookmark/templates/url_manager/url_detail_fixed.html:23 bookmark/templates/url_manager/url_detail_new.html:23 bookmark/templates/url_manager/url_list.html:149 bookmark/templates/user_accounts/settings.html:21
+msgid "edit"
+msgstr "編集"
+
+#: bookmark/templates/collection_manager/collection_form.html:6 bookmark/templates/collection_manager/collection_form.html:24
+msgid "edit_collection"
+msgstr "コレクション編集"
+
+#: bookmark/templates/user_accounts/mypage.html:56
+msgid "edit_my_page"
+msgstr "マイページ編集"
+
+#: bookmark/templates/user_accounts/edit_profile.html:4 bookmark/templates/user_accounts/edit_profile.html:10 bookmark/templates/user_accounts/profile_edit.html:4 bookmark/templates/user_accounts/profile_edit.html:9
+msgid "edit_mypage"
+msgstr "マイページ編集"
+
+#: bookmark/templates/url_manager/url_form.html:6 bookmark/templates/url_manager/url_form.html:24
+msgid "edit_url"
+msgstr "URL編集"
+
+#: bookmark/forms/user_accounts.py:50 bookmark/forms/user_accounts.py:65 bookmark/models/user.py:11 bookmark/templates/user_accounts/login.html:24 bookmark/templates/user_accounts/mypage.html:29 bookmark/templates/user_accounts/password_reset.html:28 bookmark/templates/user_accounts/password_reset_request.html:28 bookmark/templates/user_accounts/profile_edit.html:52 bookmark/templates/user_accounts/register.html:24 bookmark/templates/user_accounts/settings.html:18
+msgid "email_address"
+msgstr "メールアドレス"
+
+#: bookmark/templates/emails/email_verification_email.html:8 bookmark/templates/emails/email_verification_email.html:46
+msgid "email_confirmation"
+msgstr "メールアドレス確認"
+
+#: bookmark/views/user_accounts.py:42
+msgid "email_confirmation_subject"
+msgstr "[Flexible Web Checker] メールアドレス確認"
 
 #: bookmark/models/user.py:67
 msgid "email_confirmation_token"
@@ -348,541 +461,81 @@ msgstr "メールアドレス確認トークン"
 msgid "email_confirmation_tokens"
 msgstr "メールアドレス確認トークン"
 
-#: bookmark/models/user.py:92
-msgid "password_reset_token"
-msgstr "パスワードリセットトークン"
+#: bookmark/views/user_accounts.py:89
+msgid "email_confirmed_please_login"
+msgstr "メールアドレスが確認されました。ログインしてください"
 
-#: bookmark/models/user.py:93
-msgid "password_reset_tokens"
-msgstr "パスワードリセットトークン"
+#: bookmark/models/user.py:40
+msgid "email_notification"
+msgstr "メール通知"
 
-#: bookmark/templates/base.html:36 bookmark/templates/base.html:69
-msgid "user_icon"
-msgstr "ユーザーアイコン"
+#: bookmark/templates/emails/notification_email.html:67
+msgid "email_notification_settings_can_be_changed_at"
+msgstr "メール通知の設定は"
 
-#: bookmark/templates/base.html:41 bookmark/templates/base.html:74
-#: bookmark/templates/core/home.html:44
-#: bookmark/templates/user_accounts/email_verification_complete.html:25
-#: bookmark/templates/user_accounts/login.html:4
-#: bookmark/templates/user_accounts/login.html:9
-#: bookmark/templates/user_accounts/login.html:59
-#: bookmark/templates/user_accounts/password_reset_complete.html:25
-#: bookmark/templates/user_accounts/register.html:105
-msgid "login"
-msgstr "ログイン"
+#: bookmark/templates/user_accounts/email_verification.html:4 bookmark/templates/user_accounts/email_verification.html:9
+msgid "email_verification"
+msgstr "メール通知"
 
-#: bookmark/templates/base.html:42 bookmark/templates/base.html:75
-#: bookmark/templates/user_accounts/register.html:97
-msgid "register"
-msgstr "登録"
+#: bookmark/templates/user_accounts/email_verification_complete.html:4 bookmark/templates/user_accounts/email_verification_complete.html:9
+msgid "email_verification_complete"
+msgstr "メールアドレス確認完了メール認証完了Flexible Web Checkerへのご登録ありがとうございます。以下のリンクをクリックして、メールアドレスを確認してください。"
 
-#: bookmark/templates/base.html:46
-msgid "language"
-msgstr "言語"
+#: bookmark/templates/user_accounts/email_verification.html:21
+msgid "email_verification_instructions"
+msgstr "メールに記載されたリンクをクリックして、メールアドレスを確認してください"
 
-#: bookmark/templates/base.html:108 bookmark/templates/core/about.html:4
-msgid "about_this_site"
-msgstr "このサイトについて"
+#: bookmark/templates/emails/email_verification_email.html:52
+msgid "email_verification_message"
+msgstr "Flexible Web Checkerへのご登録ありがとうございます。以下のリンクをクリックして、メールアドレスを確認してください。Flexible Web Checkerへのご登録ありがとうございます。以下のリンクをクリックして、メールアドレスを確認してください。"
 
-#: bookmark/templates/collection_manager/collection_add.html:4
-#: bookmark/templates/collection_manager/collection_add.html:10
-msgid "add_collection"
-msgstr "コレクション追加"
+#: bookmark/templates/user_accounts/email_verification.html:17
+msgid "email_verification_sent"
+msgstr "メールアドレス確認メールを送信しましたメールアドレスの確認メールを送信しました。Flexible Web Checkerへのご登録ありがとうございます。以下のリンクをクリックして、メールアドレスを確認してください。"
 
-#: bookmark/templates/collection_manager/collection_add.html:39
-#: bookmark/templates/collection_manager/collection_add_url.html:50
-#: bookmark/templates/collection_manager/collection_delete.html:33
-#: bookmark/templates/collection_manager/collection_form.html:60
-#: bookmark/templates/collection_manager/collection_remove_url.html:34
-#: bookmark/templates/registration/password_change_form.html:44
-#: bookmark/templates/url_manager/url_add.html:50
-#: bookmark/templates/url_manager/url_bulk_add.html:48
-#: bookmark/templates/url_manager/url_delete.html:33
-#: bookmark/templates/url_manager/url_form.html:169
-#: bookmark/templates/user_accounts/account_delete.html:41
-#: bookmark/templates/user_accounts/edit_profile.html:44
-msgid "cancel"
-msgstr "キャンセル"
+#: bookmark/models/user.py:18
+msgid "email_verified_at"
+msgstr "メールアドレス確認日時"
 
-#: bookmark/templates/collection_manager/collection_add.html:42
-#: bookmark/templates/collection_manager/collection_add_url.html:53
-#: bookmark/templates/url_manager/url_add.html:53
-msgid "add"
-msgstr "追加"
-
-#: bookmark/templates/collection_manager/collection_add_url.html:4
-#: bookmark/templates/collection_manager/collection_add_url.html:17
-#: bookmark/templates/collection_manager/collection_detail.html:59
-msgid "add_url"
-msgstr "URL追加"
-
-#: bookmark/templates/collection_manager/collection_add_url.html:10
-#: bookmark/templates/collection_manager/collection_delete.html:10
-#: bookmark/templates/collection_manager/collection_remove_url.html:10
-msgid "back_to_collection_detail"
-msgstr "コレクション詳細に戻る"
-
-#: bookmark/templates/collection_manager/collection_add_url.html:44
-msgid "select_urls_to_add_to_collection"
-msgstr "コレクションに追加するURLを選択してください"
-
-#: bookmark/templates/collection_manager/collection_add_url.html:59
-msgid "create_new_url"
-msgstr "新しいURLを作成"
-
-#: bookmark/templates/collection_manager/collection_add_url.html:61
-msgid "create_new_url_if_not_in_list"
-msgstr "追加したいURLがリストにない場合は、新しいURLを作成してください。"
-
-#: bookmark/templates/collection_manager/collection_add_url.html:64
-msgid "create_new_url_button"
-msgstr "新規URL作成"
-
-#: bookmark/templates/collection_manager/collection_delete.html:4
-#: bookmark/templates/collection_manager/collection_delete.html:16
-msgid "confirm_delete_collection"
-msgstr "コレクション削除確認"
-
-#: bookmark/templates/collection_manager/collection_delete.html:19
-msgid "confirm_delete_collection_message"
-msgstr "本当にこのコレクションを削除しますか？"
-
-#: bookmark/templates/collection_manager/collection_delete.html:21
-#: bookmark/templates/collection_manager/collection_detail.html:47
-#: bookmark/templates/collection_manager/collection_list.html:28
-msgid "url_count"
-msgstr "URL数"
-
-#: bookmark/templates/collection_manager/collection_delete.html:25
-msgid "collection_delete_warning"
-msgstr "この操作は元に戻せません。コレクションを削除しても、コレクション内のURLは削除されません。"
-"この操作は元に戻せません。コレクションを削除しても、コレクション内のURLは削除"
-"されません。この操作は元に戻せません。コレクションを削除しても、コレクション"
-"内のURLは削除されません。"
-
-#: bookmark/templates/collection_manager/collection_delete.html:36
-#: bookmark/templates/collection_manager/collection_detail.html:37
-#: bookmark/templates/collection_manager/collection_list.html:44
-#: bookmark/templates/collection_manager/collection_remove_url.html:37
-#: bookmark/templates/url_manager/url_delete.html:36
-#: bookmark/templates/url_manager/url_detail.html:28
-#: bookmark/templates/url_manager/url_detail_fixed.html:26
-#: bookmark/templates/url_manager/url_detail_new.html:26
-#: bookmark/templates/url_manager/url_list.html:154
-msgid "delete"
-msgstr "削除"
-
-#: bookmark/templates/collection_manager/collection_detail.html:14
-#: bookmark/templates/url_manager/url_list.html:29
-msgid "all"
-msgstr "全て"
-
-#: bookmark/templates/collection_manager/collection_detail.html:22
-#: bookmark/templates/url_manager/url_list.html:38
-msgid "uncategorized"
-msgstr "未分類"
-
-#: bookmark/templates/collection_manager/collection_detail.html:31
-msgid "collection_info"
-msgstr "コレクション情報"
-
-#: bookmark/templates/collection_manager/collection_detail.html:34
-#: bookmark/templates/collection_manager/collection_list.html:41
-#: bookmark/templates/url_manager/url_detail.html:25
-#: bookmark/templates/url_manager/url_detail_fixed.html:23
-#: bookmark/templates/url_manager/url_detail_new.html:23
-#: bookmark/templates/url_manager/url_list.html:149
-#: bookmark/templates/user_accounts/settings.html:21
-msgid "edit"
-msgstr "編集"
-
-#: bookmark/templates/collection_manager/collection_detail.html:44
-#: bookmark/templates/collection_manager/collection_list.html:31
-msgid "created"
-msgstr "作成日"
-
-#: bookmark/templates/collection_manager/collection_detail.html:72
-#: bookmark/templates/url_manager/url_detail.html:107
-#: bookmark/templates/url_manager/url_detail_fixed.html:105
-#: bookmark/templates/url_manager/url_detail_new.html:105
-#: bookmark/templates/url_manager/url_list.html:80
-#: bookmark/templates/emails/notification_email.html:57
-msgid "last_updated"
-msgstr "最終更新"
-
-#: bookmark/templates/collection_manager/collection_detail.html:73
-#: bookmark/templates/url_manager/url_list.html:81
-msgid "actions"
-msgstr "アクション"
-
-#: bookmark/templates/collection_manager/collection_detail.html:86
-#: bookmark/templates/url_manager/url_list.html:93
-msgid "no_image"
-msgstr "画像なし"
-
-#: bookmark/templates/collection_manager/collection_detail.html:112
-#: bookmark/templates/url_manager/url_check_result.html:46
-#: bookmark/templates/url_manager/url_list.html:137
-msgid "not_updated"
-msgstr "更新なし"
-
-#: bookmark/templates/collection_manager/collection_detail.html:117
-#: bookmark/templates/url_manager/url_detail.html:21
-#: bookmark/templates/url_manager/url_detail_fixed.html:20
-#: bookmark/templates/url_manager/url_detail_new.html:20
-#: bookmark/templates/url_manager/url_list.html:143
-msgid "check_update"
-msgstr "更新チェック"
-
-#: bookmark/templates/collection_manager/collection_detail.html:122
-msgid "remove_from_collection"
-msgstr "コレクションから削除"
-
-#: bookmark/templates/collection_manager/collection_detail.html:137
-msgid "no_urls_in_collection"
-msgstr "このコレクションにはURLが登録されていません。"
-
-#: bookmark/templates/collection_manager/collection_detail.html:139
-msgid "add_url_to_collection"
-msgstr "URLをコレクションに追加"
-
-#: bookmark/templates/collection_manager/collection_form.html:6
-#: bookmark/templates/collection_manager/collection_form.html:24
-msgid "edit_collection"
-msgstr "コレクション編集"
-
-#: bookmark/templates/collection_manager/collection_form.html:8
-#: bookmark/templates/collection_manager/collection_form.html:26
-#: bookmark/templates/collection_manager/collection_list.html:12
-msgid "create_new_collection"
-msgstr "新規コレクション作成"
-
-#: bookmark/templates/collection_manager/collection_form.html:16
-msgid "back_to_collection_list"
-msgstr "コレクション一覧に戻る"
+#: bookmark/templates/user_accounts/email_verification_complete.html:17
+msgid "email_verified_successfully"
+msgstr "メールアドレス確認日時"
 
 #: bookmark/templates/collection_manager/collection_form.html:54
 msgid "enter_collection_name"
 msgstr "コレクション名を入力してください"
 
-#: bookmark/templates/collection_manager/collection_form.html:63
-#: bookmark/templates/url_manager/url_form.html:172
-#: bookmark/templates/user_accounts/edit_profile.html:47
-#: bookmark/templates/user_accounts/profile_edit.html:69
-#: bookmark/templates/user_accounts/settings.html:58
-msgid "save"
-msgstr "保存"
-
-#: bookmark/templates/collection_manager/collection_list.html:4
-#: bookmark/templates/collection_manager/collection_list.html:9
-msgid "collection_list"
-msgstr "コレクション一覧"
-
-#: bookmark/templates/collection_manager/collection_list.html:37
-#: bookmark/templates/core/job_management.html:88
-msgid "details"
-msgstr "詳細"
-
-#: bookmark/templates/collection_manager/collection_list.html:54
-msgid "no_collections_created"
-msgstr "まだコレクションが作成されていません。"
-
-#: bookmark/templates/collection_manager/collection_list.html:56
-msgid "create_new_collection_link"
-msgstr "新しいコレクションを作成する"
-
-#: bookmark/templates/collection_manager/collection_remove_url.html:4
-#: bookmark/templates/collection_manager/collection_remove_url.html:16
-#: bookmark/templates/url_manager/url_delete.html:4
-#: bookmark/templates/url_manager/url_delete.html:16
-msgid "confirm_remove_url"
-msgstr "URL削除確認"
-
-#: bookmark/templates/collection_manager/collection_remove_url.html:19
-msgid "confirm_remove_url_from_collection"
-msgstr "このURLをコレクションから削除しますか？"
-
-#: bookmark/templates/collection_manager/collection_remove_url.html:25
-msgid "url_removed_from_collection_only"
-msgstr "このURLはコレクションから削除されますが、URL自体は削除されません。"
-
-#: bookmark/templates/core/about.html:9
-msgid "about_flexible_web_checker"
-msgstr "Flexible Web Checker について"
-
-#: bookmark/templates/core/about.html:12
-msgid "overview"
-msgstr "概要"
-
-#: bookmark/templates/core/about.html:14
-msgid "about_description"
-msgstr ""
-"Flexible Web Checkerは、登録したウェブサイトの更新を自動的に検知し、通知する"
-"サービスです。Flexible Web Checkerは、Webサイトの更新を柔軟に監視するための"
-"ツールです。お気に入りのWebサイトの更新を見逃さないように、さまざまな方法で更"
-"新を検出します。Flexible Web Checkerは、Webサイトの更新を柔軟に監視するための"
-"ツールです。お気に入りのWebサイトの更新を見逃さないように、さまざまな方法で更"
-"新を検出します。"
-
-#: bookmark/templates/core/about.html:17
-msgid "about_tech_description"
-msgstr ""
-"RSS、HTML標準、HTMLカスタムの3つの検知方法を使用して、様々なウェブサイトの更"
-"新を確実に検知します。"
-
-#: bookmark/templates/core/about.html:22 bookmark/templates/core/home.html:14
-msgid "main_features"
-msgstr "主な機能"
-
-#: bookmark/templates/core/about.html:24
-msgid "multiple_detection_methods"
-msgstr "複数の検知方法（RSS、HTML標準、HTMLカスタム）"
-
-#: bookmark/templates/core/about.html:25
-msgid "url_collection_management"
-msgstr "URLをコレクションで整理・管理"
-
-#: bookmark/templates/core/about.html:26
-msgid "website_thumbnail_display"
-msgstr "ウェブサイトのサムネイル表示"
-
-#: bookmark/templates/core/about.html:27
-msgid "periodic_update_check"
-msgstr "定期的な更新チェック"
-
-#: bookmark/templates/core/about.html:28
-msgid "user_account_management"
-msgstr "ユーザーアカウント管理"
-
-#: bookmark/templates/core/about.html:29
-msgid "multilingual_support"
-msgstr "多言語対応（日本語・英語）"
-
-#: bookmark/templates/core/about.html:34
-msgid "detection_methods"
-msgstr "検知方法"
-
-#: bookmark/templates/core/about.html:37
-msgid "rss_feed"
-msgstr "RSSフィード"
-
-#: bookmark/templates/core/about.html:39
-msgid "rss_feed_description"
-msgstr ""
-"RSSフィードを定期的にチェックし、新しいエントリーを検知します。ブログやニュー"
-"スサイトに最適です。RSSフィードを提供しているWebサイトの場合、フィードの最新"
-"エントリを監視して更新を検出します。これは最も効率的な方法です。RSSフィードを"
-"提供しているWebサイトの場合、フィードの最新エントリを監視して更新を検出しま"
-"す。これは最も効率的な方法です。"
-
-#: bookmark/templates/core/about.html:44
-msgid "html_standard"
-msgstr "HTML標準"
-
-#: bookmark/templates/core/about.html:46
-msgid "html_standard_description"
-msgstr ""
-"ウェブページ全体のHTML内容をチェックし、変更を検知します。小規模なサイトや更"
-"新頻度の低いサイトに適しています。WebページのHTML全体を監視して、内容の変更を"
-"検出します。RSSフィードを提供していないサイトに適しています。WebページのHTML"
-"全体を監視して、内容の変更を検出します。RSSフィードを提供していないサイトに適"
-"しています。"
-
-#: bookmark/templates/core/about.html:51
-msgid "html_custom"
-msgstr "HTMLカスタム"
-
-#: bookmark/templates/core/about.html:53
-msgid "html_custom_description"
-msgstr ""
-"CSSセレクターで指定した特定の要素の変更を検知します。特定のセクションのみを監"
-"視したい場合に便利です。CSSセレクタを使用して、Webページの特定の部分の変更を"
-"監視します。特定の要素のみを追跡したい場合に便利です。CSSセレクタを使用して、"
-"Webページの特定の部分の変更を監視します。特定の要素のみを追跡したい場合に便利"
-"です。"
-
-#: bookmark/templates/core/about.html:59
-msgid "technical_info"
-msgstr "技術情報"
-
-#: bookmark/templates/core/about.html:61
-msgid "backend_django_python"
-msgstr "バックエンド: Django 5.2 (Python 3.12+)"
-
-#: bookmark/templates/core/about.html:62
-msgid "frontend_tech"
-msgstr "フロントエンド: TypeScript, React 19, Tailwind CSS 4"
-
-#: bookmark/templates/core/about.html:63
-msgid "async_task_celery"
-msgstr "非同期タスク: Celery + Redis"
-
-#: bookmark/templates/core/about.html:64
-msgid "database_sqlite_mysql"
-msgstr "データベース: SQLite / MySQL / PostgreSQL"
-
-#: bookmark/templates/core/about.html:65
-msgid "screenshot_selenium_firefox"
-msgstr "スクリーンショット: Playwright"
-
-#: bookmark/templates/core/about.html:66
-msgid "html_parsing_beautifulsoup"
-msgstr "HTML解析: BeautifulSoup4"
-
-#: bookmark/templates/core/about.html:67
-msgid "rss_parsing_feedparser"
-msgstr "RSS解析: feedparser"
-
-#: bookmark/templates/core/home.html:4
-msgid "home"
-msgstr "ホーム"
-
-#: bookmark/templates/core/home.html:9
-msgid "welcome_to_flexible_web_checker"
-msgstr "Flexible Web Checkerへようこそ"
-
-#: bookmark/templates/core/home.html:10
-msgid "track_favorite_websites_description"
-msgstr "お気に入りのWebサイトの更新を追跡"
-
-#: bookmark/templates/core/home.html:16
-msgid "detect_website_updates_various_methods"
-msgstr "様々な方法でWebサイトの更新を検知"
-
-#: bookmark/templates/core/home.html:17
-msgid "monitor_rss_html_elements"
-msgstr "RSS、HTMLページ、特定の要素を監視"
-
-#: bookmark/templates/core/home.html:18
-msgid "organize_urls_in_collections"
-msgstr "コレクションでURLを整理"
-
-#: bookmark/templates/core/home.html:19
-msgid "notify_on_updates"
-msgstr "更新時に通知"
-
-#: bookmark/templates/core/home.html:23
-msgid "how_to_use"
-msgstr "使い方"
-
-#: bookmark/templates/core/home.html:25
-msgid "create_account"
-msgstr "アカウント作成"
-
-#: bookmark/templates/core/home.html:26
-msgid "add_urls_to_monitor"
-msgstr "監視するURLを追加"
-
-#: bookmark/templates/core/home.html:27
-msgid "select_update_check_method"
-msgstr "更新チェック方法を選択"
-
-#: bookmark/templates/core/home.html:28
-msgid "organize_urls_as_needed"
-msgstr "必要に応じてURLを整理"
-
-#: bookmark/templates/core/home.html:29
-msgid "check_for_updates"
-msgstr "更新をチェック"
-
-#: bookmark/templates/core/home.html:37
-msgid "go_to_dashboard"
-msgstr "ダッシュボードへ"
-
-#: bookmark/templates/core/home.html:41
-msgid "register_now"
-msgstr "今すぐ登録"
-
-#: bookmark/templates/core/home.html:51
-msgid "features_of_flexible_web_checker"
-msgstr "Flexible Web Checkerの特徴"
-
-#: bookmark/templates/core/home.html:55
-msgid "flexible_update_detection"
-msgstr "柔軟な更新検知"
-
-#: bookmark/templates/core/home.html:56
-msgid "can_monitor_rss_html_elements"
-msgstr "RSS、HTML、特定要素を監視可能"
-
-#: bookmark/templates/core/home.html:59
-msgid "collection_management"
-msgstr "コレクション管理"
-
-#: bookmark/templates/core/home.html:60
-msgid "organize_and_group_websites"
-msgstr "Webサイトを整理・グループ化"
-
-#: bookmark/templates/core/home.html:63
-msgid "thumbnail_display"
-msgstr "サムネイル表示"
-
-#: bookmark/templates/core/home.html:64
-msgid "auto_generate_thumbnails"
-msgstr "サムネイルを自動生成"
-
-#: bookmark/templates/core/job_management.html:4
-#: bookmark/templates/core/job_management.html:9
-#: bookmark/templates/user_accounts/mypage.html:102
-msgid "job_management"
-msgstr "ジョブ管理"
-
-#: bookmark/templates/core/job_management.html:10
-msgid "manage_background_jobs_description"
-msgstr "バックグラウンドジョブの管理"
-
-#: bookmark/templates/core/job_management.html:16
-msgid "periodic_tasks"
-msgstr "定期タスク"
-
-#: bookmark/templates/core/job_management.html:22
-#: bookmark/templates/core/job_management.html:84
-msgid "task_name"
-msgstr "タスク名"
-
-#: bookmark/templates/core/job_management.html:23
-msgid "schedule"
-msgstr "スケジュール"
-
-#: bookmark/templates/core/job_management.html:25
-msgid "last_run"
-msgstr "最終実行"
-
-#: bookmark/templates/core/job_management.html:26
-msgid "next_run"
-msgstr "次回実行"
-
-#: bookmark/templates/core/job_management.html:37
-msgid "Every"
-msgstr "毎"
-
-#: bookmark/templates/core/job_management.html:46
-msgid "inactive"
-msgstr "無効"
-
-#: bookmark/templates/core/job_management.html:53
-msgid "not_executed"
-msgstr "未実行"
-
-#: bookmark/templates/core/job_management.html:58
-msgid "calculating"
-msgstr "計算中"
-
-#: bookmark/templates/core/job_management.html:69
-msgid "no_periodic_tasks_registered"
-msgstr "定期タスクが登録されていません"
-
-#: bookmark/templates/core/job_management.html:77
-msgid "task_execution_history"
-msgstr "タスク実行履歴"
-
-#: bookmark/templates/core/job_management.html:83
-msgid "task_id"
-msgstr "タスクID"
-
-#: bookmark/templates/core/job_management.html:85
-msgid "status"
-msgstr "ステータス"
+#: bookmark/templates/user_accounts/account_delete.html:27
+msgid "enter_current_password_to_confirm"
+msgstr "現在のパスワードを入力して確認"
+
+#: bookmark/templates/url_manager/url_form.html:71
+msgid "enter_title_for_url"
+msgstr "URLのタイトルを入力"
+
+#: bookmark/templates/url_manager/url_form.html:54
+msgid "enter_url_to_monitor"
+msgstr "監視するURLを入力"
+
+#: bookmark/templates/url_manager/url_check_result.html:58
+msgid "error"
+msgstr "エラー"
+
+#: bookmark/models/url_item.py:55 bookmark/templates/url_manager/url_detail.html:120 bookmark/templates/url_manager/url_detail_fixed.html:116 bookmark/templates/url_manager/url_detail_new.html:116
+msgid "error_count"
+msgstr "エラー回数"
+
+#: bookmark/templates/core/job_management.html:120
+msgid "error_details"
+msgstr "エラー詳細"
+
+#: bookmark/templates/url_manager/url_detail.html:119 bookmark/templates/url_manager/url_detail_fixed.html:115 bookmark/templates/url_manager/url_detail_new.html:115
+msgid "error_info"
+msgstr "エラー情報"
+
+#: bookmark/views/core.py:43
+msgid "error_occurred"
+msgstr "エラー回数"
 
 #: bookmark/templates/core/job_management.html:86
 msgid "execution_datetime"
@@ -892,702 +545,779 @@ msgstr "実行日時"
 msgid "execution_time"
 msgstr "実行時間"
 
-#: bookmark/templates/core/job_management.html:98
-msgid "success"
-msgstr "成功"
+#: bookmark/models/user.py:64 bookmark/models/user.py:89
+msgid "expires_at"
+msgstr "有効期限"
+
+#: bookmark/views/url_manager.py:209
+msgid "failed_to_add_urls_list"
+msgstr "追加に失敗したURL:"
+
+#: bookmark/views/url_manager.py:188
+msgid "failed_to_get_title_will_use_url"
+msgstr "タイトルの取得に失敗しました。URLを使用します: {url}"
 
 #: bookmark/templates/core/job_management.html:100
 msgid "failure"
 msgstr "失敗"
 
-#: bookmark/templates/core/job_management.html:102
-msgid "pending"
-msgstr "保留中"
+#: bookmark/templates/core/home.html:51
+msgid "features_of_flexible_web_checker"
+msgstr "Flexible Web Checkerの特徴"
 
-#: bookmark/templates/core/job_management.html:104
-msgid "running"
-msgstr "実行中"
-
-#: bookmark/templates/core/job_management.html:120
-msgid "error_details"
-msgstr "エラー詳細"
-
-#: bookmark/templates/core/job_management.html:139
-#: bookmark/templates/core/pagination.html:17
-#: bookmark/templates/core/pagination.html:33
-#: bookmark/templates/url_manager/url_list.html:173
-#: bookmark/templates/url_manager/url_list.html:177
-msgid "previous"
-msgstr "前へ"
-
-#: bookmark/templates/core/job_management.html:158
-#: bookmark/templates/core/pagination.html:54
-#: bookmark/templates/core/pagination.html:70
-#: bookmark/templates/url_manager/url_list.html:195
-#: bookmark/templates/url_manager/url_list.html:199
-msgid "next"
-msgstr "次へ"
-
-#: bookmark/templates/core/job_management.html:166
-msgid "no_task_execution_history"
-msgstr "タスク実行履歴がありません"
-
-#: bookmark/templates/core/notification.html:24
-msgid "system_notifications"
-msgstr "システム通知"
-
-#: bookmark/templates/core/notification.html:34
-msgid "mark_as_read"
-msgstr "既読にする"
-
-#: bookmark/templates/core/notification.html:64
-msgid "mark_all_as_read"
-msgstr "すべて既読にする"
-
-#: bookmark/templates/core/notification.html:74
-msgid "no_notifications"
-msgstr "通知はありません"
-
-#: bookmark/templates/core/pagination.html:5
-msgid "pagination"
-msgstr "ページネーション"
-
-#: bookmark/templates/core/pagination.html:8
-#: bookmark/templates/core/pagination.html:24
+#: bookmark/templates/core/pagination.html:8 bookmark/templates/core/pagination.html:24
 msgid "first"
 msgstr "最初"
 
-#: bookmark/templates/core/pagination.html:60
-#: bookmark/templates/core/pagination.html:76
-msgid "last"
-msgstr "最後"
-
-#: bookmark/templates/registration/password_change_done.html:4
-#: bookmark/templates/registration/password_change_done.html:10
-msgid "password_change_done"
-msgstr "パスワード変更完了"
-
-#: bookmark/templates/registration/password_change_done.html:11
-#: bookmark/templates/user_accounts/password_reset_complete.html:17
-msgid "password_changed_successfully"
-msgstr "パスワードが正常に変更されました！"
-
-#: bookmark/templates/registration/password_change_done.html:13
-#: bookmark/templates/user_accounts/password_change.html:76
-#: bookmark/templates/user_accounts/profile_edit.html:76
-msgid "back_to_mypage"
-msgstr "マイページに戻る"
-
-#: bookmark/templates/registration/password_change_form.html:4
-#: bookmark/templates/registration/password_change_form.html:10
-#: bookmark/templates/user_accounts/password_change.html:4
-#: bookmark/templates/user_accounts/password_change.html:9
-msgid "password_change"
-msgstr "パスワード変更"
-
-#: bookmark/templates/registration/password_change_form.html:47
-#: bookmark/templates/user_accounts/mypage.html:51
-#: bookmark/templates/user_accounts/password_change.html:69
-#: bookmark/templates/user_accounts/password_reset_confirm.html:56
-#: bookmark/templates/user_accounts/settings.html:29
-msgid "change_password"
-msgstr "パスワードを変更"
-
-#: bookmark/templates/url_manager/url_add.html:4
-#: bookmark/templates/url_manager/url_add.html:16
-#: bookmark/templates/url_manager/url_form.html:8
-#: bookmark/templates/url_manager/url_form.html:26
-#: bookmark/templates/url_manager/url_list.html:65
-#: bookmark/templates/url_manager/url_list.html:216
-msgid "add_new_url"
-msgstr "新しいURL追加"
-
-#: bookmark/templates/url_manager/url_add.html:10
-#: bookmark/templates/url_manager/url_bulk_add.html:10
-#: bookmark/templates/url_manager/url_detail.html:10
-#: bookmark/templates/url_manager/url_detail_fixed.html:10
-#: bookmark/templates/url_manager/url_detail_new.html:10
-#: bookmark/templates/url_manager/url_form.html:16
-msgid "back_to_url_list"
-msgstr "URL一覧に戻る"
-
-#: bookmark/templates/url_manager/url_bulk_add.html:4
-#: bookmark/templates/url_manager/url_bulk_add.html:16
-msgid "bulk_add_urls"
-msgstr "URL一括追加"
-
-#: bookmark/templates/url_manager/url_bulk_add.html:51
-#: bookmark/templates/url_manager/url_list.html:61
-msgid "bulk_add"
-msgstr "一括追加"
-
-#: bookmark/templates/url_manager/url_check_result.html:4
-#: bookmark/templates/url_manager/url_check_result.html:16
-msgid "check_result"
-msgstr "チェック結果"
-
-#: bookmark/templates/url_manager/url_check_result.html:10
-#: bookmark/templates/url_manager/url_delete.html:10
-msgid "back_to_url_detail"
-msgstr "URL詳細に戻る"
-
-#: bookmark/templates/url_manager/url_check_result.html:26
-msgid "check_datetime"
-msgstr "チェック日時"
-
-#: bookmark/templates/url_manager/url_check_result.html:36
-msgid "updated"
-msgstr "更新あり"
-
-#: bookmark/templates/url_manager/url_check_result.html:38
-msgid "url_has_been_updated"
-msgstr "URLが更新されました"
-
-#: bookmark/templates/url_manager/url_check_result.html:48
-msgid "url_has_not_been_updated"
-msgstr "URLは更新されていません"
-
-#: bookmark/templates/url_manager/url_check_result.html:58
-msgid "error"
-msgstr "エラー"
-
-#: bookmark/templates/url_manager/url_check_result.html:66
-msgid "back"
-msgstr "戻る"
-
-#: bookmark/templates/url_manager/url_check_result.html:69
-msgid "recheck"
-msgstr "再チェック"
-
-#: bookmark/templates/url_manager/url_delete.html:19
-msgid "confirm_delete_url"
-msgstr "URL削除確認"
-
-#: bookmark/templates/url_manager/url_delete.html:25
-msgid "url_delete_warning"
-msgstr "この操作は元に戻せません。URLを削除すると、すべてのコレクションからも削除されます。"
-"この操作は元に戻せません。URLを削除すると、すべてのコレクションからも削除され"
-"ます。この操作は元に戻せません。URLを削除すると、すべてのコレクションからも削"
-"除されます。"
-
-#: bookmark/templates/url_manager/url_detail.html:58
-#: bookmark/templates/url_manager/url_detail_fixed.html:56
-#: bookmark/templates/url_manager/url_detail_new.html:56
-#: bookmark/templates/url_manager/url_form.html:112
-msgid "condition"
-msgstr "条件"
-
-#: bookmark/templates/url_manager/url_detail.html:60
-#: bookmark/templates/url_manager/url_detail_fixed.html:58
-#: bookmark/templates/url_manager/url_detail_new.html:58
-msgid "any_change_or"
-msgstr "いずれかの変更(OR)"
-
-#: bookmark/templates/url_manager/url_detail.html:62
-#: bookmark/templates/url_manager/url_detail_fixed.html:60
-#: bookmark/templates/url_manager/url_detail_new.html:60
-msgid "all_change_and"
-msgstr "すべての変更(AND)"
-
-#: bookmark/templates/url_manager/url_detail.html:80
-#: bookmark/templates/url_manager/url_detail_fixed.html:78
-#: bookmark/templates/url_manager/url_detail_new.html:78
-msgid "not_in_any_collection"
-msgstr "どのコレクションにも含まれていません"
-
-#: bookmark/templates/url_manager/url_detail.html:92
-#: bookmark/templates/url_manager/url_detail_fixed.html:90
-#: bookmark/templates/url_manager/url_detail_new.html:90
-msgid "no_thumbnail"
-msgstr "サムネイルなし"
-
-#: bookmark/templates/url_manager/url_detail.html:98
-#: bookmark/templates/url_manager/url_detail_fixed.html:96
-#: bookmark/templates/url_manager/url_detail_new.html:96
-#: bookmark/templates/user_accounts/mypage.html:82
-msgid "last_check"
-msgstr "最終チェック"
-
-#: bookmark/templates/url_manager/url_detail.html:102
-#: bookmark/templates/url_manager/url_detail_fixed.html:100
-#: bookmark/templates/url_manager/url_detail_new.html:100
-msgid "not_checked_yet"
-msgstr "未チェック"
-
-#: bookmark/templates/url_manager/url_detail.html:111
-#: bookmark/templates/url_manager/url_detail_fixed.html:109
-#: bookmark/templates/url_manager/url_detail_new.html:109
-msgid "not_updated_yet"
-msgstr "未更新"
-
-#: bookmark/templates/url_manager/url_detail.html:119
-#: bookmark/templates/url_manager/url_detail_fixed.html:115
-#: bookmark/templates/url_manager/url_detail_new.html:115
-msgid "error_info"
-msgstr "エラー情報"
-
-#: bookmark/templates/url_manager/url_form.html:6
-#: bookmark/templates/url_manager/url_form.html:24
-msgid "edit_url"
-msgstr "URL編集"
-
-#: bookmark/templates/url_manager/url_form.html:54
-msgid "enter_url_to_monitor"
-msgstr "監視するURLを入力"
-
-#: bookmark/templates/url_manager/url_form.html:71
-msgid "enter_title_for_url"
-msgstr "URLのタイトルを入力"
-
-#: bookmark/templates/url_manager/url_form.html:88
-msgid "select_check_method"
-msgstr "チェック方法を選択"
-
-#: bookmark/templates/url_manager/url_form.html:106
-msgid "html_selector_help"
-msgstr "CSSセレクターを入力してください(改行で複数指定可)"
-
-#: bookmark/templates/url_manager/url_form.html:123
-msgid "select_condition_for_multiple_selectors"
-msgstr "複数セレクター時の条件を選択"
-
-#: bookmark/templates/url_manager/url_form.html:146
-msgid "thumbnail_upload_help"
-msgstr "サムネイル画像をアップロードしてください。空白の場合、自動的にスクリーンショットが生成されます。"
-"サムネイル画像をアップロードしてください。空白の場合、自動的にスクリーン"
-"ショットが生成されます。サムネイル画像をアップロードしてください。空白の場"
-"合、自動的にスクリーンショットが生成されます。"
-
-#: bookmark/templates/url_manager/url_form.html:163
-msgid "select_collections_for_url"
-msgstr "URLを追加するコレクションを選択"
-
-#: bookmark/templates/url_manager/url_list.html:47
-msgid "sort_by"
-msgstr "並び替え"
-
-#: bookmark/templates/url_manager/url_list.html:49
-msgid "updated_desc"
-msgstr "更新日時(新しい順)"
-
-#: bookmark/templates/url_manager/url_list.html:50
-msgid "updated_asc"
-msgstr "更新日時(古い順)"
-
-#: bookmark/templates/url_manager/url_list.html:51
-msgid "created_desc"
-msgstr "作成日時(新しい順)"
-
-#: bookmark/templates/url_manager/url_list.html:52
-msgid "created_asc"
-msgstr "作成日時(古い順)"
-
-#: bookmark/templates/url_manager/url_list.html:107
-msgid "open_in_this_tab"
-msgstr "このタブで開く"
-
-#: bookmark/templates/url_manager/url_list.html:110
-msgid "open_in_new_tab"
-msgstr "新しいタブで開く"
-
-#: bookmark/templates/url_manager/url_list.html:129
-msgid "today"
-msgstr "今日"
-
-#: bookmark/templates/url_manager/url_list.html:131
-msgid "yesterday"
-msgstr "昨日"
-
-#: bookmark/templates/url_manager/url_list.html:133
-msgid "days_ago"
-msgstr "日前"
-
-#: bookmark/templates/url_manager/url_list.html:209
-msgid "no_urls_registered"
-msgstr "URLが登録されていません"
-
-#: bookmark/templates/url_manager/url_list.html:211
-msgid "no_uncategorized_urls"
-msgstr "未分類のURLはありません"
-
-#: bookmark/templates/user_accounts/account_delete.html:4
-#: bookmark/templates/user_accounts/account_delete.html:10
-msgid "confirm_delete_account"
-msgstr "アカウント削除確認"
-
-#: bookmark/templates/user_accounts/account_delete.html:13
-msgid "really_delete_account"
-msgstr "本当にアカウントを削除しますか？"
-
-#: bookmark/templates/user_accounts/account_delete.html:14
-msgid "deletion_is_permanent"
-msgstr "削除は取り消せません"
-
-#: bookmark/templates/user_accounts/account_delete.html:27
-msgid "enter_current_password_to_confirm"
-msgstr "現在のパスワードを入力して確認"
-
-#: bookmark/templates/user_accounts/account_delete.html:34
-msgid "confirm_account_and_data_deletion"
-msgstr "アカウントとデータの削除を確認"
-
-#: bookmark/templates/user_accounts/account_delete.html:44
-#: bookmark/templates/user_accounts/settings.html:66
-#: bookmark/templates/user_accounts/settings.html:69
-msgid "delete_account"
-msgstr "アカウントを削除"
-
-#: bookmark/templates/user_accounts/edit_profile.html:4
-#: bookmark/templates/user_accounts/edit_profile.html:10
-#: bookmark/templates/user_accounts/profile_edit.html:4
-#: bookmark/templates/user_accounts/profile_edit.html:9
-msgid "edit_mypage"
-msgstr "マイページ編集"
-
-#: bookmark/templates/emails/email_verification_email.html:8
-#: bookmark/templates/emails/email_verification_email.html:46
-msgid "email_confirmation"
-msgstr "メールアドレス確認"
-
-#: bookmark/templates/emails/email_verification_email.html:50
-#: bookmark/templates/emails/notification_email.html:50
-#: bookmark/templates/emails/password_reset_email.html:50
-msgid "hello"
-msgstr "こんにちは"
-
-#: bookmark/templates/emails/email_verification_email.html:52
-msgid "email_verification_message"
-msgstr ""
-"Flexible Web Checkerへのご登録ありがとうございます。以下のリンクをクリックし"
-"て、メールアドレスを確認してください。Flexible Web Checkerへのご登録ありがと"
-"うございます。以下のリンクをクリックして、メールアドレスを確認してください。"
-
-#: bookmark/templates/emails/email_verification_email.html:55
-msgid "verify_email_address"
-msgstr "メールアドレス"
-
-#: bookmark/templates/emails/email_verification_email.html:58
-#: bookmark/templates/emails/password_reset_email.html:58
-msgid "or_paste_url_in_browser"
-msgstr "または、以下のURLをブラウザに貼り付けてください："
-
-#: bookmark/templates/emails/email_verification_email.html:61
-#: bookmark/templates/emails/password_reset_email.html:61
-msgid "link_valid_24_hours"
-msgstr "このリンクは24時間有効です。"
-
-#: bookmark/templates/emails/email_verification_email.html:63
-msgid "ignore_if_not_requested"
-msgstr "アカウント登録をリクエストしていない場合は、このメールを無視してください"
-"アカウント登録をリクエストしていない場合は、このメールを無視してください。ア"
-"カウント登録をリクエストしていない場合は、このメールを無視してください。"
-
-#: bookmark/templates/emails/email_verification_email.html:67
-#: bookmark/templates/emails/password_reset_email.html:67
-msgid "auto_email_no_reply"
-msgstr "このメールは自動送信です。返信しないでください"
-"このメールはFlexible Web Checkerから自動的に送信されています。返信しないでく"
-"ださい。このメールはFlexible Web Checkerから自動的に送信されています。返信し"
-"ないでください。"
-
-#: bookmark/templates/emails/notification_email.html:46
-msgid "update_notification"
-msgstr "通知"
-
-#: bookmark/templates/emails/notification_email.html:52
-msgid "registered_urls_have_updates"
-msgstr "登録しているURLに更新がありました。"
-
-#: bookmark/templates/emails/notification_email.html:61
-msgid "view_details"
-msgstr "詳細"
-
-#: bookmark/templates/emails/notification_email.html:66
-msgid "this_is_automated_email"
-msgstr "このメールはFlexible Web Checkerから自動的に送信されています。"
-
-#: bookmark/templates/emails/notification_email.html:67
-msgid "email_notification_settings_can_be_changed_at"
-msgstr "メール通知の設定は"
-
-#: bookmark/templates/emails/notification_email.html:67
-msgid "here"
-msgstr "こちら"
-
-#: bookmark/templates/emails/notification_email.html:67
-msgid "text_after_settings_link"
-msgstr "から変更できます。"
-
-#: bookmark/templates/emails/password_reset_email.html:8
-#: bookmark/templates/emails/password_reset_email.html:46
-#: bookmark/templates/user_accounts/password_reset.html:4
-#: bookmark/templates/user_accounts/password_reset.html:9
-#: bookmark/templates/user_accounts/password_reset_request.html:4
-#: bookmark/templates/user_accounts/password_reset_request.html:9
-msgid "password_reset"
-msgstr "パスワードリセットトークン"
-
-#: bookmark/templates/emails/password_reset_email.html:52
-msgid "password_reset_message"
-msgstr ""
-"Flexible Web Checkerのパスワードリセットをリクエストしました。以下のリンクを"
-"クリックして、新しいパスワードを設定してください。Flexible Web Checkerのパス"
-"ワードリセットをリクエストしました。以下のリンクをクリックして、新しいパス"
-"ワードを設定してください。"
-
-#: bookmark/templates/emails/password_reset_email.html:55
-msgid "reset_password"
-msgstr "新しいパスワード"
-
-#: bookmark/templates/emails/password_reset_email.html:63
-msgid "ignore_password_reset_if_not_requested"
-msgstr ""
-"パスワードリセットをリクエストしていない場合は、このメールを無視してくださ"
-"い。パスワードリセットをリクエストしていない場合は、このメールを無視してくだ"
-"さい。"
-
-#: bookmark/templates/user_accounts/email_verification.html:4
-#: bookmark/templates/user_accounts/email_verification.html:9
-msgid "email_verification"
-msgstr "メール通知"
-
-#: bookmark/templates/user_accounts/email_verification.html:17
-msgid "email_verification_sent"
-msgstr "メールアドレス確認メールを送信しました"
-"メールアドレスの確認メールを送信しました。Flexible Web Checkerへのご登録あり"
-"がとうございます。以下のリンクをクリックして、メールアドレスを確認してくださ"
-"い。"
-
-#: bookmark/templates/user_accounts/email_verification.html:21
-msgid "email_verification_instructions"
-msgstr "メールに記載されたリンクをクリックして、メールアドレスを確認してください"
-
-#: bookmark/templates/user_accounts/email_verification.html:25
-#: bookmark/templates/user_accounts/password_reset_done.html:25
-msgid "back_to_home"
-msgstr "ホームに戻る"
-
-#: bookmark/templates/user_accounts/email_verification_complete.html:4
-#: bookmark/templates/user_accounts/email_verification_complete.html:9
-msgid "email_verification_complete"
-msgstr "メールアドレス確認完了"
-"メール認証完了Flexible Web Checkerへのご登録ありがとうございます。以下のリン"
-"クをクリックして、メールアドレスを確認してください。"
-
-#: bookmark/templates/user_accounts/email_verification_complete.html:17
-msgid "email_verified_successfully"
-msgstr "メールアドレス確認日時"
-
-#: bookmark/templates/user_accounts/email_verification_complete.html:21
-msgid "account_activated_message"
-msgstr "アカウントが有効化されました。ログインしてご利用ください"
-
-#: bookmark/templates/user_accounts/login.html:53
-msgid "keep_me_logged_in"
-msgstr "ログイン状態を保持する"
+#: bookmark/templates/core/home.html:55
+msgid "flexible_update_detection"
+msgstr "柔軟な更新検知"
 
 #: bookmark/templates/user_accounts/login.html:65
 msgid "forgot_password"
 msgstr "パスワード"
 
-#: bookmark/templates/user_accounts/login.html:71
-msgid "dont_have_account"
-msgstr "アカウントをお持ちでないですか？"
+#: bookmark/templates/core/about.html:62
+msgid "frontend_tech"
+msgstr "フロントエンド: TypeScript, React 19, Tailwind CSS 4"
 
-#: bookmark/templates/user_accounts/login.html:73
-#: bookmark/templates/user_accounts/register.html:4
-#: bookmark/templates/user_accounts/register.html:9
-msgid "register_new_account"
-msgstr "新規コレクション作成"
+#: bookmark/templates/core/home.html:37
+msgid "go_to_dashboard"
+msgstr "ダッシュボードへ"
 
-#: bookmark/templates/user_accounts/mypage.html:4
-#: bookmark/templates/user_accounts/mypage.html:10
-#: bookmark/templates/user_accounts/settings.html:14
-msgid "my_page"
-msgstr "マイページ"
+#: bookmark/templates/emails/email_verification_email.html:50 bookmark/templates/emails/notification_email.html:50 bookmark/templates/emails/password_reset_email.html:50
+msgid "hello"
+msgstr "こんにちは"
 
-#: bookmark/templates/user_accounts/mypage.html:15
-msgid "account_info"
-msgstr "アカウント情報"
+#: bookmark/templates/emails/notification_email.html:67
+msgid "here"
+msgstr "こちら"
 
-#: bookmark/templates/user_accounts/mypage.html:24
-#: bookmark/templates/user_accounts/profile_edit.html:38
-#: bookmark/templates/user_accounts/register.html:38
-msgid "username"
-msgstr "ユーザー"
+#: bookmark/templates/core/home.html:4
+msgid "home"
+msgstr "ホーム"
 
-#: bookmark/templates/user_accounts/mypage.html:34
-msgid "registration_date"
-msgstr "登録日"
+#: bookmark/templates/core/home.html:23
+msgid "how_to_use"
+msgstr "使い方"
+
+#: bookmark/models/url_item.py:17
+msgid "html_condition_and"
+msgstr "AND条件"
+
+#: bookmark/models/url_item.py:16
+msgid "html_condition_or"
+msgstr "OR条件"
+
+#: bookmark/templates/core/about.html:51
+msgid "html_custom"
+msgstr "HTMLカスタム"
+
+#: bookmark/models/url_item.py:41
+msgid "html_custom_condition"
+msgstr "HTMLカスタム条件"
+
+#: bookmark/templates/core/about.html:53
+msgid "html_custom_description"
+msgstr "CSSセレクターで指定した特定の要素の変更を検知します。特定のセクションのみを監視したい場合に便利です。CSSセレクタを使用して、Webページの特定の部分の変更を監視します。特定の要素のみを追跡したい場合に便利です。CSSセレクタを使用して、Webページの特定の部分の変更を監視します。特定の要素のみを追跡したい場合に便利です。"
+
+#: bookmark/forms/url_manager.py:30
+msgid "html_custom_selector_required"
+msgstr "HTMLカスタムチェックタイプを選択した場合は、HTMLセレクタを入力してください。"
+
+#: bookmark/templates/core/about.html:66
+msgid "html_parsing_beautifulsoup"
+msgstr "HTML解析: BeautifulSoup4"
+
+#: bookmark/models/url_item.py:35 bookmark/templates/url_manager/url_detail.html:55 bookmark/templates/url_manager/url_detail_fixed.html:53 bookmark/templates/url_manager/url_detail_new.html:53 bookmark/templates/url_manager/url_form.html:95
+msgid "html_selector"
+msgstr "HTMLセレクタ"
+
+#: bookmark/templates/url_manager/url_form.html:106
+msgid "html_selector_help"
+msgstr "CSSセレクターを入力してください(改行で複数指定可)"
+
+#: bookmark/forms/url_manager.py:20
+msgid "html_selector_placeholder"
+msgstr ""
+"例: div.content\n"
+"#main-content h2"
+
+#: bookmark/templates/core/about.html:44
+msgid "html_standard"
+msgstr "HTML標準"
+
+#: bookmark/templates/core/about.html:46
+msgid "html_standard_description"
+msgstr "ウェブページ全体のHTML内容をチェックし、変更を検知します。小規模なサイトや更新頻度の低いサイトに適しています。WebページのHTML全体を監視して、内容の変更を検出します。RSSフィードを提供していないサイトに適しています。WebページのHTML全体を監視して、内容の変更を検出します。RSSフィードを提供していないサイトに適しています。"
+
+#: bookmark/templates/emails/email_verification_email.html:63
+msgid "ignore_if_not_requested"
+msgstr "アカウント登録をリクエストしていない場合は、このメールを無視してくださいアカウント登録をリクエストしていない場合は、このメールを無視してください。アカウント登録をリクエストしていない場合は、このメールを無視してください。"
+
+#: bookmark/templates/emails/password_reset_email.html:63
+msgid "ignore_password_reset_if_not_requested"
+msgstr "パスワードリセットをリクエストしていない場合は、このメールを無視してください。パスワードリセットをリクエストしていない場合は、このメールを無視してください。"
+
+#: bookmark/admin/user_accounts.py:33
+msgid "important_dates"
+msgstr "重要な日付"
+
+#: bookmark/templates/core/job_management.html:46
+msgid "inactive"
+msgstr "無効"
+
+#: bookmark/templates/core/dashboard.html
+msgid "inactive_urls"
+msgstr "無効なURL"
+
+#: bookmark/views/user_accounts.py:115
+msgid "invalid_email_or_password"
+msgstr "メールアドレスまたはパスワードが正しくありません"
+
+#: bookmark/views/url_manager.py
+msgid "invalid_format"
+msgstr "無効な形式"
+
+#: bookmark/forms/url_manager.py:74
+msgid "invalid_url_in_list"
+msgstr "無効なURLが含まれています: %(url)s"
+
+#: bookmark/models/notification.py:26
+msgid "is_read"
+msgstr "既読"
+
+#: bookmark/templates/core/job_management.html:4 bookmark/templates/core/job_management.html:9 bookmark/templates/user_accounts/mypage.html:102
+msgid "job_management"
+msgstr "ジョブ管理"
+
+#: bookmark/templates/user_accounts/login.html:53
+msgid "keep_me_logged_in"
+msgstr "ログイン状態を保持する"
+
+#: bookmark/templates/layouts/base.html:46
+msgid "language"
+msgstr "言語"
+
+#: bookmark/templates/core/pagination.html:60 bookmark/templates/core/pagination.html:76
+msgid "last"
+msgstr "最後"
+
+#: bookmark/templates/url_manager/url_detail.html:98 bookmark/templates/url_manager/url_detail_fixed.html:96 bookmark/templates/url_manager/url_detail_new.html:96 bookmark/templates/user_accounts/mypage.html:82
+msgid "last_check"
+msgstr "最終チェック"
+
+#: bookmark/models/url_item.py:48
+msgid "last_checked_at"
+msgstr "最終チェック日時"
+
+#: bookmark/models/url_item.py:51
+msgid "last_content_hash"
+msgstr "最終コンテンツハッシュ"
+
+#: bookmark/models/url_item.py:57 bookmark/templates/url_manager/url_detail.html:123
+msgid "last_error_message"
+msgstr "最終エラーメッセージ:"
+
+#: bookmark/templates/core/job_management.html:25
+msgid "last_run"
+msgstr "最終実行"
+
+#: bookmark/templates/collection_manager/collection_detail.html:72 bookmark/templates/url_manager/url_detail.html:107 bookmark/templates/url_manager/url_detail_fixed.html:105 bookmark/templates/url_manager/url_detail_new.html:105 bookmark/templates/url_manager/url_list.html:80 bookmark/templates/emails/notification_email.html:57 bookmark/templates/core/dashboard.html
+msgid "last_updated"
+msgstr "最終更新"
+
+#: bookmark/models/url_item.py:49
+msgid "last_updated_at"
+msgstr "最終更新日時"
+
+#: bookmark/templates/emails/email_verification_email.html:61 bookmark/templates/emails/password_reset_email.html:61
+msgid "link_valid_24_hours"
+msgstr "このリンクは24時間有効です。"
+
+#: bookmark/views/user_accounts.py:126
+msgid "logged_out"
+msgstr "ログアウトしました"
+
+#: bookmark/templates/layouts/base.html:41 bookmark/templates/layouts/base.html:74 bookmark/templates/core/home.html:44 bookmark/templates/user_accounts/email_verification_complete.html:25 bookmark/templates/user_accounts/login.html:4 bookmark/templates/user_accounts/login.html:9 bookmark/templates/user_accounts/login.html:59 bookmark/templates/user_accounts/password_reset_complete.html:25 bookmark/templates/user_accounts/register.html:105
+msgid "login"
+msgstr "ログイン"
 
 #: bookmark/templates/user_accounts/mypage.html:43
 msgid "logout"
 msgstr "ログアウト"
 
-#: bookmark/templates/user_accounts/mypage.html:56
-msgid "edit_my_page"
-msgstr "マイページ編集"
+#: bookmark/templates/core/about.html:22 bookmark/templates/core/home.html:14
+msgid "main_features"
+msgstr "主な機能"
 
-#: bookmark/templates/user_accounts/mypage.html:63
-msgid "statistics"
-msgstr "統計情報"
+#: bookmark/templates/core/job_management.html:10
+msgid "manage_background_jobs_description"
+msgstr "バックグラウンドジョブの管理"
 
-#: bookmark/templates/user_accounts/mypage.html:67
-msgid "registered_url_count"
-msgstr "登録URL数"
+#: bookmark/templates/core/notification.html:64
+msgid "mark_all_as_read"
+msgstr "すべて既読にする"
 
-#: bookmark/templates/user_accounts/mypage.html:72
-msgid "collection_count"
-msgstr "コレクション数"
+#: bookmark/templates/core/notification.html:34
+msgid "mark_as_read"
+msgstr "既読にする"
 
-#: bookmark/templates/user_accounts/mypage.html:77
-msgid "update_detection_count"
-msgstr "更新検知数"
+#: bookmark/models/notification.py:25
+msgid "message"
+msgstr "メッセージ"
 
-#: bookmark/templates/user_accounts/mypage.html:96
-msgid "admin_menu"
-msgstr "管理メニュー"
+#: bookmark/templates/core/home.html:17
+msgid "monitor_rss_html_elements"
+msgstr "RSS、HTMLページ、特定の要素を監視"
 
-#: bookmark/templates/user_accounts/mypage.html:99
-msgid "user_management"
-msgstr "ユーザー管理"
+#: bookmark/templates/core/about.html:29
+msgid "multilingual_support"
+msgstr "多言語対応（日本語・英語）"
 
-#: bookmark/templates/user_accounts/mypage.html:106
-msgid "confirm_check_all_active_urls"
-msgstr "すべての有効なURLをチェックしますか？"
+#: bookmark/templates/core/about.html:24
+msgid "multiple_detection_methods"
+msgstr "複数の検知方法（RSS、HTML標準、HTMLカスタム）"
 
-#: bookmark/templates/user_accounts/mypage.html:107
-msgid "run_check_for_all_urls"
-msgstr "全URLチェック実行"
+#: bookmark/templates/user_accounts/mypage.html:4 bookmark/templates/user_accounts/mypage.html:10 bookmark/templates/user_accounts/settings.html:14
+msgid "my_page"
+msgstr "マイページ"
 
-#: bookmark/templates/user_accounts/password_change.html:24
-msgid "current_password"
+#: bookmark/views/user_accounts.py:143
+msgid "mypage_updated"
+msgstr "マイページを更新しました"
+
+#: bookmark/models/collection.py:15 bookmark/templates/collection_manager/collection_form.html:43
+msgid "name"
+msgstr "名前"
+
+#: bookmark/forms/user_accounts.py:72 bookmark/templates/user_accounts/password_change.html:38 bookmark/templates/user_accounts/password_reset_confirm.html:25
+msgid "new_password"
 msgstr "新しいパスワード"
 
-#: bookmark/templates/user_accounts/password_change.html:49
-#: bookmark/templates/user_accounts/password_reset_confirm.html:36
-#: bookmark/templates/user_accounts/register.html:77
-msgid "password_requirements"
-msgstr "パスワードは8文字以上で、文字と数字を含める必要があります。"
+#: bookmark/forms/user_accounts.py:77
+msgid "new_password_confirm"
+msgstr "新しいパスワード(確認)"
 
-#: bookmark/templates/user_accounts/password_change.html:55
-#: bookmark/templates/user_accounts/password_reset_confirm.html:42
+#: bookmark/templates/user_accounts/password_change.html:55 bookmark/templates/user_accounts/password_reset_confirm.html:42
 msgid "new_password_confirmation"
 msgstr "新しいパスワード(確認)"
 
-#: bookmark/templates/user_accounts/password_reset.html:12
-msgid "password_reset_request_message"
-msgstr "パスワードリセット用のリンクをメールで送信します"
+#: bookmark/templates/core/job_management.html:158 bookmark/templates/core/pagination.html:54 bookmark/templates/core/pagination.html:70 bookmark/templates/url_manager/url_list.html:195 bookmark/templates/url_manager/url_list.html:199
+msgid "next"
+msgstr "次へ"
 
-#: bookmark/templates/user_accounts/password_reset.html:42
-#: bookmark/templates/user_accounts/password_reset_request.html:42
-msgid "send_reset_link"
-msgstr "リセットリンクを送信"
+#: bookmark/templates/core/job_management.html:26
+msgid "next_run"
+msgstr "次回実行"
 
-#: bookmark/templates/user_accounts/password_reset.html:49
-msgid "back_to_login_page"
-msgstr "コレクション詳細に戻る"
+#: bookmark/models/user.py:12 bookmark/templates/user_accounts/mypage.html:19 bookmark/templates/user_accounts/profile_edit.html:24 bookmark/templates/user_accounts/register.html:52 bookmark/templates/user_accounts/settings.html:17
+msgid "nickname"
+msgstr "ニックネーム"
 
-#: bookmark/templates/user_accounts/password_reset_complete.html:4
-#: bookmark/templates/user_accounts/password_reset_complete.html:9
-msgid "password_reset_complete"
-msgstr "パスワードリセット完了"
-"パスワードリセット完了Flexible Web Checkerのパスワードリセットをリクエストし"
-"ました。以下のリンクをクリックして、新しいパスワードを設定してください。"
+#: bookmark/templates/collection_manager/collection_list.html:54
+msgid "no_collections_created"
+msgstr "まだコレクションが作成されていません。"
 
-#: bookmark/templates/user_accounts/password_reset_complete.html:21
-msgid "you_can_now_login_with_new_password"
-msgstr "新しいパスワードでログインできるようになりました。"
+#: bookmark/templates/collection_manager/collection_detail.html:86 bookmark/templates/url_manager/url_list.html:93
+msgid "no_image"
+msgstr "画像なし"
 
-#: bookmark/templates/user_accounts/password_reset_confirm.html:4
-#: bookmark/templates/user_accounts/password_reset_confirm.html:9
-msgid "set_new_password"
-msgstr "新しいパスワード"
+#: bookmark/templates/core/notification.html:74
+msgid "no_notifications"
+msgstr "通知はありません"
 
-#: bookmark/templates/user_accounts/password_reset_confirm.html:62
-msgid "password_reset_link_invalid"
-msgstr "パスワードリセットリンクが無効です"
+#: bookmark/templates/core/job_management.html:69
+msgid "no_periodic_tasks_registered"
+msgstr "定期タスクが登録されていません"
 
-#: bookmark/templates/user_accounts/password_reset_confirm.html:66
-msgid "request_new_reset_link"
-msgstr "新しいコレクションを作成する"
+#: bookmark/templates/core/job_management.html:166
+msgid "no_task_execution_history"
+msgstr "タスク実行履歴がありません"
 
-#: bookmark/templates/user_accounts/password_reset_done.html:4
-#: bookmark/templates/user_accounts/password_reset_done.html:9
-msgid "password_reset_email_sent_title"
-msgstr "パスワードリセットメール送信完了"
-"パスワードリセットメール送信完了パスワードリセットのメールを送信しました。"
-"メールに記載されたリンクからパスワードをリセットしてください。"
+#: bookmark/templates/url_manager/url_detail.html:92 bookmark/templates/url_manager/url_detail_fixed.html:90 bookmark/templates/url_manager/url_detail_new.html:90
+msgid "no_thumbnail"
+msgstr "サムネイルなし"
 
-#: bookmark/templates/user_accounts/password_reset_done.html:17
-msgid "password_reset_email_sent_message"
-msgstr "パスワードリセットのメールを送信しました"
-"パスワードリセットのメールを送信しました。パスワードリセットのメールを送信し"
-"ました。メールに記載されたリンクからパスワードをリセットしてください。"
+#: bookmark/templates/url_manager/url_list.html:211
+msgid "no_uncategorized_urls"
+msgstr "未分類のURLはありません"
 
-#: bookmark/templates/user_accounts/password_reset_done.html:21
-msgid "password_reset_email_instructions"
-msgstr "メールに記載されたリンクからパスワードをリセットしてください"
+#: bookmark/templates/collection_manager/collection_detail.html:137
+msgid "no_urls_in_collection"
+msgstr "このコレクションにはURLが登録されていません。"
 
-#: bookmark/templates/user_accounts/password_reset_request.html:12
-msgid "password_reset_request_instructions"
-msgstr "メールアドレスを入力してください。パスワードリセット用のリンクを送信します"
+#: bookmark/templates/url_manager/url_list.html:209
+msgid "no_urls_registered"
+msgstr "URLが登録されていません"
 
-#: bookmark/templates/user_accounts/password_reset_request.html:49
-msgid "back_to_login"
-msgstr "コレクション一覧に戻る"
+#: bookmark/templates/url_manager/url_detail.html:102 bookmark/templates/url_manager/url_detail_fixed.html:100 bookmark/templates/url_manager/url_detail_new.html:100
+msgid "not_checked_yet"
+msgstr "未チェック"
 
-#: bookmark/templates/user_accounts/profile_edit.html:63
-msgid "changing_email_requires_verification"
-msgstr "メールアドレスを変更すると、新しいアドレスの確認が必要になります。"
+#: bookmark/templates/core/job_management.html:53
+msgid "not_executed"
+msgstr "未実行"
 
-#: bookmark/templates/user_accounts/register.html:83
-msgid "password_confirmation"
-msgstr "パスワード(確認)"
+#: bookmark/templates/url_manager/url_detail.html:80 bookmark/templates/url_manager/url_detail_fixed.html:78 bookmark/templates/url_manager/url_detail_new.html:78
+msgid "not_in_any_collection"
+msgstr "どのコレクションにも含まれていません"
 
-#: bookmark/templates/user_accounts/register.html:103
-msgid "already_have_account"
-msgstr "すでにアカウントをお持ちですか？"
+#: bookmark/templates/collection_manager/collection_detail.html:112 bookmark/templates/url_manager/url_check_result.html:46 bookmark/templates/url_manager/url_list.html:137
+msgid "not_updated"
+msgstr "更新なし"
 
-#: bookmark/templates/user_accounts/settings.html:4
-#: bookmark/templates/user_accounts/settings.html:10
-msgid "account_settings"
-msgstr "アカウント設定"
+#: bookmark/templates/url_manager/url_detail.html:111 bookmark/templates/url_manager/url_detail_fixed.html:109 bookmark/templates/url_manager/url_detail_new.html:109
+msgid "not_updated_yet"
+msgstr "未更新"
 
-#: bookmark/templates/user_accounts/settings.html:31
-msgid "change"
-msgstr "変更"
+#: bookmark/models/notification.py:30 bookmark/templates/core/notification.html:4 bookmark/templates/core/notification.html:10 bookmark/templates/emails/notification_email.html:8
+msgid "notification"
+msgstr "通知"
 
 #: bookmark/templates/user_accounts/settings.html:37
 msgid "notification_settings"
 msgstr "通知"
 
-#: bookmark/templates/user_accounts/settings.html:45
-msgid "receive_email_notifications"
-msgstr "メール通知"
+#: bookmark/models/notification.py:31
+msgid "notifications"
+msgstr "通知"
+
+#: bookmark/templates/core/home.html:19
+msgid "notify_on_updates"
+msgstr "更新時に通知"
+
+#: bookmark/templates/url_manager/url_list.html:110
+msgid "open_in_new_tab"
+msgstr "新しいタブで開く"
+
+#: bookmark/templates/url_manager/url_list.html:107
+msgid "open_in_this_tab"
+msgstr "このタブで開く"
+
+#: bookmark/templates/emails/email_verification_email.html:58 bookmark/templates/emails/password_reset_email.html:58
+msgid "or_paste_url_in_browser"
+msgstr "または、以下のURLをブラウザに貼り付けてください："
+
+#: bookmark/models/collection.py:16
+msgid "order"
+msgstr "順序"
+
+#: bookmark/templates/core/home.html:60
+msgid "organize_and_group_websites"
+msgstr "Webサイトを整理・グループ化"
+
+#: bookmark/templates/core/home.html:28
+msgid "organize_urls_as_needed"
+msgstr "必要に応じてURLを整理"
+
+#: bookmark/templates/core/home.html:18
+msgid "organize_urls_in_collections"
+msgstr "コレクションでURLを整理"
+
+#: bookmark/templates/core/about.html:12
+msgid "overview"
+msgstr "概要"
+
+#: bookmark/templates/core/pagination.html:5
+msgid "pagination"
+msgstr "ページネーション"
+
+#: bookmark/forms/user_accounts.py:11 bookmark/forms/user_accounts.py:51 bookmark/templates/user_accounts/account_delete.html:23 bookmark/templates/user_accounts/login.html:38 bookmark/templates/user_accounts/register.html:66 bookmark/templates/user_accounts/settings.html:27
+msgid "password"
+msgstr "パスワード"
+
+#: bookmark/templates/registration/password_change_form.html:4 bookmark/templates/registration/password_change_form.html:10 bookmark/templates/user_accounts/password_change.html:4 bookmark/templates/user_accounts/password_change.html:9
+msgid "password_change"
+msgstr "パスワード変更"
+
+#: bookmark/templates/registration/password_change_done.html:4 bookmark/templates/registration/password_change_done.html:10
+msgid "password_change_done"
+msgstr "パスワード変更完了"
+
+#: bookmark/templates/registration/password_change_done.html:11 bookmark/templates/user_accounts/password_reset_complete.html:17
+msgid "password_changed_successfully"
+msgstr "パスワードが正常に変更されました！"
+
+#: bookmark/forms/user_accounts.py:16
+msgid "password_confirm"
+msgstr "パスワード(確認)"
+
+#: bookmark/templates/user_accounts/register.html:83
+msgid "password_confirmation"
+msgstr "パスワード(確認)"
+
+#: bookmark/templates/user_accounts/password_change.html:49 bookmark/templates/user_accounts/password_reset_confirm.html:36 bookmark/templates/user_accounts/register.html:77
+msgid "password_requirements"
+msgstr "パスワードは8文字以上で、文字と数字を含める必要があります。"
+
+#: bookmark/templates/emails/password_reset_email.html:8 bookmark/templates/emails/password_reset_email.html:46 bookmark/templates/user_accounts/password_reset.html:4 bookmark/templates/user_accounts/password_reset.html:9 bookmark/templates/user_accounts/password_reset_request.html:4 bookmark/templates/user_accounts/password_reset_request.html:9
+msgid "password_reset"
+msgstr "パスワードリセットトークン"
+
+#: bookmark/templates/user_accounts/password_reset_complete.html:4 bookmark/templates/user_accounts/password_reset_complete.html:9
+msgid "password_reset_complete"
+msgstr "パスワードリセット完了パスワードリセット完了Flexible Web Checkerのパスワードリセットをリクエストしました。以下のリンクをクリックして、新しいパスワードを設定してください。"
+
+#: bookmark/templates/user_accounts/password_reset_done.html:21
+msgid "password_reset_email_instructions"
+msgstr "メールに記載されたリンクからパスワードをリセットしてください"
+
+#: bookmark/views/user_accounts.py:193 bookmark/views/user_accounts.py:199
+msgid "password_reset_email_sent"
+msgstr "パスワードリセットのメールを送信しましたパスワードリセットのメールを送信しました。メールに記載されたリンクからパスワードをリセットしてください。パスワードリセットのメールを送信しました。メールに記載されたリンクからパスワードをリセットしてください。"
+
+#: bookmark/templates/user_accounts/password_reset_done.html:17
+msgid "password_reset_email_sent_message"
+msgstr "パスワードリセットのメールを送信しましたパスワードリセットのメールを送信しました。パスワードリセットのメールを送信しました。メールに記載されたリンクからパスワードをリセットしてください。"
+
+#: bookmark/templates/user_accounts/password_reset_done.html:4 bookmark/templates/user_accounts/password_reset_done.html:9
+msgid "password_reset_email_sent_title"
+msgstr "パスワードリセットメール送信完了パスワードリセットメール送信完了パスワードリセットのメールを送信しました。メールに記載されたリンクからパスワードをリセットしてください。"
+
+#: bookmark/templates/user_accounts/password_reset_confirm.html:62
+msgid "password_reset_link_invalid"
+msgstr "パスワードリセットリンクが無効です"
+
+#: bookmark/templates/emails/password_reset_email.html:52
+msgid "password_reset_message"
+msgstr "Flexible Web Checkerのパスワードリセットをリクエストしました。以下のリンクをクリックして、新しいパスワードを設定してください。Flexible Web Checkerのパスワードリセットをリクエストしました。以下のリンクをクリックして、新しいパスワードを設定してください。"
+
+#: bookmark/templates/user_accounts/password_reset_request.html:12
+msgid "password_reset_request_instructions"
+msgstr "メールアドレスを入力してください。パスワードリセット用のリンクを送信します"
+
+#: bookmark/templates/user_accounts/password_reset.html:12
+msgid "password_reset_request_message"
+msgstr "パスワードリセット用のリンクをメールで送信します"
+
+#: bookmark/views/user_accounts.py:172
+msgid "password_reset_subject"
+msgstr "[Flexible Web Checker] パスワードリセット"
+
+#: bookmark/views/user_accounts.py:232
+msgid "password_reset_success_login_message"
+msgstr "パスワードをリセットしました。新しいパスワードでログインしてくださいFlexible Web Checkerのパスワードリセットをリクエストしました。以下のリンクをクリックして、新しいパスワードを設定してください。Flexible Web Checkerのパスワードリセットをリクエストしました。以下のリンクをクリックして、新しいパスワードを設定してください。"
+
+#: bookmark/models/user.py:92
+msgid "password_reset_token"
+msgstr "パスワードリセットトークン"
+
+#: bookmark/models/user.py:93
+msgid "password_reset_tokens"
+msgstr "パスワードリセットトークン"
+
+#: bookmark/forms/user_accounts.py:36 bookmark/forms/user_accounts.py:85
+msgid "passwords_do_not_match"
+msgstr "パスワードが一致しません。"
+
+#: bookmark/templates/core/job_management.html:102
+msgid "pending"
+msgstr "保留中"
+
+#: bookmark/templates/core/job_management.html:16
+msgid "periodic_tasks"
+msgstr "定期タスク"
+
+#: bookmark/templates/core/about.html:27
+msgid "periodic_update_check"
+msgstr "定期的な更新チェック"
+
+#: bookmark/admin/user_accounts.py:21
+msgid "permissions"
+msgstr "権限"
+
+#: bookmark/templates/core/job_management.html:139 bookmark/templates/core/pagination.html:17 bookmark/templates/core/pagination.html:33 bookmark/templates/url_manager/url_list.html:173 bookmark/templates/url_manager/url_list.html:177
+msgid "previous"
+msgstr "前へ"
+
+#: bookmark/templates/core/dashboard.html
+msgid "quick_actions"
+msgstr "クイックアクション"
+
+#: bookmark/templates/user_accounts/account_delete.html:13
+msgid "really_delete_account"
+msgstr "本当にアカウントを削除しますか？"
 
 #: bookmark/templates/user_accounts/settings.html:52
 msgid "receive_browser_notifications"
 msgstr "ブラウザ通知"
 
-#: bookmark/templates/user_accounts/settings.html:67
-msgid "account_delete_final_warning"
-msgstr "アカウントを削除すると、すべてのデータが完全に削除されます。この操作は元に戻せません。"
-"アカウントを削除すると、すべてのデータが完全に削除されます。この操作は元に戻"
-"せません。アカウントを削除すると、すべてのデータが完全に削除されます。この操"
-"作は元に戻せません。"
+#: bookmark/templates/user_accounts/settings.html:45
+msgid "receive_email_notifications"
+msgstr "メール通知"
 
-#: bookmark/views/collection_manager.py:35
-msgid "collection_added"
-msgstr "コレクションを追加しました"
+#: bookmark/templates/core/dashboard.html
+msgid "recent_updates"
+msgstr "最近の更新"
 
-#: bookmark/views/collection_manager.py:77
-msgid "collection_updated"
-msgstr "コレクションを更新しました"
+#: bookmark/templates/core/dashboard.html
+msgid "recently_updated_urls"
+msgstr "最近更新されたURL"
 
-#: bookmark/views/collection_manager.py:98
-msgid "collection_deleted"
-msgstr "コレクションを削除しました"
+#: bookmark/templates/url_manager/url_check_result.html:69
+msgid "recheck"
+msgstr "再チェック"
+
+#: bookmark/templates/layouts/base.html:42 bookmark/templates/layouts/base.html:75 bookmark/templates/user_accounts/register.html:97
+msgid "register"
+msgstr "登録"
+
+#: bookmark/templates/user_accounts/login.html:73 bookmark/templates/user_accounts/register.html:4 bookmark/templates/user_accounts/register.html:9
+msgid "register_new_account"
+msgstr "新規ユーザー登録"
+
+#: bookmark/templates/core/home.html:41
+msgid "register_now"
+msgstr "今すぐ登録"
+
+#: bookmark/templates/user_accounts/mypage.html:67
+msgid "registered_url_count"
+msgstr "登録URL数"
+
+#: bookmark/templates/emails/notification_email.html:52
+msgid "registered_urls_have_updates"
+msgstr "登録しているURLに更新がありました。"
+
+#: bookmark/views/user_accounts.py:62
+msgid "registration_complete_confirm_email"
+msgstr "登録が完了しました。メールアドレスの確認を行ってください"
+
+#: bookmark/templates/user_accounts/mypage.html:34
+msgid "registration_date"
+msgstr "登録日"
+
+#: bookmark/templates/collection_manager/collection_detail.html:122
+msgid "remove_from_collection"
+msgstr "コレクションから削除"
+
+#: bookmark/templates/user_accounts/password_reset_confirm.html:66
+msgid "request_new_reset_link"
+msgstr "新しいコレクションを作成する"
+
+#: bookmark/templates/emails/password_reset_email.html:55
+msgid "reset_password"
+msgstr "新しいパスワード"
+
+#: bookmark/templates/core/about.html:37
+msgid "rss_feed"
+msgstr "RSSフィード"
+
+#: bookmark/templates/core/about.html:39
+msgid "rss_feed_description"
+msgstr "RSSフィードを定期的にチェックし、新しいエントリーを検知します。ブログやニュースサイトに最適です。RSSフィードを提供しているWebサイトの場合、フィードの最新エントリを監視して更新を検出します。これは最も効率的な方法です。RSSフィードを提供しているWebサイトの場合、フィードの最新エントリを監視して更新を検出します。これは最も効率的な方法です。"
+
+#: bookmark/templates/core/about.html:67
+msgid "rss_parsing_feedparser"
+msgstr "RSS解析: feedparser"
+
+#: bookmark/templates/user_accounts/mypage.html:107
+msgid "run_check_for_all_urls"
+msgstr "全URLチェック実行"
+
+#: bookmark/templates/core/job_management.html:104
+msgid "running"
+msgstr "実行中"
+
+#: bookmark/templates/collection_manager/collection_form.html:63 bookmark/templates/url_manager/url_form.html:172 bookmark/templates/user_accounts/edit_profile.html:47 bookmark/templates/user_accounts/profile_edit.html:69 bookmark/templates/user_accounts/settings.html:58
+msgid "save"
+msgstr "保存"
+
+#: bookmark/templates/core/job_management.html:23
+msgid "schedule"
+msgstr "スケジュール"
+
+#: bookmark/templates/core/about.html:65
+msgid "screenshot_selenium_firefox"
+msgstr "スクリーンショット: Playwright"
+
+#: bookmark/templates/url_manager/url_form.html:88
+msgid "select_check_method"
+msgstr "チェック方法を選択"
+
+#: bookmark/templates/url_manager/url_form.html:163
+msgid "select_collections_for_url"
+msgstr "URLを追加するコレクションを選択"
+
+#: bookmark/templates/url_manager/url_form.html:123
+msgid "select_condition_for_multiple_selectors"
+msgstr "複数セレクター時の条件を選択"
+
+#: bookmark/templates/core/home.html:27
+msgid "select_update_check_method"
+msgstr "更新チェック方法を選択"
+
+#: bookmark/templates/collection_manager/collection_add_url.html:44
+msgid "select_urls_to_add_to_collection"
+msgstr "コレクションに追加するURLを選択してください"
+
+#: bookmark/templates/user_accounts/password_reset.html:42 bookmark/templates/user_accounts/password_reset_request.html:42
+msgid "send_reset_link"
+msgstr "リセットリンクを送信"
+
+#: bookmark/models/url_item.py:38
+msgid "separate_selectors_with_newlines"
+msgstr "複数のセレクタを指定する場合は、改行で区切ってください"
+
+#: bookmark/templates/user_accounts/password_reset_confirm.html:4 bookmark/templates/user_accounts/password_reset_confirm.html:9
+msgid "set_new_password"
+msgstr "新しいパスワード"
+
+#: bookmark/templates/core/dashboard.html
+msgid "settings"
+msgstr "設定"
+
+#: bookmark/templates/url_manager/url_list.html:47
+msgid "sort_by"
+msgstr "並び替え"
+
+#: bookmark/templates/user_accounts/mypage.html:63
+msgid "statistics"
+msgstr "統計情報"
+
+#: bookmark/templates/core/job_management.html:85
+msgid "status"
+msgstr "ステータス"
+
+#: bookmark/templates/core/dashboard.html
+msgid "status_updated"
+msgstr "更新済み"
+
+#: bookmark/templates/core/job_management.html:98
+msgid "success"
+msgstr "成功"
+
+#: bookmark/templates/core/notification.html:24
+msgid "system_notifications"
+msgstr "システム通知"
+
+#: bookmark/templates/core/job_management.html:77
+msgid "task_execution_history"
+msgstr "タスク実行履歴"
+
+#: bookmark/templates/core/job_management.html:83
+msgid "task_id"
+msgstr "タスクID"
+
+#: bookmark/templates/core/job_management.html:22 bookmark/templates/core/job_management.html:84
+msgid "task_name"
+msgstr "タスク名"
+
+#: bookmark/templates/core/about.html:59
+msgid "technical_info"
+msgstr "技術情報"
+
+#: bookmark/templates/emails/notification_email.html:67
+msgid "text_after_settings_link"
+msgstr "から変更できます。"
+
+#: bookmark/templates/emails/notification_email.html:66
+msgid "this_is_automated_email"
+msgstr "このメールはFlexible Web Checkerから自動的に送信されています。"
+
+#: bookmark/models/url_item.py:29 bookmark/templates/url_manager/url_detail.html:87 bookmark/templates/url_manager/url_detail_fixed.html:85 bookmark/templates/url_manager/url_detail_new.html:85 bookmark/templates/url_manager/url_form.html:130
+msgid "thumbnail"
+msgstr "サムネイル"
+
+#: bookmark/templates/core/home.html:63
+msgid "thumbnail_display"
+msgstr "サムネイル表示"
+
+#: bookmark/views/url_manager.py:157
+msgid "thumbnail_update_started"
+msgstr "サムネイル更新を開始しました"
+
+#: bookmark/templates/url_manager/url_form.html:146
+msgid "thumbnail_upload_help"
+msgstr "サムネイル画像をアップロードしてください。空白の場合、自動的にスクリーンショットが生成されます。サムネイル画像をアップロードしてください。空白の場合、自動的にスクリーンショットが生成されます。サムネイル画像をアップロードしてください。空白の場合、自動的にスクリーンショットが生成されます。"
+
+#: bookmark/models/url_item.py:27 bookmark/templates/collection_manager/collection_detail.html:69 bookmark/templates/url_manager/url_form.html:60 bookmark/templates/url_manager/url_list.html:53 bookmark/templates/url_manager/url_list.html:77
+msgid "title"
+msgstr "タイトル"
+
+#: bookmark/templates/url_manager/url_list.html:129
+msgid "today"
+msgstr "今日"
+
+#: bookmark/models/user.py:62 bookmark/models/user.py:87
+msgid "token"
+msgstr "トークン"
+
+#: bookmark/views/user_accounts.py:77
+msgid "token_expired_please_register_again"
+msgstr "トークンの有効期限が切れています。再度登録してください"
+
+#: bookmark/views/user_accounts.py:215
+msgid "token_expired_reset_password_again"
+msgstr "トークンの有効期限が切れています。再度パスワードリセットを行ってくださいトークンの有効期限が切れています。再度パスワードリセットを行ってください。トークンの有効期限が切れています。再度パスワードリセットを行ってください。"
+
+#: bookmark/templates/core/dashboard.html
+msgid "total_collections"
+msgstr "コレクション数"
+
+#: bookmark/templates/core/dashboard.html
+msgid "total_urls"
+msgstr "登録URL数"
+
+#: bookmark/templates/core/home.html:10
+msgid "track_favorite_websites_description"
+msgstr "お気に入りのWebサイトの更新を追跡"
+
+#: bookmark/templates/collection_manager/collection_detail.html:22 bookmark/templates/url_manager/url_list.html:38
+msgid "uncategorized"
+msgstr "未分類"
+
+#: bookmark/templates/core/dashboard.html
+msgid "uncategorized_urls"
+msgstr "未分類URL"
+
+#: bookmark/templates/core/dashboard.html
+msgid "unread_notifications"
+msgstr "未読通知"
+
+#: bookmark/views/url_manager.py:139
+msgid "update_check_started"
+msgstr "更新チェックを開始しました"
+
+#: bookmark/templates/user_accounts/mypage.html:77
+msgid "update_detection_count"
+msgstr "更新検知数"
+
+#: bookmark/templates/emails/notification_email.html:46
+msgid "update_notification"
+msgstr "通知"
+
+#: bookmark/templates/url_manager/url_check_result.html:36
+msgid "updated"
+msgstr "更新あり"
+
+#: bookmark/templates/url_manager/url_list.html:50
+msgid "updated_asc"
+msgstr "更新日時(古い順)"
+
+#: bookmark/models/collection.py:18 bookmark/models/url_item.py:54 bookmark/models/user.py:43
+msgid "updated_at"
+msgstr "更新日時"
+
+#: bookmark/templates/url_manager/url_list.html:49
+msgid "updated_desc"
+msgstr "更新日時(新しい順)"
+
+#: bookmark/templates/core/dashboard.html
+msgid "updated_this_week"
+msgstr "今週の更新"
+
+#: bookmark/templates/core/dashboard.html
+msgid "updated_today"
+msgstr "今日の更新"
+
+#: bookmark/models/url_item.py:26 bookmark/templates/collection_manager/collection_add_url.html:33 bookmark/templates/collection_manager/collection_detail.html:70 bookmark/templates/url_manager/url_check_result.html:19 bookmark/templates/url_manager/url_detail.html:36 bookmark/templates/url_manager/url_detail_fixed.html:34 bookmark/templates/url_manager/url_detail_new.html:34 bookmark/templates/url_manager/url_form.html:43 bookmark/templates/url_manager/url_list.html:78
+msgid "url"
+msgstr "URL"
+
+#: bookmark/views/url_manager.py:81
+msgid "url_added"
+msgstr "URLを追加しました"
 
 #: bookmark/views/collection_manager.py:116
 msgid "url_added_to_collection"
@@ -1597,118 +1327,154 @@ msgstr "URLをコレクションに追加しました"
 msgid "url_already_in_collection"
 msgstr "URLは既にコレクションに含まれています"
 
-#: bookmark/views/collection_manager.py:135
-msgid "url_removed_from_collection"
-msgstr "URLをコレクションから削除しました"
+#: bookmark/views/url_manager.py:207
+msgid "url_bulk_added_count"
+msgstr "{count}件のURLを追加しました"
 
-#: bookmark/views/core.py:43
-msgid "error_occurred"
-msgstr "エラー回数"
+#: bookmark/forms/url_manager.py:56
+msgid "url_bulk_help_text"
+msgstr "URLを1行に1つずつ入力してください。タイトルは自動的に取得されます。"
+
+#: bookmark/forms/url_manager.py:53
+msgid "url_bulk_placeholder"
+msgstr ""
+"URLを1行に1つずつ入力してください。\n"
+"例:\n"
+"https://example.com\n"
+"https://example.org"
 
 #: bookmark/views/core.py:45
 msgid "url_check_started_for_count"
 msgstr "{count}件のURLの更新チェックを開始しました"
 
-#: bookmark/views/url_manager.py:81
-msgid "url_added"
-msgstr "URLを追加しました"
+#: bookmark/templates/core/about.html:25
+msgid "url_collection_management"
+msgstr "URLをコレクションで整理・管理"
 
-#: bookmark/views/url_manager.py:105
-msgid "url_updated"
-msgstr "URLを更新しました"
+#: bookmark/templates/collection_manager/collection_delete.html:21 bookmark/templates/collection_manager/collection_detail.html:47 bookmark/templates/collection_manager/collection_list.html:28
+msgid "url_count"
+msgstr "URL数"
+
+#: bookmark/templates/url_manager/url_delete.html:25
+msgid "url_delete_warning"
+msgstr "この操作は元に戻せません。URLを削除すると、すべてのコレクションからも削除されます。この操作は元に戻せません。URLを削除すると、すべてのコレクションからも削除されます。この操作は元に戻せません。URLを削除すると、すべてのコレクションからも削除されます。"
 
 #: bookmark/views/url_manager.py:122
 msgid "url_deleted"
 msgstr "URLを削除しました"
 
-#: bookmark/views/url_manager.py:139
-msgid "update_check_started"
-msgstr "更新チェックを開始しました"
+#: bookmark/templates/url_manager/url_check_result.html:38
+msgid "url_has_been_updated"
+msgstr "URLが更新されました"
 
-#: bookmark/views/url_manager.py:157
-msgid "thumbnail_update_started"
-msgstr "サムネイル更新を開始しました"
+#: bookmark/templates/url_manager/url_check_result.html:48
+msgid "url_has_not_been_updated"
+msgstr "URLは更新されていません"
 
-#: bookmark/views/url_manager.py:188
-msgid "failed_to_get_title_will_use_url"
-msgstr "タイトルの取得に失敗しました。URLを使用します: {url}"
+#: bookmark/models/collection.py:36 bookmark/models/notification.py:23 bookmark/models/url_item.py:62
+msgid "url_item"
+msgstr "URL項目"
 
-#: bookmark/views/url_manager.py:207
-msgid "url_bulk_added_count"
-msgstr "{count}件のURLを追加しました"
+#: bookmark/models/collection.py:47
+msgid "url_item_collection"
+msgstr "URL項目コレクション"
 
-#: bookmark/views/url_manager.py:209
-msgid "failed_to_add_urls_list"
-msgstr "追加に失敗したURL:"
+#: bookmark/models/collection.py:48
+msgid "url_item_collections"
+msgstr "URL項目コレクション"
 
-#: bookmark/views/user_accounts.py:42
-msgid "email_confirmation_subject"
-msgstr "[Flexible Web Checker] メールアドレス確認"
+#: bookmark/models/url_item.py:63
+msgid "url_items"
+msgstr "URL項目"
 
-#: bookmark/views/user_accounts.py:62
-msgid "registration_complete_confirm_email"
-msgstr "登録が完了しました。メールアドレスの確認を行ってください"
+#: bookmark/forms/url_manager.py:49 bookmark/templates/collection_manager/collection_detail.html:56 bookmark/templates/url_manager/url_list.html:5 bookmark/templates/url_manager/url_list.html:24
+msgid "url_list"
+msgstr "URL一覧"
 
-#: bookmark/views/user_accounts.py:77
-msgid "token_expired_please_register_again"
-msgstr "トークンの有効期限が切れています。再度登録してください"
+#: bookmark/views/collection_manager.py:135
+msgid "url_removed_from_collection"
+msgstr "URLをコレクションから削除しました"
 
-#: bookmark/views/user_accounts.py:89
-msgid "email_confirmed_please_login"
-msgstr "メールアドレスが確認されました。ログインしてください"
+#: bookmark/templates/collection_manager/collection_remove_url.html:25
+msgid "url_removed_from_collection_only"
+msgstr "このURLはコレクションから削除されますが、URL自体は削除されません。"
 
-#: bookmark/views/user_accounts.py:111
-msgid "account_not_activated"
-msgstr "アカウントが有効化されていません。メールアドレスの確認を行ってください"
-"アカウントが有効化されていません。メールアドレスの確認を行ってください。アカ"
-"ウントが有効化されていません。メールアドレスの確認を行ってください。"
+#: bookmark/templates/core/dashboard.html
+msgid "url_statistics"
+msgstr "URL統計"
 
-#: bookmark/views/user_accounts.py:115
-msgid "invalid_email_or_password"
-msgstr "メールアドレスまたはパスワードが正しくありません"
+#: bookmark/views/url_manager.py:105
+msgid "url_updated"
+msgstr "URLを更新しました"
 
-#: bookmark/views/user_accounts.py:126
-msgid "logged_out"
-msgstr "ログアウトしました"
+#: bookmark/templates/core/dashboard.html
+msgid "urls_in_collections"
+msgstr "コレクション内URL"
 
-#: bookmark/views/user_accounts.py:143
-msgid "mypage_updated"
-msgstr "マイページを更新しました"
+#: bookmark/models/collection.py:13 bookmark/models/notification.py:15 bookmark/models/url_item.py:24 bookmark/models/user.py:24 bookmark/models/user.py:38 bookmark/models/user.py:60 bookmark/models/user.py:85
+msgid "user"
+msgstr "ユーザー"
 
-#: bookmark/views/user_accounts.py:172
-msgid "password_reset_subject"
-msgstr "[Flexible Web Checker] パスワードリセット"
+#: bookmark/templates/core/about.html:28
+msgid "user_account_management"
+msgstr "ユーザーアカウント管理"
 
-#: bookmark/views/user_accounts.py:193 bookmark/views/user_accounts.py:199
-msgid "password_reset_email_sent"
-msgstr "パスワードリセットのメールを送信しました"
-"パスワードリセットのメールを送信しました。メールに記載されたリンクからパス"
-"ワードをリセットしてください。パスワードリセットのメールを送信しました。メー"
-"ルに記載されたリンクからパスワードをリセットしてください。"
+#: bookmark/templates/layouts/base.html:36 bookmark/templates/layouts/base.html:69
+msgid "user_icon"
+msgstr "ユーザーアイコン"
 
-#: bookmark/views/user_accounts.py:215
-msgid "token_expired_reset_password_again"
-msgstr "トークンの有効期限が切れています。再度パスワードリセットを行ってください"
-"トークンの有効期限が切れています。再度パスワードリセットを行ってください。"
-"トークンの有効期限が切れています。再度パスワードリセットを行ってください。"
+#: bookmark/templates/user_accounts/mypage.html:99
+msgid "user_management"
+msgstr "ユーザー管理"
 
-#: bookmark/views/user_accounts.py:232
-msgid "password_reset_success_login_message"
-msgstr ""
-"パスワードをリセットしました。新しいパスワードでログインしてくださいFlexible "
-"Web Checkerのパスワードリセットをリクエストしました。以下のリンクをクリックし"
-"て、新しいパスワードを設定してください。Flexible Web Checkerのパスワードリ"
-"セットをリクエストしました。以下のリンクをクリックして、新しいパスワードを設"
-"定してください。"
+#: bookmark/models/user.py:46
+msgid "user_profile"
+msgstr "ユーザープロファイル"
 
-#: bookmark/views/url_manager.py
-msgid "invalid_format"
-msgstr "無効な形式"
+#: bookmark/models/user.py:47
+msgid "user_profiles"
+msgstr "ユーザープロファイル"
 
-#: bookmark/views/url_manager.py
-msgid "already_registered"
-msgstr "既に登録済み"
+#: bookmark/templates/user_accounts/mypage.html:24 bookmark/templates/user_accounts/profile_edit.html:38 bookmark/templates/user_accounts/register.html:38
+msgid "username"
+msgstr "ユーザー"
 
-#: bookmark/views/url_manager.py
-msgid "add_error"
-msgstr "追加エラー"
+#: bookmark/models/user.py:25
+msgid "users"
+msgstr "ユーザー"
+
+#: bookmark/templates/emails/email_verification_email.html:55
+msgid "verify_email_address"
+msgstr "メールアドレス"
+
+#: bookmark/templates/core/dashboard.html
+msgid "view_all_collections"
+msgstr "すべてのコレクションを見る"
+
+#: bookmark/templates/core/dashboard.html
+msgid "view_all_urls"
+msgstr "すべてのURLを見る"
+
+#: bookmark/templates/emails/notification_email.html:61
+msgid "view_details"
+msgstr "詳細"
+
+#: bookmark/templates/core/dashboard.html
+msgid "view_updates"
+msgstr "更新を見る"
+
+#: bookmark/templates/core/about.html:26
+msgid "website_thumbnail_display"
+msgstr "ウェブサイトのサムネイル表示"
+
+#: bookmark/templates/core/home.html:9
+msgid "welcome_to_flexible_web_checker"
+msgstr "Flexible Web Checkerへようこそ"
+
+#: bookmark/templates/url_manager/url_list.html:131
+msgid "yesterday"
+msgstr "昨日"
+
+#: bookmark/templates/user_accounts/password_reset_complete.html:21
+msgid "you_can_now_login_with_new_password"
+msgstr "新しいパスワードでログインできるようになりました。"

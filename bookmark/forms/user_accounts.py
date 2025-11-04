@@ -9,16 +9,32 @@ class UserRegistrationForm(forms.ModelForm):
 
     password1 = forms.CharField(
         label=_("password"),
-        widget=forms.PasswordInput,
+        widget=forms.PasswordInput(attrs={
+            'class': 'w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500'
+        }),
         validators=[validate_password],
     )
     password2 = forms.CharField(
-        label=_("password_confirm"), widget=forms.PasswordInput
+        label=_("password_confirm"),
+        widget=forms.PasswordInput(attrs={
+            'class': 'w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500'
+        })
     )
 
     class Meta:
         model = User
         fields = ("email", "username", "nickname", "password1", "password2")
+        widgets = {
+            'email': forms.EmailInput(attrs={
+                'class': 'w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500'
+            }),
+            'username': forms.TextInput(attrs={
+                'class': 'w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500'
+            }),
+            'nickname': forms.TextInput(attrs={
+                'class': 'w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500'
+            }),
+        }
 
     def clean_email(self):
         email = self.cleaned_data.get("email")
@@ -47,8 +63,18 @@ class UserRegistrationForm(forms.ModelForm):
 class UserLoginForm(forms.Form):
     """ユーザーログインフォーム"""
 
-    email = forms.EmailField(label=_("email_address"))
-    password = forms.CharField(label=_("password"), widget=forms.PasswordInput)
+    email = forms.EmailField(
+        label=_("email_address"),
+        widget=forms.EmailInput(attrs={
+            'class': 'w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500'
+        })
+    )
+    password = forms.CharField(
+        label=_("password"),
+        widget=forms.PasswordInput(attrs={
+            'class': 'w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500'
+        })
+    )
 
 
 class UserProfileForm(forms.ModelForm):
@@ -57,12 +83,25 @@ class UserProfileForm(forms.ModelForm):
     class Meta:
         model = User
         fields = ("nickname", "username")
+        widgets = {
+            'nickname': forms.TextInput(attrs={
+                'class': 'w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500'
+            }),
+            'username': forms.TextInput(attrs={
+                'class': 'w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500'
+            }),
+        }
 
 
 class PasswordResetRequestForm(forms.Form):
     """パスワードリセットリクエストフォーム"""
 
-    email = forms.EmailField(label=_("email_address"))
+    email = forms.EmailField(
+        label=_("email_address"),
+        widget=forms.EmailInput(attrs={
+            'class': 'w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500'
+        })
+    )
 
 
 class PasswordResetForm(forms.Form):
@@ -70,11 +109,16 @@ class PasswordResetForm(forms.Form):
 
     password = forms.CharField(
         label=_("new_password"),
-        widget=forms.PasswordInput,
+        widget=forms.PasswordInput(attrs={
+            'class': 'w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500'
+        }),
         validators=[validate_password],
     )
     password_confirm = forms.CharField(
-        label=_("new_password_confirm"), widget=forms.PasswordInput
+        label=_("new_password_confirm"),
+        widget=forms.PasswordInput(attrs={
+            'class': 'w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500'
+        })
     )
 
     def clean_password_confirm(self):

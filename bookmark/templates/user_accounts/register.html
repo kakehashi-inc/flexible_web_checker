@@ -1,16 +1,16 @@
-{% extends 'base.html' %}
+{% extends 'layouts/guest.html' %}
 {% load i18n %}
 
 {% block title %}{% trans 'register_new_account' %} | Flexible Web Checker{% endblock %}
 
-{% block content %}
+{% block main_content %}
 <div class="max-w-md mx-auto">
     <div class="bg-white shadow-md rounded-lg p-6">
         <h1 class="text-2xl font-bold text-blue-600 mb-6 text-center">{% trans 'register_new_account' %}</h1>
-        
+
         <form method="post" class="space-y-4">
             {% csrf_token %}
-            
+
             {% if form.non_field_errors %}
                 <div class="bg-red-100 border border-red-200 text-red-700 px-4 py-3 rounded mb-4">
                     {% for error in form.non_field_errors %}
@@ -18,7 +18,7 @@
                     {% endfor %}
                 </div>
             {% endif %}
-            
+
             <div>
                 <label for="{{ form.email.id_for_label }}" class="block text-sm font-medium text-gray-700 mb-1">
                     {% trans 'email_address' %}
@@ -32,7 +32,7 @@
                     </div>
                 {% endif %}
             </div>
-            
+
             <div>
                 <label for="{{ form.username.id_for_label }}" class="block text-sm font-medium text-gray-700 mb-1">
                     {% trans 'username' %}
@@ -46,7 +46,7 @@
                     </div>
                 {% endif %}
             </div>
-            
+
             <div>
                 <label for="{{ form.nickname.id_for_label }}" class="block text-sm font-medium text-gray-700 mb-1">
                     {% trans 'nickname' %}
@@ -60,7 +60,7 @@
                     </div>
                 {% endif %}
             </div>
-            
+
             <div>
                 <label for="{{ form.password1.id_for_label }}" class="block text-sm font-medium text-gray-700 mb-1">
                     {% trans 'password' %}
@@ -77,7 +77,7 @@
                     {% trans 'password_requirements' %}
                 </p>
             </div>
-            
+
             <div>
                 <label for="{{ form.password2.id_for_label }}" class="block text-sm font-medium text-gray-700 mb-1">
                     {% trans 'password_confirmation' %}
@@ -91,14 +91,14 @@
                     </div>
                 {% endif %}
             </div>
-            
+
             <div>
                 <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition duration-300">
                     {% trans 'register' %}
                 </button>
             </div>
         </form>
-        
+
         <div class="mt-6 border-t border-gray-200 pt-4 text-center">
             <p class="text-gray-600 mb-2">{% trans 'already_have_account' %}</p>
             <a href="{% url 'bookmark:login' %}" class="text-blue-600 hover:text-blue-800">

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+{% load static i18n %}
+<html lang="{{ LANGUAGE_CODE }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Flexible Web Checker{% endblock %}</title>
+    <link href="{% static 'css/theme.css' %}" rel="stylesheet">
+    <link href="{% static 'css/app.min.css' %}" rel="stylesheet">
+    <link rel="icon" href="{% static 'assets/favicons/favicon.ico' %}" sizes="any">
+    <link rel="icon" type="image/png" href="{% static 'assets/favicons/favicon-16x16.png' %}" sizes="16x16">
+    <link rel="icon" type="image/png" href="{% static 'assets/favicons/favicon-32x32.png' %}" sizes="32x32">
+    <link rel="icon" type="image/png" href="{% static 'assets/favicons/favicon-48x48.png' %}" sizes="48x48">
+    <link rel="apple-touch-icon" href="{% static 'assets/favicons/apple-touch-icon.png' %}">
+    <link rel="apple-touch-icon" sizes="57x57" href="{% static 'assets/favicons/apple-touch-icon-57x57.png' %}">
+    <link rel="apple-touch-icon" sizes="72x72" href="{% static 'assets/favicons/apple-touch-icon-72x72.png' %}">
+    <link rel="apple-touch-icon" sizes="114x114" href="{% static 'assets/favicons/apple-touch-icon-114x114.png' %}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'assets/favicons/apple-touch-icon-180x180.png' %}">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="{% static 'assets/favicons/mstile-144x144.png' %}">
+    {% block extra_css %}{% endblock %}
+</head>
+<body class="bg-gray-50">
+    {% block header %}{% endblock %}
+
+    {% block content %}{% endblock %}
+
+    {% block footer %}{% endblock %}
+
+    <script src="{% static 'js/page-footer.js' %}"></script>
+    {% block extra_js %}{% endblock %}
+</body>
+</html>

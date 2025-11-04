@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'layouts/user.html' %}
 {% load i18n %}
 
 {% block title %}
@@ -9,14 +9,14 @@
     {% endif %} | Flexible Web Checker
 {% endblock %}
 
-{% block content %}
+{% block main_content %}
 <div class="max-w-2xl mx-auto">
     <div class="mb-6">
         <a href="{% url 'bookmark:url_list' %}" class="text-blue-600 hover:text-blue-800">
             ← {% trans 'back_to_url_list' %}
         </a>
     </div>
-    
+
     <div class="bg-white shadow-md rounded-lg overflow-hidden">
         <div class="p-6">
             <h1 class="text-2xl font-bold text-gray-800 mb-6">
@@ -26,10 +26,10 @@
                     {% trans 'add_new_url' %}
                 {% endif %}
             </h1>
-            
+
             <form method="post" enctype="multipart/form-data" class="space-y-6">
                 {% csrf_token %}
-                
+
                 {% if form.non_field_errors %}
                     <div class="bg-red-100 border border-red-200 text-red-700 px-4 py-3 rounded mb-4">
                         {% for error in form.non_field_errors %}
@@ -37,7 +37,7 @@
                         {% endfor %}
                     </div>
                 {% endif %}
-                
+
                 <div>
                     <label for="{{ form.url.id_for_label }}" class="block text-sm font-medium text-gray-700 mb-1">
                         {% trans 'url' %} <span class="text-red-600">*</span>
@@ -54,7 +54,7 @@
                         {% trans 'enter_url_to_monitor' %}
                     </p>
                 </div>
-                
+
                 <div>
                     <label for="{{ form.title.id_for_label }}" class="block text-sm font-medium text-gray-700 mb-1">
                         {% trans 'title' %} <span class="text-red-600">*</span>
@@ -71,7 +71,7 @@
                         {% trans 'enter_title_for_url' %}
                     </p>
                 </div>
-                
+
                 <div>
                     <label for="{{ form.check_type.id_for_label }}" class="block text-sm font-medium text-gray-700 mb-1">
                         {% trans 'check_type' %} <span class="text-red-600">*</span>
@@ -88,7 +88,7 @@
                         {% trans 'select_check_method' %}
                     </p>
                 </div>
-                
+
                 <div id="html-custom-fields" class="space-y-4 hidden">
                     <div>
                         <label for="{{ form.html_selector.id_for_label }}" class="block text-sm font-medium text-gray-700 mb-1">
@@ -106,7 +106,7 @@
                             {% trans 'html_selector_help' %}
                         </p>
                     </div>
-                    
+
                     <div>
                         <label for="{{ form.html_custom_condition.id_for_label }}" class="block text-sm font-medium text-gray-700 mb-1">
                             {% trans 'condition' %}
@@ -124,7 +124,7 @@
                         </p>
                     </div>
                 </div>
-                
+
                 <div>
                     <label for="{{ form.thumbnail.id_for_label }}" class="block text-sm font-medium text-gray-700 mb-1">
                         {% trans 'thumbnail' %}
@@ -146,7 +146,7 @@
                         {% trans 'thumbnail_upload_help' %}
                     </p>
                 </div>
-                
+
                 <div>
                     <label class="block text-sm font-medium text-gray-700 mb-1">
                         {% trans 'collection' %}
@@ -163,7 +163,7 @@
                         {% trans 'select_collections_for_url' %}
                     </p>
                 </div>
-                
+
                 <div class="flex justify-between pt-4">
                     <a href="{% url 'bookmark:url_list' %}" class="bg-gray-500 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-md transition duration-300">
                         {% trans 'cancel' %}
@@ -182,7 +182,7 @@
     document.addEventListener('DOMContentLoaded', function() {
         const checkTypeSelect = document.getElementById('{{ form.check_type.id_for_label }}');
         const htmlCustomFields = document.getElementById('html-custom-fields');
-        
+
         function toggleHtmlCustomFields() {
             if (checkTypeSelect.value === 'HTML_CUSTOM') {
                 htmlCustomFields.classList.remove('hidden');
@@ -190,10 +190,10 @@
                 htmlCustomFields.classList.add('hidden');
             }
         }
-        
+
         // Initial toggle
         toggleHtmlCustomFields();
-        
+
         // Toggle on change
         checkTypeSelect.addEventListener('change', toggleHtmlCustomFields);
     });

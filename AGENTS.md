@@ -147,7 +147,7 @@ Use `django-environ`: Copy `.env.example` → `.env`
 
 ### Template & Static Files
 
-- **Base**: `bookmark/templates/base.html`
+- **Base**: `bookmark/templates/layouts/base.html`
 - **Structure**: `core/`, `url_manager/`, `collection_manager/`, `user_accounts/`, `registration/`
 - **Styling**: Tailwind utilities + custom SCSS (`frontend/scss/app.scss`)
 - **Dev**: `static/` (STATICFILES_DIRS)

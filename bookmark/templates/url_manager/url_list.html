@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'layouts/user.html' %}
 {% load i18n %}
 {% load core_tags %}
 
@@ -18,7 +18,7 @@
     });
 </script>
 {% endblock %}
-{% block content %}
+{% block main_content %}
 <div class="max-w-6xl mx-auto">
     <div class="mb-6">
         <h1 class="text-2xl font-bold text-gray-800 mb-4">{% trans 'url_list' %}</h1>
