@@ -1,12 +1,12 @@
 {% extends 'base.html' %}
 {% load i18n %}
 
-{% block title %}{% trans 'メール認証完了' %} | Flexible Web Checker{% endblock %}
+{% block title %}{% trans 'email_verification_complete' %} | Flexible Web Checker{% endblock %}
 
 {% block content %}
 <div class="max-w-md mx-auto">
     <div class="bg-white shadow-md rounded-lg p-6">
-        <h1 class="text-2xl font-bold text-blue-600 mb-6 text-center">{% trans 'メール認証完了' %}</h1>
+        <h1 class="text-2xl font-bold text-blue-600 mb-6 text-center">{% trans 'email_verification_complete' %}</h1>
         
         <div class="text-center">
             <svg class="w-16 h-16 text-green-500 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -14,15 +14,15 @@
             </svg>
             
             <p class="text-gray-700 text-lg mb-4">
-                {% trans 'メールアドレスの認証が完了しました！' %}
+                {% trans 'email_verified_successfully' %}
             </p>
             
             <p class="text-gray-600 mb-6">
-                {% trans 'アカウントが有効化されました。ログインして、Flexible Web Checkerのすべての機能をご利用いただけます。' %}
+                {% trans 'account_activated_message' %}
             </p>
             
             <a href="{% url 'user_accounts:login' %}" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition duration-300">
-                {% trans 'ログイン' %}
+                {% trans 'login' %}
             </a>
         </div>
     </div>

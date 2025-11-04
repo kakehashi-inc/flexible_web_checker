@@ -6,68 +6,68 @@ import uuid
 
 
 class User(AbstractUser):
-    """カスタムユーザーモデル"""
+    """Custom user model"""
 
-    email = models.EmailField(_("メールアドレス"), unique=True)
-    nickname = models.CharField(_("ニックネーム"), max_length=150)
+    email = models.EmailField(_("email_address"), unique=True)
+    nickname = models.CharField(_("nickname"), max_length=150)
     is_active = models.BooleanField(
-        _("有効"),
+        _("active"),
         default=False,
         help_text=_(
-            "このユーザーがアクティブかどうかを指定します。アカウントを削除する代わりに、これを選択解除してください。"
+            "designates_whether_user_active"
         ),
     )
-    email_verified_at = models.DateTimeField(_("メール認証日時"), null=True, blank=True)
+    email_verified_at = models.DateTimeField(_("email_verified_at"), null=True, blank=True)
 
     USERNAME_FIELD = "email"
     REQUIRED_FIELDS = ["username", "nickname"]
 
     class Meta:
-        verbose_name = _("ユーザー")
-        verbose_name_plural = _("ユーザー")
+        verbose_name = _("user")
+        verbose_name_plural = _("users")
 
     def __str__(self):
         return self.nickname or self.email
 
 
 class UserProfile(models.Model):
-    """ユーザープロファイルモデル"""
+    """User profile model"""
 
     user = models.OneToOneField(
         User,
         on_delete=models.CASCADE,
         related_name="profile",
-        verbose_name=_("ユーザー"),
+        verbose_name=_("user"),
     )
-    email_notification = models.BooleanField(_("メール通知"), default=True)
-    browser_notification = models.BooleanField(_("ブラウザ通知"), default=True)
-    created_at = models.DateTimeField(_("作成日時"), auto_now_add=True)
-    updated_at = models.DateTimeField(_("更新日時"), auto_now=True)
+    email_notification = models.BooleanField(_("email_notification"), default=True)
+    browser_notification = models.BooleanField(_("browser_notification"), default=True)
+    created_at = models.DateTimeField(_("created_at"), auto_now_add=True)
+    updated_at = models.DateTimeField(_("updated_at"), auto_now=True)
 
     class Meta:
-        verbose_name = _("ユーザープロファイル")
-        verbose_name_plural = _("ユーザープロファイル")
+        verbose_name = _("user_profile")
+        verbose_name_plural = _("user_profiles")
 
     def __str__(self):
         return f"{self.user.nickname or self.user.email} のプロファイル"
 
 
 class EmailConfirmationToken(models.Model):
-    """メールアドレス確認用トークン"""
+    """Email confirmation token"""
 
     user = models.ForeignKey(
         User,
         on_delete=models.CASCADE,
         related_name="email_tokens",
-        verbose_name=_("ユーザー"),
+        verbose_name=_("user"),
     )
-    token = models.UUIDField(_("トークン"), default=uuid.uuid4, unique=True)
-    created_at = models.DateTimeField(_("作成日時"), auto_now_add=True)
-    expires_at = models.DateTimeField(_("有効期限"))
+    token = models.UUIDField(_("token"), default=uuid.uuid4, unique=True)
+    created_at = models.DateTimeField(_("created_at"), auto_now_add=True)
+    expires_at = models.DateTimeField(_("expires_at"))
 
     class Meta:
-        verbose_name = _("メール確認トークン")
-        verbose_name_plural = _("メール確認トークン")
+        verbose_name = _("email_confirmation_token")
+        verbose_name_plural = _("email_confirmation_tokens")
 
     def __str__(self):
         return f"{self.user.email} - {self.token}"
@@ -78,21 +78,21 @@ class EmailConfirmationToken(models.Model):
 
 
 class PasswordResetToken(models.Model):
-    """パスワードリセット用トークン"""
+    """Password reset token"""
 
     user = models.ForeignKey(
         User,
         on_delete=models.CASCADE,
         related_name="password_tokens",
-        verbose_name=_("ユーザー"),
+        verbose_name=_("user"),
     )
-    token = models.UUIDField(_("トークン"), default=uuid.uuid4, unique=True)
-    created_at = models.DateTimeField(_("作成日時"), auto_now_add=True)
-    expires_at = models.DateTimeField(_("有効期限"))
+    token = models.UUIDField(_("token"), default=uuid.uuid4, unique=True)
+    created_at = models.DateTimeField(_("created_at"), auto_now_add=True)
+    expires_at = models.DateTimeField(_("expires_at"))
 
     class Meta:
-        verbose_name = _("パスワードリセットトークン")
-        verbose_name_plural = _("パスワードリセットトークン")
+        verbose_name = _("password_reset_token")
+        verbose_name_plural = _("password_reset_tokens")
 
     def __str__(self):
         return f"{self.user.email} - {self.token}"

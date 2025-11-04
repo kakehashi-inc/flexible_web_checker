@@ -4,22 +4,22 @@ from django.utils.translation import gettext_lazy as _
 
 
 class Collection(models.Model):
-    """コレクションモデル"""
+    """Collection model"""
 
     user = models.ForeignKey(
         settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE,
         related_name="collections",
-        verbose_name=_("ユーザー"),
+        verbose_name=_("user"),
     )
-    name = models.CharField(_("名前"), max_length=255)
-    order = models.IntegerField(_("並び順"), default=0)
-    created_at = models.DateTimeField(_("作成日時"), auto_now_add=True)
-    updated_at = models.DateTimeField(_("更新日時"), auto_now=True)
+    name = models.CharField(_("name"), max_length=255)
+    order = models.IntegerField(_("order"), default=0)
+    created_at = models.DateTimeField(_("created_at"), auto_now_add=True)
+    updated_at = models.DateTimeField(_("updated_at"), auto_now=True)
 
     class Meta:
-        verbose_name = _("コレクション")
-        verbose_name_plural = _("コレクション")
+        verbose_name = _("collection")
+        verbose_name_plural = _("collections")
         ordering = ["order", "name"]
 
     def __str__(self):
@@ -27,23 +27,23 @@ class Collection(models.Model):
 
 
 class UrlItemCollection(models.Model):
-    """URL項目とコレクションの中間テーブル"""
+    """URL item and collection intermediate model"""
 
     url_item = models.ForeignKey(
         "UrlItem",
         on_delete=models.CASCADE,
         related_name="collections",
-        verbose_name=_("URL項目"),
+        verbose_name=_("url_item"),
     )
     collection = models.ForeignKey(
         Collection,
         on_delete=models.CASCADE,
         related_name="url_items",
-        verbose_name=_("コレクション"),
+        verbose_name=_("collection"),
     )
-    added_at = models.DateTimeField(_("追加日時"), auto_now_add=True)
+    added_at = models.DateTimeField(_("added_at"), auto_now_add=True)
 
     class Meta:
-        verbose_name = _("URL項目-コレクション")
-        verbose_name_plural = _("URL項目-コレクション")
+        verbose_name = _("url_item_collection")
+        verbose_name_plural = _("url_item_collections")
         unique_together = [["url_item", "collection"]]

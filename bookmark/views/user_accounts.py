@@ -39,7 +39,7 @@ def register(request):
                 reverse("bookmark:verify_email", kwargs={"token": token.token})
             )
 
-            subject = _("メールアドレスの確認")
+            subject = _("email_confirmation_subject")
             message = render_to_string(
                 "bookmark/email/verify_email.html",
                 {
@@ -59,7 +59,7 @@ def register(request):
             )
 
             messages.success(
-                request, _("登録が完了しました。メールアドレスの確認を行ってください。")
+                request, _("registration_complete_confirm_email")
             )
             return redirect("bookmark:login")
     else:
@@ -74,7 +74,7 @@ def verify_email(request, token):
 
     if not token_obj.is_valid():
         messages.error(
-            request, _("トークンの有効期限が切れています。再度登録を行ってください。")
+            request, _("token_expired_please_register_again")
         )
         return redirect("bookmark:register")
 
@@ -86,7 +86,7 @@ def verify_email(request, token):
     EmailConfirmationToken.objects.filter(user=user).delete()
 
     messages.success(
-        request, _("メールアドレスの確認が完了しました。ログインしてください。")
+        request, _("email_confirmed_please_login")
     )
     return redirect("bookmark:login")
 
@@ -108,13 +108,11 @@ def login_view(request):
                 else:
                     messages.error(
                         request,
-                        _(
-                            "アカウントが有効化されていません。メールアドレスの確認を行ってください。"
-                        ),
+                        _("account_not_activated")
                     )
             else:
                 messages.error(
-                    request, _("メールアドレスまたはパスワードが正しくありません。")
+                    request, _("invalid_email_or_password")
                 )
     else:
         form = UserLoginForm()
@@ -125,7 +123,7 @@ def login_view(request):
 def logout_view(request):
     """ログアウトビュー"""
     logout(request)
-    messages.success(request, _("ログアウトしました。"))
+    messages.success(request, _("logged_out"))
     return redirect("bookmark:login")
 
 
@@ -142,7 +140,7 @@ def edit_profile(request):
         form = UserProfileForm(request.POST, instance=request.user)
         if form.is_valid():
             form.save()
-            messages.success(request, _("マイページを更新しました。"))
+            messages.success(request, _("mypage_updated"))
             return redirect("bookmark:mypage")
     else:
         form = UserProfileForm(instance=request.user)
@@ -171,7 +169,7 @@ def password_reset_request(request):
                     )
                 )
 
-                subject = _("パスワードリセット")
+                subject = _("password_reset_subject")
                 message = render_to_string(
                     "bookmark/email/password_reset.html",
                     {
@@ -192,17 +190,13 @@ def password_reset_request(request):
 
                 messages.success(
                     request,
-                    _(
-                        "パスワードリセットのメールを送信しました。メールに記載されたリンクからパスワードをリセットしてください。"
-                    ),
+                    _("password_reset_email_sent")
                 )
                 return redirect("bookmark:login")
             except User.DoesNotExist:
                 messages.success(
                     request,
-                    _(
-                        "パスワードリセットのメールを送信しました。メールに記載されたリンクからパスワードをリセットしてください。"
-                    ),
+                    _("password_reset_email_sent")
                 )
                 return redirect("bookmark:login")
     else:
@@ -218,9 +212,7 @@ def password_reset(request, token):
     if not token_obj.is_valid():
         messages.error(
             request,
-            _(
-                "トークンの有効期限が切れています。再度パスワードリセットを行ってください。"
-            ),
+            _("token_expired_reset_password_again")
         )
         return redirect("bookmark:password_reset_request")
 
@@ -237,9 +229,7 @@ def password_reset(request, token):
 
             messages.success(
                 request,
-                _(
-                    "パスワードをリセットしました。新しいパスワードでログインしてください。"
-                ),
+                _("password_reset_success_login_message"),
             )
             return redirect("bookmark:login")
     else:

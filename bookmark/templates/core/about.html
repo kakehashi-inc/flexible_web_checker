@@ -1,70 +1,70 @@
 {% extends 'base.html' %}
 {% load i18n %}
 
-{% block title %}{% trans 'このサイトについて' %} | Flexible Web Checker{% endblock %}
+{% block title %}{% trans 'about_this_site' %} | Flexible Web Checker{% endblock %}
 
 {% block content %}
 <div class="max-w-4xl mx-auto">
     <div class="bg-white shadow-md rounded-lg p-6">
-        <h1 class="text-3xl font-bold text-blue-600 mb-6">{% trans 'Flexible Web Checkerについて' %}</h1>
+        <h1 class="text-3xl font-bold text-blue-600 mb-6">{% trans 'about_flexible_web_checker' %}</h1>
         
         <div class="mb-8">
-            <h2 class="text-2xl font-semibold text-gray-800 mb-4">{% trans '概要' %}</h2>
+            <h2 class="text-2xl font-semibold text-gray-800 mb-4">{% trans 'overview' %}</h2>
             <p class="text-gray-700 mb-4">
-                {% trans 'Flexible Web Checkerは、Webサイトの更新を柔軟に監視するためのツールです。お気に入りのWebサイトの更新を見逃さないように、さまざまな方法で更新を検出します。' %}
+                {% trans 'about_description' %}
             </p>
             <p class="text-gray-700">
-                {% trans 'このアプリケーションは、Djangoフレームワークを使用して構築されており、モダンなレスポンシブデザインと多言語対応を備えています。' %}
+                {% trans 'about_tech_description' %}
             </p>
         </div>
         
         <div class="mb-8">
-            <h2 class="text-2xl font-semibold text-gray-800 mb-4">{% trans '主な機能' %}</h2>
+            <h2 class="text-2xl font-semibold text-gray-800 mb-4">{% trans 'main_features' %}</h2>
             <ul class="list-disc list-inside space-y-2 text-gray-700">
-                <li>{% trans '複数の更新検出方法（RSSフィード、HTML標準、HTMLカスタム）' %}</li>
-                <li>{% trans 'URLのコレクション管理' %}</li>
-                <li>{% trans 'Webサイトのサムネイル表示' %}</li>
-                <li>{% trans '定期的な更新チェック' %}</li>
-                <li>{% trans 'ユーザーアカウント管理' %}</li>
-                <li>{% trans '多言語対応（日本語・英語）' %}</li>
+                <li>{% trans 'multiple_detection_methods' %}</li>
+                <li>{% trans 'url_collection_management' %}</li>
+                <li>{% trans 'website_thumbnail_display' %}</li>
+                <li>{% trans 'periodic_update_check' %}</li>
+                <li>{% trans 'user_account_management' %}</li>
+                <li>{% trans 'multilingual_support' %}</li>
             </ul>
         </div>
         
         <div class="mb-8">
-            <h2 class="text-2xl font-semibold text-gray-800 mb-4">{% trans '更新検出方法' %}</h2>
+            <h2 class="text-2xl font-semibold text-gray-800 mb-4">{% trans 'detection_methods' %}</h2>
             
             <div class="mb-4">
-                <h3 class="text-xl font-semibold text-blue-700 mb-2">{% trans 'RSSフィード' %}</h3>
+                <h3 class="text-xl font-semibold text-blue-700 mb-2">{% trans 'rss_feed' %}</h3>
                 <p class="text-gray-700">
-                    {% trans 'RSSフィードを提供しているWebサイトの場合、フィードの最新エントリを監視して更新を検出します。これは最も効率的な方法です。' %}
+                    {% trans 'rss_feed_description' %}
                 </p>
             </div>
             
             <div class="mb-4">
-                <h3 class="text-xl font-semibold text-blue-700 mb-2">{% trans 'HTML標準' %}</h3>
+                <h3 class="text-xl font-semibold text-blue-700 mb-2">{% trans 'html_standard' %}</h3>
                 <p class="text-gray-700">
-                    {% trans 'WebページのHTML全体を監視して、内容の変更を検出します。ページ全体の変更を検出したい場合に適しています。' %}
+                    {% trans 'html_standard_description' %}
                 </p>
             </div>
             
             <div>
-                <h3 class="text-xl font-semibold text-blue-700 mb-2">{% trans 'HTMLカスタム' %}</h3>
+                <h3 class="text-xl font-semibold text-blue-700 mb-2">{% trans 'html_custom' %}</h3>
                 <p class="text-gray-700">
-                    {% trans 'CSSセレクタを使用して、Webページの特定の部分の変更を監視します。ページの特定のセクションのみを監視したい場合に適しています。' %}
+                    {% trans 'html_custom_description' %}
                 </p>
             </div>
         </div>
         
         <div>
-            <h2 class="text-2xl font-semibold text-gray-800 mb-4">{% trans '技術情報' %}</h2>
+            <h2 class="text-2xl font-semibold text-gray-800 mb-4">{% trans 'technical_info' %}</h2>
             <ul class="list-disc list-inside space-y-2 text-gray-700">
-                <li>{% trans 'バックエンド: Django (Python)' %}</li>
-                <li>{% trans 'フロントエンド: HTML, CSS (Tailwind CSS), JavaScript' %}</li>
-                <li>{% trans '非同期タスク処理: Celery' %}</li>
-                <li>{% trans 'データベース: SQLite / MySQL' %}</li>
-                <li>{% trans 'スクリーンショット: Selenium, Firefox' %}</li>
-                <li>{% trans 'HTML解析: BeautifulSoup4' %}</li>
-                <li>{% trans 'RSSパース: feedparser' %}</li>
+                <li>{% trans 'backend_django_python' %}</li>
+                <li>{% trans 'frontend_tech' %}</li>
+                <li>{% trans 'async_task_celery' %}</li>
+                <li>{% trans 'database_sqlite_mysql' %}</li>
+                <li>{% trans 'screenshot_selenium_firefox' %}</li>
+                <li>{% trans 'html_parsing_beautifulsoup' %}</li>
+                <li>{% trans 'rss_parsing_feedparser' %}</li>
             </ul>
         </div>
     </div>

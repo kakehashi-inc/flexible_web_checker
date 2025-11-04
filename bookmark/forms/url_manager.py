@@ -17,7 +17,7 @@ class UrlItemForm(forms.ModelForm):
         )
         widgets = {
             "html_selector": forms.Textarea(
-                attrs={"rows": 4, "placeholder": _("例: div.content\n#main-content h2")}
+                attrs={"rows": 4, "placeholder": _("html_selector_placeholder")}
             ),
         }
 
@@ -27,9 +27,7 @@ class UrlItemForm(forms.ModelForm):
 
         if check_type == "HTML_CUSTOM" and not html_selector:
             raise forms.ValidationError(
-                _(
-                    "HTMLカスタムチェックタイプを選択した場合は、HTMLセレクタを入力してください。"
-                )
+                _("html_custom_selector_required")
             )
 
         return html_selector
@@ -48,18 +46,18 @@ class BulkUrlAddForm(forms.Form):
     """一括URL追加フォーム"""
 
     urls = forms.CharField(
-        label=_("URL一覧"),
+        label=_("url_list"),
         widget=forms.Textarea(
             attrs={
                 "rows": 10,
-                "placeholder": _("URLを1行に1つずつ入力してください。\n例:\nhttps://example.com\nhttps://example.org")
+                "placeholder": _("url_bulk_placeholder")
             }
         ),
-        help_text=_("URLを1行に1つずつ入力してください。タイトルは自動的に取得されます。")
+        help_text=_("url_bulk_help_text")
     )
 
     check_type = forms.ChoiceField(
-        label=_("チェックタイプ"),
+        label=_("check_type"),
         choices=UrlItem.CHECK_TYPE_CHOICES,
         initial="HTML_STANDARD",
     )
@@ -69,10 +67,10 @@ class BulkUrlAddForm(forms.Form):
         url_list = [url.strip() for url in urls.split("\n") if url.strip()]
 
         if not url_list:
-            raise forms.ValidationError(_("少なくとも1つのURLを入力してください。"))
+            raise forms.ValidationError(_("at_least_one_url_required"))
 
         for url in url_list:
             if not url.startswith(("http://", "https://")):
-                raise forms.ValidationError(_("無効なURLが含まれています: %(url)s"), params={"url": url})
+                raise forms.ValidationError(_("invalid_url_in_list"), params={"url": url})
 
         return url_list

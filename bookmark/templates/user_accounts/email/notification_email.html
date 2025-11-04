@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% trans '通知' %}</title>
+    <title>{% trans 'notification' %}</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -43,28 +43,28 @@
 </head>
 <body>
     <div class="header">
-        <h1>{% trans '更新通知' %}</h1>
+        <h1>{% trans 'update_notification' %}</h1>
     </div>
     
     <div class="content">
-        <p>{% trans 'こんにちは' %}, {{ user.nickname }}!</p>
+        <p>{% trans 'hello' %}, {{ user.nickname }}!</p>
         
-        <p>{% trans '登録しているURLに更新がありました。' %}</p>
+        <p>{% trans 'registered_urls_have_updates' %}</p>
         
         <div style="margin: 20px 0; padding: 15px; border: 1px solid #e2e8f0; border-radius: 5px;">
             <h2 style="margin-top: 0; color: #2563eb;">{{ url_item.title }}</h2>
             <p><a href="{{ url_item.url }}" style="color: #2563eb; text-decoration: underline;">{{ url_item.url }}</a></p>
-            <p>{% trans '最終更新' %}: {{ url_item.last_updated_at|date:"Y/m/d H:i" }}</p>
+            <p>{% trans 'last_updated' %}: {{ url_item.last_updated_at|date:"Y/m/d H:i" }}</p>
         </div>
         
         <p style="text-align: center;">
-            <a href="{{ detail_url }}" class="button">{% trans '詳細を確認' %}</a>
+            <a href="{{ detail_url }}" class="button">{% trans 'view_details' %}</a>
         </p>
     </div>
     
     <div class="footer">
-        <p>{% trans 'このメールはFlexible Web Checkerから自動的に送信されています。' %}</p>
-        <p>{% trans 'メール通知の設定は' %} <a href="{{ settings_url }}" style="color: #2563eb;">{% trans 'こちら' %}</a> {% trans 'から変更できます。' %}</p>
+        <p>{% trans 'this_is_automated_email' %}</p>
+        <p>{% trans 'email_notification_settings_can_be_changed_at' %} <a href="{{ settings_url }}" style="color: #2563eb;">{% trans 'here' %}</a> {% trans 'text_after_settings_link' %}</p>
         <p>&copy; {% now "Y" %} Flexible Web Checker</p>
     </div>
 </body>

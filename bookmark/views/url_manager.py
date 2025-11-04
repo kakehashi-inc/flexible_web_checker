@@ -78,7 +78,7 @@ def url_add(request):
             except Exception as e:
                 logger.error(f"Error scheduling tasks for URL {url_item.id}: {str(e)}")
 
-            messages.success(request, _("URLを追加しました。"))
+            messages.success(request, _("url_added"))
             return redirect("bookmark:url_list")
     else:
         form = UrlItemForm()
@@ -102,7 +102,7 @@ def url_edit(request, url_id):
         form = UrlItemForm(request.POST, instance=url_item)
         if form.is_valid():
             form.save()
-            messages.success(request, _("URLを更新しました。"))
+            messages.success(request, _("url_updated"))
             return redirect("bookmark:url_detail", url_id=url_item.id)
     else:
         form = UrlItemForm(instance=url_item)
@@ -119,7 +119,7 @@ def url_delete(request, url_id):
 
     if request.method == "POST":
         url_item.delete()
-        messages.success(request, _("URLを削除しました。"))
+        messages.success(request, _("url_deleted"))
         return redirect("bookmark:url_list")
 
     return render(request, "bookmark/url_manager/url_delete.html", {"url_item": url_item})
@@ -136,7 +136,7 @@ def url_check(request, url_id):
     except Exception as e:
         logger.error(f"Error scheduling update check for URL {url_item.id}: {str(e)}")
 
-    messages.success(request, _("更新チェックを開始しました。"))
+    messages.success(request, _("update_check_started"))
 
     if request.headers.get("X-Requested-With") == "XMLHttpRequest":
         return JsonResponse({"status": "success"})
@@ -154,7 +154,7 @@ def url_update_thumbnail(request, url_id):
     except Exception as e:
         logger.error(f"Error scheduling thumbnail update for URL {url_item.id}: {str(e)}")
 
-    messages.success(request, _("サムネイルの更新を開始しました。"))
+    messages.success(request, _("thumbnail_update_started"))
 
     if request.headers.get("X-Requested-With") == "XMLHttpRequest":
         return JsonResponse({"status": "success"})
@@ -174,18 +174,18 @@ def url_bulk_add(request):
 
             for url_str in urls_to_add:
                 if not url_str.startswith(('http://', 'https://')):
-                    error_urls.append(f"{url_str} ({_('無効な形式')})")
+                    error_urls.append(f"{url_str} ({_('invalid_format')})")
                     continue
 
                 if UrlItem.objects.filter(user=request.user, url=url_str).exists():
-                    error_urls.append(f"{url_str} ({_('登録済み')})")
+                    error_urls.append(f"{url_str} ({_('already_registered')})")
                     continue
 
                 try:
                     title = get_page_title(url_str)
                     if not title:
                         title = url_str
-                        messages.warning(request, _('URL "{url}" のタイトルを取得できませんでした。URLをタイトルとして使用します。').format(url=url_str))
+                        messages.warning(request, _('failed_to_get_title_will_use_url').format(url=url_str))
 
                     url_item = UrlItem.objects.create(
                         user=request.user,
@@ -201,12 +201,12 @@ def url_bulk_add(request):
                     added_count += 1
                 except Exception as e:
                     print(f"Error adding URL {url_str}: {e}")
-                    error_urls.append(f"{url_str} ({_('追加エラー')})")
+                    error_urls.append(f"{url_str} ({_('add_error')})")
 
             if added_count > 0:
-                messages.success(request, _('{count}件のURLを追加しました。').format(count=added_count))
+                messages.success(request, _('url_bulk_added_count').format(count=added_count))
             if error_urls:
-                error_html = _('以下のURLは追加できませんでした:') + '<ul class="list-disc list-inside">' + "".join([f"<li>{err}</li>" for err in error_urls]) + "</ul>"
+                error_html = _('failed_to_add_urls_list') + '<ul class="list-disc list-inside">' + "".join([f"<li>{err}</li>" for err in error_urls]) + "</ul>"
                 messages.error(request, error_html, extra_tags='safe')
 
             return redirect('bookmark:url_list')

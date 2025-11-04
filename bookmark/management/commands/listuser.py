@@ -18,14 +18,14 @@ class Command(BaseCommand):
         for user in users:
             permission_level = []
             if user.is_superuser:
-                permission_level.append('スーパーユーザー')
+                permission_level.append('Superuser')
             if user.is_staff:
-                permission_level.append('スタッフ')
+                permission_level.append('Staff')
             if not user.is_superuser and not user.is_staff:
-                permission_level.append('一般ユーザー')
+                permission_level.append('Regular User')
                 
-            self.stdout.write(f'ユーザー名: {user.username}')
-            self.stdout.write(f'メールアドレス: {user.email}')
-            self.stdout.write(f'権限レベル: {", ".join(permission_level)}')
-            self.stdout.write(f'アクティブ: {user.is_active}')
+            self.stdout.write(f'Username: {user.username}')
+            self.stdout.write(f'Email: {user.email}')
+            self.stdout.write(f'Permission Level: {", ".join(permission_level)}')
+            self.stdout.write(f'Active: {user.is_active}')
             self.stdout.write('-' * 40)

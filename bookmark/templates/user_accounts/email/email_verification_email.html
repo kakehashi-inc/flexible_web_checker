@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% trans 'メールアドレス確認' %}</title>
+    <title>{% trans 'email_confirmation' %}</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -43,28 +43,28 @@
 </head>
 <body>
     <div class="header">
-        <h1>{% trans 'メールアドレス確認' %}</h1>
+        <h1>{% trans 'email_confirmation' %}</h1>
     </div>
     
     <div class="content">
-        <p>{% trans 'こんにちは' %}, {{ user.nickname }}!</p>
+        <p>{% trans 'hello' %}, {{ user.nickname }}!</p>
         
-        <p>{% trans 'Flexible Web Checkerへのご登録ありがとうございます。以下のリンクをクリックして、メールアドレスを確認してください。' %}</p>
+        <p>{% trans 'email_verification_message' %}</p>
         
         <p style="text-align: center;">
-            <a href="{{ verification_url }}" class="button">{% trans 'メールアドレスを確認' %}</a>
+            <a href="{{ verification_url }}" class="button">{% trans 'verify_email_address' %}</a>
         </p>
         
-        <p>{% trans 'または、以下のURLをブラウザに貼り付けてください：' %}</p>
+        <p>{% trans 'or_paste_url_in_browser' %}</p>
         <p>{{ verification_url }}</p>
         
-        <p>{% trans 'このリンクは24時間有効です。' %}</p>
+        <p>{% trans 'link_valid_24_hours' %}</p>
         
-        <p>{% trans 'アカウント登録をリクエストしていない場合は、このメールを無視してください。' %}</p>
+        <p>{% trans 'ignore_if_not_requested' %}</p>
     </div>
     
     <div class="footer">
-        <p>{% trans 'このメールはFlexible Web Checkerから自動的に送信されています。返信しないでください。' %}</p>
+        <p>{% trans 'auto_email_no_reply' %}</p>
         <p>&copy; {% now "Y" %} Flexible Web Checker</p>
     </div>
 </body>

@@ -1,13 +1,13 @@
 {% extends 'base.html' %}
 {% load i18n %}
 
-{% block title %}{% trans 'コレクション追加' %} | Flexible Web Checker{% endblock %}
+{% block title %}{% trans 'add_collection' %} | Flexible Web Checker{% endblock %}
 
 {% block content %}
 <div class="max-w-md mx-auto">
     <div class="bg-white shadow-md rounded-lg overflow-hidden">
         <div class="p-6">
-            <h1 class="text-2xl font-bold text-gray-800 mb-6">{% trans 'コレクション追加' %}</h1>
+            <h1 class="text-2xl font-bold text-gray-800 mb-6">{% trans 'add_collection' %}</h1>
             
             <form method="post" class="space-y-6">
                 {% csrf_token %}
@@ -36,10 +36,10 @@
                 
                 <div class="flex justify-between pt-4">
                     <a href="{% url 'collection_manager:collection_list' %}" class="bg-gray-500 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-md transition duration-300">
-                        {% trans 'キャンセル' %}
+                        {% trans 'cancel' %}
                     </a>
                     <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition duration-300">
-                        {% trans '追加' %}
+                        {% trans 'add' %}
                     </button>
                 </div>
             </form>

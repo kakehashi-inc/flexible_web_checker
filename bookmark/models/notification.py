@@ -6,13 +6,13 @@ from typing import cast
 
 
 class Notification(models.Model):
-    """通知モデル"""
+    """Notification model"""
 
     user = models.ForeignKey(
         settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE,
         related_name="notifications",
-        verbose_name=_("ユーザー"),
+        verbose_name=_("user"),
     )
     url_item = models.ForeignKey(
         "UrlItem",
@@ -20,15 +20,15 @@ class Notification(models.Model):
         null=True,
         blank=True,
         related_name="notifications",
-        verbose_name=_("URL項目"),
+        verbose_name=_("url_item"),
     )
-    message = models.TextField(_("メッセージ"))
-    is_read = models.BooleanField(_("既読"), default=False)
-    created_at = models.DateTimeField(_("作成日時"), auto_now_add=True)
+    message = models.TextField(_("message"))
+    is_read = models.BooleanField(_("is_read"), default=False)
+    created_at = models.DateTimeField(_("created_at"), auto_now_add=True)
 
     class Meta:
-        verbose_name = _("通知")
-        verbose_name_plural = _("通知")
+        verbose_name = _("notification")
+        verbose_name_plural = _("notifications")
 
     def __str__(self):
         created = cast(datetime, self.created_at)

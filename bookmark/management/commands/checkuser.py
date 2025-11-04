@@ -16,36 +16,36 @@ class Command(BaseCommand):
         password = options.get('password')
         
         if not username:
-            username = input('ユーザー名を入力してください: ')
+            username = input('Enter username: ')
         
         if not password:
-            password = getpass.getpass('パスワードを入力してください: ')
+            password = getpass.getpass('Enter password: ')
         
         try:
             user = User.objects.get(username=username)
-            self.stdout.write(self.style.SUCCESS(f'ユーザー "{username}" が存在します。'))
+            self.stdout.write(self.style.SUCCESS(f'User "{username}" exists.'))
         except User.DoesNotExist:
-            self.stdout.write(self.style.ERROR(f'ユーザー "{username}" は存在しません。'))
+            self.stdout.write(self.style.ERROR(f'User "{username}" does not exist.'))
             return
         
         if not user.is_active:
-            self.stdout.write(self.style.WARNING(f'ユーザー "{username}" は非アクティブです。'))
+            self.stdout.write(self.style.WARNING(f'User "{username}" is inactive.'))
             return
         
         auth_user = authenticate(username=username, password=password)
         if auth_user is not None:
             permission_level = []
             if auth_user.is_superuser:
-                permission_level.append('スーパーユーザー')
+                permission_level.append('Superuser')
             if auth_user.is_staff:
-                permission_level.append('スタッフ')
+                permission_level.append('Staff')
             if not auth_user.is_superuser and not auth_user.is_staff:
-                permission_level.append('一般ユーザー')
+                permission_level.append('Regular User')
                 
-            self.stdout.write(self.style.SUCCESS(f'認証成功: ユーザー "{username}" のパスワードは正しいです。'))
-            self.stdout.write(f'ユーザー名: {auth_user.username}')
-            self.stdout.write(f'メールアドレス: {auth_user.email}')
-            self.stdout.write(f'権限レベル: {", ".join(permission_level)}')
-            self.stdout.write(f'アクティブ: {auth_user.is_active}')
+            self.stdout.write(self.style.SUCCESS(f'Authentication successful: Password for user "{username}" is correct.'))
+            self.stdout.write(f'Username: {auth_user.username}')
+            self.stdout.write(f'Email: {auth_user.email}')
+            self.stdout.write(f'Permission Level: {", ".join(permission_level)}')
+            self.stdout.write(f'Active: {auth_user.is_active}')
         else:
-            self.stdout.write(self.style.ERROR(f'認証失敗: ユーザー "{username}" のパスワードが正しくありません。'))
+            self.stdout.write(self.style.ERROR(f'Authentication failed: Password for user "{username}" is incorrect.'))

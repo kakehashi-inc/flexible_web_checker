@@ -1,13 +1,13 @@
 {% extends 'base.html' %}
 {% load i18n %}
 
-{% block title %}{% trans '通知' %} | Flexible Web Checker{% endblock %}
+{% block title %}{% trans 'notification' %} | Flexible Web Checker{% endblock %}
 
 {% block content %}
 <div class="max-w-4xl mx-auto">
     <div class="bg-white shadow-md rounded-lg overflow-hidden mb-6">
         <div class="p-6">
-            <h1 class="text-2xl font-bold text-gray-800 mb-6">{% trans '通知' %}</h1>
+            <h1 class="text-2xl font-bold text-gray-800 mb-6">{% trans 'notification' %}</h1>
             
             {% if notifications %}
                 <div class="space-y-4">
@@ -21,7 +21,7 @@
                                                 {{ notification.url_item.title }}
                                             </a>
                                         {% else %}
-                                            {% trans 'システム通知' %}
+                                            {% trans 'system_notifications' %}
                                         {% endif %}
                                     </h2>
                                     <p class="text-sm text-gray-500">{{ notification.created_at|date:"Y/m/d H:i" }}</p>
@@ -31,7 +31,7 @@
                                     <form method="post" action="{% url 'core:mark_notification_read' notification.id %}">
                                         {% csrf_token %}
                                         <button type="submit" class="text-sm text-blue-600 hover:text-blue-800">
-                                            {% trans '既読にする' %}
+                                            {% trans 'mark_as_read' %}
                                         </button>
                                     </form>
                                 {% endif %}
@@ -61,7 +61,7 @@
                         <form method="post" action="{% url 'core:mark_all_notifications_read' %}">
                             {% csrf_token %}
                             <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition duration-300">
-                                {% trans 'すべて既読にする' %}
+                                {% trans 'mark_all_as_read' %}
                             </button>
                         </form>
                     </div>
@@ -71,7 +71,7 @@
                     <svg class="w-16 h-16 text-gray-400 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4"></path>
                     </svg>
-                    <p class="text-gray-500 text-lg">{% trans '通知はありません' %}</p>
+                    <p class="text-gray-500 text-lg">{% trans 'no_notifications' %}</p>
                 </div>
             {% endif %}
         </div>

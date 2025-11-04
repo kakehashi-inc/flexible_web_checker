@@ -18,7 +18,7 @@ class UserAdmin(admin.ModelAdmin):
     fieldsets = (
         (None, {"fields": ("email", "username", "nickname", "password")}),
         (
-            _("権限"),
+            _("permissions"),
             {
                 "fields": (
                     "is_active",
@@ -30,7 +30,7 @@ class UserAdmin(admin.ModelAdmin):
             },
         ),
         (
-            _("重要な日付"),
+            _("important_dates"),
             {"fields": ("last_login", "date_joined", "email_verified_at")},
         ),
     )

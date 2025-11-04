@@ -1,15 +1,15 @@
 {% extends 'base.html' %}
 {% load i18n %}
 
-{% block title %}{% trans 'コレクション一覧' %} | Flexible Web Checker{% endblock %}
+{% block title %}{% trans 'collection_list' %} | Flexible Web Checker{% endblock %}
 
 {% block content %}
 <div class="max-w-6xl mx-auto">
     <div class="flex justify-between items-center mb-6">
-        <h1 class="text-2xl font-bold text-gray-800">{% trans 'コレクション一覧' %}</h1>
+        <h1 class="text-2xl font-bold text-gray-800">{% trans 'collection_list' %}</h1>
         <div>
             <a href="{% url 'collection_manager:collection_add' %}" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition duration-300">
-                {% trans '新規コレクション作成' %}
+                {% trans 'create_new_collection' %}
             </a>
         </div>
     </div>
@@ -25,23 +25,23 @@
                             </a>
                         </h2>
                         <p class="text-gray-600 mb-4">
-                            {% trans 'URL数' %}: {{ collection.url_items.count }}
+                            {% trans 'url_count' %}: {{ collection.url_items.count }}
                         </p>
                         <p class="text-gray-500 text-sm">
-                            {% trans '作成日' %}: {{ collection.created_at|date:"Y/m/d" }}
+                            {% trans 'created' %}: {{ collection.created_at|date:"Y/m/d" }}
                         </p>
                     </div>
                     <div class="bg-gray-50 px-5 py-3 border-t border-gray-200">
                         <div class="flex justify-between">
                             <a href="{% url 'collection_manager:collection_detail' collection.id %}" class="text-blue-600 hover:text-blue-800">
-                                {% trans '詳細' %}
+                                {% trans 'details' %}
                             </a>
                             <div class="flex space-x-3">
                                 <a href="{% url 'collection_manager:collection_edit' collection.id %}" class="text-yellow-600 hover:text-yellow-800">
-                                    {% trans '編集' %}
+                                    {% trans 'edit' %}
                                 </a>
                                 <a href="{% url 'collection_manager:collection_delete' collection.id %}" class="text-red-600 hover:text-red-800">
-                                    {% trans '削除' %}
+                                    {% trans 'delete' %}
                                 </a>
                             </div>
                         </div>
@@ -51,9 +51,9 @@
         </div>
     {% else %}
         <div class="bg-white shadow-md rounded-lg p-6 text-center">
-            <p class="text-gray-600 mb-4">{% trans 'コレクションが作成されていません。' %}</p>
+            <p class="text-gray-600 mb-4">{% trans 'no_collections_created' %}</p>
             <a href="{% url 'collection_manager:collection_add' %}" class="text-blue-600 hover:text-blue-800">
-                {% trans '新しいコレクションを作成する' %} →
+                {% trans 'create_new_collection_link' %} →
             </a>
         </div>
     {% endif %}

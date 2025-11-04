@@ -1,32 +1,32 @@
 {% extends 'base.html' %}
 {% load i18n %}
 
-{% block title %}{% trans 'ホーム' %} | Flexible Web Checker{% endblock %}
+{% block title %}{% trans 'home' %} | Flexible Web Checker{% endblock %}
 
 {% block content %}
 <div class="max-w-4xl mx-auto">
     <div class="bg-white shadow-md rounded-lg p-6 mb-6">
-        <h1 class="text-3xl font-bold text-blue-600 mb-4">{% trans 'Flexible Web Checker へようこそ' %}</h1>
-        <p class="text-lg mb-6">{% trans 'お気に入りのWebサイトの更新を簡単に追跡できるツールです。' %}</p>
+        <h1 class="text-3xl font-bold text-blue-600 mb-4">{% trans 'welcome_to_flexible_web_checker' %}</h1>
+        <p class="text-lg mb-6">{% trans 'track_favorite_websites_description' %}</p>
         
         <div class="grid md:grid-cols-2 gap-6 mb-8">
             <div class="bg-blue-50 p-4 rounded-md">
-                <h2 class="text-xl font-semibold text-blue-700 mb-2">{% trans '主な機能' %}</h2>
+                <h2 class="text-xl font-semibold text-blue-700 mb-2">{% trans 'main_features' %}</h2>
                 <ul class="list-disc list-inside space-y-2">
-                    <li>{% trans 'さまざまな方法でWebサイトの更新を検出' %}</li>
-                    <li>{% trans 'RSSフィード、HTML全体、特定のHTML要素の変更を監視' %}</li>
-                    <li>{% trans 'URLをコレクションに整理' %}</li>
-                    <li>{% trans '更新があった場合に通知' %}</li>
+                    <li>{% trans 'detect_website_updates_various_methods' %}</li>
+                    <li>{% trans 'monitor_rss_html_elements' %}</li>
+                    <li>{% trans 'organize_urls_in_collections' %}</li>
+                    <li>{% trans 'notify_on_updates' %}</li>
                 </ul>
             </div>
             <div class="bg-blue-50 p-4 rounded-md">
-                <h2 class="text-xl font-semibold text-blue-700 mb-2">{% trans '使い方' %}</h2>
+                <h2 class="text-xl font-semibold text-blue-700 mb-2">{% trans 'how_to_use' %}</h2>
                 <ol class="list-decimal list-inside space-y-2">
-                    <li>{% trans 'アカウントを作成' %}</li>
-                    <li>{% trans '監視したいWebサイトのURLを追加' %}</li>
-                    <li>{% trans '更新の確認方法を選択' %}</li>
-                    <li>{% trans '必要に応じてURLをコレクションに整理' %}</li>
-                    <li>{% trans '更新を確認' %}</li>
+                    <li>{% trans 'create_account' %}</li>
+                    <li>{% trans 'add_urls_to_monitor' %}</li>
+                    <li>{% trans 'select_update_check_method' %}</li>
+                    <li>{% trans 'organize_urls_as_needed' %}</li>
+                    <li>{% trans 'check_for_updates' %}</li>
                 </ol>
             </div>
         </div>
@@ -34,34 +34,34 @@
         <div class="flex justify-center space-x-4">
             {% if user.is_authenticated %}
                 <a href="{% url 'core:dashboard' %}" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-md transition duration-300">
-                    {% trans 'ダッシュボードへ' %}
+                    {% trans 'go_to_dashboard' %}
                 </a>
             {% else %}
                 <a href="{% url 'user_accounts:register' %}" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-md transition duration-300">
-                    {% trans '今すぐ登録' %}
+                    {% trans 'register_now' %}
                 </a>
                 <a href="{% url 'user_accounts:login' %}" class="bg-gray-600 hover:bg-gray-700 text-white font-bold py-2 px-6 rounded-md transition duration-300">
-                    {% trans 'ログイン' %}
+                    {% trans 'login' %}
                 </a>
             {% endif %}
         </div>
     </div>
     
     <div class="bg-white shadow-md rounded-lg p-6">
-        <h2 class="text-2xl font-bold text-blue-600 mb-4">{% trans 'Flexible Web Checkerの特徴' %}</h2>
+        <h2 class="text-2xl font-bold text-blue-600 mb-4">{% trans 'features_of_flexible_web_checker' %}</h2>
         
         <div class="grid md:grid-cols-3 gap-6">
             <div class="border border-gray-200 rounded-md p-4">
-                <h3 class="text-lg font-semibold text-blue-700 mb-2">{% trans '柔軟な更新検出' %}</h3>
-                <p>{% trans 'RSSフィード、HTML全体、または特定のHTML要素の変更を監視できます。' %}</p>
+                <h3 class="text-lg font-semibold text-blue-700 mb-2">{% trans 'flexible_update_detection' %}</h3>
+                <p>{% trans 'can_monitor_rss_html_elements' %}</p>
             </div>
             <div class="border border-gray-200 rounded-md p-4">
-                <h3 class="text-lg font-semibold text-blue-700 mb-2">{% trans 'コレクション管理' %}</h3>
-                <p>{% trans 'URLをコレクションに整理して、関連するWebサイトをグループ化できます。' %}</p>
+                <h3 class="text-lg font-semibold text-blue-700 mb-2">{% trans 'collection_management' %}</h3>
+                <p>{% trans 'organize_and_group_websites' %}</p>
             </div>
             <div class="border border-gray-200 rounded-md p-4">
-                <h3 class="text-lg font-semibold text-blue-700 mb-2">{% trans 'サムネイル表示' %}</h3>
-                <p>{% trans 'Webサイトのサムネイルを自動生成して、視覚的に識別しやすくします。' %}</p>
+                <h3 class="text-lg font-semibold text-blue-700 mb-2">{% trans 'thumbnail_display' %}</h3>
+                <p>{% trans 'auto_generate_thumbnails' %}</p>
             </div>
         </div>
     </div>

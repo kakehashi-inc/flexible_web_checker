@@ -8,12 +8,12 @@ class UserRegistrationForm(forms.ModelForm):
     """ユーザー登録フォーム"""
 
     password1 = forms.CharField(
-        label=_("パスワード"),
+        label=_("password"),
         widget=forms.PasswordInput,
         validators=[validate_password],
     )
     password2 = forms.CharField(
-        label=_("パスワード(確認)"), widget=forms.PasswordInput
+        label=_("password_confirm"), widget=forms.PasswordInput
     )
 
     class Meta:
@@ -33,7 +33,7 @@ class UserRegistrationForm(forms.ModelForm):
         password2 = self.cleaned_data.get("password2")
 
         if password1 and password2 and password1 != password2:
-            raise forms.ValidationError(_("パスワードが一致しません。"))
+            raise forms.ValidationError(_("passwords_do_not_match"))
         return password2
 
     def save(self, commit=True):
@@ -47,8 +47,8 @@ class UserRegistrationForm(forms.ModelForm):
 class UserLoginForm(forms.Form):
     """ユーザーログインフォーム"""
 
-    email = forms.EmailField(label=_("メールアドレス"))
-    password = forms.CharField(label=_("パスワード"), widget=forms.PasswordInput)
+    email = forms.EmailField(label=_("email_address"))
+    password = forms.CharField(label=_("password"), widget=forms.PasswordInput)
 
 
 class UserProfileForm(forms.ModelForm):
@@ -62,19 +62,19 @@ class UserProfileForm(forms.ModelForm):
 class PasswordResetRequestForm(forms.Form):
     """パスワードリセットリクエストフォーム"""
 
-    email = forms.EmailField(label=_("メールアドレス"))
+    email = forms.EmailField(label=_("email_address"))
 
 
 class PasswordResetForm(forms.Form):
     """パスワードリセットフォーム"""
 
     password = forms.CharField(
-        label=_("新しいパスワード"),
+        label=_("new_password"),
         widget=forms.PasswordInput,
         validators=[validate_password],
     )
     password_confirm = forms.CharField(
-        label=_("新しいパスワード(確認)"), widget=forms.PasswordInput
+        label=_("new_password_confirm"), widget=forms.PasswordInput
     )
 
     def clean_password_confirm(self):
@@ -82,5 +82,5 @@ class PasswordResetForm(forms.Form):
         password_confirm = self.cleaned_data.get("password_confirm")
 
         if password and password_confirm and password != password_confirm:
-            raise forms.ValidationError(_("パスワードが一致しません。"))
+            raise forms.ValidationError(_("passwords_do_not_match"))
         return password_confirm

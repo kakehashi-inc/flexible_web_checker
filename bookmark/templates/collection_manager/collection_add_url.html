@@ -1,20 +1,20 @@
 {% extends 'base.html' %}
 {% load i18n %}
 
-{% block title %}{% trans 'URLを追加' %}: {{ collection.name }} | Flexible Web Checker{% endblock %}
+{% block title %}{% trans 'add_url' %}: {{ collection.name }} | Flexible Web Checker{% endblock %}
 
 {% block content %}
 <div class="max-w-2xl mx-auto">
     <div class="mb-6">
         <a href="{% url 'collection_manager:collection_detail' collection.id %}" class="text-blue-600 hover:text-blue-800">
-            ← {% trans 'コレクション詳細に戻る' %}
+            ← {% trans 'back_to_collection_detail' %}
         </a>
     </div>
     
     <div class="bg-white shadow-md rounded-lg overflow-hidden">
         <div class="p-6">
             <h1 class="text-2xl font-bold text-gray-800 mb-6">
-                {% trans 'URLを追加' %}: {{ collection.name }}
+                {% trans 'add_url' %}: {{ collection.name }}
             </h1>
             
             <form method="post" class="space-y-6">
@@ -30,7 +30,7 @@
                 
                 <div>
                     <label for="{{ form.url_items.id_for_label }}" class="block text-sm font-medium text-gray-700 mb-1">
-                        {% trans 'URL' %} <span class="text-red-600">*</span>
+                        {% trans 'url' %} <span class="text-red-600">*</span>
                     </label>
                     {{ form.url_items }}
                     {% if form.url_items.errors %}
@@ -41,27 +41,27 @@
                         </div>
                     {% endif %}
                     <p class="text-xs text-gray-500 mt-1">
-                        {% trans 'コレクションに追加するURLを選択してください。複数選択可能です。' %}
+                        {% trans 'select_urls_to_add_to_collection' %}
                     </p>
                 </div>
                 
                 <div class="flex justify-between pt-4">
                     <a href="{% url 'collection_manager:collection_detail' collection.id %}" class="bg-gray-500 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-md transition duration-300">
-                        {% trans 'キャンセル' %}
+                        {% trans 'cancel' %}
                     </a>
                     <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition duration-300">
-                        {% trans '追加' %}
+                        {% trans 'add' %}
                     </button>
                 </div>
             </form>
             
             <div class="mt-8 border-t border-gray-200 pt-6">
-                <h2 class="text-lg font-semibold text-gray-700 mb-4">{% trans '新しいURLを作成' %}</h2>
+                <h2 class="text-lg font-semibold text-gray-700 mb-4">{% trans 'create_new_url' %}</h2>
                 <p class="text-gray-600 mb-4">
-                    {% trans '追加したいURLがリストにない場合は、新しいURLを作成してください。' %}
+                    {% trans 'create_new_url_if_not_in_list' %}
                 </p>
                 <a href="{% url 'url_manager:url_add' %}?collection={{ collection.id }}" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-md transition duration-300">
-                    {% trans '新規URL作成' %}
+                    {% trans 'create_new_url_button' %}
                 </a>
             </div>
         </div>

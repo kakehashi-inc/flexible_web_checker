@@ -16,6 +16,7 @@ urlpatterns = [
     path("", core.home, name="home"),
     path("about/", core.about, name="about"),
     path("check_all/", core.check_all_urls, name="check_all_urls"),
+    path("job_management/", core.job_management, name="job_management"),
 
     # User Accounts
     path("register/", user_accounts.register, name="register"),

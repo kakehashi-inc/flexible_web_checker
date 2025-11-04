@@ -32,7 +32,7 @@ def collection_add(request):
             collection.order = (max_order.order + 1) if max_order else 0
 
             collection.save()
-            messages.success(request, _("コレクションを追加しました。"))
+            messages.success(request, _("collection_added"))
             return redirect(
                 "bookmark:collection_detail", collection_id=collection.pk
             )
@@ -74,7 +74,7 @@ def collection_edit(request, collection_id):
         form = CollectionForm(request.POST, instance=collection)
         if form.is_valid():
             form.save()
-            messages.success(request, _("コレクションを更新しました。"))
+            messages.success(request, _("collection_updated"))
             return redirect(
                 "bookmark:collection_detail", collection_id=collection.pk
             )
@@ -95,7 +95,7 @@ def collection_delete(request, collection_id):
 
     if request.method == "POST":
         collection.delete()
-        messages.success(request, _("コレクションを削除しました。"))
+        messages.success(request, _("collection_deleted"))
         return redirect("bookmark:collection_list")
 
     return render(
@@ -113,9 +113,9 @@ def collection_add_url(request, collection_id, url_id):
         collection=collection, url_item=url_item
     ).exists():
         UrlItemCollection.objects.create(collection=collection, url_item=url_item)
-        messages.success(request, _("URLをコレクションに追加しました。"))
+        messages.success(request, _("url_added_to_collection"))
     else:
-        messages.info(request, _("このURLは既にコレクションに追加されています。"))
+        messages.info(request, _("url_already_in_collection"))
 
     if request.headers.get("X-Requested-With") == "XMLHttpRequest":
         return JsonResponse({"status": "success"})
@@ -132,7 +132,7 @@ def collection_remove_url(request, collection_id, url_id):
     url_item = get_object_or_404(UrlItem, pk=url_id, user=request.user)
 
     UrlItemCollection.objects.filter(collection=collection, url_item=url_item).delete()
-    messages.success(request, _("URLをコレクションから削除しました。"))
+    messages.success(request, _("url_removed_from_collection"))
 
     if request.headers.get("X-Requested-With") == "XMLHttpRequest":
         return JsonResponse({"status": "success"})

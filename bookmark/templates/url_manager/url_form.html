@@ -3,9 +3,9 @@
 
 {% block title %}
     {% if form.instance.id %}
-        {% trans 'URL編集' %}: {{ form.instance.title }}
+        {% trans 'edit_url' %}: {{ form.instance.title }}
     {% else %}
-        {% trans '新規URL追加' %}
+        {% trans 'add_new_url' %}
     {% endif %} | Flexible Web Checker
 {% endblock %}
 
@@ -13,7 +13,7 @@
 <div class="max-w-2xl mx-auto">
     <div class="mb-6">
         <a href="{% url 'url_manager:url_list' %}" class="text-blue-600 hover:text-blue-800">
-            ← {% trans 'URL一覧に戻る' %}
+            ← {% trans 'back_to_url_list' %}
         </a>
     </div>
     
@@ -21,9 +21,9 @@
         <div class="p-6">
             <h1 class="text-2xl font-bold text-gray-800 mb-6">
                 {% if form.instance.id %}
-                    {% trans 'URL編集' %}: {{ form.instance.title }}
+                    {% trans 'edit_url' %}: {{ form.instance.title }}
                 {% else %}
-                    {% trans '新規URL追加' %}
+                    {% trans 'add_new_url' %}
                 {% endif %}
             </h1>
             
@@ -40,7 +40,7 @@
                 
                 <div>
                     <label for="{{ form.url.id_for_label }}" class="block text-sm font-medium text-gray-700 mb-1">
-                        {% trans 'URL' %} <span class="text-red-600">*</span>
+                        {% trans 'url' %} <span class="text-red-600">*</span>
                     </label>
                     {{ form.url }}
                     {% if form.url.errors %}
@@ -51,13 +51,13 @@
                         </div>
                     {% endif %}
                     <p class="text-xs text-gray-500 mt-1">
-                        {% trans '監視したいWebページのURLを入力してください。' %}
+                        {% trans 'enter_url_to_monitor' %}
                     </p>
                 </div>
                 
                 <div>
                     <label for="{{ form.title.id_for_label }}" class="block text-sm font-medium text-gray-700 mb-1">
-                        {% trans 'タイトル' %} <span class="text-red-600">*</span>
+                        {% trans 'title' %} <span class="text-red-600">*</span>
                     </label>
                     {{ form.title }}
                     {% if form.title.errors %}
@@ -68,13 +68,13 @@
                         </div>
                     {% endif %}
                     <p class="text-xs text-gray-500 mt-1">
-                        {% trans 'URLを識別するためのタイトルを入力してください。' %}
+                        {% trans 'enter_title_for_url' %}
                     </p>
                 </div>
                 
                 <div>
                     <label for="{{ form.check_type.id_for_label }}" class="block text-sm font-medium text-gray-700 mb-1">
-                        {% trans 'チェックタイプ' %} <span class="text-red-600">*</span>
+                        {% trans 'check_type' %} <span class="text-red-600">*</span>
                     </label>
                     {{ form.check_type }}
                     {% if form.check_type.errors %}
@@ -85,14 +85,14 @@
                         </div>
                     {% endif %}
                     <p class="text-xs text-gray-500 mt-1">
-                        {% trans 'URLの更新をチェックする方法を選択してください。' %}
+                        {% trans 'select_check_method' %}
                     </p>
                 </div>
                 
                 <div id="html-custom-fields" class="space-y-4 hidden">
                     <div>
                         <label for="{{ form.html_selector.id_for_label }}" class="block text-sm font-medium text-gray-700 mb-1">
-                            {% trans 'HTMLセレクタ' %}
+                            {% trans 'html_selector' %}
                         </label>
                         {{ form.html_selector }}
                         {% if form.html_selector.errors %}
@@ -103,13 +103,13 @@
                             </div>
                         {% endif %}
                         <p class="text-xs text-gray-500 mt-1">
-                            {% trans '監視したい要素のCSSセレクタを入力してください。複数のセレクタを指定する場合は、改行で区切ってください。' %}
+                            {% trans 'html_selector_help' %}
                         </p>
                     </div>
                     
                     <div>
                         <label for="{{ form.html_custom_condition.id_for_label }}" class="block text-sm font-medium text-gray-700 mb-1">
-                            {% trans '条件' %}
+                            {% trans 'condition' %}
                         </label>
                         {{ form.html_custom_condition }}
                         {% if form.html_custom_condition.errors %}
@@ -120,14 +120,14 @@
                             </div>
                         {% endif %}
                         <p class="text-xs text-gray-500 mt-1">
-                            {% trans '複数のセレクタを指定した場合の条件を選択してください。' %}
+                            {% trans 'select_condition_for_multiple_selectors' %}
                         </p>
                     </div>
                 </div>
                 
                 <div>
                     <label for="{{ form.thumbnail.id_for_label }}" class="block text-sm font-medium text-gray-700 mb-1">
-                        {% trans 'サムネイル' %}
+                        {% trans 'thumbnail' %}
                     </label>
                     {% if form.instance.thumbnail %}
                         <div class="mb-2">
@@ -143,13 +143,13 @@
                         </div>
                     {% endif %}
                     <p class="text-xs text-gray-500 mt-1">
-                        {% trans 'サムネイル画像をアップロードしてください。空白の場合、自動的にスクリーンショットが生成されます。' %}
+                        {% trans 'thumbnail_upload_help' %}
                     </p>
                 </div>
                 
                 <div>
                     <label class="block text-sm font-medium text-gray-700 mb-1">
-                        {% trans 'コレクション' %}
+                        {% trans 'collection' %}
                     </label>
                     {{ form.collections }}
                     {% if form.collections.errors %}
@@ -160,16 +160,16 @@
                         </div>
                     {% endif %}
                     <p class="text-xs text-gray-500 mt-1">
-                        {% trans 'このURLを追加するコレクションを選択してください。複数選択可能です。' %}
+                        {% trans 'select_collections_for_url' %}
                     </p>
                 </div>
                 
                 <div class="flex justify-between pt-4">
                     <a href="{% url 'url_manager:url_list' %}" class="bg-gray-500 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-md transition duration-300">
-                        {% trans 'キャンセル' %}
+                        {% trans 'cancel' %}
                     </a>
                     <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition duration-300">
-                        {% trans '保存' %}
+                        {% trans 'save' %}
                     </button>
                 </div>
             </form>

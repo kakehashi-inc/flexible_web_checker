@@ -1,12 +1,12 @@
 {% extends 'base.html' %}
 {% load i18n %}
 
-{% block title %}{% trans '新規登録' %} | Flexible Web Checker{% endblock %}
+{% block title %}{% trans 'register_new_account' %} | Flexible Web Checker{% endblock %}
 
 {% block content %}
 <div class="max-w-md mx-auto">
     <div class="bg-white shadow-md rounded-lg p-6">
-        <h1 class="text-2xl font-bold text-blue-600 mb-6 text-center">{% trans '新規登録' %}</h1>
+        <h1 class="text-2xl font-bold text-blue-600 mb-6 text-center">{% trans 'register_new_account' %}</h1>
         
         <form method="post" class="space-y-4">
             {% csrf_token %}
@@ -21,7 +21,7 @@
             
             <div>
                 <label for="{{ form.email.id_for_label }}" class="block text-sm font-medium text-gray-700 mb-1">
-                    {% trans 'メールアドレス' %}
+                    {% trans 'email_address' %}
                 </label>
                 {{ form.email }}
                 {% if form.email.errors %}
@@ -35,7 +35,7 @@
             
             <div>
                 <label for="{{ form.username.id_for_label }}" class="block text-sm font-medium text-gray-700 mb-1">
-                    {% trans 'ユーザー名' %}
+                    {% trans 'username' %}
                 </label>
                 {{ form.username }}
                 {% if form.username.errors %}
@@ -49,7 +49,7 @@
             
             <div>
                 <label for="{{ form.nickname.id_for_label }}" class="block text-sm font-medium text-gray-700 mb-1">
-                    {% trans 'ニックネーム' %}
+                    {% trans 'nickname' %}
                 </label>
                 {{ form.nickname }}
                 {% if form.nickname.errors %}
@@ -63,7 +63,7 @@
             
             <div>
                 <label for="{{ form.password1.id_for_label }}" class="block text-sm font-medium text-gray-700 mb-1">
-                    {% trans 'パスワード' %}
+                    {% trans 'password' %}
                 </label>
                 {{ form.password1 }}
                 {% if form.password1.errors %}
@@ -74,13 +74,13 @@
                     </div>
                 {% endif %}
                 <p class="text-xs text-gray-500 mt-1">
-                    {% trans 'パスワードは8文字以上で、文字と数字を含める必要があります。' %}
+                    {% trans 'password_requirements' %}
                 </p>
             </div>
             
             <div>
                 <label for="{{ form.password2.id_for_label }}" class="block text-sm font-medium text-gray-700 mb-1">
-                    {% trans 'パスワード（確認）' %}
+                    {% trans 'password_confirmation' %}
                 </label>
                 {{ form.password2 }}
                 {% if form.password2.errors %}
@@ -94,15 +94,15 @@
             
             <div>
                 <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition duration-300">
-                    {% trans '登録' %}
+                    {% trans 'register' %}
                 </button>
             </div>
         </form>
         
         <div class="mt-6 border-t border-gray-200 pt-4 text-center">
-            <p class="text-gray-600 mb-2">{% trans 'すでにアカウントをお持ちですか？' %}</p>
+            <p class="text-gray-600 mb-2">{% trans 'already_have_account' %}</p>
             <a href="{% url 'user_accounts:login' %}" class="text-blue-600 hover:text-blue-800">
-                {% trans 'ログイン' %}
+                {% trans 'login' %}
             </a>
         </div>
     </div>
