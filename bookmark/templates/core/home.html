@@ -8,7 +8,7 @@
     <div class="bg-white shadow-md rounded-lg p-6 mb-6">
         <h1 class="text-3xl font-bold text-blue-600 mb-4">{% trans 'welcome_to_flexible_web_checker' %}</h1>
         <p class="text-lg mb-6">{% trans 'track_favorite_websites_description' %}</p>
-        
+
         <div class="grid md:grid-cols-2 gap-6 mb-8">
             <div class="bg-blue-50 p-4 rounded-md">
                 <h2 class="text-xl font-semibold text-blue-700 mb-2">{% trans 'main_features' %}</h2>
@@ -30,7 +30,7 @@
                 </ol>
             </div>
         </div>
-        
+
         <div class="flex justify-center space-x-4">
             {% if user.is_authenticated %}
                 <a href="{% url 'bookmark:url_list' %}" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-md transition duration-300">
@@ -46,10 +46,10 @@
             {% endif %}
         </div>
     </div>
-    
+
     <div class="bg-white shadow-md rounded-lg p-6">
         <h2 class="text-2xl font-bold text-blue-600 mb-4">{% trans 'features_of_flexible_web_checker' %}</h2>
-        
+
         <div class="grid md:grid-cols-3 gap-6">
             <div class="border border-gray-200 rounded-md p-4">
                 <h3 class="text-lg font-semibold text-blue-700 mb-2">{% trans 'flexible_update_detection' %}</h3>
