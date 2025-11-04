@@ -1,193 +1,193 @@
 # Flexible Web Checker
 
-## 1. システム概要
+## 1. System Overview
 
-Flexible Web Checkerは、指定したWebページの更新を定期的にチェックし、変更があった場合に通知するDjangoアプリケーションです。ユーザーはURLを登録し、コレクションにまとめることができます。更新チェックはバックグラウンドで非同期に実行されます。
+Flexible Web Checker is a Django application that periodically checks specified web pages for updates and notifies users when changes are detected. Users can register URLs and organize them into collections. Update checks are performed asynchronously in the background.
 
-## 2. 開発環境構築
+## 2. Development Environment Setup
 
-### 2.1 前提条件
+### 2.1 Prerequisites
 
-- Python 3.12以上 (Django 5.2)
-- gettext（国際化のため）
+- Python 3.12 or higher (Django 5.2)
+- gettext (for internationalization)
 - Node.js, Yarn
 
-### 2.2 手順
+### 2.2 Setup Steps
 
-1. リポジトリのクローン
+1. Clone the repository
 
     ```bash
-    git clone <リポジトリURL>
-    cd <リポジトリ名>
+    git clone <repository-url>
+    cd <repository-name>
     ```
 
-2. 仮想環境の作成と有効化
+2. Create and activate virtual environment
 
     ```bash
-    # 仮想環境の作成
+    # Create virtual environment
     python3 -m venv venv
 
-    # 仮想環境の有効化
+    # Activate virtual environment
     source venv/bin/activate  # (macOS/Linux)
     .\venv\Scripts\activate  # (Windows)
     ```
 
-3. 依存関係のインストール
+3. Install dependencies
 
     ```bash
-    # Python依存関係のインストール
+    # Install Python dependencies
     pip install -r requirements.txt
 
-    # gettextがインストールされていない場合（Ubuntu/Debian）
+    # If gettext is not installed (Ubuntu/Debian)
     # sudo apt-get install gettext
     ```
 
-4. 環境変数の設定
+4. Configure environment variables
 
-    `.env.example`ファイルを`.env`にコピーして必要に応じて編集する
+    Copy `.env.example` to `.env` and edit as needed
 
     ```bash
     cp .env.example .env
-    # 必要に応じて.envファイルを編集
+    # Edit .env file as needed
     ```
 
-5. フロントエンド依存関係のインストールとセットアップ
+5. Install and setup frontend dependencies
 
-    **注記:** このプロジェクトではパッケージマネージャーとして **Yarn の利用を推奨**していますが、npm でも動作します。
-    以下のコマンド例は Yarn を使用しています。npm を使用する場合は、適宜コマンドを読み替えてください
-    (`yarn install` は `npm install`、`yarn <script>` は `npm run <script>`)。
+    **Note:** This project **recommends using Yarn** as the package manager, but npm also works.
+    The following command examples use Yarn. If using npm, please adapt the commands accordingly
+    (`yarn install` becomes `npm install`, `yarn <script>` becomes `npm run <script>`).
 
     ```bash
-    # Node.jsとYarnがインストールされていることを確認
-    # 依存関係をインストール
+    # Ensure Node.js and Yarn are installed
+    # Install dependencies
     yarn install
 
-    # TypeScriptをビルド
+    # Build TypeScript
     yarn build:ts
 
-    # JavaScriptをビルド
+    # Build JavaScript
     yarn build:js
 
-    # CSS (Tailwind) をビルド
+    # Build CSS (Tailwind)
     yarn build:css:prod
 
-    # SCSS をビルド
+    # Build SCSS
     yarn build:scss
 
-    # JavaScript ライブラリをコピー
+    # Copy JavaScript libraries
     yarn setup:libs
 
-    # FontAwesome フォントをコピー
+    # Copy FontAwesome fonts
     yarn setup:fa
 
-    # アイコンを生成 (もし必要なら)
+    # Generate icons (if needed)
     # yarn icons
 
-    # モジュールの選択更新
+    # Selective module updates
     # yarn upgrade-interactive
 
-    # モジュールの更新
+    # Update specific module
     # yarn up "sweetalert2"
     ```
 
-6. 言語ファイルのコンパイル
+6. Compile language files
 
     ```bash
-    # .poファイルから.moファイルを生成
+    # Generate .mo files from .po files
     python manage.py compilemessages
     ```
 
-7. データベースのマイグレーション
+7. Run database migrations
 
     ```bash
     python manage.py migrate
     ```
 
-8. 静的ファイルの準備（本番環境など）
+8. Prepare static files (for production, etc.)
 
     ```bash
     python manage.py collectstatic
     ```
 
-9. スーパーユーザーの作成 (管理者アカウント)
+9. Create superuser (administrator account)
 
     ```bash
     python manage.py createsuperuser
     ```
 
-10. 開発サーバーの起動
+10. Start development server
 
     ```bash
     python manage.py runserver
     ```
 
-### 2.3 動作確認
+### 2.3 Verification
 
-ブラウザで `http://localhost:8000/` にアクセス。
+Access `http://localhost:8000/` in your browser.
 
-### 2.4. CeleryワーカーとBeatの起動 (非同期タスク用)
+### 2.4 Starting Celery Worker and Beat (for asynchronous tasks)
 
-別のターミナルでそれぞれ起動します。
+Launch each in separate terminals.
 
 ```bash
-# Celeryワーカー
+# Celery Worker
 celery -A flexible_web_checker worker -l info
 
-# Celery Beat (スケジュールタスク用)
+# Celery Beat (for scheduled tasks)
 celery -A flexible_web_checker beat -l info --scheduler django_celery_beat.schedulers:DatabaseScheduler
 ```
 
-## 3. 開発時の注意点
+## 3. Development Notes
 
-### モデルとマイグレーション
+### Models and Migrations
 
-Djangoのモデル（`models.py` または `models/` ディレクトリ内のファイル）に変更を加えた場合は、**原則としてマイグレーションファイルの作成・適用が必要**です。
-モデルファイルを編集した後は、**習慣として `makemigrations <アプリ名>` を実行し**、"No changes detected" と表示されるか、意図した変更がマイグレーションファイルとして生成されるかを確認することを推奨します。
+When making changes to Django models (`models.py` or files in the `models/` directory), **migration file creation and application are generally required**.
+After editing model files, it is **recommended to habitually run `makemigrations <app-name>`** to verify that either "No changes detected" is displayed or the intended changes are generated as migration files.
 
-1. makemigrations の実行
-    モデルに変更を加えた後、以下のコマンドを実行して変更内容をマイグレーションファイルに記録します。
+1. Running makemigrations
+    After making changes to models, run the following command to record the changes in a migration file.
 
     ```bash
     python manage.py makemigrations bookmark
     ```
 
-    このコマンドは、モデル定義と既存のマイグレーションファイルとの差分を検出し、新しいマイグレーションファイル（例: `000X_...py`）を生成します。
+    This command detects differences between the model definitions and existing migration files, and generates a new migration file (e.g., `000X_...py`).
 
-2. migrate の実行
-    生成されたマイグレーションファイルを以下のコマンドでデータベースに適用します。
+2. Running migrate
+    Apply the generated migration file to the database with the following command.
 
     ```bash
     python manage.py migrate
     ```
 
-    これにより、データベースのスキーマがモデル定義と同期されます。
+    This synchronizes the database schema with the model definitions.
 
-### 翻訳ファイルの更新 (compilemessages)
+### Updating Translation Files (compilemessages)
 
-翻訳ファイル（`.po` ファイル）に手動で変更を加えた場合や、ソースコード内の翻訳対象文字列 (`{% trans "..." %}` や `trans("...")` および `_("...")` など) を追加・変更した後に `python manage.py makemessages -l <言語コード>` を実行した場合は、以下のコマンドで翻訳ファイルをコンパイルする必要があります。
+When manually modifying translation files (`.po` files), or after adding/modifying translatable strings in source code (`{% trans "..." %}`, `trans("...")`, `_("...")`, etc.) and running `python manage.py makemessages -l <language-code>`, you need to compile the translation files with the following command.
 
 ```bash
 python manage.py compilemessages
 ```
 
-これにより、`.po` ファイルから `.mo` ファイルが生成（または更新）され、アプリケーションの表示言語に翻訳が正しく反映されるようになります。
+This generates (or updates) `.mo` files from `.po` files, allowing translations to be correctly reflected in the application's display language.
 
-### CSSの再構築 (Tailwind CSS)
+### Rebuilding CSS (Tailwind CSS)
 
-HTMLテンプレートファイルや、Tailwind CSSのスキャン対象として設定されている他のファイル（JavaScriptファイルやPythonファイルなど）で、Tailwind CSSのユーティリティクラスを追加・変更・削除した場合は、CSSファイルを再構築して変更を反映させる必要があります。
+When adding, modifying, or removing Tailwind CSS utility classes in HTML template files or other files configured as Tailwind CSS scan targets (such as JavaScript or Python files), you need to rebuild the CSS files to reflect the changes.
 
-多くのプロジェクトでは、開発中にファイルの変更を監視し、自動的にCSSを再構築するウォッチモードが用意されています。
+Many projects provide a watch mode that monitors file changes during development and automatically rebuilds CSS.
 
 ```bash
 yarn watch:css
-# または npm run watch:css
+# or npm run watch:css
 ```
 
-ウォッチモードを使用している場合でも、定期的に本番用ビルドを実行して、最終的なCSSの出力に問題がないか確認することが推奨されます。
+Even when using watch mode, it is recommended to periodically run a production build to verify that the final CSS output has no issues.
 
-本番ビルド:
+Production build:
 
 ```bash
 yarn build:css:prod
-# または npm run build:css:prod
+# or npm run build:css:prod
 ```
