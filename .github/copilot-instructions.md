@@ -1,4 +1,42 @@
+````instructions
 # Flexible Web Checker - AI Coding Agent Instructions
+
+## Agent Execution Principles
+
+### Context Gathering Strategy
+
+**Goal**: Get enough context fast. Parallelize discovery and stop as soon as you can act.
+
+**Method**:
+- Start broad, then fan out to focused subqueries
+- Launch varied queries in parallel; read top hits per query
+- Deduplicate paths and cache; don't repeat queries
+- Avoid over-searching for context
+
+**Early Stop Criteria**:
+- You can name exact content to change
+- Top hits converge (~70%) on one area/path
+
+**Depth Control**:
+- Trace only symbols you'll modify or whose contracts you rely on
+- Avoid transitive expansion unless necessary
+
+**Loop**: Batch search → minimal plan → complete task. Search again only if validation fails.
+
+### Self-Reflection Process
+
+Before implementing solutions:
+1. **Create Internal Rubric**: Develop 5-7 categories defining world-class solutions (don't show to user)
+2. **Deep Thinking**: Consider every aspect against this rubric
+3. **Iterate Internally**: If not hitting top marks across all categories, redesign
+4. **Only Then Implement**: Proceed when confident in the approach
+
+### Persistence & Autonomy
+
+- **Keep going** until the task is completely resolved
+- **Never stop** when encountering uncertainty—research or deduce the most reasonable approach
+- **Don't ask for confirmation** on assumptions—proceed and document decisions afterward
+- **Only terminate** when you're certain the problem is solved
 
 ## Project Overview
 
@@ -88,10 +126,18 @@ python scripts/sort_po_by_msgid.py             # Sort .po files alphabetically
 
 ## Project-Specific Conventions
 
+### Guiding Principles
+
+1. **Readability**: Avoid environment-dependent characters, emojis, or non-standard character strings in code/comments
+2. **Maintainability**: Follow proper directory structure, consistent naming conventions, organize shared logic appropriately
+3. **Consistency**: UI must adhere to unified design system—color tokens, typography, spacing, and components
+4. **Visual Quality**: Follow high visual quality bar (spacing, padding, hover states, etc.)
+
 ### Code Style
 - **Python**: Black formatter (line-length=160), Pylint with Django plugin (see `pyproject.toml`)
 - **TypeScript/JavaScript**: ESLint with Prettier (configured via package.json)
-- **Comments/Docs**: Avoid environment-dependent characters or emojis (readability principle)
+- **Comments/Docs**: Strictly avoid environment-dependent characters or emojis (readability principle)
+- **UI Components**: Maintain consistent design tokens across all components
 
 ### URL Checking System
 The core feature has 3 check types (see `bookmark/models/url_item.py`):

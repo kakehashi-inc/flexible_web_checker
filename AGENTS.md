@@ -4,16 +4,45 @@
 
 ### Context Gathering Strategy
 
-- **Parallelize discovery**: Launch varied queries in parallel; read top hits per query
-- **Early stop criteria**: Stop searching when you can name exact content to change, or when ~70% of hits converge on one area
-- **Avoid over-searching**: Prefer acting over searching. Search again only if validation fails
-- **Depth control**: Trace only symbols you'll modify; avoid transitive expansion unless necessary
+**Goal**: Get enough context fast. Parallelize discovery and stop as soon as you can act.
+
+**Method**:
+
+- Start broad, then fan out to focused subqueries
+- In parallel, launch varied queries; read top hits per query
+- Deduplicate paths and cache; don't repeat queries
+- Avoid over-searching for context
+
+**Early Stop Criteria**:
+
+- You can name exact content to change
+- Top hits converge (~70%) on one area/path
+
+**Escalate Once**:
+
+- If signals conflict or scope is fuzzy, run one refined parallel batch, then proceed
+
+**Depth Control**:
+
+- Trace only symbols you'll modify or whose contracts you rely on
+- Avoid transitive expansion unless necessary
+
+**Loop**: Batch search → minimal plan → complete task. Search again only if validation fails.
+
+### Self-Reflection Process
+
+Before implementing solutions:
+
+1. **Create Internal Rubric**: Develop 5-7 categories defining world-class solutions (don't show to user)
+2. **Deep Thinking**: Consider every aspect against this rubric
+3. **Iterate Internally**: If not hitting top marks across all categories, redesign
+4. **Only Then Implement**: Proceed when confident in the approach
 
 ### Persistence & Autonomy
 
 - **Keep going** until the task is completely resolved
-- **Never stop** when encountering uncertainty - research or deduce the most reasonable approach
-- **Don't ask for confirmation** on assumptions - proceed and document decisions afterward
+- **Never stop** when encountering uncertainty—research or deduce the most reasonable approach
+- **Don't ask for confirmation** on assumptions—proceed and document decisions afterward
 - **Only terminate** when you're certain the problem is solved
 
 ---
@@ -119,12 +148,19 @@ python scripts/sort_po_by_msgid.py             # Alphabetical sort
 
 ## 🎨 Code Conventions
 
+### Guiding Principles
+
+1. **Readability**: Avoid environment-dependent characters, emojis, or non-standard character strings in code/comments
+2. **Maintainability**: Follow proper directory structure, consistent naming conventions, organize shared logic appropriately
+3. **Consistency**: UI must adhere to unified design system—color tokens, typography, spacing, and components
+4. **Visual Quality**: Follow high visual quality bar (spacing, padding, hover states, etc.)
+
 ### Style Guidelines
 
 - **Python**: Black (line-length=160), Pylint with Django plugin (`pyproject.toml`)
 - **TypeScript/JS**: ESLint + Prettier (`package.json`)
-- **Comments**: Avoid environment-dependent chars, emojis (readability principle)
-- **UI Consistency**: Unified color tokens, typography, spacing throughout
+- **Comments**: Strictly avoid environment-dependent chars, emojis (readability principle)
+- **UI Components**: Maintain consistent design tokens across all components
 
 ### URL Checking System (Core Feature)
 
@@ -235,6 +271,100 @@ celery -A flexible_web_checker beat -l info --scheduler django_celery_beat.sched
 3. **Translation changes** → Edit `.po` → `compilemessages`
 4. **TypeScript/React changes** → `yarn build:ts`
 5. **Test** → `python manage.py test bookmark`
+
+---
+
+## 🤖 Agent Execution Best Practices
+
+### Task Decomposition
+
+When receiving a complex task:
+
+1. **Understand Requirements**: Parse the user's request for main objectives and constraints
+2. **Identify Dependencies**: Map out which components depend on others
+3. **Prioritize Actions**: Order tasks by dependency chain (models → migrations → views → templates → frontend)
+4. **Execute Incrementally**: Complete one unit, validate, then proceed to next
+
+### Context Discovery Pattern
+
+```text
+1. Initial Reconnaissance (Parallel)
+   ├─ semantic_search: "feature X implementation"
+   ├─ grep_search: "class FeatureX|def feature_x"
+   └─ file_search: "**/*feature*.py"
+
+2. Convergence Check
+   └─ If 70%+ results point to same files → Read those files
+   └─ If scattered → Run one refined parallel batch
+
+3. Deep Dive (Sequential)
+   └─ read_file: Read identified files with sufficient context (50-100 lines)
+   └─ list_code_usages: Trace symbols you'll modify
+
+4. Act
+   └─ Make changes with full context
+```
+
+### Common Agent Workflows
+
+#### Adding a New Model Field
+
+```text
+1. grep_search: Find model definition
+2. read_file: Read model + related forms/views
+3. Edit model → makemigrations → migrate
+4. Update forms/views/templates
+5. Update translations if needed
+6. Run tests
+```
+
+#### Fixing a Bug
+
+```text
+1. semantic_search: Find relevant code by symptom description
+2. Read top 3-5 files returned
+3. list_code_usages: Trace function/class causing issue
+4. Identify root cause
+5. Fix + add test case if missing
+6. Validate with runTests
+```
+
+#### Implementing New Feature
+
+```text
+1. Search existing similar features (semantic_search)
+2. Read models → Identify data requirements
+3. Create/modify models → makemigrations → migrate
+4. Create forms/views following existing patterns
+5. Create templates using Tailwind + existing components
+6. Add translations (ja/en)
+7. Update frontend (TypeScript/React) if needed → build
+8. Run tests
+```
+
+### Quality Assurance Checklist
+
+Before completing a task, verify:
+
+- [ ] Migrations created and applied (if models changed)
+- [ ] Frontend rebuilt (if TS/JS/CSS changed)
+- [ ] Translations added (ja/en) and compiled
+- [ ] Code follows project style (Black, ESLint)
+- [ ] No hardcoded strings in UI (use {% trans %})
+- [ ] Tests pass (`python manage.py test bookmark`)
+- [ ] No linting errors
+- [ ] Documentation updated if needed
+
+### Error Recovery Strategies
+
+| Error Type | Detection | Recovery |
+|------------|-----------|----------|
+| **Import Error** | `ModuleNotFoundError` | Check venv activated, run `pip install -r requirements.txt` |
+| **Migration Conflict** | `Conflicting migrations` | Check migration history, resolve conflicts, recreate migration |
+| **Translation Missing** | String not translated in UI | Run `makemessages`, edit .po, run `compilemessages` |
+| **Frontend Build Fail** | Parcel/Tailwind error | Check syntax errors, node_modules integrity, rerun build |
+| **Celery Task Not Running** | Task queued but not executed | Verify worker/beat processes running in separate terminals |
+| **Template Syntax Error** | `TemplateSyntaxError` | Check Django template tags syntax, ensure {% load %} present |
 
 ---
 
