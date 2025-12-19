@@ -9,6 +9,10 @@
     "build:ts": "gulp build-ts",
     "build:js": "gulp build-js",
     "build:scss": "gulp build-scss",
+    "format:ts": "prettier --write \"frontend/ts/**/*.ts\"",
+    "format:js": "prettier --write \"frontend/js/**/*.js\"",
+    "format:style": "prettier --write \"frontend/scss/**/*.{css,scss}\"",
+    "lint": "tsc --noEmit -p tsconfig.lint.json",
     "setup:libs": "gulp setup-libs",
     "setup:fa": "gulp setup-fa",
     "icons": "gulp icons"
